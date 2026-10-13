@@ -1,0 +1,40 @@
+{
+  "source_repository": "ciotd/odor-complaint-dialect-rag",
+  "source_ref": "main",
+  "source_commit": "0422b027ee92aaf461c29244987d4d8d2e094284",
+  "target_repository": "ciotd/korean-dialect-grammar-kg",
+  "analysis_date_kst": "2026-10-13",
+  "tree_truncated": false,
+  "tree_entries": 1611,
+  "source_files": 1510,
+  "commits": 94,
+  "history_reaches_root": true,
+  "retrieved_text_files": 180,
+  "content_policy": "Selected text documentation, summaries and contracts retrieved; remaining artifacts inventoried by path and blob SHA. No independent scoring of every raw response.",
+  "source_write_operations": 0,
+  "collections": {
+    "branches?per_page=100": [
+      {
+        "name": "main",
+        "commit": {
+          "sha": "0422b027ee92aaf461c29244987d4d8d2e094284",
+          "url": "https://api.github.com/repos/ciotd/odor-complaint-dialect-rag/commits/0422b027ee92aaf461c29244987d4d8d2e094284"
+        },
+        "protected": false
+      }
+    ],
+    "tags?per_page=100": {
+      "error": "not_available"
+    },
+    "releases?per_page=100": [],
+    "issues?state=all&per_page=100": [],
+    "pulls?state=all&per_page=100": []
+  },
+  "limits": [
+    "GitHub snapshot only; no uncommitted local states or external conversations.",
+    "Original PDFs and Git-excluded corpora were not available for direct review.",
+    "Historical tests and model experiments were not rerun.",
+    "Historical source claims are distinguished from new v3 proposals.",
+    "Tags API was unavailable; no claim of exhaustive tag coverage. Historical deleted file contents were not exhaustively reconstructed."
+  ]
+}

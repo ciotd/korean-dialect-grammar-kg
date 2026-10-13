@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KG v3 research knowledge record draft",
+  "type": "object",
+  "required": ["id", "status", "use", "forms", "functions", "conditions", "scope", "evidence", "claim_status", "limitations"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["proposed", "reviewed_candidate", "reference_only", "blocked"]},
+    "use": {"type": "string", "minLength": 1},
+    "forms": {"type": "array", "items": {"type": "string"}},
+    "functions": {"type": "array", "items": {"type": "string"}},
+    "conditions": {"type": "array", "items": {"type": "object", "required": ["owner", "description", "basis"], "properties": {"owner": {"enum": ["input", "candidate", "target", "context"]}, "description": {"type": "string"}, "basis": {"enum": ["explicit", "analyst_interpretation", "unknown"]}}}},
+    "scope": {"type": "object", "required": ["regions", "period", "note"], "properties": {"regions": {"type": "array", "items": {"type": "string"}}, "period": {"type": "array", "items": {"type": "string"}}, "note": {"type": "string"}}},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["source_id", "location", "verification"], "properties": {"source_id": {"type": "string"}, "location": {"type": "string"}, "verification": {"enum": ["not_checked", "text_match_only", "semantic_review", "independent_review"]}}}},
+    "claim_status": {"enum": ["attested_form", "attested_example", "source_generalization", "author_hypothesis", "secondary_report", "analyst_interpretation", "negative_example", "model_composition"]},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

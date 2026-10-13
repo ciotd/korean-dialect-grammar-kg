@@ -1,0 +1,628 @@
+sha	author_date_utc	subject	message	parents	url
+0422b027ee92aaf461c29244987d4d8d2e094284	2026-10-13T05:42:51Z	Improve KG v2 retrieval and preserve dialect experiments and reports	"Improve KG v2 retrieval and preserve dialect experiments and reports
+
+Integrate reviewed construction and terminal retrieval, transformation plans, and preservation checks. Preserve factorial comparisons, advisor reviews, model baselines, reports, and reproducible snapshots. Record the revised 20-input run and its remaining errors; refresh project guidance and the result index. Validation: 72 KG v2 regression tests passed."	8eee9ce927c8e588081d7c39d769ef7fe52ef37b	https://github.com/ciotd/odor-complaint-dialect-rag/commit/0422b027ee92aaf461c29244987d4d8d2e094284
+8eee9ce927c8e588081d7c39d769ef7fe52ef37b	2026-10-12T01:44:39Z	Connect KG v2 to sentence generation and export Neo4j diagrams	"Connect KG v2 to sentence generation and export Neo4j diagrams
+
+Bind clause analysis and Kiwi morphology to source-grounded v2 references and inflection edges. Add live analysis-to-generation execution and a frozen four-condition comparison on 30 short inputs and 8 dialogues, preserving the initial run and revision history.
+
+Record partial lexical/question-form improvements and remaining politeness and modifier failures without claiming overall quality superiority. Add 15 passing implementation tests and exact Neo4j node/edge/property verification with PNG/SVG schema and eating-path diagrams. Existing KG source artifacts remain unchanged."	3c957a332fe1b24c04ac02e59c7fde4d28127fdf	https://github.com/ciotd/odor-complaint-dialect-rag/commit/8eee9ce927c8e588081d7c39d769ef7fe52ef37b
+3c957a332fe1b24c04ac02e59c7fde4d28127fdf	2026-10-12T01:16:45Z	Add full-source KG v2 and integrate parallel source review	"Add full-source KG v2 and integrate parallel source review
+
+Preserve the existing KG and publish accumulated retrieval experiments, source repairs, and project documentation. Add 3,757 source-grounded v2 statements with common schema, evidence, review ledgers, and lexical-to-inflection paths.
+
+Three Astra reviewers completed the 162-page gap review: 84 resolved and 78 source-limited. Record remaining source constraints and targeted cross-review corrections. Validate the full build, integration audit, 9 v2 tests, and 175 existing tests; sentence translation quality remains unevaluated."	cf52fbd16593f1e1a4bf7ff41fef166b19c73a40	https://github.com/ciotd/odor-complaint-dialect-rag/commit/3c957a332fe1b24c04ac02e59c7fde4d28127fdf
+cf52fbd16593f1e1a4bf7ff41fef166b19c73a40	2026-09-21T09:14:38Z	refactor: retire superseded KG prototypes and consolidate project guidance	refactor: retire superseded KG prototypes and consolidate project guidance	90197d8fe226af02fcc967f59950e1d9a450ae60	https://github.com/ciotd/odor-complaint-dialect-rag/commit/cf52fbd16593f1e1a4bf7ff41fef166b19c73a40
+90197d8fe226af02fcc967f59950e1d9a450ae60	2026-09-18T00:19:17Z	research: expand grammar KG drafts and add session handoff	research: expand grammar KG drafts and add session handoff	f238c210b3b2c704102655547e802fd3c8db1302	https://github.com/ciotd/odor-complaint-dialect-rag/commit/90197d8fe226af02fcc967f59950e1d9a450ae60
+f238c210b3b2c704102655547e802fd3c8db1302	2026-09-15T11:06:46Z	research: sync literature review, grammar drafts and open design questions	research: sync literature review, grammar drafts and open design questions	2faf35d8819091efda9879ed4de6e7256063d3d7	https://github.com/ciotd/odor-complaint-dialect-rag/commit/f238c210b3b2c704102655547e802fd3c8db1302
+2faf35d8819091efda9879ed4de6e7256063d3d7	2026-09-11T10:05:39Z	research: consolidate grammar KG drafts and design Busan generation experiments	research: consolidate grammar KG drafts and design Busan generation experiments	f05f95dee8005464cba23084f229a2f13fddf089	https://github.com/ciotd/odor-complaint-dialect-rag/commit/2faf35d8819091efda9879ed4de6e7256063d3d7
+f05f95dee8005464cba23084f229a2f13fddf089	2026-09-07T08:40:30Z	claims: 세 자료 파일럿 Claim 15건 추출	claims: 세 자료 파일럿 Claim 15건 추출	e1152605c97f836adf75a10f1e3030957ef23cfc	https://github.com/ciotd/odor-complaint-dialect-rag/commit/f05f95dee8005464cba23084f229a2f13fddf089
+e1152605c97f836adf75a10f1e3030957ef23cfc	2026-09-07T08:30:19Z	claims: 출처 정책과 원자 Claim 기록 규격 정의	claims: 출처 정책과 원자 Claim 기록 규격 정의	d84861dad38b5955d9ee36281af3e8def3fe4320	https://github.com/ciotd/odor-complaint-dialect-rag/commit/e1152605c97f836adf75a10f1e3030957ef23cfc
+d84861dad38b5955d9ee36281af3e8def3fe4320	2026-09-07T07:48:27Z	chore: 연구 자료와 실험 구조 재정리	chore: 연구 자료와 실험 구조 재정리	896c91a8bb8bbba67c00d9059be129af4114de9c	https://github.com/ciotd/odor-complaint-dialect-rag/commit/d84861dad38b5955d9ee36281af3e8def3fe4320
+896c91a8bb8bbba67c00d9059be129af4114de9c	2026-08-31T11:59:50Z	v2-graph: 설계 감사 결과 + 재시작 문서(RESET) — 측정 실패 확정	"v2-graph: 설계 감사 결과 + 재시작 문서(RESET) — 측정 실패 확정
+
+전면 감사(실사 4 + 감사 6 렌즈, 지적 36개/치명 21개) 결과 현재 ablation이
+측정 실패 상태임을 확정. 하중 큰 7개 지적은 독립 재계산으로 검증.
+
+핵심 확인 사실:
+- 무변환(copy) 베이스라인 34/60이 세 조건 전부를 이김 (plain 30/덤프 26/KG 23).
+  기존 보고는 의문 25건 부분집합(12/11/11)만 유통 → 전체에서 KG 최하위.
+- 정답행동 층화: 어미 변경필요 30건에서 plain=KG=6 동률. 격차는 전부 '유지필요'
+  층에서 발생(KG가 안 건드려야 할 문장을 건드려 감점).
+- KG 오라클 상한 12/60 < copy 34/60 → 지표와 KG가 반대 방향을 가리킴.
+- 앵무새 효과: 주입 어미가 복사된 16건의 정답률 0/16 (비복사 39건은 19/39).
+- anchoring 주장 반증: 문말 어절 제외 시 경상 마커가 3조건 전부 0/60.
+  기존 '경상마커 3→8'은 주입 문자열 재측정(순환 지표)이며 8건 중 6건이 오답.
+- 구현 버그: STD_ENDING 6키가 호환자모(U+3142/U+3134)로 작성돼 kiwi 결합자모와
+  영구 미매칭 → 자질추출 실패 8건의 원인. 의문종류 정확도 58.3% < majority 62.5%.
+- 재실행 불가: 두 엔드포인트 모두 사망(405 / connection refused).
+
+코드 변경(미커밋 상태였던 것 반영):
+- run_ablation.py 엔드포인트·모델 갱신(Qwen3.8-27B), 치환 사전·음운 블록 제거,
+  조건명 plain/KG/덤프, 출력 경로 _nolex 접미사.
+
+문서:
+- RESET_2026-08-31.md 신규 — 자기완결 이관 문서. 시간순 경위, 검증된 사실,
+  치명 결함, '지표 설계'가 무엇인지, 재시작 순서, 기존 문서의 오류 목록 포함.
+- HANDOFF.md 폐기 배너 추가 → RESET 문서로 리다이렉트.
+
+주장 불가로 확정: KG 기여의 부호, focused>덤프, anchoring, 조건부 KG novelty.
+주장 가능: 규칙표 자원 기여, '규칙 주입이 언제 해가 되는가' 진단(negative result).
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>"	5bc7ef9c09e41bb0d2edfb50922841d3dea4d8e3	https://github.com/ciotd/odor-complaint-dialect-rag/commit/896c91a8bb8bbba67c00d9059be129af4114de9c
+5bc7ef9c09e41bb0d2edfb50922841d3dea4d8e3	2026-08-27T08:46:24Z	v2-graph: 세션 인수인계 문서(HANDOFF) — 새 세션 진입점	"v2-graph: 세션 인수인계 문서(HANDOFF) — 새 세션 진입점
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	0ae47d921c9bc3d0a63f0a2d2d253bfb7dae6756	https://github.com/ciotd/odor-complaint-dialect-rag/commit/5bc7ef9c09e41bb0d2edfb50922841d3dea4d8e3
+0ae47d921c9bc3d0a63f0a2d2d253bfb7dae6756	2026-08-26T08:49:07Z	v2-graph: 악취 보조 테스트셋 + run_ablation 입력경로 인자화	"v2-graph: 악취 보조 테스트셋 + run_ablation 입력경로 인자화
+
+- build_eval_odor.py: v1 표준 악취 대화 → 민원인 발화 40개(시나리오 골고루, 정확·유사중복 제거)
+  eval_odor.jsonl (도메인 적용 테스트, judge 전용·gold 없음), gitignore
+- run_ablation: 입력 .jsonl 인자로 받음(eval_pairs/eval_odor 둘 다). 출력 ablation_<셋>.jsonl 분리
+- 실행(서버 뜨면): python run_ablation.py [입력.jsonl] [N]
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	f25f210e61d32fada94ab20453039d27273d881b	https://github.com/ciotd/odor-complaint-dialect-rag/commit/0ae47d921c9bc3d0a63f0a2d2d253bfb7dae6756
+f25f210e61d32fada94ab20453039d27273d881b	2026-08-26T08:35:47Z	v2-graph: PROGRESS 갱신 — 평가셋 AI-Hub 실제쌍(일반+의문)으로 전환	"v2-graph: PROGRESS 갱신 — 평가셋 AI-Hub 실제쌍(일반+의문)으로 전환
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	8e724b5a7378119aa05b86c97898915e353dd576	https://github.com/ciotd/odor-complaint-dialect-rag/commit/f25f210e61d32fada94ab20453039d27273d881b
+8e724b5a7378119aa05b86c97898915e353dd576	2026-08-26T08:35:09Z	v2-graph: STD_ENDING 확장 + 평가셋 일반/의문 분리 (실제 AI-Hub)	"v2-graph: STD_ENDING 확장 + 평가셋 일반/의문 분리 (실제 AI-Hub)
+
+- convert_prototype STD_ENDING 확장: 하게체(는가·네·게·세)·하이소명령(십시오)·해체(아/어/지/잖아/거든)
+  ·해라(나·너라·더라·으냐) 추가 → AI-Hub 자연어미 자질추출 85% 커버
+- build_eval_set: 일반셋 + 의문셋(판정/설명 showcase) 분리 추출, 유형 태그.
+  eval_pairs.jsonl = 35 일반 + 25 의문 (전부 실제 구어체 + 방언 정답), gitignore
+- 자연분포는 서술 지배라, 의문셋으로 KG 강점(판정/설명) 케이스 확보
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	c54d8d44c1b7a69ea1b128f6fc3b55261d8aa0cb	https://github.com/ciotd/odor-complaint-dialect-rag/commit/8e724b5a7378119aa05b86c97898915e353dd576
+c54d8d44c1b7a69ea1b128f6fc3b55261d8aa0cb	2026-08-26T08:23:41Z	v2-graph: run_ablation 입력을 eval_pairs.jsonl(AI-Hub)로 전환	"v2-graph: run_ablation 입력을 eval_pairs.jsonl(AI-Hub)로 전환
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	55c061611f4d0d6613ff090b76e4ce3490e2eb16	https://github.com/ciotd/odor-complaint-dialect-rag/commit/c54d8d44c1b7a69ea1b128f6fc3b55261d8aa0cb
+55c061611f4d0d6613ff090b76e4ce3490e2eb16	2026-08-26T08:22:42Z	v2-graph: eval_inputs.jsonl(수작업 28문장) 제거 — AI-Hub 자연문장으로 대체	"v2-graph: eval_inputs.jsonl(수작업 28문장) 제거 — AI-Hub 자연문장으로 대체
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	262083a5d8c9ebbd9bfc628afe8d8fedac201fd2	https://github.com/ciotd/odor-complaint-dialect-rag/commit/55c061611f4d0d6613ff090b76e4ce3490e2eb16
+262083a5d8c9ebbd9bfc628afe8d8fedac201fd2	2026-08-26T08:22:23Z	v2-graph: 평가 입력을 AI-Hub 실제 문장쌍으로 전환	"v2-graph: 평가 입력을 AI-Hub 실제 문장쌍으로 전환
+
+- build_eval_set.py: 경상 2인발화 재구성 → 완성형 (표준,방언) 쌍 (실제 구어체 + 방언 정답)
+  출력 eval_pairs.jsonl은 AI-Hub 저작권상 gitignore(스크립트 재현)
+- 기존 eval_inputs.jsonl(수작업 28문장, 인위적) 제거 → AI-Hub 자연 문장으로 대체
+- 평가 reference-based 업그레이드 가능
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	be15f4e4ba366c77792727c5066828249d781a68	https://github.com/ciotd/odor-complaint-dialect-rag/commit/262083a5d8c9ebbd9bfc628afe8d8fedac201fd2
+be15f4e4ba366c77792727c5066828249d781a68	2026-08-26T07:45:03Z	v2-graph: 노션 미러링용 방향 요약 문서 (방향전환 반영)	"v2-graph: 노션 미러링용 방향 요약 문서 (방향전환 반영)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	49086b8c5901ab9503672f76de9fc528a6bebb5d	https://github.com/ciotd/odor-complaint-dialect-rag/commit/be15f4e4ba366c77792727c5066828249d781a68
+49086b8c5901ab9503672f76de9fc528a6bebb5d	2026-08-26T07:11:35Z	v2-graph: PROGRESS 갱신 — 입력셋·파이프라인 완료, 실행은 서버 대기	"v2-graph: PROGRESS 갱신 — 입력셋·파이프라인 완료, 실행은 서버 대기
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	d3cdab5e0a3c158e71509d7848ed7756d6db7f5a	https://github.com/ciotd/odor-complaint-dialect-rag/commit/49086b8c5901ab9503672f76de9fc528a6bebb5d
+d3cdab5e0a3c158e71509d7848ed7756d6db7f5a	2026-08-26T07:10:59Z	v2-graph: ablation 입력셋(28문장) + 3조건 실험 파이프라인 구축	"v2-graph: ablation 입력셋(28문장) + 3조건 실험 파이프라인 구축
+
+- eval_inputs.jsonl: 표준 입력 28문장 (의문14=판정/설명×계사/용언×높임3, 서술6·명령4·청유4), 셀 라벨
+- run_ablation.py: 치환만 / 치환+KG(focused 종결어미+음운) / 치환+덤프 3조건 변환
+  = 치환(substitution.py) + KG(kg_rules) 통합 프롬프트. 실행은 로컬 vLLM 필요
+- (실행/judge는 서버 기동 후)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	8274918f1125a8ad6d6cd670f4835d4bd1164a4b	https://github.com/ciotd/odor-complaint-dialect-rag/commit/d3cdab5e0a3c158e71509d7848ed7756d6db7f5a
+8274918f1125a8ad6d6cd670f4835d4bd1164a4b	2026-08-26T06:54:09Z	v2-graph: 음운 KB 편입 + 치환 로더 (2번 완료)	"v2-graph: 음운 KB 편입 + 치환 로더 (2번 완료)
+
+- kg_rules.jsonl 멀티도메인화: domain 필드 추가. 종결어미39 + 음운14 = 53레코드
+  (음운은 conditions{위치·환경·대상·지역/세대} + 변환{from,to})
+- src/substitution.py: 치환 로더 (어휘 vocab_clean 경상 + 문법론 flat).
+  v1 데이터 런타임 참조(복사·커밋 X, 라이선스 보호). 문장→관련 어휘치환 추출 확인
+- 음운 노드노트 개수 정정(13→14, ①7/④7)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	496dd2292753deb58915dfa86d2cf368c54d5de0	https://github.com/ciotd/odor-complaint-dialect-rag/commit/8274918f1125a8ad6d6cd670f4835d4bd1164a4b
+496dd2292753deb58915dfa86d2cf368c54d5de0	2026-08-26T06:38:22Z	v2-graph: 자원 정리 완료 — 조건부 KG(종결어미+음운) vs flat 치환 확정	"v2-graph: 자원 정리 완료 — 조건부 KG(종결어미+음운) vs flat 치환 확정
+
+- 음운 노드: 어색한 이관/보류 2개 제거 (오늘→올, -습니다→-시엄니다)
+- 연결어미 84 = 종결어미 오분류(실 연결어미 0개) → 종결부분 폐기(조현준 KG와 중복),
+  어휘/부사(고마·단디·억수로)는 치환으로. 연결어미 체계=gap(future)
+- 문법론 9 = 조사·선어말·부정·활용·인용 = flat → 치환 dict (조사 KG 아님으로 자기정정)
+- 결론: 진짜 조건부 KG = 종결어미 + 음운 2도메인. 나머지 = flat 치환 dict
+- README/PROGRESS 스코프·결정로그·다음할일 갱신
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	bde70a02bed9203017eba24454c7744022fd6cac	https://github.com/ciotd/odor-complaint-dialect-rag/commit/496dd2292753deb58915dfa86d2cf368c54d5de0
+bde70a02bed9203017eba24454c7744022fd6cac	2026-08-26T06:27:57Z	v2-graph: 음운 KG 노드노트 (13규칙, 조건축=음운환경)	"v2-graph: 음운 KG 노드노트 (13규칙, 조건축=음운환경)
+
+- 음운 16 분류 → A5(환경명확)+B8(변이) = 13 조건부 KG 편입, C1→어휘, D1→보류
+- 도메인=음운, 조건=음운환경(위치·앞뒤소리·대상·지역/세대). 종결어미와 별도 조건축
+- 적용은 LLM 규칙설명 방식(자모엔진 미구현)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	c3c7eb9f01d338f07c5c3ef014ee5a940a6e6468	https://github.com/ciotd/odor-complaint-dialect-rag/commit/bde70a02bed9203017eba24454c7744022fd6cac
+c3c7eb9f01d338f07c5c3ef014ee5a940a6e6468	2026-08-26T05:56:07Z	v2-graph: 방향 재프레이밍 — 치환+조건부 KG (ablation)	"v2-graph: 방향 재프레이밍 — 치환+조건부 KG (ablation)
+
+- 종결어미 전용(cherry-picking 위험) → ""광범위 치환 + 조건부 종결어미 KG"" 통합 시스템
+- RQ = ablation: 치환만 vs 치환+KG → KG 순수 기여 (부: focused KG vs 전체덤프)
+- 자연 문장 전체 평가(반만 방언 문제 해소). vocab 품질은 ablation서 상쇄(±KG 공통)
+- README/PROGRESS: 목표·차별점·스코프·평가·결정로그·빌드순서(12) 갱신
+- 사용자 비판(방법 유리하게 좁힌 것) 반영한 교정
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	8f7269ea7288e2bb5020cea7015a45a0fc1cd2e3	https://github.com/ciotd/odor-complaint-dialect-rag/commit/c3c7eb9f01d338f07c5c3ef014ee5a940a6e6468
+8f7269ea7288e2bb5020cea7015a45a0fc1cd2e3	2026-08-26T03:01:33Z	v2-graph: (b) 변환 프로토타입 + 전체 파이프라인 데모 + 빌드순서 기록	"v2-graph: (b) 변환 프로토타입 + 전체 파이프라인 데모 + 빌드순서 기록
+
+- src/convert_prototype.py: ①자질추출(kiwi+규칙표+의문사) → ②KG조회(조건 필터)
+- src/pipeline_demo.py: ①②③④ 전체, 실제 로컬 Qwen 호출. KG-focused vs Dump 대조
+  단일 예시 ""뭐 먹었니?"" → KG ""-노""(정답) / 덤프 ""-니꺼""(오답) 확인(n=1 일화)
+- PROGRESS.md: 빌드 순서(1~11) 기록 + 현재상태/문서지도 갱신 (진행 추적용)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	bca0189c76220d2ad5360fa25ffbbf8f2bb1dc65	https://github.com/ciotd/odor-complaint-dialect-rag/commit/8f7269ea7288e2bb5020cea7015a45a0fc1cd2e3
+bca0189c76220d2ad5360fa25ffbbf8f2bb1dc65	2026-08-25T08:52:00Z	v2-graph: PROGRESS.md 대시보드 추가 (진행 추적용)	"v2-graph: PROGRESS.md 대시보드 추가 (진행 추적용)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	3a58a0be481a418007b76749fe9660e5d56bc67f	https://github.com/ciotd/odor-complaint-dialect-rag/commit/bca0189c76220d2ad5360fa25ffbbf8f2bb1dc65
+3a58a0be481a418007b76749fe9660e5d56bc67f	2026-08-25T08:33:21Z	v2-graph: 과제·스코프·평가 확정 재프레이밍 (README)	"v2-graph: 과제·스코프·평가 확정 재프레이밍 (README)
+
+- 과제 = 표준→방언 변환, 발화 단위 (대화생성/QA 아님). 악취 도메인 미사용
+- 차별점 = KG(focused 서브그래프) vs RAG(파편 덤프) + training-free
+- 스코프 = 종결어미 core + 조사·기타(기존 경북 소스 있는 대로, 빈곳은 빈대로)
+- 평가 = AI-Hub 139 경상도 코퍼스. 경북/경남 미분리(province=gs, 코드북 없음) 확인
+  → (A) 경상 통합 그대로 사용 + 경북 KG 프레이밍 + reference-tolerant 평가
+  → 경남 고유형 생성불가는 한계 명시(핵심 조건부 체계는 공유라 영향 제한적)
+- EDC 인사이트 기록: schema retriever=(b) 2번째 선례, canonicalization=향후 병합도구
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	6e8ebe8b9a47622f5ab4e60edc84992dc3c61602	https://github.com/ciotd/odor-complaint-dialect-rag/commit/3a58a0be481a418007b76749fe9660e5d56bc67f
+6e8ebe8b9a47622f5ab4e60edc84992dc3c61602	2026-08-25T06:38:05Z	v2-graph: 통합 KB 생성 (kg_rules.jsonl)	"v2-graph: 통합 KB 생성 (kg_rules.jsonl)
+
+- 4개 종결법 md 노트 → 기계가독 JSONL 통합 (39규칙, 167어미형)
+- 스키마: id / conditions(종결법·높임·격식·의문종류·결합환경·지역) / 어미[{form,유형,빈도}]
+  / 사용양상 / 출처 / 검증
+- 검증상태: ①추출-미검증 35, ④불확실 3(-구마 감탄겹침 등), 충돌 1(-지러/-제 등급논쟁)
+- 의문 판정/설명 규칙 8개(하게·해라 × 판정/설명 × 계사/용언/동부)
+- kg_schema 진행: 기계가독 변환 완료 체크
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	7c4a7e3c09eeea7688dd298c11df224ce88cfb46	https://github.com/ciotd/odor-complaint-dialect-rag/commit/6e8ebe8b9a47622f5ab4e60edc84992dc3c61602
+7c4a7e3c09eeea7688dd298c11df224ce88cfb46	2026-08-25T05:57:49Z	v2-graph: 원천 완결 — 명령·청유법 + 비격식 의문 추출 (4종결법 전부)	"v2-graph: 원천 완결 — 명령·청유법 + 비격식 의문 추출 (4종결법 전부)
+
+- kg_nodes_imperative.md 신규: 명령법 격식4+비격식(해체/해요체류)
+- kg_nodes_propositive.md 신규: 청유법 격식4+비격식
+- kg_nodes_interrogative.md: 비격식 의문(해체·해요체류) 추가 → 의문법 완결
+  (해요체 의문 -가요/-고요에 판정/설명 잔재)
+- 서술·의문·명령·청유 4종결법 × 격식/비격식 요약표(표13~56) 추출 완료
+- README/kg_schema 진행상태 갱신
+출처: 조현준(2018). 검증상태 전부 ①추출-미검증.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	cc8b2f42b03a821dfa1d9a87be5310dcf14e5c7a	https://github.com/ciotd/odor-complaint-dialect-rag/commit/7c4a7e3c09eeea7688dd298c11df224ce88cfb46
+cc8b2f42b03a821dfa1d9a87be5310dcf14e5c7a	2026-08-25T05:49:03Z	v2-graph: 의문법(격식 4등급) 완결 + 서술법(6등급) 노드 추출	"v2-graph: 의문법(격식 4등급) 완결 + 서술법(6등급) 노드 추출
+
+- kg_nodes_interrogative.md: 하소체 의문 추가 → 격식 의문법 완결
+  (하이소·하소=판정/설명 미구분, 하게·해라=구분+계사/용언 분기)
+- kg_nodes_declarative.md 신규: 서술법 6등급(하이소·하소·하게·해라·해체·해요체류)
+  요약표 기반 어미 목록. 서술은 판정/설명 분기 없음. 출처·빈도·불확실 플래그 포함
+- README/kg_schema 진행상태 갱신
+출처: 조현준(2018) 표13~28·45~48. 검증상태 전부 ①추출-미검증(②검증 라운드 예정).
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	9a04f5b162b98acae8008742ddf925af945eb62c	https://github.com/ciotd/odor-complaint-dialect-rag/commit/cc8b2f42b03a821dfa1d9a87be5310dcf14e5c7a
+9a04f5b162b98acae8008742ddf925af945eb62c	2026-08-25T05:38:41Z	v2-graph 착수: 경북 방언 문법 KG 스키마 + 의문법 노드, v1 문법DB 정제 기록	"v2-graph 착수: 경북 방언 문법 KG 스키마 + 의문법 노드, v1 문법DB 정제 기록
+
+- PROJECT_MAP.md: v1-retrieval / v2-graph 두 연구 분리 지도
+- v2_graph/: 신규 연구 골격 + README(경북 스코프 확정, backbone=조현준2018,
+  경남 함양=대조 참고), kg_schema.md(종결법×상대높임×판정설명×결합환경,
+  R reification, 출처 필수, 검증상태 4단계), kg_nodes_interrogative.md
+  (하이소·하게·해라 의문법 노드, 판정/설명·계사/용언 조건)
+- research_scope §8: v1 문법DB 권역별 품질 격차 발견(전라·강원 LLM 조작물)
+  + 정제 결정 기록 (grammar_rules는 라이선스상 gitignore 유지, 로컬 백업)
+- docs/fixed_injection_rules.md: 정제 후 재생성(경상·충청·제주만)
+- .gitignore: *.pdf 추가(방언학 논문 CC BY-NC-ND 재배포 방지)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	a913389433b643d63d38a8f157ff859bceb64399	https://github.com/ciotd/odor-complaint-dialect-rag/commit/9a04f5b162b98acae8008742ddf925af945eb62c
+a913389433b643d63d38a8f157ff859bceb64399	2026-08-23T12:09:35Z	docs: S2 간섭 정량 분석 추가 + 논의 대화록 생성, 로드맵 정리	"docs: S2 간섭 정량 분석 추가 + 논의 대화록 생성, 로드맵 정리
+
+- research_scope: §10.2b-3 신규(S2에서 RAG가 어미 방언율 낮추는 원인 =
+  진짜 간섭 -29% + 측정 인공물 -30%, judge 무승부 설명), §10.6에 어미방언율↔사람
+  상관 검증 목표 추가, §8에 Claude 평가 프레이밍 결정, §11 로드맵 정리
+  ((A)downstream·(D)일반화 제거, (G)모델 tuning/KD 추가), RQ 중립화·(b)해석 반영
+- docs/research_discussion_transcript.md/.docx: §3~§11 단계별 논의 기록
+- docs/fixed_injection_rules.md: 고정주입 문법 규칙 96개 원본
+- scripts/md_to_docx_transcript.py: 대화록 docx 변환기
+- docs/paper_draft.md 삭제(구버전 SUPERSEDED, paper_ieie.md로 대체)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	7ed680dce72f3909f2e77b84c9cd91009b38fb50	https://github.com/ciotd/odor-complaint-dialect-rag/commit/a913389433b643d63d38a8f157ff859bceb64399
+7ed680dce72f3909f2e77b84c9cd91009b38fb50	2026-08-21T06:41:56Z	docs: 프롬프트·RAG 예시 참고문서 추가 + 낡은 3개 MD 갱신	"docs: 프롬프트·RAG 예시 참고문서 추가 + 낡은 3개 MD 갱신
+
+- prompt_and_rag_examples.md 신규: 조건별 knowledge_block, C1 권역별 전체 쌍,
+  RAG 검색 실제 예시(S1 키워드 vs S2 문장 = injection vs retrieval 실증)
+- design_report/data_audit/paper_draft: 구버전 배너 + 핵심 사실 정정
+  (Qwen3.6→3.8, n=50→100, 나무위키→웹수집, C1 구현, judge 추가, 어휘 본문제외)
+- paper_draft는 SUPERSEDED 표시(정본=paper_ieie.md)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	d7f0d19a197356aaed0a02c1b39da61c26402242	https://github.com/ciotd/odor-complaint-dialect-rag/commit/7ed680dce72f3909f2e77b84c9cd91009b38fb50
+d7f0d19a197356aaed0a02c1b39da61c26402242	2026-08-21T06:26:55Z	docs: 실험 상세 리포트(docx) — 개요·설계·과정·결과 + 지표 계산식	"docs: 실험 상세 리포트(docx) — 개요·설계·과정·결과 + 지표 계산식
+
+- build_experiment_report.py: python-docx로 상세 리포트 생성
+- 구성: 0.개요 1.설계(+1.7 지표 수식) 2.과정(어휘축 제외·judge원리 포함) 3.결과 4.한계 5.부록
+- 어휘 방언율은 본문 제외(견고성 한계), 어미+judge 이중검증으로 정리
+- 지표 계산식: 어미 방언율/누수율, A단계 민감도·특이도, 활용률, judge 승률
+- experiment_report.docx 동봉
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	00235bee6f4cdda9f482d4a03151ec1c0d264649	https://github.com/ciotd/odor-complaint-dialect-rag/commit/d7f0d19a197356aaed0a02c1b39da61c26402242
+00235bee6f4cdda9f482d4a03151ec1c0d264649	2026-08-21T05:44:55Z	feat(eval): LLM judge 자연스러움 평가 — 삼각검증 수렴	"feat(eval): LLM judge 자연스러움 평가 — 삼각검증 수렴
+
+- judge_reliability: A단계 교란 재활용 블라인드 쌍대, Opus 방언분별 98.9% (관문 통과)
+- judge_conditions: 조건별 자연스러움 쌍대비교
+- 결과 c_kb>c1: S1 20%(few-shot 압도) / S2 43%(무승부). 앵커 c1>c0 97%/89%
+- 어미·어휘·judge 세 축 수렴: few-shot 우위, RAG는 어휘·S2 한정 대등. 평가 완결
+- research_scope §10.2d 반영
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	ca6ee957b757c930bd5e31888c47da854fff2b94	https://github.com/ciotd/odor-complaint-dialect-rag/commit/00235bee6f4cdda9f482d4a03151ec1c0d264649
+ca6ee957b757c930bd5e31888c47da854fff2b94	2026-08-20T06:22:51Z	feat(eval): 어휘축 독립 참조 재검증 — 홈 어드밴티지 확인, 견고하지 않음	"feat(eval): 어휘축 독립 참조 재검증 — 홈 어드밴티지 확인, 견고하지 않음
+
+- extract_vocab_pairs_aihub: AI-Hub 표준-방언 정렬쌍서 방언 명사어휘 추출(독립 참조)
+- vocab_dialect_rate/stats: AI-Hub 독립 참조 로드 + 명사 한정
+- 세 참조 불일치(S2 c_kb−c1: RAG사전+.040*** / 용언포함−.006* / 명사한정+.005**)
+  → 어휘 우위 견고하지 않음, 홈 어드밴티지였음
+- 견고한 결과는 어미축(few-shot)뿐. 품질 판정은 LLM judge 필요
+- research_scope §10.2b-2 반영
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	202a1b438ffa3d4972078828d258c32760457067	https://github.com/ciotd/odor-complaint-dialect-rag/commit/ca6ee957b757c930bd5e31888c47da854fff2b94
+202a1b438ffa3d4972078828d258c32760457067	2026-08-20T02:01:34Z	docs: 연구 논리 흐름 문서(방어용) — 문제→비대칭 결론 사슬 + 예상 심사 Q&A	"docs: 연구 논리 흐름 문서(방어용) — 문제→비대칭 결론 사슬 + 예상 심사 Q&A
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	2b5769e29f734fbfa64283da08c6561a65c4b526	https://github.com/ciotd/odor-complaint-dialect-rag/commit/202a1b438ffa3d4972078828d258c32760457067
+2b5769e29f734fbfa64283da08c6561a65c4b526	2026-08-20T01:57:45Z	docs: A단계 지표 신뢰성 재실행 결과 반영(n=100·3.8)	"docs: A단계 지표 신뢰성 재실행 결과 반영(n=100·3.8)
+
+- §10.2c 추가: 민감도 .872, 특이도-A .931, 특이도-B +.113, 변환확인 .122
+- 독립 모델(Claude) 교란에 지표가 정확 반응 → 진단 도구 신뢰성 확인
+- 강원 저실현 한계 명시
+- §10.5 남은작업: 어휘청소·A단계 완료 체크, 다음=Ⅳ 집필
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	74260cfa49b02a504ab0ca6f6ff19620f8367d7e	https://github.com/ciotd/odor-complaint-dialect-rag/commit/2b5769e29f734fbfa64283da08c6561a65c4b526
+74260cfa49b02a504ab0ca6f6ff19620f8367d7e	2026-08-20T01:36:15Z	feat(eval): 어휘 방언율 객관 청소 + 비대칭 확정	"feat(eval): 어휘 방언율 객관 청소 + 비대칭 확정
+
+- vocab_dialect_rate/vocab_stats: 어절 단위 매칭 + kiwi 표준어 필터(통짜 단일형태소 제외)
+- 청소로 오탐 바닥 ~90% 제거(c0 .038→.003), 옛 수치 대부분이 표준어 오탐이었음 확인
+- 청소 후에도 RAG 어휘 우위 생존: c_kb−c1 S1 +.0048** / S2 +.0397*** (S2 ≈9배)
+- 비대칭 확정: 어미축=few-shot / 어휘축=지식주입, 어느쪽도 일률 우월 아님
+- research_scope §10.2b 반영
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	51a65ac61d4090a0b0e0437641757d85b265f984	https://github.com/ciotd/odor-complaint-dialect-rag/commit/74260cfa49b02a504ab0ca6f6ff19620f8367d7e
+51a65ac61d4090a0b0e0437641757d85b265f984	2026-08-20T01:04:07Z	docs: 정직성 재정립 — RAG 승리 프레임 폐기, 시스템·데이터셋 축으로 재계획	"docs: 정직성 재정립 — RAG 승리 프레임 폐기, 시스템·데이터셋 축으로 재계획
+
+- §9 기여 rev.5: ""RAG 이긴다"" 주장 안 함. 주=시스템/데이터셋, 부차=진단·정직 관찰
+- §10.3 metric shopping 인지 → 순환 지표(시나리오별 검색어 실현)·C_kb+ 개선실험 폐기
+- 어미 방언율=주 결과(공정), 어휘 방언율=객관 필터 청소 후 부차·투명 보고
+- §10.4 논문 구성(Ⅰ~Ⅴ) 정직 프레임으로 재작성
+- 비대칭(어미=few-shot / 어휘=주입) 관찰, 승부 판정 회피
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	0acb8e86884c6442c6100b2bd505b9ed6d409bac	https://github.com/ciotd/odor-complaint-dialect-rag/commit/51a65ac61d4090a0b0e0437641757d85b265f984
+0acb8e86884c6442c6100b2bd505b9ed6d409bac	2026-08-19T06:12:43Z	feat(eval): 주입 활용률 분석 + 3.8 본실험 결과 문서화	"feat(eval): 주입 활용률 분석 + 3.8 본실험 결과 문서화
+
+- injection_utilization.py: S1 C_kb 주입 어휘·규칙의 실제 활용률 측정
+- 본실험 Qwen3.8-27B-FP8 n=100 통일: RAG 고유기여 ≈0(S2 음), few-shot 지배
+- 활용률 21%(어휘)/11%(규칙), 무주입 28/100 → 병목=활용률
+- paper_ieie 제안방법: 주입 vs 검색(S1/S2) 프레이밍 보강
+- research_scope §10 재작성 + C_kb+ 개선실험 계획(A안)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	1beb5a423e70a0dcf2bdcc277d22931d757deeb9	https://github.com/ciotd/odor-complaint-dialect-rag/commit/0acb8e86884c6442c6100b2bd505b9ed6d409bac
+1beb5a423e70a0dcf2bdcc277d22931d757deeb9	2026-08-18T06:06:07Z	docs: Ⅲ 제안방법 보강 — RAG 프레이밍/어휘·문법 근거/그림1/예문 반영	"docs: Ⅲ 제안방법 보강 — RAG 프레이밍/어휘·문법 근거/그림1/예문 반영
+
+- 1절: '시스템 개요'→'제안 방법 개요'(동기·전체구조·Fig.1 아키텍처).
+- 2절: '방언 지식베이스'→'검색 증강 생성(RAG) 기반 방언 지식 주입'.
+  어휘/문법 두 층위 언어학적 근거, 검색방식(정확매칭/BM25/고정주입) 세부, 예문 병기.
+- 3~5절 근거·세부 보강. c_kb=규칙+예문 반영."	426f5f136696aba3719a7fc8c1adb3ce03071121	https://github.com/ciotd/odor-complaint-dialect-rag/commit/1beb5a423e70a0dcf2bdcc277d22931d757deeb9
+426f5f136696aba3719a7fc8c1adb3ce03071121	2026-08-18T06:03:11Z	refactor: c_kb를 규칙+예문(actionable)으로 정식 통합, c_kb_ex 조건 삭제	"refactor: c_kb를 규칙+예문(actionable)으로 정식 통합, c_kb_ex 조건 삭제
+
+실험(Qwen3.8,n=50): c_kb_ex−c_kb S1 +0.012 p=0.021(유의)/S2 tie → 예문 채택.
+c_kb/c_kb_c1이 이제 규칙+예문 주입. c_kb_ex·c_kb_ex_c1 조건 제거. 4조건 복귀."	2eaea887ded9c00a3a883eda1a7cc836fcd64e26	https://github.com/ciotd/odor-complaint-dialect-rag/commit/426f5f136696aba3719a7fc8c1adb3ce03071121
+2eaea887ded9c00a3a883eda1a7cc836fcd64e26	2026-08-18T05:27:40Z	docs: IEIE 양식 정식 원고 초안 — Ⅲ 제안방법 작성	"docs: IEIE 양식 정식 원고 초안 — Ⅲ 제안방법 작성
+
+- paper_ieie.md 신규(전자공학회논문지 양식용 참고 원고, HWP 전사용).
+- Ⅲ 제안방법 완성(격식체): 시스템 개요/방언 지식베이스/파이프라인 S1·S2/
+  지식공급 조건/자동 진단 지표(방언성 B·신뢰성검증 A) + 수식(1)(2)·표1.
+- Ⅰ서론·Ⅱ관련연구·Ⅳ실험·Ⅴ결론·요약/Abstract는 골격만(작성 예정)."	ffdb8f219580f60622baf8e7a02f95e6e693f93d	https://github.com/ciotd/odor-complaint-dialect-rag/commit/2eaea887ded9c00a3a883eda1a7cc836fcd64e26
+ffdb8f219580f60622baf8e7a02f95e6e693f93d	2026-08-18T05:07:45Z	docs: C_kb=고정규칙 주입(검색 아님) 발견 + n=100 결론 정교화 + threshold 크기축	"docs: C_kb=고정규칙 주입(검색 아님) 발견 + n=100 결론 정교화 + threshold 크기축
+
+- §4: C_kb는 쿼리 무관 '고정 규칙 주입'(fixed_rules가 cap 채워 BM25 검색분 truncate).
+  어미 지표 효과=주입 효과이지 retrieval 아님 → 'RAG 검색' 과장 금지, 'injection'으로.
+- §10: n=100 결론 정교화 — S1 RAG 소폭 도움(+0.012)/S2 소폭 방해(-0.033), 무이득(ns) 철회.
+- §11(E): threshold 핵심변수=모델 크기(27B→1.7B), 버전/타LLM은 보조."	cfd7ce983a2f68e4d8d5cc6140d771a6e94add0d	https://github.com/ciotd/odor-complaint-dialect-rag/commit/ffdb8f219580f60622baf8e7a02f95e6e693f93d
+cfd7ce983a2f68e4d8d5cc6140d771a6e94add0d	2026-08-18T01:08:40Z	feat: C_kb+예문(actionable) 조건 구현 — c_kb_ex / c_kb_ex_c1	"feat: C_kb+예문(actionable) 조건 구현 — c_kb_ex / c_kb_ex_c1
+
+RAG가 앙상한 규칙이라 약했는지 검증: 규칙에 예문 1개 부착해 주입.
+- clean_resources: 규칙에 예문 최대 2개 유지(examples 필드)
+- kb_retriever: format_for_prompt(use_examples) — 규칙 뒤 [예: 표준→방언] 부착
+- s1/s2_pipeline: c_kb_ex(규칙+예문)·c_kb_ex_c1 조건 추가
+- eval_conditions: 새 조건 채점 포함
+검증: 규칙 297/321 예문 보유, 주입 포맷 정상. 서버로 c_kb vs c_kb_ex 비교 예정."	b6ba21b334791a0cb8c535a2895f525dc249d84d	https://github.com/ciotd/odor-complaint-dialect-rag/commit/cfd7ce983a2f68e4d8d5cc6140d771a6e94add0d
+b6ba21b334791a0cb8c535a2895f525dc249d84d	2026-08-14T06:37:12Z	docs: 관련연구 — dialect ID 뿌리 + DIA-REFINE 차별화 정밀화	"docs: 관련연구 — dialect ID 뿌리 + DIA-REFINE 차별화 정밀화
+
+- 방언식별(SLMA/아랍어ADI/한국어) = 마커 지표의 뿌리, 마커채점 자체는 신규 아님 명시.
+  본 연구 위치 = gold 없는 '생성' 평가에 reference-free 적용.
+- DIA-REFINE 차이 정밀화: 번역(gold 있음, DFS=reference-based) vs 생성(gold 없음,
+  reference-free 마커). 세팅·지표 메커니즘이 다름. False Success/True Attempt 각주 추가."	caacb9acad6786016fdc9ef78835c4e568e01a95	https://github.com/ciotd/odor-complaint-dialect-rag/commit/b6ba21b334791a0cb8c535a2895f525dc249d84d
+caacb9acad6786016fdc9ef78835c4e568e01a95	2026-08-14T06:26:08Z	docs: research_scope rev.4 전면 갱신 (현재 방향 반영)	"docs: research_scope rev.4 전면 갱신 (현재 방향 반영)
+
+- RQ2(어휘 vs 규칙) 폐기 → future. RQ를 few-shot vs RAG + 원인분해로 재정의.
+- S1/S2 재배치: 원설계 ""S2가 RAG 핵심""을 실측이 반박(S1 우세, RAG는 S2서 방해)
+  → S1 주력·트레이드오프 분석으로 수정.
+- 문법 예문 제외 → C_kb에 규칙+예문 포함으로 반전.
+- 제주 KB 구축·마커 v3(287)·나무위키→웹수집 반영.
+- 평가: B/A/통계 구현, judge·사람·downstream·비용·상용비교는 미실행/future 명시.
+- DIA-REFINE 겹침 → 자동지표 신규성 철회(인용·도구화).
+- 기여 재정리, 파일럿→진행현황, 확장로드맵에 threshold(E) 추가."	b0d3a499cab7f0bbf9365748b51d446683b18270	https://github.com/ciotd/odor-complaint-dialect-rag/commit/caacb9acad6786016fdc9ef78835c4e568e01a95
+b0d3a499cab7f0bbf9365748b51d446683b18270	2026-08-14T05:24:13Z	docs: research_scope/data_audit/paper_draft 사실 동기화	"docs: research_scope/data_audit/paper_draft 사실 동기화
+
+- research_scope.md: rev.4 노트 추가(현재 authority=design_report, RQ2제외·마커v3·
+  제주구축·C_kb예문·few-shot지배 이탈 명시)
+- data_audit.md: 2026-08-14 갱신요약(제주 KB 구축, 마커 v3 287개 1인+2인발화)
+- paper_draft.md: 마커 78→287, 출처 1인+2인발화로 정정
+  (6.2/6.7 결과 수치는 서버 재실험 후 갱신 예정)"	80336006ebe9d3b75556faaecb846d71cd299b74	https://github.com/ciotd/odor-complaint-dialect-rag/commit/b0d3a499cab7f0bbf9365748b51d446683b18270
+80336006ebe9d3b75556faaecb846d71cd299b74	2026-08-14T05:20:04Z	docs: RAG DB 검수 기준 + C_kb 조건 설계 확정 (규칙+예문)	"docs: RAG DB 검수 기준 + C_kb 조건 설계 확정 (규칙+예문)
+
+- 검수 기준을 '문법이냐'→'주입해 모델이 쓸 수 있냐'로 재정의:
+  어미=유지(코퍼스마커/경어법·연결어미), 어휘=어휘DB 이관, 음운=저효용(top-k 낭비)
+- C_kb 조건 변경 확정: 규칙만→'규칙+예문'(actionable) 주입.
+  근거·트레이드오프(검색/예시 미분리, 예문 합성) 명시. 서버 복구 후 재실험."	0bccdda22c93473587a56a13a6cdc0d4c34ea7ca	https://github.com/ciotd/odor-complaint-dialect-rag/commit/80336006ebe9d3b75556faaecb846d71cd299b74
+0bccdda22c93473587a56a13a6cdc0d4c34ea7ca	2026-08-14T01:49:02Z	feat: 마커 v3 — 5권역 1인+2인발화 통합 추출 (존댓말 대폭 보강)	"feat: 마커 v3 — 5권역 1인+2인발화 통합 추출 (존댓말 대폭 보강)
+
+- extract_corpus_markers_v3.py: 2인발화(segment)+1인발화(문장 위치정렬) 통합.
+  1인발화 노이즈 차단: 어절수-동일 정렬만+숫자제외. region 매칭은 zip basename
+  으로(상위폴더 ""강원도,경상도"" 교차오염 버그 수정).
+- build_scoring_markers.py: v3 우선 사용 + 노이즈 필터(구두점/더거/새그러 제거).
+- 채점 마커 78→287. 존댓말 확보: 경상 니더/심더, 충청 겄슈/시유, 전라 당께/겄소,
+  제주 마씸/쿠다, 강원 시래요/래요 (이전 수동보완이 코퍼스로 확인됨).
+- design_report 3.2 마커 v3 반영. CSV는 gitignore(스크립트로 재현)."	6b3a8a9f9b2b27853f436f167487825a0d99fd4c	https://github.com/ciotd/odor-complaint-dialect-rag/commit/0bccdda22c93473587a56a13a6cdc0d4c34ea7ca
+6b3a8a9f9b2b27853f436f167487825a0d99fd4c	2026-08-13T09:05:09Z	feat: 강원 마커 3개 추가 (원본 검증) — 시래요/이래요/버텅	"feat: 강원 마커 3개 추가 (원본 검증) — 시래요/이래요/버텅
+
+미사용 1인발화(질문에답하기) 코퍼스에서 추출, 각 후보 원본 대조로 선별:
+- 시래요(세요→시래요, 존댓말)/이래요(이에요→이래요, 존댓말)/버텅(부터→버텅, 조사) = 검증됨
+- 구로(119'로')/더거('에더거'=말더듬) = 노이즈로 판명, 제외
+총 마커 78→81. 강원 생성문에서 '편이래요' 등 실제 포착 확인."	b27cbbc9d6247546161e6a27b0824877ba90a7b4	https://github.com/ciotd/odor-complaint-dialect-rag/commit/6b3a8a9f9b2b27853f436f167487825a0d99fd4c
+b27cbbc9d6247546161e6a27b0824877ba90a7b4	2026-08-13T08:54:55Z	docs: 강원 1인발화 발견 반영 + 지표 개선 계획(마커 주/임베딩 보조)	"docs: 강원 1인발화 발견 반영 + 지표 개선 계획(마커 주/임베딩 보조)
+
+- 강원 저측정=2인발화 subset 탓 확인(1인발화에 강원 어미 풍부, 시래요/데이/니더 32k토큰)
+- 7절 지표개선: 강원 1인발화 마커보강(우선) + 임베딩 보조지표(후순위, 학습없는 거리)
+  분류기 학습은 DIA-REFINE 파생성으로 제외"	fd20f5966bdc5b91a4a319a4199badcdb8307ac5	https://github.com/ciotd/odor-complaint-dialect-rag/commit/b27cbbc9d6247546161e6a27b0824877ba90a7b4
+fd20f5966bdc5b91a4a319a4199badcdb8307ac5	2026-08-13T04:52:53Z	docs: 초안 관련연구 인용 채움 + 예비결과 명시	"docs: 초안 관련연구 인용 채움 + 예비결과 명시
+
+관련연구 3항목 실제 후보 인용(DialectBench/DiaSynth/Lewis RAG/Bengali 등,
+서지 최종대조 필요). 초록 메타 노트를 '예비 결과' 상태로 갱신.
+남은 TODO 없음(서버 복구 후 재실험으로 수치 갱신 예정)."	22457643148d63e89cb5453d27a3ecd81a2832e6	https://github.com/ciotd/odor-complaint-dialect-rag/commit/fd20f5966bdc5b91a4a319a4199badcdb8307ac5
+22457643148d63e89cb5453d27a3ecd81a2832e6	2026-08-12T08:40:10Z	"Revert ""feat: 문법 RAG DB 1차 자동 정제 (주입 부적합 규칙 제거)"""	"Revert ""feat: 문법 RAG DB 1차 자동 정제 (주입 부적합 규칙 제거)""
+
+This reverts commit a5cb64b62483b3617b53dafc3b6b1072e903856d."	a5cb64b62483b3617b53dafc3b6b1072e903856d	https://github.com/ciotd/odor-complaint-dialect-rag/commit/22457643148d63e89cb5453d27a3ecd81a2832e6
+a5cb64b62483b3617b53dafc3b6b1072e903856d	2026-08-12T08:09:31Z	feat: 문법 RAG DB 1차 자동 정제 (주입 부적합 규칙 제거)	"feat: 문법 RAG DB 1차 자동 정제 (주입 부적합 규칙 제거)
+
+is_injectable_rule: 추상 음운(된소리/움라우트/자모 리스트)·문장형(예문 오염)·
+어휘 오배치 규칙 제외, 어미/형태소 치환 규칙만 유지.
+결과: 문법 규칙 321 → 111. 경상 155→62, 충청 70→10 등.
+남은 규칙은 어절 단위 주입 가능. (강원 2·제주 15는 자원 한계로 여전히 얇음)"	61ed55c98f8006218351157894504567ad46c974	https://github.com/ciotd/odor-complaint-dialect-rag/commit/a5cb64b62483b3617b53dafc3b6b1072e903856d
+61ed55c98f8006218351157894504567ad46c974	2026-08-12T07:59:22Z	docs: 최근접 선행연구 DIA-REFINE 인용 + 차별점 명시	"docs: 최근접 선행연구 DIA-REFINE 인용 + 차별점 명시
+
+- DIA-REFINE(arXiv 2511.06680): 한국어 방언 LLM + DFS/TDR 자동지표 →
+  우리 지표와 겹침 → 자동지표 신규성 주장 철회, 인용·도구화
+- 차별점 4개 명시: 다중턴 대화(악취민원 도메인) / KB-RAG 비교 /
+  학습불필요 어미마커 / 5권역·로컬전용
+- Bengali RAG-방언, Dialect-robust Eval, CTRLEval 관련연구 추가
+- design_report 2.1 절 신설, paper_draft 2장 반영"	83dc526aebb0bf7ae6b33d4d1f37804784bce014	https://github.com/ciotd/odor-complaint-dialect-rag/commit/61ed55c98f8006218351157894504567ad46c974
+83dc526aebb0bf7ae6b33d4d1f37804784bce014	2026-08-12T07:05:40Z	docs: 누수율·정성예시 추가 + RAG 약함 원인 복수가설로 완화	"docs: 누수율·정성예시 추가 + RAG 약함 원인 복수가설로 완화
+
+- design_report 4장: 누수율 표 추가(방언율/누수율), S2 누수 높음 명시
+- design_report 정성예시: 실제 발췌(충청/경상 성공, 강원 지표한계,
+  경상 외국어혼입, S2 누수) 추가
+- 5장/8장(양 문서): 'RAG 약함=RAG DB 검수 탓' 단정 → 복수 가설
+  (품질/정보량/검색/주입/모델활용)로 완화, 검수는 유력 가설로"	9116a513c1d9cba76daac9a534736dda04b2c80f	https://github.com/ciotd/odor-complaint-dialect-rag/commit/83dc526aebb0bf7ae6b33d4d1f37804784bce014
+9116a513c1d9cba76daac9a534736dda04b2c80f	2026-08-12T05:59:44Z	docs: 설계서 팀장 보고용 정리 + 논문 출처 표기 순화	"docs: 설계서 팀장 보고용 정리 + 논문 출처 표기 순화
+
+- design_report.md: 4장 '예비 결과' 명시, 핵심발견 '예비' 표기,
+  '7. 다음 단계(계획)' 신규(RAG DB 검수→지표개선→n확대→모델비교),
+  체크리스트에 다음 단계 반영
+- paper_draft.md: 문법 출처 '나무위키' → '웹 수집 정보/비학술 웹 출처'로 순화
+  (설계서·research_scope는 내부 문서라 나무위키 유지)"	45af69711864920ab978120f49aa3cc2a08a266d	https://github.com/ciotd/odor-complaint-dialect-rag/commit/9116a513c1d9cba76daac9a534736dda04b2c80f
+45af69711864920ab978120f49aa3cc2a08a266d	2026-08-12T01:13:11Z	docs: 설계서 추가 + 초안 최신화(용어 RAG DB 통일, 제주/78마커/few-shot 결론)	"docs: 설계서 추가 + 초안 최신화(용어 RAG DB 통일, 제주/78마커/few-shot 결론)
+
+- design_report.md 신규(팀장 보고용): 배경 범위한정·RAG=가설, 제주 RAG DB 구축,
+  A단계·통계 반영, few-shot 지배 결론, 진행 체크리스트
+- paper_draft.md 1~3장 동기화: 제주 RAG DB 구축(5권역), 마커 65→78,
+  기여 재정리(검증된 자동지표), 서론 범위한정·가설 프레이밍
+- 두 문서 KB → ""RAG DB"" 용어 통일(C_kb 조건명은 보존)"	f7d317fa4ff6be193e9568c2d71c5fd2bf41d591	https://github.com/ciotd/odor-complaint-dialect-rag/commit/45af69711864920ab978120f49aa3cc2a08a266d
+f7d317fa4ff6be193e9568c2d71c5fd2bf41d591	2026-08-11T09:05:31Z	feat: 통계 검정(부트스트랩 CI + 짝지은 차이) 구현 + 초안 6.7	"feat: 통계 검정(부트스트랩 CI + 짝지은 차이) 구현 + 초안 6.7
+
+- src/eval/stats_test.py: 시나리오 재표집 부트스트랩(B=10000, scipy 불필요)
+  조건별 95% CI + paired 차이 검정(평균차 CI·양측 p근사)
+- 핵심 검정 결과:
+  * few-shot 우위 유의(C1 > C0·C_kb, 양 파이프라인 p<0.001)
+  * C1 vs C_kb+C1: S1 ns(p=0.54), S2는 C1이 유의하게 높음(KB 방해)
+  * KB 단독: S1 C_kb>C0 유의 / S2 C_kb≈C0 ns
+- 초안 6.7에 표3(CI·짝비교) 반영 → 'few-shot 지배, KB 이득 없음' 주장 통계 뒷받침"	e2eb5dac0c3502a17403b29a8c2e47f28117e366	https://github.com/ciotd/odor-complaint-dialect-rag/commit/f7d317fa4ff6be193e9568c2d71c5fd2bf41d591
+e2eb5dac0c3502a17403b29a8c2e47f28117e366	2026-08-11T08:43:18Z	docs: 최종 n=50(새 KB+제주마커) 결과로 초안 표·결론 갱신	"docs: 최종 n=50(새 KB+제주마커) 결과로 초안 표·결론 갱신
+
+- S1/S2 표 갱신: 제주 실측정(마커 보완)으로 전체 그림 변화
+- 핵심 결론 수정: 'C_kb+C1 최고' → 'few-shot(C1) 지배, KB는 few-shot 못 넘음'
+  (C1 0.071 ≈ C_kb+C1 0.070, n=10 노이즈 범위)
+- KB 검색 약함의 근본원인 = RAG 자원 미검수/형식 불일치로 명시(논의·한계)
+- 제주=진짜 KB 조건이나 few-shot 지배 패턴, 강원=지표 맹점(방언유형)으로 구분
+- 6.7 통계 검정 자리표시 추가"	96f975d2d762a44e2813a2867e6186ad73d0918a	https://github.com/ciotd/odor-complaint-dialect-rag/commit/e2eb5dac0c3502a17403b29a8c2e47f28117e366
+96f975d2d762a44e2813a2867e6186ad73d0918a	2026-08-11T07:49:15Z	feat: 제주 존댓말 마커 보완 (수다/마씸/쿠다/허우다 등)	"feat: 제주 존댓말 마커 보완 (수다/마씸/쿠다/허우다 등)
+
+코퍼스가 가족 반말 위주라 제주 존대 표본이 얇아 지표가 제주를 과소측정.
+few-shot이 실제로 가르치는 존댓말 종결형을 마커에 보완:
+- 수다(습니다, 코퍼스 확인) / 마씸·마씀 / 쿠다 / 허우다(우다는 배우다 등 오탐→허우다로 특정)
+효과: 제주 C1 0.038→0.100, C_kb+C1 0.042→0.119. 타권역 누수 오탐 없음 확인.
+발견: 제주 저측정은 생성 실패가 아니라 지표 맹점이었음(강원과 동류)."	6ddf02cdae4d94d0e02f2ee43f5b05d860e92a45	https://github.com/ciotd/odor-complaint-dialect-rag/commit/96f975d2d762a44e2813a2867e6186ad73d0918a
+6ddf02cdae4d94d0e02f2ee43f5b05d860e92a45	2026-08-11T04:44:15Z	feat: 제주 KB 편입 (v2 기반) + null 문법규칙 자동 제외	"feat: 제주 KB 편입 (v2 기반) + null 문법규칙 자동 제외
+
+- clean_resources.py에 제주 추가: jeju_vocab_v2(어휘 13,508 유지)
+  + jeju_grammar_v2(구조화 규칙 30개, 폼null 53개 자동 제외)
+- 어휘 final은 지명유래 오염이라 제외, v2만 사용
+- 결과: retriever 5권역 인식, 제주 C_kb가 실제 KB 조건이 됨(정합성 해결)
+- 단 제주 방언율 기여는 약함(KB단독<few-shot 공통 패턴 + 제주 존대마커 얇음)
+- 문법 나무위키 출처 → 투고 전 학술 근거 보강 필요(data_audit §2)"	fd19b8a55da990a91bc0872108896ac9886699e4	https://github.com/ciotd/odor-complaint-dialect-rag/commit/6ddf02cdae4d94d0e02f2ee43f5b05d860e92a45
+fd19b8a55da990a91bc0872108896ac9886699e4	2026-08-11T02:07:11Z	chore: 사용하지 않는 구버전 평가 스크립트 삭제	"chore: 사용하지 않는 구버전 평가 스크립트 삭제
+
+score_dialectness.py, score_generated.py는 eval_conditions.py로
+완전히 대체됨(S1+S2 통합·오탐방지·마커보완). 서로만 참조하고
+현재 파이프라인 어디서도 미사용."	f0ddf0692f5cab2939842d2ae2970cdd5131a2da	https://github.com/ciotd/odor-complaint-dialect-rag/commit/fd19b8a55da990a91bc0872108896ac9886699e4
+f0ddf0692f5cab2939842d2ae2970cdd5131a2da	2026-08-11T01:22:01Z	feat: LLM(Claude) 독립 교란 기반 A단계 지표 검증 추가	"feat: LLM(Claude) 독립 교란 기반 A단계 지표 검증 추가
+
+- src/eval/llm_perturb_sensitivity.py: 채점기(어미사전)와 독립인 Claude로
+  정상문을 표준어화/타권역화 → B 지표 반응 측정(순환성 완화)
+- 결과: 민감도 0.958, 특이도 0.959, 누수 +0.094, 타권역화의 타깃 방언율 0.10
+  (독립 생성 방언을 지표가 인식 → 수렴 타당도)
+- 사전기반 교란은 보조 sanity check로 강등, 초안 5.2/6.5/초록/한계 갱신
+- Claude는 평가용 독립 교란기로만 사용(생성은 로컬 Qwen 전용, 요지 불변)"	fb6c3136d8e2860d8a223b0ebff1a14179793536	https://github.com/ciotd/odor-complaint-dialect-rag/commit/f0ddf0692f5cab2939842d2ae2970cdd5131a2da
+fb6c3136d8e2860d8a223b0ebff1a14179793536	2026-08-11T00:37:04Z	feat: A단계 합성 교란 민감도 검증 구현 + 초안 반영	"feat: A단계 합성 교란 민감도 검증 구현 + 초안 반영
+
+- src/eval/perturb_sensitivity.py: 정상문의 방언 어미에
+  (A)표준어 역치환 (B)타권역 어미 교체를 주입해 B 지표 반응 측정
+- 결과: 역치환/교체 민감도 ~1.0, 타권역 교체 시 누수 +0.071 검출
+- 초안 6.5에 결과·구성상 자명성 한계 명시 (일관성 검사로 프레이밍)"	44811cfc92bd62087a92ffeb393e47efedf0d41e	https://github.com/ciotd/odor-complaint-dialect-rag/commit/fb6c3136d8e2860d8a223b0ebff1a14179793536
+44811cfc92bd62087a92ffeb393e47efedf0d41e	2026-08-11T00:30:13Z	docs: 6.4 정성 예시 추가 (실제 생성 대화 발췌)	"docs: 6.4 정성 예시 추가 (실제 생성 대화 발췌)
+
+성공(충청/경상 C_kb+C1), 지표 한계(강원 — 방언형 뚜렷하나 방언율 0),
+타권역 누수(S2 경상 C0에 충청 -유 혼입) 예시로 정량 결과 뒷받침."	bfff0ac98fb5ef577bfb76e6265e7d7bfe4f5499	https://github.com/ciotd/odor-complaint-dialect-rag/commit/44811cfc92bd62087a92ffeb393e47efedf0d41e
+bfff0ac98fb5ef577bfb76e6265e7d7bfe4f5499	2026-08-10T10:39:52Z	docs: 논문 초안 작성 + n=50 결과표 채움	"docs: 논문 초안 작성 + n=50 결과표 채움
+
+- 생성 중심 프레이밍(로컬 LLM + 방언 지식 주입), 국내 학회 대상
+- S1/S2 n=50 방언율·누수율 표, S1/S2 트레이드오프 분석
+- 주요 발견: S1은 지식주입 단조 증가(C_kb+C1 최고), S2는 few-shot 지배·
+  KB검색 불안정·누수 높음. 로컬모델 외국어 혼입 40~50% 관찰.
+- RQ2 제외, A단계 간단버전은 설계만(미구현)"	8df48943f103986ec011010f952da558b8c958ac	https://github.com/ciotd/odor-complaint-dialect-rag/commit/bfff0ac98fb5ef577bfb76e6265e7d7bfe4f5499
+8df48943f103986ec011010f952da558b8c958ac	2026-08-10T09:34:58Z	fix: 전라 핵심 방언 어미 마커 수동 보완	"fix: 전라 핵심 방언 어미 마커 수동 보완
+
+정렬쌍 추출이 놓친 전라 대표 종결형을 MANUAL에 추가:
+당께(요)/랑께(요)/여라/겄소/부러. 보완 전 전라 C1/C_kb+C1이
+0으로 과소평가되던 문제 해결(생성문은 방언 풍부하나 지표가 못 잡음)."	9ec209aadadf5bec128aee7a49b2551b1c8f9693	https://github.com/ciotd/odor-complaint-dialect-rag/commit/8df48943f103986ec011010f952da558b8c958ac
+9ec209aadadf5bec128aee7a49b2551b1c8f9693	2026-08-10T09:01:04Z	feat: 조건별 방언성 자동 진단 지표 추가 + 발화자 라벨 출력 형식 강제	"feat: 조건별 방언성 자동 진단 지표 추가 + 발화자 라벨 출력 형식 강제
+
+- src/eval/eval_conditions.py: S1/S2 공통 방언율·누수율 자동 평가
+  - 코퍼스 유래 마커 기반 표면 매칭(S1) / 정렬 어절쌍 매칭(S2)
+  - 1자 마커 오탐 방지(화이트리스트 + 앞 음절 받침 조건)
+  - 표준어 동형 마커(어서/가지고) 코드 레벨 제외로 재현성 확보
+- prompt_template.txt: ""상담원:/민원인:"" 라벨 출력 형식 규칙 추가
+  (라벨 누락 시 발화 파싱 실패 → 채점 0 문제 해결)"	6d01cb2723eb0e09933ea6f40c780dfbf9ce9bf0	https://github.com/ciotd/odor-complaint-dialect-rag/commit/9ec209aadadf5bec128aee7a49b2551b1c8f9693
+6d01cb2723eb0e09933ea6f40c780dfbf9ce9bf0	2026-08-10T04:32:15Z	feat: S1 단일단계 파이프라인 추가 및 프롬프트 전면 개선	"feat: S1 단일단계 파이프라인 추가 및 프롬프트 전면 개선
+
+- s1_pipeline.py: 방언 대화 직접 생성 파이프라인 (hallucination 비교용)
+- data/regional_dialogue_examples.json: 권역별 대화 예시 분리 (C0 진짜 zero-shot 보장)
+- 실험 조건 정리: C0(zero-shot)/C1(few-shot)/C_kb(RAG)/C_kb+C1(RAG+few-shot)
+- convert_template.txt: 혼종어미·타권역 누수 금지 목록 추가, 한국어 전용 규칙 강화
+- prompt_standard.txt: 마무리 규칙 구체화, 한국어 전용 규칙 추가
+- prompt_template.txt: 한국어 전용 규칙 맨 위 강조 추가
+- run.py/test.py: VLLM_API_KEY 환경변수로 분리 (하드코딩 제거)
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"	3bde145d5da3660e104724ab11f7588906971d3f	https://github.com/ciotd/odor-complaint-dialect-rag/commit/6d01cb2723eb0e09933ea6f40c780dfbf9ce9bf0
+3bde145d5da3660e104724ab11f7588906971d3f	2026-08-07T02:51:35Z	feat: C_kb-lex/C_kb-rule 분리 조건 구현 완료	"feat: C_kb-lex/C_kb-rule 분리 조건 구현 완료
+
+kb_retriever의 use_lex/use_rule 스위치를 s2_pipeline에 연결.
+_COND_SWITCHES 딕셔너리로 3가지 KB 조건(c_kb_lex, c_kb_rule, c_kb)을
+통일된 루프에서 처리. ②-b 변환 블록도 kb_blocks dict 기반으로 정리.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"	94169d2ba3b761d8c5d7687bd24e851297975069	https://github.com/ciotd/odor-complaint-dialect-rag/commit/3bde145d5da3660e104724ab11f7588906971d3f
+94169d2ba3b761d8c5d7687bd24e851297975069	2026-08-07T02:42:11Z	fix: C1 예시 standard 필드 순수 표준어 강제, gitignore zip 추가	fix: C1 예시 standard 필드 순수 표준어 강제, gitignore zip 추가	38c0290b521e7d1bc4d4198cbf6171cd88310651	https://github.com/ciotd/odor-complaint-dialect-rag/commit/94169d2ba3b761d8c5d7687bd24e851297975069
+38c0290b521e7d1bc4d4198cbf6171cd88310651	2026-08-07T02:35:53Z	feat: C1 고정 few-shot 조건 구현 및 Claude Opus 예시 생성	feat: C1 고정 few-shot 조건 구현 및 Claude Opus 예시 생성	1e8abfd8ae77675f605dde370e9ccc477eff843a	https://github.com/ciotd/odor-complaint-dialect-rag/commit/38c0290b521e7d1bc4d4198cbf6171cd88310651
+1e8abfd8ae77675f605dde370e9ccc477eff843a	2026-08-07T01:39:44Z	docs: 평가 프레임워크 B+A 이중구조로 개편 (C 역번역 제거)	docs: 평가 프레임워크 B+A 이중구조로 개편 (C 역번역 제거)	af3cb149e7ed73e812dcc949e7b556c1ad4dfc93	https://github.com/ciotd/odor-complaint-dialect-rag/commit/1e8abfd8ae77675f605dde370e9ccc477eff843a
+af3cb149e7ed73e812dcc949e7b556c1ad4dfc93	2026-07-31T09:04:10Z	data_audit: 충청 문법 0 진단·검색기 고정주입 수정·검증 기록	"data_audit: 충청 문법 0 진단·검색기 고정주입 수정·검증 기록
+
+충청 문법 방언성 0의 원인(BM25가 요→유 미검색) 규명 → 종결·조사·존대 고정주입
+수정 → 재생성 검증(충청 C_kb 문법 0→0.8, ~유 실제 생성). 생성물 채점 결과 반영.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	f6b9af5b51b7a0f205ed027cc281088ab729a38a	https://github.com/ciotd/odor-complaint-dialect-rag/commit/af3cb149e7ed73e812dcc949e7b556c1ad4dfc93
+f6b9af5b51b7a0f205ed027cc281088ab729a38a	2026-07-31T09:00:31Z	C_kb 검색 개선: 종결어미·조사·존대 규칙 고정 주입(BM25 우회)	"C_kb 검색 개선: 종결어미·조사·존대 규칙 고정 주입(BM25 우회)
+
+문제: BM25는 '요'처럼 초고빈도 종결어미의 IDF가 0에 수렴해, 존댓말 민원에 가장
+필요한 종결 규칙(-요→-유 등)을 검색하지 못함 → C_kb가 종결 방언을 못 바꿈
+(충청 문법 방언성 0의 원인).
+
+수정: 카테고리에 종결/조사/경어/높임을 포함하는 권역 일반 규칙은 해당 권역이면
+항상 주입(BM25 우회), 어휘·내용 규칙만 BM25 검색. 권역별 고정 규칙 경상11·강원19·
+전라26·충청21. (경상은 '경어법'이 존대 종결을 담아 포함됨.)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	17e93e0c22bad154097a4e27256b949aac8f7157	https://github.com/ciotd/odor-complaint-dialect-rag/commit/f6b9af5b51b7a0f205ed027cc281088ab729a38a
+17e93e0c22bad154097a4e27256b949aac8f7157	2026-07-31T08:48:39Z	평가 파이프라인 추가: 코퍼스 주도 방언성 채점기(B) + 이중추정 + 생성물 채점	"평가 파이프라인 추가: 코퍼스 주도 방언성 채점기(B) + 이중추정 + 생성물 채점
+
+- src/eval/extract_corpus_markers.py: AI-Hub 중·노년 방언(2인발화)에서 형태소 기반
+  어미·조사 표지 추출, 5권역 교차집계(변별력·레지스터·연령경향).
+- src/eval/build_scoring_markers.py: 채점용 손목록 선별(존대·중립·변별, 임계빈도),
+  우리말샘 검증분 보조 병합.
+- src/eval/score_dialectness.py: B 채점기(정렬 어절쌍 기반 +표지/−누수) + 코퍼스
+  혼동행렬 교차검증(① 코퍼스 5/5 대각지배, ② KB 2/5 — 이중추정).
+- src/eval/score_generated.py: S2 출력(C0/C_kb) diff 정렬 후 문법·어휘 두 축 채점.
+  예비결과(n=4/권역): 어휘 축 C_kb 전권역 우세, 합계 C_kb>C0; 문법은 권역 의존.
+- docs: data_audit §8 갱신(방법·결과·한계), research_scope 반영.
+
+데이터(dialect_corpus/·손목록 CSV·results)는 저장소 제외 — 별도 배포 예정.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	805dc6eeda61c0f60a3c5c4a4ab1c19152782c77	https://github.com/ciotd/odor-complaint-dialect-rag/commit/17e93e0c22bad154097a4e27256b949aac8f7157
+805dc6eeda61c0f60a3c5c4a4ab1c19152782c77	2026-07-29T08:05:25Z	docs: 프로젝트 상세정리 Word(이어가기·검증문헌 포함) 백업	docs: 프로젝트 상세정리 Word(이어가기·검증문헌 포함) 백업	7d96bfa890bec97fa747321f13b95fdbae029597	https://github.com/ciotd/odor-complaint-dialect-rag/commit/805dc6eeda61c0f60a3c5c4a4ab1c19152782c77
+7d96bfa890bec97fa747321f13b95fdbae029597	2026-07-29T08:04:30Z	docs: 검색기 docstring 최신화(어휘 정확매칭) + data_audit §0 이어가기·§8 평가설계 추가	"docs: 검색기 docstring 최신화(어휘 정확매칭) + data_audit §0 이어가기·§8 평가설계 추가
+
+- kb_retriever.py: 낡은 docstring('어휘도 BM25') → 현재 설계(어휘=정확매칭, 규칙=BM25)로 정정.
+- data_audit.md: §0 새 세션 이어가기 가이드, §8 평가 프레임워크 결정(B+C+A, 이중추정,
+  순환성 회피, 표지 손목록 초안, 문헌 검증 결과) 추가. 최종갱신 2026-07-29.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	b35734057afa89d5039c7b800007502b2ae3301a	https://github.com/ciotd/odor-complaint-dialect-rag/commit/7d96bfa890bec97fa747321f13b95fdbae029597
+b35734057afa89d5039c7b800007502b2ae3301a	2026-07-27T07:25:08Z	docs: Claude C0 vs C_kb 관찰 + 중심발견(RAG가치∝1/모델성능) 기록 (§6-2c)	docs: Claude C0 vs C_kb 관찰 + 중심발견(RAG가치∝1/모델성능) 기록 (§6-2c)	9f7078ea72e9240a8d6a15b74d7d2d6290f666d9	https://github.com/ciotd/odor-complaint-dialect-rag/commit/b35734057afa89d5039c7b800007502b2ae3301a
+9f7078ea72e9240a8d6a15b74d7d2d6290f666d9	2026-07-27T07:06:13Z	docs: S2 n=8 파일럿(튜닝 후) 관찰 기록 (§6-2b)	docs: S2 n=8 파일럿(튜닝 후) 관찰 기록 (§6-2b)	a775f2e7fa9ab1c80f94688e57234f3c49d4301c	https://github.com/ciotd/odor-complaint-dialect-rag/commit/9f7078ea72e9240a8d6a15b74d7d2d6290f666d9
+a775f2e7fa9ab1c80f94688e57234f3c49d4301c	2026-07-27T07:01:08Z	tune: 프롬프트 잡음 억제 (외국어 누수 + 과잉 음운표기)	"tune: 프롬프트 잡음 억제 (외국어 누수 + 과잉 음운표기)
+
+- prompt_standard: 한국어만/외국어문자 금지(①단계 中 '那股' 누수 대응).
+- convert: '다른 권역 표현/어미/외국어 금지'로 완화 표현 통일 + 표준철자 유지 규칙
+  (있습니다→잇습니다, 전화→전하 식 오타성 과잉표기 억제). 방언색은 어휘·어미로.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	ed744f0bc742e1c9ff1d26ee1074c4f973a70aea	https://github.com/ciotd/odor-complaint-dialect-rag/commit/a775f2e7fa9ab1c80f94688e57234f3c49d4301c
+ed744f0bc742e1c9ff1d26ee1074c4f973a70aea	2026-07-27T06:50:32Z	fix: 규칙 malformed 검수 반영 (제거3/수정5/유지2) via rule_overrides.json	"fix: 규칙 malformed 검수 반영 (제거3/수정5/유지2) via rule_overrides.json
+
+경상 음운론 서술형 3건 제거(모음체계/성조/모음조화 지역차), 문법론 5건 필드교정
+(설명에 파묻힌 형태쌍만 추출: 주격/속격/공동격 조사·선어말·부정). 결정은
+rule_overrides.json에 명시, clean_resources.py가 정제 시 자동 적용(재현 가능).
+규칙 294→291. data_audit §4-1 기록.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	9965cfcbd243428cc9c7655ec72ddfa31ffdb7ec	https://github.com/ciotd/odor-complaint-dialect-rag/commit/ed744f0bc742e1c9ff1d26ee1074c4f973a70aea
+9965cfcbd243428cc9c7655ec72ddfa31ffdb7ec	2026-07-27T05:58:46Z	docs: S2 파일럿(C0 vs C_kb) 관찰 + 어휘개선/하네스 완료 반영	docs: S2 파일럿(C0 vs C_kb) 관찰 + 어휘개선/하네스 완료 반영	ca37795adfaa0d8078427a7625fa02d6146b2ef1	https://github.com/ciotd/odor-complaint-dialect-rag/commit/9965cfcbd243428cc9c7655ec72ddfa31ffdb7ec
+ca37795adfaa0d8078427a7625fa02d6146b2ef1	2026-07-27T05:57:12Z	feat: S2 변환 하네스 (표준어 생성 → 검색·주입 → 방언 변환)	"feat: S2 변환 하네스 (표준어 생성 → 검색·주입 → 방언 변환)
+
+- s2_pipeline.py: 2단계 생성. C0(지식없이 변환) vs C_kb(검색 주입 변환)를
+  변환 프롬프트 knowledge_block 유무로만 구분(RAG 효과 분리). 쿼리=민원인
+  표준어 발화, 어휘 coverage 로그. run.py 호출함수·시나리오 샘플러 재사용.
+- prompt_standard.txt: 표준어 대화 생성(라벨 상담원:/민원인:, 민원인 존댓말).
+- convert_template.txt: 민원인 발화만 방언 변환, 상담원 표준어 유지.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	649318f6c2bd4e92c087589b467f517148a169b7	https://github.com/ciotd/odor-complaint-dialect-rag/commit/ca37795adfaa0d8078427a7625fa02d6146b2ef1
+649318f6c2bd4e92c087589b467f517148a169b7	2026-07-27T05:52:40Z	improve: 어휘 검색 BM25 → 표제어 정확매칭	"improve: 어휘 검색 BM25 → 표제어 정확매칭
+
+내용어(명사·용언)만 표제어형(+다)으로 복원해 head 정확일치. 조사·어미·부사는
+배제(규칙 DB 담당). BM25 잡음('너무→너물','어서→어부') 제거. 규칙은 BM25 유지.
+head=None(뜻풀이만) 항목은 정확매칭 불가라 어휘 검색에서 제외.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	106404f865fc97cd0107049e41781af918d01c48	https://github.com/ciotd/odor-complaint-dialect-rag/commit/649318f6c2bd4e92c087589b467f517148a169b7
+106404f865fc97cd0107049e41781af918d01c48	2026-07-27T04:54:26Z	docs: 방언 리소스 감사 기록 + 규칙 전수검수 CSV 도구	"docs: 방언 리소스 감사 기록 + 규칙 전수검수 CSV 도구
+
+- docs/data_audit.md: 출처·정제·품질이슈·검색기 커버리지·파일럿 관찰·TODO를
+  재현 가능하게 기록(논문 Methods/한계 근거).
+- src/preprocess/export_rules_review.py: 규칙 294개 → 검수 CSV(자동 플래그
+  malformed 10/templated_exp 44/question_only 11). CSV는 gitignore(라이선스).
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	22c3d9a452b5f2d35102223519054b9e7381312b	https://github.com/ciotd/odor-complaint-dialect-rag/commit/106404f865fc97cd0107049e41781af918d01c48
+22c3d9a452b5f2d35102223519054b9e7381312b	2026-07-27T04:53:53Z	feat: 로컬 vLLM(Qwen) provider + 민원인 존댓말 강제 + 권역 필터	"feat: 로컬 vLLM(Qwen) provider + 민원인 존댓말 강제 + 권역 필터
+
+- run.py: call_local()/local_up() 추가(OpenAI 호환, thinking off). provider
+  dispatch에 local 포함. --regions 권역 필터 추가.
+- config.py: ('local','Qwen/Qwen3.6-27B') 등록, LOCAL_BASE_URL.
+- prompt_template.txt: 민원인도 존댓말(해요체/합쇼체 방언형) 강제, 반말 금지.
+
+파일럿 S1×C0(Qwen 8/8, 경상·전라) 실행에 사용.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	7a9d1a7ab7d803bdb772376493313e44760668ba	https://github.com/ciotd/odor-complaint-dialect-rag/commit/22c3d9a452b5f2d35102223519054b9e7381312b
+7a9d1a7ab7d803bdb772376493313e44760668ba	2026-07-24T09:28:29Z	feat: C_kb 지식 검색기 + 규칙셋 예문쌍 오염 제거	"feat: C_kb 지식 검색기 + 규칙셋 예문쌍 오염 제거
+
+- src/retrieval/kb_retriever.py: 표준어 질의 → 권역별 방언 지식 검색.
+  z/ 순수 BM25·형태소 토크나이저 복사(vendoring, z는 동결 보존).
+  어휘/규칙 동일 형태소 BM25로 검색(RQ2 메커니즘 고정), 권역별 분리 색인,
+  use_lex/use_rule 스위치가 C_kb-lex/-rule/-both에 대응. 역색인 최적화.
+- clean_resources.py: category='예문대조규칙'(경상 79건) 규칙셋에서 제외.
+  standard_form/dialect_form이 통째로 문장인 예문 쌍 = LLM 인공물이라
+  검색소스에 들면 '미리 만든 few-shot 검색'이 됨(C1/C_kb 구분 붕괴).
+  버리지 않고 grammar_examples.jsonl로 이관. 규칙 373→294.
+- requirements.txt: RAG 확장 의존성 kiwipiepy 명시.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	9ea1053d835a861f25d3dd807a1764aff785bdbf	https://github.com/ciotd/odor-complaint-dialect-rag/commit/7a9d1a7ab7d803bdb772376493313e44760668ba
+9ea1053d835a861f25d3dd807a1764aff785bdbf	2026-07-24T09:14:03Z	feat: 방언 지식 리소스 정제 스크립트 (src/preprocess/clean_resources.py)	"feat: 방언 지식 리소스 정제 스크립트 (src/preprocess/clean_resources.py)
+
+- 어휘: standard를 head(표제어)+gloss(뜻풀이) 파싱, 무변환/속담/중복 제거
+- 문법: 규칙만 추출(예문 분리, 검색소스 제외), 강원 2파일 병합
+- 전라 '-당께라우' 제외 (현지인 확인 결과 실사용 빈도 낮음)
+- 출력 data/dialect_kb/ 는 .gitignore (네이버 사전/문법서 파생물, 라이선스)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"	9a3af2351b1022fc721cd278cfe85159c7b2bdd6	https://github.com/ciotd/odor-complaint-dialect-rag/commit/9ea1053d835a861f25d3dd807a1764aff785bdbf
+9a3af2351b1022fc721cd278cfe85159c7b2bdd6	2026-07-24T08:50:05Z	Initial commit: 방언 악취 민원 생성 파이프라인 + Phase 0 연구 설계	"Initial commit: 방언 악취 민원 생성 파이프라인 + Phase 0 연구 설계
+
+- 원본: sukoji/korean-dialect-complaint-generator (동료 공동연구) 이어받아 고도화 착수
+- 추가: docs/research_scope.md (로컬 LLM + 방언지식 RAG 연구 설계, Phase 0)
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"		https://github.com/ciotd/odor-complaint-dialect-rag/commit/9a3af2351b1022fc721cd278cfe85159c7b2bdd6

@@ -1,0 +1,87 @@
+{
+  "status": "full_source_draft",
+  "source_pages": 474,
+  "reviewed_pages": 474,
+  "pending_pages": 0,
+  "facts": 3767,
+  "fact_types": {
+    "context": 688,
+    "usage": 625,
+    "ending": 612,
+    "phonology": 88,
+    "construction": 293,
+    "inflection": 675,
+    "lexical_mapping": 650,
+    "constraint": 10,
+    "particle": 126
+  },
+  "claim_statuses": {
+    "secondary_report": 297,
+    "attested_form": 1097,
+    "source_generalization": 1852,
+    "author_hypothesis": 16,
+    "analyst_interpretation": 299,
+    "attested_example": 198,
+    "negative_example": 8
+  },
+  "nodes": 25818,
+  "edges": 35410,
+  "sources": [
+    {
+      "source_id": "YANG2021",
+      "pages": 22,
+      "reviewed_pages": 22,
+      "facts": 58,
+      "gap_pages": 0
+    },
+    {
+      "source_id": "JO2018",
+      "pages": 265,
+      "reviewed_pages": 265,
+      "facts": 1203,
+      "gap_pages": 31
+    },
+    {
+      "source_id": "RYU2014",
+      "pages": 38,
+      "reviewed_pages": 38,
+      "facts": 160,
+      "gap_pages": 2
+    },
+    {
+      "source_id": "NAMU20260901",
+      "pages": 55,
+      "reviewed_pages": 55,
+      "facts": 451,
+      "gap_pages": 18
+    },
+    {
+      "source_id": "NAMU_GRAMMAR_20260908",
+      "pages": 51,
+      "reviewed_pages": 51,
+      "facts": 1466,
+      "gap_pages": 6
+    },
+    {
+      "source_id": "NAMU_HONORIFICS_20260908",
+      "pages": 35,
+      "reviewed_pages": 35,
+      "facts": 311,
+      "gap_pages": 16
+    },
+    {
+      "source_id": "NAMU_PHONOLOGY_20260908",
+      "pages": 8,
+      "reviewed_pages": 8,
+      "facts": 118,
+      "gap_pages": 6
+    }
+  ],
+  "legacy_preservation": "all hashed legacy files unchanged",
+  "semantic_completeness": "not implied by page coverage; inspect review notes and gaps",
+  "translation_quality": "not evaluated",
+  "authoring_model": "gpt-6-astra",
+  "facts_sha256": "70704456dda47d9cf2019b7e8ea63bc7cc4d9e000417d3216ef08983c9b3dd95",
+  "graph_sha256": "7f903cd4a1dcf9e6dd1e9109f4339b0f1b50e12d4dbc55f1789c17eb8a8c0a59"
+}
+

@@ -1,0 +1,149 @@
+{
+  "updated": "2026-10-13",
+  "latest_translation_run": "20261013_user_qualification20",
+  "latest_implementation_run": "20261013_terminal_retrieval",
+  "latest_model_comparison": "20261013_terminal_generation",
+  "translation_matches_latest_implementation": true,
+  "runs": [
+    [
+      "reports/20261013_user_qualification20",
+      "translations.html",
+      "수정된 사용자 입력20개:20개 생성·동일 위치 덮어쓰기"
+    ],
+    [
+      "reports/20261013_user_qualification20",
+      "review.txt",
+      "수정된20개 실행의 높임·조회·생성 오류 검토"
+    ],
+    [
+      "reports/20261013_review_guide",
+      "경상도_방언_KG_예시로_이해하는_복습가이드_20261013.docx",
+      "최신 복습용 DOCX: 쉬운 예시·그림·상세 속성표·복습 문제"
+    ],
+    [
+      "reports/20261013_terminal_generation",
+      "comparison.html",
+      "기존 개발70개: 종결 기능별 조회 수정 전후"
+    ],
+    [
+      "reports/20261013_terminal_generation",
+      "history.html",
+      "전체 실험27조건·참고 모델 대조"
+    ],
+    [
+      "reports/20261013_terminal_generation",
+      "review.txt",
+      "전체 추세·개선·악화·A/B/C/D 전환 설명"
+    ],
+    [
+      "reports/20261013_terminal_retrieval",
+      "lookup_comparison.html",
+      "종결79구간 조회 검증 — 이후 새 번역 생성 완료"
+    ],
+    [
+      "reports/20261013_terminal_retrieval",
+      "coordinator_report.txt",
+      "종결 조회 수정의 문헌 근거·변경·한계"
+    ],
+    [
+      "reports/20261013_gyeongbuk40_prompt",
+      "comparison.html",
+      "이전 별도 분기: 경북40대 이상 지시만 추가한70개"
+    ],
+    [
+      "reports/20261013_gyeongbuk40_prompt",
+      "review.txt",
+      "말투 지시 실험의 구체적 변화·한계 검토"
+    ],
+    [
+      "reports/20261012_easy_briefing",
+      "경상도_방언_연구_쉽게보는_전체과정_20261013.docx",
+      "쉬운 DOCX:10월12일 상태, 이후 실험 미반영"
+    ],
+    [
+      "reports/20261012_easy_briefing",
+      "sonnet_feedback_review.txt",
+      "새 Sonnet70개 피드백: 실제 요청·문헌 대조와 개선안"
+    ],
+    [
+      "reports/20261012_construction_generation",
+      "comparison.html",
+      "최신 실험의 주 비교군: 인용·의도 조회 수정 후70개"
+    ],
+    [
+      "reports/kg_v2_construction_review_20261012",
+      "coordinator_report.txt",
+      "최신 KG·조회 구현 근거: 이후 별도 생성 실험 완료"
+    ],
+    [
+      "reports/kg_v2_pipeline_repair_20261012",
+      "comparison.html",
+      "직전 번역: 높임·보존 수정 후70개"
+    ],
+    [
+      "reports/model_comparison_after_repair_20261012",
+      "comparison.html",
+      "직전 Qwen과 Astra·Sonnet 비교"
+    ],
+    [
+      "reports/kg_v2_advisory_20261012",
+      "coordinator_report.txt",
+      "이전 네 역할 검토 및 입력량 통계"
+    ],
+    [
+      "reports/kg_v2_factorial_20261012",
+      "comparison.html",
+      "이전 A/B/C/D: 의미 검색 × 전달 형식"
+    ],
+    [
+      "reports/astra_high_no_kg_20261012",
+      "output.txt",
+      "Astra high 외부 근거 없는 출력"
+    ],
+    [
+      "reports/model_comparison_20261012",
+      "comparison.html",
+      "이전 모델 비교 및 Sonnet 제공 원문"
+    ],
+    [
+      "reports/current_briefing_20261012",
+      "경상도_방언_KG_현재상황_상세보고_20261013.docx",
+      "상세 DOCX: 이후 구현 미반영"
+    ],
+    [
+      "reports/briefing_20261012",
+      "경상도_방언_KG_연구_상세브리핑_20261012.docx",
+      "최초 상세 DOCX: 이전 시점"
+    ],
+    [
+      "kg_v2/reports/translation_20261012_ending_repair",
+      "comparison.txt",
+      "이전 종결 대응 수정"
+    ],
+    [
+      "kg_v2/reports/translation_20261012_speech_style",
+      "comparison.txt",
+      "이전 높임 순위 수정"
+    ],
+    [
+      "kg_v2/reports/translation_20261012",
+      "comparison.txt",
+      "KG v2 최초 연결"
+    ],
+    [
+      "current_kg/experiments/reports/integrated_development",
+      "comparison.txt",
+      "기존 KG 통합 실험"
+    ]
+  ],
+  "latest_model_comparison_entry": "history.html",
+  "briefing_text": "20261013_user_qualification20/briefing.txt",
+  "latest_docx": "20261013_review_guide/경상도_방언_KG_예시로_이해하는_복습가이드_20261013.docx",
+  "latest_user_feedback_comparison": "20261013_terminal_generation/history.html",
+  "translation_note": "수정된 사용자 입력20개를 같은 폴더에 덮어쓰기 실행:20개 모두 번역 생성. KG·조회·생성 설정 유지. 자동 보존 경고1개 및 별도 관찰 오류가 남아 있습니다. 입력 변경 시험으로 시스템 개선율 비교는 아닙니다.",
+  "latest_docx_label": "복습용 DOCX — 기존70개까지의 시스템 설명, 새20개 결과는 현재 요약 참고",
+  "model_comparison_label": "이전 실험27조건·참고 모델 비교 — 새20개는 별도",
+  "user_feedback_label": "Sonnet 두 버전 및 최신 Qwen을 선택해 비교",
+  "translation_comparison_label": "수정된20개 최초 출력·최종 선택 비교"
+}
+

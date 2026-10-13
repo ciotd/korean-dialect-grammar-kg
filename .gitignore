@@ -1,0 +1,18 @@
+# Private source materials and credentials
+*.pdf
+*.zip
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+local/
+data/raw/
+data/derived_private/
+**/private/
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db

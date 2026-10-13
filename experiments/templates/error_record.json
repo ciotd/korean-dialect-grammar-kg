@@ -1,0 +1,13 @@
+{
+  "record_type": "template_not_evaluated",
+  "input_id": null,
+  "run_id": null,
+  "condition": null,
+  "layers": [],
+  "observed_problem": null,
+  "evidence_paths": [],
+  "cause_status": "unknown",
+  "counterexample": null,
+  "proposed_intervention": null,
+  "independent_review": false
+}

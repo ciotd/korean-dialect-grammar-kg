@@ -1,0 +1,14 @@
+{
+  "run_id": "TEMPLATE_NOT_EXECUTED",
+  "status": "planned",
+  "purpose": "실행 전에 질문·조건·자료·평가를 확정한다.",
+  "timestamp_utc": null,
+  "independent_evaluation": false,
+  "inputs": {"count": null, "unit": "utterance", "split": "not_decided", "sha256": null},
+  "conditions": [],
+  "artifacts": {"code_commit": null, "kg_sha256": null, "requests_sha256": null, "responses_sha256": null},
+  "model": {"id": null, "checkpoint": null, "quantization": null, "settings": {}},
+  "calls": {"analysis": null, "generation": null, "retries": null, "preservation_rechecks": null, "reused_outputs": null},
+  "evaluation": {"status": "not_performed", "quality_scores": null},
+  "limitations": ["템플릿이며 실행 결과가 아니다."]
+}
