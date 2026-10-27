@@ -1,0 +1,48 @@
+{
+  "reviewer_role": "Schema Reviewer",
+  "phase": "동일 출처발췌 공유 통합 표적 검토",
+  "date": "2026-10-19",
+  "old_artifact": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\knowledge\\authored\\kg_v3_evidence_20261019",
+  "new_artifact": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\knowledge\\authored\\kg_v3_evidence_20261019_r2",
+  "scope": "SourceSpan 중복통합 전후의 출처·원문발췌·offset·문헌해시·인용경로·curated Claim 보존만 확인. DB 실제 실행과 언어학 전체 재검토는 수행하지 않음.",
+  "checks": {
+    "old_nodes": 2417,
+    "new_nodes": 1625,
+    "old_edges": 6959,
+    "new_edges": 6167,
+    "old_spans": 1447,
+    "new_spans": 655,
+    "span_reduction": 792,
+    "unique_source_excerpt_signatures_old": 655,
+    "unique_source_excerpt_signatures_new": 655,
+    "span_signatures_equal": true,
+    "all_non_document_edges_canonicalized_preserved": true,
+    "unique_span_document_routes_equal": true,
+    "unresolved_endpoints": 0,
+    "nonspan_nodes_unchanged": true,
+    "curated_claim_and_exact_span_nodes_unchanged": true,
+    "anchor_mapping_loss_count": 0,
+    "cites_source_span_count": 1418,
+    "curated_claim_count": 29
+  },
+  "findings": [
+    {
+      "target": "자동 SourceSpan 동일발췌 공유 통합",
+      "severity": "문제 없음",
+      "evidence": "doc·문헌해시·PDF쪽·start/end·quote·text해시·quote종류·품질을 묶어 전후비교. 고유발췌655개 동일, non-document 연결은 SourceSpan ID를 발췌실체로 치환하면 속성을 포함해 완전동일. 792 감소는 중복span 및 그 part_of_document 연결 감소와 일치.",
+      "recommendation": "추가 수정 불필요."
+    },
+    {
+      "target": "항목별 anchor 메타데이터",
+      "severity": "보존 확인",
+      "evidence": "공유 SourceSpan에서 anchor/anchor_status를 분리했으나 mapping/source_to_kg.json의 원자별 refs에 보존됨. 기존1418인용에 대해 원래 anchor와 status 대조 누락0.",
+      "recommendation": "시각화에서 원자별 검색단서가 필요하면 해당 mapping 명세를 참조. 신규 기능 구현 요구 아님."
+    }
+  ],
+  "sha256": {
+    "graph\\nodes.jsonl": "ea646186bb417ce53fc212ebce0db1c6d3acaf7c8847bae26ef268e859a32509",
+    "graph\\edges.jsonl": "de9340e4c920d1303ba15bc8299e1d0d372cfa96a1854c1f98c4f122b713e546",
+    "mapping\\source_to_kg.json": "58482fcb0520bd6df2f1129e17dbae61fbc6e59f5f74c2755981ac68dfeea248"
+  },
+  "verdict": "중복 SourceSpan 공유에 따른 출처 발췌 및 연결 손실 없음. 표적 구조 재검토 통과."
+}

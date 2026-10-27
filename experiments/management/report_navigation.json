@@ -1,0 +1,52 @@
+[
+  {
+    "title": "01 · 문헌·설계 대조",
+    "url": "http://127.0.0.1:8765/01.html",
+    "summary": "원본 7종과 설계 보고서 19개 대조·연구 계획"
+  },
+  {
+    "title": "02 · 독립 검토",
+    "url": "http://127.0.0.1:8765/02.html",
+    "summary": "별도 AI 검토자의 설계 문제와 보완 의견"
+  },
+  {
+    "title": "03 · KG 구축",
+    "url": "http://127.0.0.1:8765/03.html",
+    "summary": "공통 척추·모듈·문헌 연결·실제 구축 통계"
+  },
+  {
+    "title": "04 · Neo4j 적재",
+    "url": "http://127.0.0.1:8765/04.html",
+    "summary": "DB 실제 적재와 무결성 검사"
+  },
+  {
+    "title": "05 · 실제 그래프 사례",
+    "url": "http://127.0.0.1:8765/05.html",
+    "summary": "실제 노드·관계·속성 원본 확인"
+  },
+  {
+    "title": "06 · 저장과 실행의 차이",
+    "url": "http://127.0.0.1:8765/06.html",
+    "summary": "KG 저장 구조와 실행 구현의 간격 설명"
+  },
+  {
+    "title": "07 · 두 Qwen 모듈 설계",
+    "url": "http://127.0.0.1:8765/07.html",
+    "summary": "문법 분석·생성의 설계와 예상 흐름"
+  },
+  {
+    "title": "08 · 50건 실제 실행",
+    "url": "http://127.0.0.1:8765/08.html",
+    "summary": "35건 형식 통과·15건 분석 실패, 입력별 결과와 한계"
+  },
+  {
+    "title": "09 · KG 실행층 재설계·회귀 비교",
+    "url": "http://127.0.0.1:8766/reports/runtime/report.html",
+    "summary": "과거50 오류 원인, 17개 실행 규칙, Kiwi 분석 진단과 Single/Planning+Worker 비교"
+  },
+  {
+    "title": "10 · 검색·실행 분리와 통제 비교",
+    "url": "http://127.0.0.1:8766/reports/search-execution/report.html",
+    "summary": "721개 항목 검색, 회귀50·미사용12, Single/Planner–Worker와 Kiwi 제공 여부 비교"
+  }
+]

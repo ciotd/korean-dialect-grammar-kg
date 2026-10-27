@@ -1,0 +1,9 @@
+RUN C:\Users\ciot28\AppData\Local\Temp\tmpf8g9jzu7\experiments\runs\20261025T092004445202Z_qwen_kg_evaluation
+{"done":1,"id":"X1","of":1,"references":null,"seconds":0.1,"status":"unchanged"}
+COMPLETE {"metrics":{"accuracy":null,"api_attempts":0,"api_failures":0,"automatic_retries":0,"calls_with_usage":0,"calls_without_usage":0,"changed_records":0,"char_reduction_fraction":null,"error_types":{},"evaluation_note":"No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.","evidence_appropriateness":null,"mean_record_seconds":0.1,"median_record_seconds":0.1,"naturalness":null,"neighborhood_limit_records":0,"packet_chars_total":0,"records":1,"records_with_claim_paths":0,"records_with_realization_reference":0,"reported_usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0},"retrieval_chars_total":0,"status_counts":{"unchanged":1},"valid_output_records":1,"wall_seconds":0.046},"run":"C:\\Users\\ciot28\\AppData\\Local\\Temp\\tmpf8g9jzu7\\experiments\\runs\\20261025T092004445202Z_qwen_kg_evaluation"}
+
+................................................................................................
+----------------------------------------------------------------------
+Ran 96 tests in 19.762s
+
+OK

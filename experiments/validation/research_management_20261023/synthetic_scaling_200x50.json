@@ -1,0 +1,10 @@
+{
+  "synthetic_runs": 200,
+  "records_per_run": 50,
+  "indexed_records": 10000,
+  "first_sync_seconds": 8.578,
+  "second_sync_seconds": 6.375,
+  "list_seconds": 0.0072,
+  "model_calls": 0,
+  "limitation": "Synthetic lightweight records; no large KG JSON or model inference. Measures index workflow, not generation throughput."
+}

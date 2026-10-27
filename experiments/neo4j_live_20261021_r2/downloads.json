@@ -1,0 +1,12 @@
+[
+  {
+    "file": "neo4j.zip",
+    "url": "https://dist.neo4j.org/neo4j-community-5.26.32-windows.zip",
+    "sha256": "00eca54f38f601b3adb596611505280a4784d9726c6df5f0b72b7a4a04cc87ec"
+  },
+  {
+    "file": "jdk.zip",
+    "url": "https://aka.ms/download-jdk/microsoft-jdk-21-windows-x64.zip",
+    "sha256": "192441a9d27da813bada974bb88b4cf64d37a9589ed37f204374d411ca5ce07f"
+  }
+]

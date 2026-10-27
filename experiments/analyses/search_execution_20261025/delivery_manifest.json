@@ -1,0 +1,27 @@
+{
+  "runs": {
+    "regression": {
+      "single": "20261025T085653301020Z_runtime_single_regression",
+      "multi": "20261025T085653584686Z_runtime_multi_regression"
+    },
+    "evaluation": {
+      "single": "20261025T090456534523Z_runtime_single_evaluation",
+      "multi": "20261025T090456827614Z_runtime_multi_evaluation"
+    },
+    "diagnostic": {
+      "analysis_qwen": "20261025T090633179738Z_runtime_analysis_qwen_regression",
+      "analysis_kiwi": "20261025T090633416523Z_runtime_analysis_kiwi_regression"
+    }
+  },
+  "files": {
+    "blind_review.json": "5cf865817e512e777e9d8d46a36ac50050f9178dddcfb5cbb8ce7f49a511fb6c",
+    "blind_review_key.json": "f6dacc2336f43f3128b50aabfd47e3c319c08231f6953a6dde8fe6c3af70704e",
+    "data.json": "dc6ef8fed75908a6b89739ecd6a966f51987e14a34b6e46f659178adbe7488a9",
+    "report.css": "5759ed63be92e6a952d7928e6f5c21e2cdbdc33275564779b44a2a3fdfeae78b",
+    "report.html": "2319fe2795dd57d4ff68dc251065f76000253dfa58d6253498299fd016d866e8",
+    "report.js": "622f934de6be744cdd6f95c0a822f18b8398b4fc91d3933c141879bd99c463ad",
+    "review.html": "24d152932418b169af42ec727e55bdb2acd4c21bd7f051cabfe8315bdc79f8df",
+    "review.js": "28fbddced88921a972ea1622117934ba65fa2652f3974b3a874ddaee2788ad4d"
+  },
+  "run_artifacts_modified": false
+}

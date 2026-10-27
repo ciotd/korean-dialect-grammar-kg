@@ -1,0 +1,10 @@
+{
+  "baseline_atoms": 911,
+  "baseline_edges": 2909,
+  "curated_claims": 29,
+  "sources": 7,
+  "total_pdf_pages": 474,
+  "neo4j_live_validation": "not_performed_no_environment_provided",
+  "generation_experiment": "not_performed",
+  "semantic_review_scope": "curated claims plus inherited audit findings; not independent semantic reread of all 721 atoms"
+}

@@ -1,0 +1,84 @@
+{
+  "reviewer_role": "Schema Reviewer",
+  "phase": "최종본 수정쟁점 한정 재검토",
+  "date": "2026-10-19",
+  "target": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\knowledge\\authored\\kg_v3_evidence_20261019",
+  "scope": "SP02 한국어 문서정리, SP04 CSV NUL 표시정책, 신규 Claim의 참조무결성만 확인. 전체 재검토나 실제 Neo4j 실행 아님.",
+  "results": [
+    {
+      "id": "SP01",
+      "status": "오탐 철회 유지",
+      "evidence": "import 마지막 문장의 Module.number 설정 유지 확인"
+    },
+    {
+      "id": "SP02",
+      "status": "수정 확인",
+      "evidence": "has_module.meaning 및 final_design_authority.basis가 한국어로 변경됨"
+    },
+    {
+      "id": "SP04",
+      "status": "수정 확인",
+      "evidence": {
+        "csv_literal_nul": 0,
+        "visible_nul_symbols": 150,
+        "raw_properties_roundtrip_errors": 0
+      },
+      "note": "표시용 quote는 ␀로 바꾸고 properties_json raw 문자열은 원본과 동일하게 보존. Neo4j 실제적재는 별도환경확인사항."
+    },
+    {
+      "id": "DELTA01",
+      "status": "통과",
+      "evidence": {
+        "new_nodes": [
+          {
+            "id": "C_D07_06",
+            "type": "Claim"
+          },
+          {
+            "id": "SPAN_C_D07_06",
+            "type": "SourceSpan"
+          }
+        ],
+        "endpoint_or_type_errors": [],
+        "changed_or_added_edge_ids": 39,
+        "new_edge_triples": 4,
+        "removed_edge_triples": 0,
+        "new_connections": [
+          {
+            "source": "C_D07_06",
+            "relation": "analyzed_by",
+            "target": "SPAN_C_D07_06"
+          },
+          {
+            "source": "C_D07_06",
+            "relation": "documents_atom",
+            "target": "GS_HAM_P2"
+          },
+          {
+            "source": "SPAN_C_D07_06",
+            "relation": "part_of_document",
+            "target": "D07"
+          },
+          {
+            "source": "C_D07_06",
+            "relation": "interpreted_as",
+            "target": "G_PRON_PERSON"
+          }
+        ],
+        "note": "documents_atom mapping_note 추가로 기존35개 관계 ID도 달라짐. 삼중쌍 기준 실질신규 연결은4개."
+      }
+    }
+  ],
+  "final_counts": {
+    "nodes": 2417,
+    "edges": 6959,
+    "claims": 29
+  },
+  "sha256": {
+    "graph\\nodes.jsonl": "7eead0b07f6c7bde507aed82e1357085cea66b057f0031072305e102d673d97c",
+    "graph\\edges.jsonl": "ed7a1cd7f7527f4afc0a6785795226568fdce5485a28eaac91b1fb288f62c752",
+    "schema\\schema.json": "ad217514af7d5d1171a8edf91681831a7ed5a9155b9c2109010b698f5b7cac04",
+    "neo4j\\nodes_SourceSpan.csv": "999a4d6640d4b7ce4e35cca89d5723c75ddc7e3ea7ba39efed7f78bdebddbd0e"
+  },
+  "verdict": "요청된 두 수정 및 신규 Claim 연결 delta 정합성 확인. 기존 독립 구조검토 결론 유지."
+}

@@ -1,0 +1,135 @@
+{
+  "checked_runs": 16,
+  "checked_files": 5863,
+  "all_passed": true,
+  "runs": [
+    {
+      "run_id": "20261025T090456827614Z_runtime_multi_evaluation",
+      "verified_at": "2026-10-25T09:09:33.612027+00:00",
+      "checked_files": 235,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261025T090456534523Z_runtime_single_evaluation",
+      "verified_at": "2026-10-25T09:09:33.887217+00:00",
+      "checked_files": 199,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261025T085653584686Z_runtime_multi_regression",
+      "verified_at": "2026-10-25T09:09:35.155167+00:00",
+      "checked_files": 944,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261025T085653301020Z_runtime_single_regression",
+      "verified_at": "2026-10-25T09:09:37.459226+00:00",
+      "checked_files": 787,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261025T085610380100Z_runtime_multi_smoke",
+      "verified_at": "2026-10-25T09:09:37.714375+00:00",
+      "checked_files": 100,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261025T085610187632Z_runtime_single_smoke",
+      "verified_at": "2026-10-25T09:09:37.901616+00:00",
+      "checked_files": 87,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T165740502855Z_runtime_multi_regression",
+      "verified_at": "2026-10-25T09:09:39.917906+00:00",
+      "checked_files": 920,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T165740319929Z_runtime_single_regression",
+      "verified_at": "2026-10-25T09:09:41.571505+00:00",
+      "checked_files": 750,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T165740096535Z_runtime_analysis_kiwi_regression",
+      "verified_at": "2026-10-25T09:09:43.863571+00:00",
+      "checked_files": 590,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T165529268792Z_runtime_multi_smoke",
+      "verified_at": "2026-10-25T09:09:44.096944+00:00",
+      "checked_files": 98,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T165529017937Z_runtime_single_smoke",
+      "verified_at": "2026-10-25T09:09:44.312883+00:00",
+      "checked_files": 86,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T090255985956Z_qwen_kg_first50",
+      "verified_at": "2026-10-25T09:09:46.831733+00:00",
+      "checked_files": 691,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T085916247048Z_qwen_kg_smoke",
+      "verified_at": "2026-10-25T09:09:47.276512+00:00",
+      "checked_files": 106,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T085522286984Z_qwen_kg_smoke",
+      "verified_at": "2026-10-25T09:09:47.665340+00:00",
+      "checked_files": 105,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T085237851535Z_qwen_kg_smoke",
+      "verified_at": "2026-10-25T09:09:47.857568+00:00",
+      "checked_files": 60,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    },
+    {
+      "run_id": "20261023T085008864199Z_qwen_kg_smoke",
+      "verified_at": "2026-10-25T09:09:48.334454+00:00",
+      "checked_files": 105,
+      "issues": [],
+      "status": "passed",
+      "limitation": "Consistency against saved manifest, not an external authenticity signature."
+    }
+  ]
+}

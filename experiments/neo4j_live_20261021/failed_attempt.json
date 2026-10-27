@@ -1,0 +1,9 @@
+{
+  "date_kst": "2026-10-21",
+  "failed_statement": 9,
+  "file": "nodes_ReviewIssue.csv",
+  "error": "Neo.DatabaseError.Statement.ExecutionFailed: CSV quote parsing failed with legacy_quote_escaping=true",
+  "preceding_statements_committed": 8,
+  "resolution": "Set db.import.csv.legacy_quote_escaping=false and restart. Preserve files and re-run idempotent MERGE import.",
+  "status": "retry_in_separate_run"
+}

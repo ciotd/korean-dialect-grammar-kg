@@ -1,0 +1,34 @@
+{
+  "reviewer": "Linguistic Evidence Reviewer",
+  "date": "2026-10-19",
+  "review_kind": "targeted_rendered_report_review",
+  "report_path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\knowledge\\authored\\kg_v3_evidence_20261019_r2\\report.html",
+  "report_sha256": "843bb53461e4318b9bebfce7ec6409afad1cfb47de098d8ba883785e55cad75d",
+  "method": "Headless Chrome로 file URL을 열어 JavaScript 실행 후 body.innerText를 확인. 원문 재검토는 수행하지 않음.",
+  "scope": "LE02 최종표시 범위만 확인. KG 및 보고서 수정 없음.",
+  "checks": [
+    {
+      "target": "29 Claim / 721 기존 방언 항목 구분",
+      "status": "pass",
+      "evidence": "Architecture 카드와 Validation 처리표에 분리 표시. 직접 대조한 좁은 Claim과 기존 원자의 검증 범위가 다르다고 명시."
+    },
+    {
+      "target": "전체 원문 의미검증 완료 오해 방지",
+      "status": "pass",
+      "evidence": "Source-to-KG Mapping에서 모든 기존 항목을 새로 독립 의미 검증한 것은 아니라고 명시. HR_COVERAGE에서도 독립 승인 범위 제한."
+    },
+    {
+      "target": "실행 완료 주장 방지",
+      "status": "pass",
+      "evidence": "문장 변환기나 실행 가능한 문법 규칙 엔진이 아니며 DB 적재·LLM 호출·방언생성 실험을 수행하지 않았다고 명시."
+    },
+    {
+      "target": "모듈12 직접매핑0 기준",
+      "status": "pass_after_correction",
+      "evidence": "실제 렌더 텍스트에서 이번 직접 Claim의 공통 개념 해석 연결(interpreted_as)이 없는 모듈: 12로 한정됨. 통계 컬럼도 공통 개념에 연결된 Claim으로 수정 확인.",
+      "limitation": "documents_atom을 통한 기존 방언 원자 연결의 유무와 다른 기준임."
+    }
+  ],
+  "verdict": "LE02 표적검토 통과. 29Claim/721원자 검증범위 구분, 직접 공통개념 매핑0 기준, 전수검증 및 실행완료 주장 배제 모두 실제 표시 내용에서 확인함.",
+  "kg_modified": false
+}

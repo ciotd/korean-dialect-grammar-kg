@@ -1,0 +1,411 @@
+{
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "unique_node_ids",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "unique_edge_ids",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "reference_integrity",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "no_duplicate_relationship_triples",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all_original_atoms_losslessly_preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all_original_edges_losslessly_preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "twelve_modules",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "one_original_module_assignment_per_atom",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no_runtime_rules_or_inferred_facts",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "relationship_domain_range",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "valid_pdf_page_ranges",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "curated_claims_have_exact_spans",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "claim_quote_equals_linked_span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "excerpt_lengths_and_source_digests",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "interpretation_not_source_identity",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "every_source_atom_has_citation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_hash_D01",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_hash_D02",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_hash_D03",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_hash_D04",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_hash_D05",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_hash_D06",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "source_hash_D07",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all_source_excerpt_offsets_and_hashes",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "csv_nodes_lossless_roundtrip",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "csv_edges_lossless_roundtrip",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "csv_files_contain_no_nul_bytes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no_isolated_nodes",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "stats": {
+    "nodes": 2417,
+    "edges": 6959,
+    "baseline_atoms": 911,
+    "baseline_edges": 2909,
+    "node_types": {
+      "Framework": 1,
+      "Claim": 29,
+      "SourceDocument": 7,
+      "SourceAtom": 721,
+      "AnalysisConcept": 48,
+      "Construction": 54,
+      "GrammarFeature": 23,
+      "AggregateInterface": 11,
+      "ReviewIssue": 10,
+      "TechnicalResponsibility": 54,
+      "Module": 12,
+      "SourceSpan": 1447
+    },
+    "relations": {
+      "part_of_document": 1447,
+      "cross_reference": 2841,
+      "in_module": 911,
+      "has_common_concept": 136,
+      "cites_source_span": 1418,
+      "interpreted_as": 50,
+      "maps_to": 21,
+      "review_target": 11,
+      "analyzed_by": 29,
+      "documents_atom": 36,
+      "has_component": 47,
+      "has_module": 12
+    },
+    "modules": [
+      {
+        "module": 1,
+        "title": "동사",
+        "atoms": 7,
+        "curated_claims": 3,
+        "by_role": {
+          "grammar": 7
+        },
+        "baseline_internal_edges": 1,
+        "baseline_cross_module_incident_edges": 43
+      },
+      {
+        "module": 2,
+        "title": "형용사·계사",
+        "atoms": 25,
+        "curated_claims": 1,
+        "by_role": {
+          "dialect": 20,
+          "grammar": 5
+        },
+        "baseline_internal_edges": 38,
+        "baseline_cross_module_incident_edges": 558
+      },
+      {
+        "module": 3,
+        "title": "명사·대명사·수사",
+        "atoms": 8,
+        "curated_claims": 1,
+        "by_role": {
+          "grammar": 8
+        },
+        "baseline_internal_edges": 3,
+        "baseline_cross_module_incident_edges": 26
+      },
+      {
+        "module": 4,
+        "title": "조사",
+        "atoms": 112,
+        "curated_claims": 2,
+        "by_role": {
+          "dialect": 101,
+          "grammar": 11
+        },
+        "baseline_internal_edges": 10,
+        "baseline_cross_module_incident_edges": 242
+      },
+      {
+        "module": 5,
+        "title": "어미·종결법",
+        "atoms": 304,
+        "curated_claims": 11,
+        "by_role": {
+          "dialect": 282,
+          "grammar": 22
+        },
+        "baseline_internal_edges": 361,
+        "baseline_cross_module_incident_edges": 1083
+      },
+      {
+        "module": 6,
+        "title": "상대높임·주체높임",
+        "atoms": 6,
+        "curated_claims": 2,
+        "by_role": {
+          "grammar": 5,
+          "dialect": 1
+        },
+        "baseline_internal_edges": 5,
+        "baseline_cross_module_incident_edges": 405
+      },
+      {
+        "module": 7,
+        "title": "연결·전성·절 구조",
+        "atoms": 103,
+        "curated_claims": 2,
+        "by_role": {
+          "dialect": 90,
+          "grammar": 13
+        },
+        "baseline_internal_edges": 98,
+        "baseline_cross_module_incident_edges": 539
+      },
+      {
+        "module": 8,
+        "title": "시제·상·양태·부정",
+        "atoms": 13,
+        "curated_claims": 2,
+        "by_role": {
+          "grammar": 12,
+          "dialect": 1
+        },
+        "baseline_internal_edges": 12,
+        "baseline_cross_module_incident_edges": 510
+      },
+      {
+        "module": 9,
+        "title": "사동·피동·보조용언",
+        "atoms": 21,
+        "curated_claims": 3,
+        "by_role": {
+          "grammar": 21
+        },
+        "baseline_internal_edges": 27,
+        "baseline_cross_module_incident_edges": 100
+      },
+      {
+        "module": 10,
+        "title": "부사·관용·어휘 선택",
+        "atoms": 115,
+        "curated_claims": 2,
+        "by_role": {
+          "dialect": 108,
+          "grammar": 7
+        },
+        "baseline_internal_edges": 7,
+        "baseline_cross_module_incident_edges": 252
+      },
+      {
+        "module": 11,
+        "title": "형태음운·표기",
+        "atoms": 25,
+        "curated_claims": 7,
+        "by_role": {
+          "dialect": 18,
+          "grammar": 7
+        },
+        "baseline_internal_edges": 6,
+        "baseline_cross_module_incident_edges": 69
+      },
+      {
+        "module": 12,
+        "title": "지역·변이·실행 제어",
+        "atoms": 172,
+        "curated_claims": 0,
+        "by_role": {
+          "dialect": 100,
+          "graph": 54,
+          "grammar": 18
+        },
+        "baseline_internal_edges": 117,
+        "baseline_cross_module_incident_edges": 621
+      }
+    ],
+    "sources": [
+      {
+        "doc": "D01",
+        "source_atoms": 20,
+        "by_primary_module": {
+          "7": 20
+        },
+        "curated_claims": 4,
+        "linked_pages": 16
+      },
+      {
+        "doc": "D02",
+        "source_atoms": 287,
+        "by_primary_module": {
+          "7": 1,
+          "5": 282,
+          "6": 1,
+          "8": 1,
+          "2": 2
+        },
+        "curated_claims": 6,
+        "linked_pages": 147
+      },
+      {
+        "doc": "D03",
+        "source_atoms": 0,
+        "by_primary_module": {},
+        "curated_claims": 2,
+        "linked_pages": 9
+      },
+      {
+        "doc": "D04",
+        "source_atoms": 296,
+        "by_primary_module": {
+          "2": 18,
+          "4": 101,
+          "7": 69,
+          "10": 108
+        },
+        "curated_claims": 5,
+        "linked_pages": 41
+      },
+      {
+        "doc": "D05",
+        "source_atoms": 17,
+        "by_primary_module": {
+          "12": 17
+        },
+        "curated_claims": 3,
+        "linked_pages": 24
+      },
+      {
+        "doc": "D06",
+        "source_atoms": 18,
+        "by_primary_module": {
+          "11": 18
+        },
+        "curated_claims": 3,
+        "linked_pages": 7
+      },
+      {
+        "doc": "D07",
+        "source_atoms": 83,
+        "by_primary_module": {
+          "12": 83
+        },
+        "curated_claims": 6,
+        "linked_pages": 27
+      }
+    ],
+    "components": [
+      2417
+    ],
+    "isolated": [],
+    "source_families": 4,
+    "cross_module_counting_note": "incident counts count an edge once for each endpoint module; do not sum as global edge count",
+    "citation_counting_note": "same atom can cite several sources; source columns are not mutually exclusive",
+    "curated_claims": 29,
+    "review_issues": 10,
+    "inherited_semantic_review": {
+      "not_individually_revalidated": 685,
+      "has_narrow_source_compared_claim": 36
+    }
+  },
+  "neo4j_execution": "NOT_RUN: no DB connection supplied",
+  "semantic_correctness": "not established by automatic checks",
+  "pdf_checks_performed": true
+}

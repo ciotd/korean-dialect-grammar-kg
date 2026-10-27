@@ -1,0 +1,37 @@
+[
+  {
+    "id": "D01",
+    "pdf_sha256": "30b90da21b6f86e1c7404d194d35f6bbb9f77f7ed9e11dcb642f5f8b7ee19f3b",
+    "extracted_text_sha256": "30e9e04f8379a353671bbccd2beeec3b07549307507981bececad05f713e2d2f"
+  },
+  {
+    "id": "D02",
+    "pdf_sha256": "3b48d6356b9efe95fe06dbd9f4db61031795cb3fb48aa87da0f192fcc1ee6c3d",
+    "extracted_text_sha256": "d86a873ec309ad337093c4a6635b9e030dfe8c087587331cd9df1c5a41ac240c"
+  },
+  {
+    "id": "D03",
+    "pdf_sha256": "97a5ccceeb15d9b80370f1a505c5eebd6e69e9da9a57ade1bed8e19303b9f80c",
+    "extracted_text_sha256": "47f813086843eee6f37b9609b0cb0a9b7606f80c543f17c6128c4d4498a46efa"
+  },
+  {
+    "id": "D04",
+    "pdf_sha256": "7bbc219e272b325a44310fe70aeed20912b38b9023d00fcbbb879edc22ec7003",
+    "extracted_text_sha256": "4b398fd6f081a5a18f75a027ae3a700c37ef7d69e4716861b93801d56dcf33de"
+  },
+  {
+    "id": "D05",
+    "pdf_sha256": "e0eb50ca37599a7c21e09c49c4c2052a6013c6073edd14391c0d2d70a15de9c4",
+    "extracted_text_sha256": "6c1f58d4af7002b47724e66e8b4ad2b6e2c278bec452eed955c15d6c71e84d2c"
+  },
+  {
+    "id": "D06",
+    "pdf_sha256": "ecdde8d655782e6ebb4c86361019139f6dc6ad87c556bf1b4bcf82402b2b3366",
+    "extracted_text_sha256": "036d1b6c0b84a6add2d3a3243bbbe6cddc76968280c062346766635cc6f88888"
+  },
+  {
+    "id": "D07",
+    "pdf_sha256": "2ae9c22e1a7cc9f470909bdf9cfe5f7e002d868c208a55ce23fed479ae5d9973",
+    "extracted_text_sha256": "b269b29dfe934549547eda783984c70c71334ccd49b51da15ba6b385cb0e44a9"
+  }
+]

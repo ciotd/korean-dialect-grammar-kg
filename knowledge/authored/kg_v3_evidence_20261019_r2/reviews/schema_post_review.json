@@ -1,0 +1,77 @@
+{
+  "reviewer_role": "Schema Reviewer",
+  "phase": "초기 KG 독립 구조 검증",
+  "date": "2026-10-19",
+  "reviewed_artifact": "draft1",
+  "live_neo4j_test": false,
+  "method": "JSONL 전체 순회, 원본입력 911/2909 완전 동일 비교, 관계 endpoint계약 전수검사, CSV 역직렬화 전수 비교, Cypher 정적 확인. 실제 DB 구문 실행 및 원문 언어학 전수 대조는 수행하지 않음.",
+  "checks": {
+    "nodes": 2415,
+    "edges": 6955,
+    "baseline_node_original_spec_equal": 911,
+    "baseline_edge_original_spec_equal": 2909,
+    "node_type_contract_errors": 0,
+    "edge_endpoint_type_contract_errors": 0,
+    "unresolved_endpoints": 0,
+    "isolated_nodes": 0,
+    "csv_node_rows": 2415,
+    "csv_edge_rows": 6955,
+    "csv_node_properties_roundtrip_errors": 0,
+    "csv_edge_roundtrip_errors": 0,
+    "module_count": 12,
+    "source_document_count": 7,
+    "curated_claim_count": 28,
+    "runtime_rule_count": 0
+  },
+  "findings": [
+    {
+      "id": "SP01",
+      "target": "neo4j/import.cypher 마지막 문장",
+      "severity": "철회",
+      "evidence": "Reviewer가 최초 검토에서 파일 끝의 MATCH (m:Module ...) SET m.number=toInteger(substring(m.id,1)) 문장을 누락했다. Builder 지적 후 확인하였으며 Module.number는 실제로 적재된다.",
+      "recommendation": "수정 불필요. 검토 오탐을 이력에 남김.",
+      "status": "오탐 철회"
+    },
+    {
+      "id": "SP02",
+      "target": "schema/schema.json extensions.has_module.meaning; reviews/design_decisions.json final_design_authority.basis",
+      "severity": "문서 정리",
+      "evidence": "일본어 문장이 한국어 설명 안에 섞여 있다. 구조 의미 오류는 아니나 사용자 가독성이 낮음.",
+      "recommendation": "의미 보존하여 한국어로 통일.",
+      "status": "미해결"
+    },
+    {
+      "id": "SP03",
+      "target": "향후 Technical Report 완료범위·Source Mapping 통계",
+      "severity": "보고 범위 명시",
+      "evidence": "SourceAtom721개는 inherited_design_specification이며 semantic_review_status=not_individually_revalidated. Claim은28개이고 SourceSpan 대부분 automatic_context_not_semantic_evidence이다. 따라서 근거 위치를 연결한 것과 해당721개의 언어학적 진술을 새로 전수 검증한 것은 다르다. build_scope는 이 차이를 올바르게 밝히고 있다.",
+      "recommendation": "보고서도 911설계원자이관/721방언항목출처위치연결/28좁은원문진술대조를 분리하여 표시. 7문헌의 언어지식 전체 추출·전체확인 완료라고 서술하지 않는다.",
+      "status": "현재데이터표시는적절; 최종보고서확인필요"
+    },
+    {
+      "id": "SP04",
+      "target": "neo4j/nodes_SourceSpan.csv quote 열",
+      "severity": "호환성 확인 권고",
+      "evidence": "CSV 파일 내 실제 NUL바이트150개 확인. JSON 문자열 안의 escape와 달리 표시용 quote가 추출 원문의 제어문자를 그대로 포함한다. 실제DB가 제공되지 않아 Neo4j 해당버전에서의 적재성공 여부는 확인하지 않았다.",
+      "recommendation": "표시용 CSV quote에서 NUL을 가시적 문자로 바꾸고 변환정책을 기록하되 properties_json의 원문과 offset은 그대로 보존하는 방법 고려. 제어문자 존재만으로 실제DB 실패라고 단정하지 않는다.",
+      "status": "권고"
+    }
+  ],
+  "accepted_design_choices": [
+    "기존 원자 ID와 최종12모듈 배정 보존",
+    "Framework·ReviewIssue 및8개 관리/근거관계를 명시적 확장으로 기록",
+    "cites_source_span은 문헌참조이며 지지증명 아님을 표시",
+    "Claim source_statement와 Builder claim_text/해석연결 분리",
+    "문헌 source atom을 실행Rule로 승격하지 않음",
+    "중첩원본 속성을 properties_json에 보존하고 APOC 비의존 import 제공",
+    "dataset_id+id MERGE로 원본저장소 변경이나 삭제 없이 별도 적재 가능"
+  ],
+  "snapshot_sha256": {
+    "graph\\nodes.jsonl": "55476181a56d2a2dd20f8838274b2a1cc493a04f8b54637733b898e5008c4ea2",
+    "graph\\edges.jsonl": "1dbe5fccc1f6bdfa5ce5c3f0cc5d71dad021d4597b21c0e184174dcab79348b3",
+    "schema\\schema.json": "8976c83e11cf9eb81c0542d2639bd01a93b34317df49c422de357e39b8591070",
+    "neo4j\\import.cypher": "7c5a5cd087851a807016ed1dc0d94515997ee39571512212e4766a97d251ca8e",
+    "neo4j\\explore.cypher": "e08a53f6d83b40a16d1b50d01af428096d94ca480522bd44bff343bbab8be56f"
+  },
+  "verdict": "기존ID·모듈·형식계약·참조·CSV역직렬화 독립 구조검토 통과. Module.number 지적은 오탐 철회. 최종본에서 문서 언어 정리와 CSV NUL 표시정책 확인 권고. DB 실제 적재 성공이나 언어학 전수정확성은 이 검토가 보증하지 않음."
+}

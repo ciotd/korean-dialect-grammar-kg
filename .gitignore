@@ -16,3 +16,6 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 Thumbs.db
+
+# Local Qwen gateway configuration contains a credential.
+/test.py

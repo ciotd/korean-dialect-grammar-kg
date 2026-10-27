@@ -1,0 +1,108 @@
+{
+  "batch_id": "20261025T090456534523Z",
+  "job_order": [
+    [
+      "HOLD001",
+      "single"
+    ],
+    [
+      "HOLD001",
+      "multi"
+    ],
+    [
+      "HOLD002",
+      "multi"
+    ],
+    [
+      "HOLD002",
+      "single"
+    ],
+    [
+      "HOLD003",
+      "single"
+    ],
+    [
+      "HOLD003",
+      "multi"
+    ],
+    [
+      "HOLD004",
+      "multi"
+    ],
+    [
+      "HOLD004",
+      "single"
+    ],
+    [
+      "HOLD005",
+      "single"
+    ],
+    [
+      "HOLD005",
+      "multi"
+    ],
+    [
+      "HOLD006",
+      "multi"
+    ],
+    [
+      "HOLD006",
+      "single"
+    ],
+    [
+      "HOLD007",
+      "single"
+    ],
+    [
+      "HOLD007",
+      "multi"
+    ],
+    [
+      "HOLD008",
+      "multi"
+    ],
+    [
+      "HOLD008",
+      "single"
+    ],
+    [
+      "HOLD009",
+      "single"
+    ],
+    [
+      "HOLD009",
+      "multi"
+    ],
+    [
+      "HOLD010",
+      "multi"
+    ],
+    [
+      "HOLD010",
+      "single"
+    ],
+    [
+      "HOLD011",
+      "single"
+    ],
+    [
+      "HOLD011",
+      "multi"
+    ],
+    [
+      "HOLD012",
+      "multi"
+    ],
+    [
+      "HOLD012",
+      "single"
+    ]
+  ],
+  "order": "input-wise rotating condition order",
+  "workers": 2,
+  "runs": {
+    "single": "20261025T090456534523Z_runtime_single_evaluation",
+    "multi": "20261025T090456827614Z_runtime_multi_evaluation"
+  },
+  "model_calls_planned_min": 36
+}

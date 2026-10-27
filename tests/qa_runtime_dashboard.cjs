@@ -1,0 +1,32 @@
+const {chromium}=require('C:/Users/ciot28/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('fs'),path=require('path');
+const out=path.resolve(__dirname,'../experiments/validation/runtime_20261024/private');fs.mkdirSync(out,{recursive:true});
+const single='20261023T165740319929Z_runtime_single_regression',multi='20261023T165740502855Z_runtime_multi_regression';
+(async()=>{
+ const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:8766/');await page.waitForFunction(()=>document.querySelectorAll('#run-rows tr').length>=10);
+ await page.locator('#role').selectOption('regression');if(await page.locator('#run-rows tr').count()!==3)throw Error('regression_filter');
+ await page.locator('[data-tab="comparison"]').click();await page.locator('#left-run').selectOption(single);await page.locator('#right-run').selectOption(multi);await page.locator('#compare').click();
+ await page.waitForFunction(()=>document.querySelector('#compare-result').textContent.includes('같은 입력 기준'));
+ await page.locator('[data-tab="inspection"]').click();await page.locator('#inspect-run').selectOption(single);await page.waitForFunction(()=>document.querySelectorAll('#record-list button').length===50);
+ await page.locator('#record-search').fill('DEV012');await page.locator('#record-list button').click();
+ await page.locator('.flow button').filter({hasText:'변환 계획'}).click();await page.waitForFunction(()=>document.querySelector('#record-detail').textContent.includes('GS_ENDRULE_Q_WH_V'));
+ await page.screenshot({path:out+'/dashboard_plan.png',fullPage:true});
+ await page.goto('http://127.0.0.1:8766/reports/runtime/report.html');await page.waitForFunction(()=>document.querySelectorAll('#summary .card').length===4);
+ if(await page.locator('#case option').count()!==50)throw Error('case_count');
+ if(await page.locator('#rules tbody tr').count()!==17)throw Error('compiled_rule_count');
+ await page.screenshot({path:out+'/report_desktop.png'});
+ await page.locator('#rule-status').selectOption('');if(await page.locator('#rules tbody tr').count()!==721)throw Error('full_ledger');
+ await page.locator('#rule-module').selectOption('4');if(await page.locator('#rules tbody tr').count()!==101)throw Error('particle_ledger');
+ await page.locator('#rules button').first().click();await page.waitForFunction(()=>document.querySelector('#rule-detail').textContent.includes('실행'));
+ await page.locator('#case').selectOption('LONG003');await page.locator('#arch').selectOption('multi');
+ if(!(await page.locator('#case-detail').textContent()).includes('output_differs_from_authorized_edits'))throw Error('failed_case_trace');
+ await page.locator('#case').selectOption('DEV012');await page.locator('#cases').scrollIntoViewIfNeeded();await page.screenshot({path:out+'/report_case.png'});
+ await page.setViewportSize({width:390,height:844});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:out+'/report_mobile.png'});
+ const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+ const links=[];for(const url of ['http://127.0.0.1:8766/reports/runtime/report.html',...Array.from({length:8},(_,i)=>'http://127.0.0.1:8765/'+String(i+1).padStart(2,'0')+'.html')]){const r=await page.request.get(url);links.push({url,status:r.status()});}
+ const data={regression_runs:3,records_per_run:50,compiled_rules:17,ledger_rows:721,particle_items:101,plan_trace:true,failed_output_trace:true,mobile_overflow:overflow,browser_errors:errors,links};
+ fs.writeFileSync(out+'/browser_qa.json',JSON.stringify(data,null,2));console.log(JSON.stringify(data));await browser.close();if(overflow||errors.length||links.some(x=>x.status!==200))process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(1)});

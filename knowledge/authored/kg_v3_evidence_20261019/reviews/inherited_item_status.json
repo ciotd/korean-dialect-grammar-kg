@@ -1,0 +1,3607 @@
+[
+  {
+    "id": "GS_FEATURE_SCOPE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_FEATURE_MOOD",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_FEATURE_WH",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_FEATURE_HON",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_FEATURE_TAM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_FEATURE_COP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_FEATURE_LEMMA",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_I_ZERO",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_I_E",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_U1_O",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_U1_U",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_U2_A",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_AE_A",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_E_EO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_MUK_UU",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_GAJ_U",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_DAR_REQ",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_O_IMP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_AUX_BAE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_B_REG",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_B_A",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_B_W",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_S_REG",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_COMPOUND_ELIDE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONJ_HADA_TA",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_REAL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_RESULT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_PURPOSE",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_MANNER",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_DEGREE",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_LIMIT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_CAUSE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_ORDER",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_PROMISE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_PROPOSAL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_BLOCK_BECOME",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_MAIN_BECOME",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_ADV_I",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_ADV_GEORO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_INTENT_Q",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_INTENT_A",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_BLOCK_GUESS",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_EXCLAIM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_BLOCK_KKEUM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_GEORO_PARTICLE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_14",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_15",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_16",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_17",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_18",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_19",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_20",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HI_21",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HSO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HSO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HSO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HSO_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HGE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HGE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HGE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HGE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HGE_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HGE_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HGE_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HRA_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_14",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_15",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_16",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HI_17",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HSO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HSO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HSO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HSO_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HSO_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HSO_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HSO_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HSO_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HGE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HGE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HGE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HGE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HGE_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HGE_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_14",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HRA_15",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HI_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HI_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HI_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HI_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HI_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HI_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HI_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HI_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HSO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HSO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HGE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HGE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HGE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HGE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_14",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_15",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HRA_16",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HI_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HI_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HI_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HSO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HSO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HSO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HSO_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HSO_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HGE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HRA_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HRA_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HRA_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HRA_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_HAE_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_14",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YO_15",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YE_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YE_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YE_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YE_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YEO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YEO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_DECL_YEO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_HAE_14",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_14",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YO_15",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YE_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YEO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YEO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_Q_YEO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HAE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HAE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HAE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_HAE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_YO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_YO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_YO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_YO_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_YO_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_YE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_IMP_YEO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HAE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HAE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HAE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_HAE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_YO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_YO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_YO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_END_HORT_YE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_POLAR_V",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_WH_V",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_POLAR_C",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_WH_C",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_TAM_C",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_INDEF",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_HGE_POLAR",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_HGE_WH",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_HGE_GE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_RA_RO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_RA_WH_EXCEPTION",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_DA_DO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_Q_DEI_RARE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_NI_B_OPTION",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_NI_LONG",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_SIP_NO_SUBJ",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_NI_DROP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_I_DEO",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_EXIST_I",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_SI_COP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_SI_INTENT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_M_SI_PROM",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_DI_MEMORY",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_DI_GESS_GAP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_GUMA_EXCLAIM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_KKUMA_PROM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_S_SE_COP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_GEOT_SE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_GEOT_GA",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_KKIDA",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_KKINDE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_RA_EXCLAIM",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_RA_COP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_RA_RETR",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_ISO_IMP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_ISO_OPTIONAL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_HGE_SI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_SE_AGENTS",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_RAE_BO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_DA_GO_REQUEST",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_NNA_O",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_HORT_ISI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_HORT_SI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_HORT_JA",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_JI_ASSERT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_JI_CONFIRM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_KKI_PROM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_YO_COMPOSE",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_YO_FORMAL_RARE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_YEO_SCOPE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_JIYE_HORT_GAP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_ENDRULE_SIYO_HORT_GAP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_DAT_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_MEASURE_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_SIMILAR_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_ONLY_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_ONLY_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_TOP_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_TOP_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_TOP_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_TOP_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_TOP_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_NOM_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_NOM_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_NOM_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_FOCUS_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_ACC_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_ACC_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_ACC_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_ACC_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_ACC_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_ACC_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_GEN_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_GEN_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_GEN_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_GEN_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_GEN_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_CONCESS_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_CONCESS_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMPARE_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_EXCEPT_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_EXCEPT_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_EXCEPT_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_EXCEPT_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_EXCEPT_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_EXCEPT_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_EXCEPT_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_UNTIL_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_AT_FOCUS_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMIT_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMIT_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMIT_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMIT_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_COMIT_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_INSTR_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_INSTR_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_INSTR_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_INSTR_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_INSTR_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_INSTR_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_INSTR_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PART_INSTR_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_COND_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_COND_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_COND_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_COND_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_COND_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_COND_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_14",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_15",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_16",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_SIMUL_17",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_CAUSE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_CAUSE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_CAUSE_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_CAUSE_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_ANY_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_ANY_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_ANY_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_ANY_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_ANY_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_REASON_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_RETRO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_RETRO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_RETRO_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_RETRO_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_RETRO_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_RETRO_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_CONTRAST_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_CONTRAST_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_CONTRAST_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_ADDITIVE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_ADDITIVE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_STYLE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_STYLE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_QUOTE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_QUOTE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_OCCUP_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_OCCUP_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_OCCUP_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_INTENT_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_INTENT_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_INTENT_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_WHE_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_WHE_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_NEG_JI_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_NEG_JI_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_NEG_JI_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_NEG_DO_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_CONNECT_NEG_DO_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_001",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_002",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_003",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_004",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_005",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_006",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_007",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_008",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_009",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_010",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_011",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_012",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_013",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_014",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_015",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_016",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_017",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_018",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_019",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_020",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_021",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_022",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_023",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_024",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_025",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_026",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_027",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_028",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_029",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_030",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_031",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_032",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_033",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_034",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_035",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_036",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_037",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_038",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_039",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_040",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_041",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_042",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_043",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_044",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_045",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_046",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_047",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_048",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_049",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_050",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_051",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_052",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_053",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_054",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_055",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_056",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_057",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_058",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_059",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_060",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_061",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_062",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_063",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_064",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_065",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_066",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_067",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_LEX_068",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_CARD_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_ATTR_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_ATTR_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_ATTR_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_ATTR_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_ATTR_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_ATTR_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_ATTR_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_ATTR_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_07",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_08",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_09",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_10",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_11",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_12",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_NUM_COUNT_13",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HUMAN_COUNTER_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HUMAN_COUNTER_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_TIMELEX_01",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_TIMELEX_02",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_TIMELEX_03",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_TIMELEX_04",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_TIMELEX_05",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_TIMELEX_06",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_NORTH_NIKK",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_WEST_HASO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_MID_HASO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_SOUTH_HASO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_REDUCED_HASO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_EAST_MERGED",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_BUSAN_NK",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_HAGE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_HAERA",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_NORTH_RA_RO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_ULJIN_NA_NO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_WEST_NA",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_JINJU_NE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_HAEYE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_HAEYEO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_DAYO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PROFILE_ARCHAIC",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_V_MERGE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_DIP_YEO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_DIP_OE_WI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_FRONT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_VELAR",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_LABIAL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_N_NASAL",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_NG_DROP",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_H_DROP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_K_DROP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_D_DROP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_L_DROP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_KI_JI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_HI_SI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_S_SS",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_B_PRESERVE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_CONTRACT",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_PHON_PITCH",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_P1",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_P2",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_P3",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_REFL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_WH",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_LOC",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_OBJ",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_NOM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ACC",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_GEN",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_VOC",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_DAT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_LOCATIVE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_INSTR",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAPACITY",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_COMIT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_SIMIL",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_MEAS",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ONLY",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_MIN",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_TOPIC_GAP",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_IMP",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_HORT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_Q",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_DECL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_EXCLAIM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_COORD_GO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_COORD_SIM",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CONCESS_DO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CHANGE_DA",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_REASON_EO",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_BACKGROUND_INDE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_GEOLLANG",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_INTENT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_SCALE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AS_KNOW",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CONDITION",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_REASON_NI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_MOVE_PURPOSE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_DESIRE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_QUOTE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_FUTURE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_PRESENT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_PAST",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADN",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_NEG_AN",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_NEG_MOT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_NEG_MAL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_I",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_IU",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_GI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_HI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_RI",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_U",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_GU",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_CHU",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_CAUSE_AE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_PASS_I",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_PASS_GI",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_PASS_HI",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_PASS_RI",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_PROGRESS",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_COMPLETE",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_SERVICE",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_TRY",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_HOLD",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_CAUSE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_PASS",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_ITER",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_INFER",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_OBL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_ACK",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_WANT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_BODA",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_AUX_STATE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADV_MAI",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADV_LITTLE",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADV_FULL",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADV_BARE",
+    "status": "has_narrow_source_compared_claim",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADV_FREE",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADV_STRAIGHT",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADV_STILL",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  },
+  {
+    "id": "GS_HAM_ADV_ALMOST",
+    "status": "not_individually_revalidated",
+    "whole_atom_semantically_approved": false
+  }
+]

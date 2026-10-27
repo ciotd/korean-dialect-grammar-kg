@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-19",
+  "command": "KG_TEST_ROOT=<r2> python tools/kg_v3/test_validation.py -v",
+  "exit_code": 0,
+  "tests_run": 6,
+  "seconds": 5.259,
+  "results": [
+    {
+      "test": "test_baseline_passes",
+      "passed": true
+    },
+    {
+      "test": "test_changed_original_rejected",
+      "passed": true
+    },
+    {
+      "test": "test_csv_data_loss_rejected",
+      "passed": true
+    },
+    {
+      "test": "test_dangling_endpoint_rejected",
+      "passed": true
+    },
+    {
+      "test": "test_invalid_edge_type_rejected",
+      "passed": true
+    },
+    {
+      "test": "test_unsupported_source_quote_rejected",
+      "passed": true
+    }
+  ]
+}

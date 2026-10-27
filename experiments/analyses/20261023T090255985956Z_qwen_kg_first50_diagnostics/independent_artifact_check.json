@@ -1,0 +1,12 @@
+{
+  "run_files_hash_checked": 691,
+  "hash_mismatches": [],
+  "unique_inputs": 50,
+  "analysis_calls": 50,
+  "generation_calls": 35,
+  "all_live_nodes_and_relationships_still_match_frozen_KG": true,
+  "live_node_count": 1625,
+  "git_head_observed_after_run": "fd774a91e1faea92f0fd33326156bd6a6f1e117a",
+  "source_tree_has_uncommitted_implementation": true,
+  "note": "Pipeline version is identified by frozen file hashes, not by Git HEAD alone."
+}

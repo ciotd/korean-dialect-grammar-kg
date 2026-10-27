@@ -1,0 +1,67 @@
+test_anchor_occurrence (test_kg_pipeline.IntegrityTests.test_anchor_occurrence) ... ok
+test_automatic_excerpt_not_evidence (test_kg_pipeline.IntegrityTests.test_automatic_excerpt_not_evidence) ... ok
+test_boolean_not_integer (test_kg_pipeline.IntegrityTests.test_boolean_not_integer) ... ok
+test_budget_omission_recorded (test_kg_pipeline.IntegrityTests.test_budget_omission_recorded) ... ok
+test_clause_cycle (test_kg_pipeline.IntegrityTests.test_clause_cycle) ... ok
+test_constraint_not_permission (test_kg_pipeline.IntegrityTests.test_constraint_not_permission) ... ok
+test_contract (test_kg_pipeline.IntegrityTests.test_contract) ... ok
+test_duplicate_ids (test_kg_pipeline.IntegrityTests.test_duplicate_ids) ... ok
+test_exact_reconstruction (test_kg_pipeline.IntegrityTests.test_exact_reconstruction) ... ok
+test_extra_field (test_kg_pipeline.IntegrityTests.test_extra_field) ... ok
+test_fabricated_evidence (test_kg_pipeline.IntegrityTests.test_fabricated_evidence) ... ok
+test_hortative_claim_form_conflict (test_kg_pipeline.IntegrityTests.test_hortative_claim_form_conflict) ... ok
+test_http_failure_redacts_secret (test_kg_pipeline.IntegrityTests.test_http_failure_redacts_secret) ... ok
+test_invalid_concept_not_invented (test_kg_pipeline.IntegrityTests.test_invalid_concept_not_invented) ... ok
+test_nna_not_generalized (test_kg_pipeline.IntegrityTests.test_nna_not_generalized) ... ok
+test_no_anchor_normalization (test_kg_pipeline.IntegrityTests.test_no_anchor_normalization) ... ok
+test_overlap_rejected (test_kg_pipeline.IntegrityTests.test_overlap_rejected) ... ok
+test_politeness_not_ignored (test_kg_pipeline.IntegrityTests.test_politeness_not_ignored) ... ok
+test_promise_missing_prior_command (test_kg_pipeline.IntegrityTests.test_promise_missing_prior_command) ... ok
+test_question_scope_and_tam (test_kg_pipeline.IntegrityTests.test_question_scope_and_tam) ... ok
+test_real_concept_ids (test_kg_pipeline.IntegrityTests.test_real_concept_ids) ... ok
+test_required_predicate_features (test_kg_pipeline.IntegrityTests.test_required_predicate_features) ... ok
+test_selection_deduplicates_paths (test_kg_pipeline.IntegrityTests.test_selection_deduplicates_paths) ... ok
+test_uncertainty_blocks_realization (test_kg_pipeline.IntegrityTests.test_uncertainty_blocks_realization) ... ok
+test_unchanged_valid_not_change (test_kg_pipeline.IntegrityTests.test_unchanged_valid_not_change) ... ok
+test_unknown_deferred (test_kg_pipeline.IntegrityTests.test_unknown_deferred) ... ok
+test_unknown_schema_keyword (test_kg_pipeline.IntegrityTests.test_unknown_schema_keyword) ... ok
+test_unsupported_claim_preserved (test_kg_pipeline.IntegrityTests.test_unsupported_claim_preserved) ... ok
+test_untracked_change_rejected (test_kg_pipeline.IntegrityTests.test_untracked_change_rejected) ... ok
+test_wrong_clause (test_kg_pipeline.IntegrityTests.test_wrong_clause) ... ok
+test_arbitrary_trace_file_rejected (test_research_management.ManagementTests.test_arbitrary_trace_file_rejected) ... ok
+test_artifact_manifest_path_escape_rejected (test_research_management.ManagementTests.test_artifact_manifest_path_escape_rejected) ... ok
+test_automatic_comparison_selects_prior_same_inputs (test_research_management.ManagementTests.test_automatic_comparison_selects_prior_same_inputs) ... ok
+test_changed_frozen_reference_blocks_execution (test_research_management.ManagementTests.test_changed_frozen_reference_blocks_execution) ... ok
+test_changed_validator_blocks_pass_count (test_research_management.ManagementTests.test_changed_validator_blocks_pass_count) ... ok
+test_compare_different_inputs_blocks_deltas (test_research_management.ManagementTests.test_compare_different_inputs_blocks_deltas) ... ok
+test_compare_same_inputs_has_descriptive_delta (test_research_management.ManagementTests.test_compare_same_inputs_has_descriptive_delta) ... ok
+test_completed_change_is_detected (test_research_management.ManagementTests.test_completed_change_is_detected) ... ok
+test_corrupt_run_does_not_hide_other_runs (test_research_management.ManagementTests.test_corrupt_run_does_not_hide_other_runs) ... ok
+test_dataset_normalized_overlap_blocks_development (test_research_management.ManagementTests.test_dataset_normalized_overlap_blocks_development) ... ok
+test_idempotent_index_preserves_files (test_research_management.ManagementTests.test_idempotent_index_preserves_files) ... ok
+test_incomplete_is_visible (test_research_management.ManagementTests.test_incomplete_is_visible) ... ok
+test_metrics_recalculated_count_mismatch (test_research_management.ManagementTests.test_metrics_recalculated_count_mismatch) ... ok
+test_missing_validator_blocks_pass_count (test_research_management.ManagementTests.test_missing_validator_blocks_pass_count) ... ok
+test_no_quality_score_invented (test_research_management.ManagementTests.test_no_quality_score_invented) ... ok
+test_path_escape_rejected (test_research_management.ManagementTests.test_path_escape_rejected) ... ok
+test_preflight_failure_is_visible (test_research_management.ManagementTests.test_preflight_failure_is_visible) ... ok
+test_review_bundle_is_separate (test_research_management.ManagementTests.test_review_bundle_is_separate) ... ok
+test_source_directory_missing_reported (test_research_management.ManagementTests.test_source_directory_missing_reported) ... ok
+test_trace_is_exact_original (test_research_management.ManagementTests.test_trace_is_exact_original) ... ok
+test_trace_unreached_stage (test_research_management.ManagementTests.test_trace_unreached_stage) ... ok
+test_verify_checks_unindexed_trace (test_research_management.ManagementTests.test_verify_checks_unindexed_trace) ... ok
+test_completed_run_automatically_registered_without_model_calls (test_research_management.RunnerIntegrationTests.test_completed_run_automatically_registered_without_model_calls) ... RUN C:\Users\ciot28\AppData\Local\Temp\tmpm5tu9i34\experiments\runs\20261023T095440379832Z_qwen_kg_evaluation
+{"done":1,"id":"X1","of":1,"references":null,"seconds":0.1,"status":"unchanged"}
+COMPLETE {"metrics":{"accuracy":null,"api_attempts":0,"api_failures":0,"automatic_retries":0,"calls_with_usage":0,"calls_without_usage":0,"changed_records":0,"char_reduction_fraction":null,"error_types":{},"evaluation_note":"No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.","evidence_appropriateness":null,"mean_record_seconds":0.1,"median_record_seconds":0.1,"naturalness":null,"neighborhood_limit_records":0,"packet_chars_total":0,"records":1,"records_with_claim_paths":0,"records_with_realization_reference":0,"reported_usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0},"retrieval_chars_total":0,"status_counts":{"unchanged":1},"valid_output_records":1,"wall_seconds":0.007},"run":"C:\\Users\\ciot28\\AppData\\Local\\Temp\\tmpm5tu9i34\\experiments\\runs\\20261023T095440379832Z_qwen_kg_evaluation"}
+ok
+test_cross_origin_post_rejected (test_research_management.ServerTests.test_cross_origin_post_rejected) ... ok
+test_rebinding_host_rejected (test_research_management.ServerTests.test_rebinding_host_rejected) ... ok
+test_refresh_valid_token (test_research_management.ServerTests.test_refresh_valid_token) ... ok
+test_refresh_without_token_rejected (test_research_management.ServerTests.test_refresh_without_token_rejected) ... ok
+test_runs_and_trace (test_research_management.ServerTests.test_runs_and_trace) ... ok
+test_secret_file_not_served (test_research_management.ServerTests.test_secret_file_not_served) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 7.446s
+
+OK

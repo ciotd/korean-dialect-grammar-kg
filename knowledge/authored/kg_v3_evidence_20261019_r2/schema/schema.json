@@ -1,0 +1,620 @@
+{
+  "version": "evidence_graph_1",
+  "baseline_entity_registry": [
+    {
+      "type": "Module",
+      "meaning": "목차에서 읽고 관리하는 기능 묶음",
+      "constraint": "has_part 관계는 분류·관리 관계이며 실행 순서를 뜻하지 않는다."
+    },
+    {
+      "type": "ClassificationScheme",
+      "meaning": "문헌 저자의 분류체계",
+      "constraint": "D02와 위키의 하이소/하소 정의가 다르면 별도 scheme에 둔다."
+    },
+    {
+      "type": "Taxon",
+      "meaning": "분류체계 안의 문법 명칭",
+      "constraint": "표준어·지역 화계 명칭에 sameAs를 기계 적용하지 않는다."
+    },
+    {
+      "type": "GrammarFeature",
+      "meaning": "공통 문법 특징의 정의",
+      "constraint": "과거·부정·서술어 유형 등 값 정의. 문장별 값은 분석 인스턴스에 저장."
+    },
+    {
+      "type": "Construction",
+      "meaning": "형태·통사·기능을 함께 갖는 구성",
+      "constraint": "동일 표면 -게도 목적/정도/보조되다/추측답변으로 분리."
+    },
+    {
+      "type": "RuleFamily",
+      "meaning": "한 문법 기능에 대한 지역 실현규칙 묶음",
+      "constraint": "목차 leaf는 family를 가리키고 실제 적용은 조건이 완전한 Rule이 담당."
+    },
+    {
+      "type": "Rule",
+      "meaning": "적용 판정과 효과가 명시된 실행 규칙",
+      "constraint": "조건 AST·변수 binding·read/write sets·profile·revision·보존·시험 필수."
+    },
+    {
+      "type": "Realization",
+      "meaning": "목표 구조를 어간·어미·조사·표기열로 실현하는 명세",
+      "constraint": "형태·음운·정서법과 기능 선택을 분리."
+    },
+    {
+      "type": "LexicalEntry",
+      "meaning": "품사·표제어를 가진 어휘 항목",
+      "constraint": "문자열과 동일하지 않다. 동음이의어는 별도 ID."
+    },
+    {
+      "type": "LexicalSense",
+      "meaning": "한 어휘의 특정 뜻",
+      "constraint": "버리다의 처분/오염/보조용언 기능을 분리."
+    },
+    {
+      "type": "LexicalForm",
+      "meaning": "어간·활용형·음성형·표기형",
+      "constraint": "다른 음성·표기형을 하나의 문자열 치환표로 합치지 않는다."
+    },
+    {
+      "type": "Region",
+      "meaning": "관찰지역·행정구역·방언구획",
+      "constraint": "행정구역 containment는 생산규칙 상속을 뜻하지 않는다."
+    },
+    {
+      "type": "DialectProfile",
+      "meaning": "지원 지역·시기·변이·문체·표기 정책",
+      "constraint": "profile은 결합 허용표와 활성 규칙집을 가지며 경상도 전체라는 임의 평균 없음."
+    },
+    {
+      "type": "SourceDocument",
+      "meaning": "원본 문헌",
+      "constraint": "해시·파일명·권리 고지·evidence family·채록시기 포함."
+    },
+    {
+      "type": "SourceSpan",
+      "meaning": "PDF 페이지·표·예문 위치",
+      "constraint": "PDF 1-based와 인쇄 쪽수 별도 필드. 큰 원문 복제 없이 요약과 locator."
+    },
+    {
+      "type": "Claim",
+      "meaning": "문헌 관찰·제약·분석·가설",
+      "constraint": "Claim이 존재한다고 Rule 활성화 불가; 충돌·자기보고·미관측 구별."
+    },
+    {
+      "type": "Fixture",
+      "meaning": "적용/비적용/불명확/충돌 시험",
+      "constraint": "허용 출력집합 및 보존 signature. 한 대응문장만 유일 정답으로 두지 않음."
+    },
+    {
+      "type": "Release",
+      "meaning": "원자적으로 배포할 immutable 규칙·사전 묶음",
+      "constraint": "revision들과 compiled hash를 고정."
+    },
+    {
+      "type": "AnalysisInstance",
+      "meaning": "현재 요청의 문장·절·구·형태소 후보",
+      "constraint": "ephemeral namespace. 영구 문법 KG와 생애주기 분리."
+    },
+    {
+      "type": "ExecutionTrace",
+      "meaning": "이번 요청의 조건 판정과 적용 기록",
+      "constraint": "rule ID, binding, before/after, version, 보류 이유 보존."
+    },
+    {
+      "type": "Operation",
+      "meaning": "허용된 실행 연산",
+      "constraint": "사전조회·어미선택·구조변경·형태실현. 문헌 자연어를 runtime에서 실행하지 않음."
+    },
+    {
+      "type": "FeaturePath",
+      "meaning": "변수에 바인딩된 특징 경로",
+      "constraint": "엔진이 허용한 field registry 안의 경로만"
+    },
+    {
+      "type": "BoundSlot",
+      "meaning": "현재 요청의 수정 자리",
+      "constraint": "slot owner와 scope를 명시"
+    },
+    {
+      "type": "SourceAtom",
+      "meaning": "문헌을 원자별로 정리한 명세 단위",
+      "constraint": "GS_ namespace; Rule과 구별"
+    },
+    {
+      "type": "TechnicalResponsibility",
+      "meaning": "실행기와 관리 계층의 책임 단위",
+      "constraint": "K_ namespace; Rule과 구별"
+    },
+    {
+      "type": "AggregateInterface",
+      "meaning": "여러 하위 공통 개념의 접근 포트",
+      "constraint": "is_atomic=false이며 묶음 자체를 하나의 실행 Rule로 취급하지 않는다"
+    },
+    {
+      "type": "AnalysisConcept",
+      "meaning": "공통 분석·제약·조회 개념의 정의",
+      "constraint": "G_ namespace의 analysis contract; kind=Feature/Construction이면 세부 type로 분류"
+    },
+    {
+      "type": "RealizationFamily",
+      "meaning": "차단과 실현 분류에 쓰는 형태 계열",
+      "constraint": "하나의 형태 계열이 여러 구성/slot에서 쓰여도 slot 조건을 유지"
+    },
+    {
+      "type": "LexicalAllowlist",
+      "meaning": "어휘한정 규칙의 표제어 ID 집합",
+      "constraint": "raw lemma label과 안정 ID를 구별; 복합형 승인은 별도"
+    },
+    {
+      "type": "RuleFamilyPair",
+      "meaning": "두 규칙 family의 조합",
+      "constraint": "profile과 reviewed compatibility를 명시"
+    },
+    {
+      "type": "StemClass",
+      "meaning": "목표 어간 활용 부류",
+      "constraint": "어휘별 사전 부류가 없으면 UNKNOWN"
+    },
+    {
+      "type": "SpanPattern",
+      "meaning": "보호할 구성의 위치 패턴",
+      "constraint": "bounded 구조 패턴이며 임의 코드 금지"
+    },
+    {
+      "type": "ClauseInstance",
+      "meaning": "현재 요청의 절 후보",
+      "constraint": "AnalysisInstance의 subtype"
+    },
+    {
+      "type": "PredicateInstance",
+      "meaning": "현재 요청의 서술어 후보",
+      "constraint": "AnalysisInstance의 subtype"
+    },
+    {
+      "type": "AuxPredicateInstance",
+      "meaning": "보조용언 후보",
+      "constraint": "PredicateInstance의 subtype"
+    },
+    {
+      "type": "MorphemeInstance",
+      "meaning": "형태소 후보",
+      "constraint": "AnalysisInstance의 subtype"
+    },
+    {
+      "type": "WhInstance",
+      "meaning": "의문/부정대명사 후보",
+      "constraint": "AnalysisInstance의 subtype"
+    }
+  ],
+  "baseline_edge_registry": [
+    {
+      "name": "has_part",
+      "from": "Module",
+      "to": "Module|RuleFamily",
+      "meaning": "목차 부분관계",
+      "guard": "분류 DAG; 순서 추론 금지"
+    },
+    {
+      "name": "classified_in",
+      "from": "Construction|RuleFamily|Taxon",
+      "to": "Taxon",
+      "meaning": "문법 분류",
+      "guard": "scheme_id 필수"
+    },
+    {
+      "name": "in_scheme",
+      "from": "Taxon",
+      "to": "ClassificationScheme",
+      "meaning": "저자 분류체계",
+      "guard": "동일 label이 같은 의미라고 추론하지 않음"
+    },
+    {
+      "name": "matches_construction",
+      "from": "Rule",
+      "to": "Construction",
+      "meaning": "적용 구성",
+      "guard": "조건 판정 선행"
+    },
+    {
+      "name": "requires_feature",
+      "from": "Rule",
+      "to": "GrammarFeature",
+      "meaning": "필수 판정 특징",
+      "guard": "UNKNOWN이면 확정 적용 금지"
+    },
+    {
+      "name": "reads",
+      "from": "Rule",
+      "to": "FeaturePath|BoundSlot",
+      "meaning": "읽는 상태",
+      "guard": "bound variable별 경로 명시"
+    },
+    {
+      "name": "writes",
+      "from": "Rule",
+      "to": "FeaturePath|BoundSlot",
+      "meaning": "수정 상태",
+      "guard": "선언하지 않은 효과 불허"
+    },
+    {
+      "name": "calls",
+      "from": "Rule|Operation",
+      "to": "Operation",
+      "meaning": "허용된 연산 호출",
+      "guard": "입출력 type와 bounded 실행 필요"
+    },
+    {
+      "name": "produces",
+      "from": "Rule|Operation",
+      "to": "Construction|Realization|LexicalSense",
+      "meaning": "목표 구조",
+      "guard": "의미보존은 별도 검사"
+    },
+    {
+      "name": "realizes",
+      "from": "Realization",
+      "to": "Construction|GrammarFeature",
+      "meaning": "형태 실현",
+      "guard": "단순 표면 같음과 기능 같음 구별"
+    },
+    {
+      "name": "applies_in",
+      "from": "Rule|LexicalSense|Realization",
+      "to": "DialectProfile",
+      "meaning": "지원 프로필",
+      "guard": "Region 부모에서 자동 상속 없음"
+    },
+    {
+      "name": "profile_observed_in",
+      "from": "DialectProfile",
+      "to": "Region",
+      "meaning": "관찰지역",
+      "guard": "사용 범위와 지원 범위 구별"
+    },
+    {
+      "name": "permits_combination",
+      "from": "DialectProfile",
+      "to": "RuleFamilyPair",
+      "meaning": "조합 허용",
+      "guard": "프로필 혼용에 대한 검토 결과 명시"
+    },
+    {
+      "name": "depends_on",
+      "from": "Rule|Operation",
+      "to": "Rule|Operation",
+      "meaning": "선행 산출 요구",
+      "guard": "task stage별 DAG로 검증"
+    },
+    {
+      "name": "overrides",
+      "from": "Rule",
+      "to": "Rule|RuleFamily",
+      "meaning": "좁은 규칙이 일반규칙 대체",
+      "guard": "같은 effect scope, TRUE match, 우선관계 DAG 필수"
+    },
+    {
+      "name": "blocks",
+      "from": "Rule",
+      "to": "Rule|RuleFamily",
+      "meaning": "해당 binding의 후보 차단",
+      "guard": "미관측 자료에서 block 생성 금지"
+    },
+    {
+      "name": "more_specific_than",
+      "from": "Rule",
+      "to": "Rule",
+      "meaning": "조건집합 포함관계",
+      "guard": "증명 가능한 제한 AST만 비교; 미비교=incomparable"
+    },
+    {
+      "name": "conflicts_with",
+      "from": "Rule",
+      "to": "Rule",
+      "meaning": "효과·전제 충돌",
+      "guard": "문장 binding에서 동적 검증; 정적 가능충돌과 구별"
+    },
+    {
+      "name": "has_sense",
+      "from": "LexicalEntry",
+      "to": "LexicalSense",
+      "meaning": "어휘 뜻",
+      "guard": "동음이의어 entry IDs 분리"
+    },
+    {
+      "name": "has_form",
+      "from": "LexicalEntry",
+      "to": "LexicalForm",
+      "meaning": "어간·활용형",
+      "guard": "형태 실현은 target lexeme에 연결"
+    },
+    {
+      "name": "lexically_restricted_to",
+      "from": "Rule|Realization",
+      "to": "LexicalEntry|StemClass",
+      "meaning": "어휘 한정",
+      "guard": "온나·도고 등 일반 어미로 확장 금지"
+    },
+    {
+      "name": "translation_candidate",
+      "from": "LexicalSense",
+      "to": "LexicalSense",
+      "meaning": "뜻별 대응 후보",
+      "guard": "profile·domain·register 조건 확인 후 선택"
+    },
+    {
+      "name": "protects_span",
+      "from": "Construction|Rule",
+      "to": "SpanPattern",
+      "meaning": "고정표현·이름 보호",
+      "guard": "부분 문자열 치환보다 먼저 bind"
+    },
+    {
+      "name": "attested_at",
+      "from": "Claim",
+      "to": "SourceSpan",
+      "meaning": "관찰 위치",
+      "guard": "원문이 실제 입증한 범위만"
+    },
+    {
+      "name": "analyzed_by",
+      "from": "Claim",
+      "to": "SourceSpan",
+      "meaning": "저자 분석 위치",
+      "guard": "attestation과 분석 주장 분리"
+    },
+    {
+      "name": "supports",
+      "from": "Claim",
+      "to": "Rule|Construction",
+      "meaning": "명세 구축 근거",
+      "guard": "지원은 활성화의 충분조건 아님"
+    },
+    {
+      "name": "contradicts",
+      "from": "Claim",
+      "to": "Claim",
+      "meaning": "충돌하는 주장",
+      "guard": "같은 scope인지 확인; taxonomy difference 별도"
+    },
+    {
+      "name": "derived_from",
+      "from": "Claim",
+      "to": "Claim|SourceDocument",
+      "meaning": "인용된 출처",
+      "guard": "2차 인용을 독립 증거로 가산 금지"
+    },
+    {
+      "name": "tested_by",
+      "from": "Rule|RuleFamily",
+      "to": "Fixture",
+      "meaning": "검증 사례",
+      "guard": "본 설계 Fixture는 계획·합성임을 표시"
+    },
+    {
+      "name": "in_release",
+      "from": "Rule|LexicalEntry|DialectProfile",
+      "to": "Release",
+      "meaning": "실행 snapshot",
+      "guard": "한 요청에서 서로 다른 release 혼합 불허"
+    },
+    {
+      "name": "instance_of",
+      "from": "AnalysisInstance",
+      "to": "Construction|GrammarFeature",
+      "meaning": "현재 문장 후보의 유형",
+      "guard": "입력분석 후보를 영구 fact로 저장하지 않음"
+    },
+    {
+      "name": "belongs_to_clause",
+      "from": "PredicateInstance|MorphemeInstance|WhInstance",
+      "to": "ClauseInstance",
+      "meaning": "절 범위",
+      "guard": "겉으로 의문사가 존재한다는 조건과 다름"
+    },
+    {
+      "name": "parent_clause",
+      "from": "ClauseInstance",
+      "to": "ClauseInstance",
+      "meaning": "내포 구조",
+      "guard": "tree/DAG 불변식 및 인용 경계 검사"
+    },
+    {
+      "name": "wh_scope",
+      "from": "WhInstance",
+      "to": "ClauseInstance",
+      "meaning": "의문사의 작용 절",
+      "guard": "occurrence_clause_id와 scope_clause_id를 분리; licensed_scope_path/status가 검토되어야 하며 UNKNOWN 가능. occurrence와 target clause의 같은절 조건을 강제하지 않는다."
+    },
+    {
+      "name": "applied_with",
+      "from": "ExecutionTrace",
+      "to": "Rule|AnalysisInstance",
+      "meaning": "적용 규칙 및 binding",
+      "guard": "중간 상태와 release digest 포함"
+    },
+    {
+      "name": "maps_to",
+      "from": "GrammarFeature|Construction|Taxon|RuleFamily|SourceAtom|TechnicalResponsibility|AnalysisConcept",
+      "to": "GrammarFeature|Construction|Taxon|RuleFamily|AnalysisConcept",
+      "meaning": "자료별 개념의 공통 개념 대응",
+      "guard": "mapping_kind와 조건 필수; conditional mapping을 sameAs로 해석 금지"
+    },
+    {
+      "name": "aux_of",
+      "from": "PredicateInstance",
+      "to": "PredicateInstance",
+      "meaning": "보조구성의 head와 dependent 관계",
+      "guard": "방향은 보조용언→주된 서술어; 같은 clause binding 필수"
+    },
+    {
+      "name": "cross_reference",
+      "from": "SourceAtom|GrammarFeature|Construction|AnalysisConcept|AggregateInterface|TechnicalResponsibility",
+      "to": "SourceAtom|GrammarFeature|Construction|AnalysisConcept|AggregateInterface|TechnicalResponsibility",
+      "meaning": "문헌·공통 분석·기술 책임 사이 의미 참조",
+      "guard": "execution_dependency=false; 의미 cycle을 scheduling cycle로 취급하지 않는다"
+    },
+    {
+      "name": "has_component",
+      "from": "AggregateInterface",
+      "to": "GrammarFeature|Construction|AnalysisConcept|AggregateInterface",
+      "meaning": "묶음 인터페이스의 실제 하위 개념",
+      "guard": "is_atomic=false인 부모만 사용; 하위가 모두 현재문장에 applicable이라고 추론하지 않는다; 실행 순서 아님"
+    },
+    {
+      "name": "maps_to_aggregate",
+      "from": "SourceAtom",
+      "to": "AggregateInterface",
+      "meaning": "출처별 원자를 공통 묶음 포트에 연결",
+      "guard": "근거·대응 조건을 명시; exact sameAs 및 실행 의존으로 자동 승격 금지"
+    }
+  ],
+  "node_types": [
+    "AggregateInterface",
+    "AnalysisConcept",
+    "Claim",
+    "Construction",
+    "Framework",
+    "GrammarFeature",
+    "Module",
+    "ReviewIssue",
+    "SourceAtom",
+    "SourceDocument",
+    "SourceSpan",
+    "TechnicalResponsibility"
+  ],
+  "extensions": {
+    "has_module": {
+      "from": [
+        "Framework"
+      ],
+      "to": [
+        "Module"
+      ],
+      "meaning": "관리용 12개 모듈. 언어학적 실행 순서가 아님.",
+      "change_kind": "evidence_or_navigation_only"
+    },
+    "has_common_concept": {
+      "from": [
+        "Framework"
+      ],
+      "to": [
+        "AnalysisConcept",
+        "AggregateInterface",
+        "GrammarFeature",
+        "Construction"
+      ],
+      "meaning": "공통 개념 탐색용 연결",
+      "change_kind": "evidence_or_navigation_only"
+    },
+    "in_module": {
+      "from": [
+        "SourceAtom",
+        "AnalysisConcept",
+        "AggregateInterface",
+        "GrammarFeature",
+        "Construction",
+        "TechnicalResponsibility"
+      ],
+      "to": [
+        "Module"
+      ],
+      "meaning": "최종 설계 _module의 관리 분류",
+      "change_kind": "evidence_or_navigation_only"
+    },
+    "cites_source_span": {
+      "from": [
+        "SourceAtom",
+        "AnalysisConcept",
+        "AggregateInterface",
+        "GrammarFeature",
+        "Construction",
+        "TechnicalResponsibility"
+      ],
+      "to": [
+        "SourceSpan"
+      ],
+      "meaning": "기존 설계의 인용 위치. 진술 입증을 뜻하지 않음",
+      "change_kind": "evidence_or_navigation_only"
+    },
+    "part_of_document": {
+      "from": [
+        "SourceSpan"
+      ],
+      "to": [
+        "SourceDocument"
+      ],
+      "meaning": "PDF 1-based 위치와 해시",
+      "change_kind": "evidence_or_navigation_only"
+    },
+    "documents_atom": {
+      "from": [
+        "Claim"
+      ],
+      "to": [
+        "SourceAtom"
+      ],
+      "meaning": "직접 대조한 좁은 진술의 관련 기존 항목. 항목 전체 승인 아님",
+      "change_kind": "evidence_or_navigation_only"
+    },
+    "interpreted_as": {
+      "from": [
+        "Claim"
+      ],
+      "to": [
+        "AnalysisConcept",
+        "AggregateInterface",
+        "GrammarFeature",
+        "Construction"
+      ],
+      "meaning": "Builder의 해석적 매핑. 원문 직접 진술과 구별",
+      "change_kind": "evidence_or_navigation_only"
+    },
+    "review_target": {
+      "from": [
+        "ReviewIssue"
+      ],
+      "to": [
+        "SourceAtom",
+        "AnalysisConcept",
+        "AggregateInterface",
+        "GrammarFeature",
+        "Construction",
+        "TechnicalResponsibility",
+        "Claim",
+        "SourceSpan",
+        "Framework"
+      ],
+      "meaning": "불확실성·충돌 추적",
+      "change_kind": "evidence_or_navigation_only"
+    }
+  },
+  "additional_node_types": {
+    "Framework": "관리·탐색용 척추",
+    "ReviewIssue": "미해결 검토 기록"
+  },
+  "property_contract": {
+    "node": [
+      "id",
+      "type",
+      "title",
+      "properties"
+    ],
+    "edge": [
+      "id",
+      "source",
+      "relation",
+      "target",
+      "properties"
+    ],
+    "nested_properties": "canonical JSON in JSONL; Neo4j properties_json/original_spec_json strings preserve nested values without APOC",
+    "claim_origins": [
+      "document_based",
+      "inference_candidate"
+    ],
+    "inference_candidate_policy": "future candidates remain separate; no inferred knowledge asserted in this build",
+    "quotes": "raw pypdf text offsets; whitespace-normalized matching only, no glyph repair. Neo4j display quote replaces NUL with U+2400; properties_json retains raw escaped NUL.",
+    "source_span_context": "automatic context quote does not establish semantic support; curated_exact_span is a separate classification"
+  },
+  "runtime_policy": "Evidence/navigation graph only. No Rule instantiated, no LLM calls, no generation or mandatory demographic filtering."
+}

@@ -1,0 +1,44 @@
+{
+  "batch_id": "20261023T165529017937Z",
+  "job_order": [
+    [
+      "RTS001",
+      "single"
+    ],
+    [
+      "RTS001",
+      "multi"
+    ],
+    [
+      "RTS002",
+      "multi"
+    ],
+    [
+      "RTS002",
+      "single"
+    ],
+    [
+      "RTS003",
+      "single"
+    ],
+    [
+      "RTS003",
+      "multi"
+    ],
+    [
+      "RTS004",
+      "multi"
+    ],
+    [
+      "RTS004",
+      "single"
+    ]
+  ],
+  "order": "input-wise rotating condition order",
+  "workers": 2,
+  "runs": {
+    "single": "20261023T165529017937Z_runtime_single_smoke",
+    "multi": "20261023T165529268792Z_runtime_multi_smoke"
+  },
+  "model_calls_planned_min": 12
+}

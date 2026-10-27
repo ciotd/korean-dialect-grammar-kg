@@ -1,0 +1,47 @@
+{
+  "records": 4,
+  "status_counts": {
+    "generated_requires_human_review": 4
+  },
+  "valid_output_records": 4,
+  "changed_records": 4,
+  "records_with_realization_reference": 4,
+  "records_with_claim_paths": 0,
+  "api_attempts": 4,
+  "api_failures": 0,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 13363,
+    "completion_tokens": 747,
+    "total_tokens": 14110
+  },
+  "calls_with_usage": 4,
+  "calls_without_usage": 0,
+  "wall_seconds": null,
+  "mean_record_seconds": 4.139,
+  "median_record_seconds": 3.833,
+  "retrieval_chars_total": 41215,
+  "packet_chars_total": 28463,
+  "char_reduction_fraction": 0.3094,
+  "neighborhood_limit_records": 0,
+  "error_types": {},
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.",
+  "shared_batch_wall_seconds": 22.451,
+  "analysis_valid_records": 0,
+  "kg_query_count": 4,
+  "selected_rule_ids": [
+    "GS_CONNECT_COND_03",
+    "GS_ENDRULE_HORT_JA",
+    "GS_ENDRULE_ISO_IMP",
+    "GS_ENDRULE_Q_POLAR_V",
+    "GS_ENDRULE_Q_WH_V",
+    "GS_ENDRULE_YO_COMPOSE",
+    "GS_HAM_ADV_LITTLE"
+  ],
+  "wall_note": "Shared interleaved batch: compare per-record latency; no isolated per-condition wall time.",
+  "rule_accuracy": null,
+  "meaning_preservation": null
+}

@@ -1,0 +1,2 @@
+id,title,node_type,module,role,epistemic_status,review_status,quote,pdf_page,doc,properties_json
+COMMON_SPINE,공통 척추 · 설계 탐색 뷰,Framework,,,,,,,,"{""note"":""기존 설계에는 Spine ID가 없음. 공통 개념과 12개 모듈을 탐색하기 위한 관리 노드이며 언어학적 루트 또는 실행 순서가 아니다."",""origin"":""implementation_navigation_extension"",""runtime_active"":false}"

@@ -1,0 +1,32 @@
+[
+  {
+    "width": 1440,
+    "errors": [],
+    "initial": "1625개 일치 · 목록은 처음 120개 표시. 검색어로 범위를 좁힐 수 있습니다.",
+    "exact_id_matches": 1,
+    "detail_has_selected_id": true,
+    "source_claim_filter": "6개 일치 · 목록은 처음 120개 표시. 검색어로 범위를 좁힐 수 있습니다.",
+    "layout": {
+      "w": 1440,
+      "scroll": 1440,
+      "svg": 22,
+      "dataNodes": 1625
+    },
+    "passed": true
+  },
+  {
+    "width": 390,
+    "errors": [],
+    "initial": "1625개 일치 · 목록은 처음 120개 표시. 검색어로 범위를 좁힐 수 있습니다.",
+    "exact_id_matches": 1,
+    "detail_has_selected_id": true,
+    "source_claim_filter": "6개 일치 · 목록은 처음 120개 표시. 검색어로 범위를 좁힐 수 있습니다.",
+    "layout": {
+      "w": 390,
+      "scroll": 390,
+      "svg": 22,
+      "dataNodes": 1625
+    },
+    "passed": true
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "returncode": 0,
+  "last_lines": [
+    "................................................................................................",
+    "----------------------------------------------------------------------",
+    "Ran 96 tests in 19.762s",
+    "",
+    "OK"
+  ],
+  "previous_observation": "One HTTP500 in test_refresh_valid_token; isolated repeat passed five times. Prior log preserved; root cause not established."
+}

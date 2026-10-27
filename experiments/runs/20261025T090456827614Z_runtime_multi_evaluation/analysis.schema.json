@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "finish",
+        "lookup"
+      ]
+    },
+    "lookup_concepts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selected_candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_text": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "action",
+    "lookup_concepts",
+    "selected_candidate_ids",
+    "output_text",
+    "reason"
+  ],
+  "additionalProperties": false
+}

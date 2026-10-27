@@ -1,0 +1,24 @@
+{
+  "date_kst": "2026-10-23",
+  "command": "python tests/test_kg_pipeline.py",
+  "exit_code": 0,
+  "tests_run": 30,
+  "failures": 0,
+  "errors": 0,
+  "source": "Observed tool execution before first50; no linguistic accuracy claim",
+  "test_sha256": "0122e70db0c4a2493785e6e806a779270f953ca2eb6e64b0f1167ee54738be9a",
+  "coverage": [
+    "actual Concept IDs",
+    "span occurrence",
+    "null/required contracts",
+    "duplicate references",
+    "clause cycle",
+    "unknown conditions",
+    "lexical and politeness restrictions",
+    "TAM and WH scope",
+    "exact evidence selection",
+    "budget omissions",
+    "API credential redaction",
+    "overlap and untracked edits"
+  ]
+}

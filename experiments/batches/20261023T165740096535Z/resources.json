@@ -1,0 +1,7 @@
+{
+  "batch_wall_seconds": 1082.2286269000033,
+  "local_process_cpu_seconds": 19.953125,
+  "local_peak_working_set_bytes": 614912000,
+  "remote_gpu_memory_bytes": null,
+  "remote_gpu_utilization": null
+}

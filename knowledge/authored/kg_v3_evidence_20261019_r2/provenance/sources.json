@@ -1,0 +1,198 @@
+[
+  {
+    "id": "D01",
+    "filename": "georo2021.pdf",
+    "sha256": "30b90da21b6f86e1c7404d194d35f6bbb9f77f7ed9e11dcb642f5f8b7ee19f3b",
+    "pages": 22,
+    "accessible": true,
+    "text_extracted_pages": 22,
+    "empty_pages": [
+      22
+    ],
+    "nul_pages": [],
+    "current_analysis_scope": "all pages extracted and cited locations checked; semantic comparison limited to curated claim spans; prior full-reading audit is a distinct review",
+    "manual_claim_pages": [
+      9,
+      12,
+      17
+    ],
+    "policy": {
+      "title": "경남방언 어말어미 '-거로'에 대해서",
+      "author": "양지현",
+      "year": 2021,
+      "family": "georo_paper_2021",
+      "tier": "문헌 분석 논문",
+      "time_scope": "논문이 사용한 경남 자료의 범위",
+      "notes": "-게와 -거로는 형태뿐 아니라 기능·결합 제약이 달라 blanket 치환 불가"
+    }
+  },
+  {
+    "id": "D02",
+    "filename": "경북방언_종결어미_연구.pdf",
+    "sha256": "3b48d6356b9efe95fe06dbd9f4db61031795cb3fb48aa87da0f192fcc1ee6c3d",
+    "pages": 265,
+    "accessible": true,
+    "text_extracted_pages": 265,
+    "empty_pages": [],
+    "nul_pages": [],
+    "current_analysis_scope": "all pages extracted and cited locations checked; semantic comparison limited to curated claim spans; prior full-reading audit is a distinct review",
+    "manual_claim_pages": [
+      92,
+      144,
+      145,
+      168,
+      169,
+      190
+    ],
+    "policy": {
+      "title": "경북방언의 종결어미 연구 - 한국구비문학대계(경북 편)을 대상으로",
+      "author": "조현준",
+      "year": 2018,
+      "family": "gb_final_endings_thesis",
+      "tier": "박사학위 논문",
+      "time_scope": "1978–1984년 채록 구비문학대계 경북 자료; 논문 발표 2018년",
+      "notes": "서술·의문·명령·청유 × 격식/비격식 및 높임 체계; 현대 전국 경상 화자로 일반화 금지"
+    }
+  },
+  {
+    "id": "D03",
+    "filename": "동남 방언.pdf",
+    "sha256": "97a5ccceeb15d9b80370f1a505c5eebd6e69e9da9a57ade1bed8e19303b9f80c",
+    "pages": 55,
+    "accessible": true,
+    "text_extracted_pages": 55,
+    "empty_pages": [],
+    "nul_pages": [
+      3,
+      16,
+      24,
+      27
+    ],
+    "current_analysis_scope": "all pages extracted and cited locations checked; semantic comparison limited to curated claim spans; prior full-reading audit is a distinct review",
+    "manual_claim_pages": [
+      3
+    ],
+    "policy": {
+      "title": "동남 방언",
+      "author": "나무위키 기여자",
+      "year": 2026,
+      "family": "namuwiki_se_dialect",
+      "tier": "협업 위키 저장본",
+      "time_scope": "본문 수정 2026-09-01, PDF 저장 2026-09-03",
+      "notes": "문법 관련 주장과 배경정보 분리; 사용자·창작물·화자 성격은 실행 규칙 근거에서 제외"
+    }
+  },
+  {
+    "id": "D04",
+    "filename": "동남 방언_문법.pdf",
+    "sha256": "7bbc219e272b325a44310fe70aeed20912b38b9023d00fcbbb879edc22ec7003",
+    "pages": 51,
+    "accessible": true,
+    "text_extracted_pages": 51,
+    "empty_pages": [],
+    "nul_pages": [
+      27,
+      30,
+      34,
+      35,
+      41,
+      48
+    ],
+    "current_analysis_scope": "all pages extracted and cited locations checked; semantic comparison limited to curated claim spans; prior full-reading audit is a distinct review",
+    "manual_claim_pages": [
+      3,
+      20,
+      35
+    ],
+    "policy": {
+      "title": "동남 방언/문법",
+      "author": "나무위키 기여자",
+      "year": 2026,
+      "family": "namuwiki_se_dialect",
+      "tier": "협업 위키 저장본",
+      "time_scope": "본문 수정 2026-09-07, PDF 저장 2026-09-08",
+      "notes": "활용·조사·어휘 후보 지도. 명시된 추정 세대 예문은 관찰자료로 쓰지 않는다"
+    }
+  },
+  {
+    "id": "D05",
+    "filename": "동남 방언_상대높임법.pdf",
+    "sha256": "e0eb50ca37599a7c21e09c49c4c2052a6013c6073edd14391c0d2d70a15de9c4",
+    "pages": 35,
+    "accessible": true,
+    "text_extracted_pages": 35,
+    "empty_pages": [],
+    "nul_pages": [
+      10
+    ],
+    "current_analysis_scope": "all pages extracted and cited locations checked; semantic comparison limited to curated claim spans; prior full-reading audit is a distinct review",
+    "manual_claim_pages": [
+      8,
+      14,
+      26
+    ],
+    "policy": {
+      "title": "동남 방언/상대 높임법",
+      "author": "나무위키 기여자",
+      "year": 2026,
+      "family": "namuwiki_se_dialect",
+      "tier": "협업 위키 저장본",
+      "time_scope": "본문 수정 및 PDF 저장 2026-09-08",
+      "notes": "여러 분류·지역 혼합 설명은 classification scheme 및 profile별 claim으로 분리"
+    }
+  },
+  {
+    "id": "D06",
+    "filename": "동남 방언_음운.pdf",
+    "sha256": "ecdde8d655782e6ebb4c86361019139f6dc6ad87c556bf1b4bcf82402b2b3366",
+    "pages": 8,
+    "accessible": true,
+    "text_extracted_pages": 8,
+    "empty_pages": [],
+    "nul_pages": [
+      8
+    ],
+    "current_analysis_scope": "all pages extracted and cited locations checked; semantic comparison limited to curated claim spans; prior full-reading audit is a distinct review",
+    "manual_claim_pages": [
+      3,
+      4,
+      8
+    ],
+    "policy": {
+      "title": "동남 방언/음운",
+      "author": "나무위키 기여자",
+      "year": 2026,
+      "family": "namuwiki_se_dialect",
+      "tier": "협업 위키 저장본",
+      "time_scope": "PDF 저장 2026-09-08",
+      "notes": "발음·형태소중시 표기·축약 표기를 각각 구별. 기호 판독불가 항목은 활성화하지 않는다"
+    }
+  },
+  {
+    "id": "D07",
+    "filename": "표준어 간섭 및 방언에 대한 의식으로 인한 경남 함양 방언 문법 형태의 변화 연구.pdf",
+    "sha256": "2ae9c22e1a7cc9f470909bdf9cfe5f7e002d868c208a55ce23fed479ae5d9973",
+    "pages": 38,
+    "accessible": true,
+    "text_extracted_pages": 38,
+    "empty_pages": [],
+    "nul_pages": [],
+    "current_analysis_scope": "all pages extracted and cited locations checked; semantic comparison limited to curated claim spans; prior full-reading audit is a distinct review",
+    "manual_claim_pages": [
+      7,
+      12,
+      23,
+      24,
+      26
+    ],
+    "policy": {
+      "title": "표준어 간섭 및 방언에 대한 의식으로 인한 경남 함양 방언 문법 형태의 변화 연구",
+      "author": "류성기",
+      "year": 2014,
+      "family": "hamyang_change_survey",
+      "tier": "지역 조사 논문",
+      "time_scope": "2014년 7월 함양군 서하면 조사와 함양읍 세대별 확인",
+      "notes": "소규모 조사·확인자의 사용 추정치. 표의 0%를 그 문법형의 보편적 금지로 해석하지 않는다"
+    }
+  }
+]

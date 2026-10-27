@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "applied_candidate_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_text": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "applied_candidate_ids",
+    "output_text",
+    "reason"
+  ],
+  "additionalProperties": false
+}

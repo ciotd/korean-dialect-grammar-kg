@@ -1,0 +1,6 @@
+{
+  "frozen_before_first_input_call": "2026-10-23T08:50:09.921819+00:00",
+  "code_hashes_sha256": "ae2f26906cc961c75e8ea8c6696ff948f1ec99772436798340ce6133aa49ee95",
+  "config_sha256": "414c48be60b7a4beb17ec1d5dc28e1c7dfc5da90188deb8fafb126373e4fc785",
+  "no_post_freeze_tuning": true
+}

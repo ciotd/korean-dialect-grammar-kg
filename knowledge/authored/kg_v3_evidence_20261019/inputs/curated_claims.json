@@ -1,0 +1,450 @@
+[
+  {
+    "id": "C_D01_01",
+    "doc": "D01",
+    "page": 9,
+    "needle": "방언형인‘-거로’가쓰인문장도‘목적’이나‘정도’의의미로해석된다.",
+    "summary": "저자는 -거로 문장이 목적 또는 정도로 중의적으로 해석될 수 있다고 분석한다.",
+    "concepts": [
+      "G_GE_PURPOSE",
+      "G_GE_DEGREE"
+    ],
+    "atoms": [
+      "GS_GEORO_PURPOSE",
+      "GS_GEORO_DEGREE"
+    ],
+    "kind": "author_analysis"
+  },
+  {
+    "id": "C_D01_02",
+    "doc": "D01",
+    "page": 12,
+    "needle": "경남방언에서는‘되-’가본용언이라면‘-거로’와어울려쓰이기도하나‘되-’가보조용언일경우에는‘-거로’를취하지않는다.",
+    "summary": "저자는 -거로와 되다의 결합에서 본용언과 보조용언을 구별한다.",
+    "concepts": [
+      "G_AUX_BECOME",
+      "G_MAIN_BECOME"
+    ],
+    "atoms": [
+      "GS_GEORO_BLOCK_BECOME"
+    ],
+    "kind": "author_analysis"
+  },
+  {
+    "id": "C_D01_03",
+    "doc": "D01",
+    "page": 17,
+    "needle": "(26ㄴ)은‘-으려고’대신에‘-거로’로자신의의도를표현하는예이다.",
+    "summary": "저자는 예문 (26ㄴ)의 종결 -거로를 화자의 의도 표현으로 분석한다.",
+    "concepts": [
+      "G_Q_INTENTION",
+      "G_TAM_MODALITY"
+    ],
+    "atoms": [
+      "GS_GEORO_INTENT_A"
+    ],
+    "kind": "author_analysis"
+  },
+  {
+    "id": "C_D01_04",
+    "doc": "D01",
+    "page": 17,
+    "needle": "첫째,‘-거로’에는한번짐작해서답해보라는의미를나타내는의문종결어미로서의쓰임이없다.",
+    "summary": "저자는 짐작하여 답하도록 요구하는 -게의 기능을 -거로에는 인정하지 않는다. 해당 문헌의 기능 구분으로 보존한다.",
+    "concepts": [
+      "G_Q_GUESS_CHALLENGE"
+    ],
+    "atoms": [
+      "GS_GEORO_BLOCK_GUESS"
+    ],
+    "kind": "author_analysis"
+  },
+  {
+    "id": "C_D02_01",
+    "doc": "D02",
+    "page": 144,
+    "needle": "‘-가/고’는 계사와 직접 결합하여 쓰이는 특징을 보인다.",
+    "summary": "해라체 의문 -가/-고에 대해 저자는 계사와의 직접 결합을 기술한다.",
+    "concepts": [
+      "G_PRED_KIND",
+      "G_Q_POLAR",
+      "G_Q_WH"
+    ],
+    "atoms": [
+      "GS_ENDRULE_Q_POLAR_C",
+      "GS_ENDRULE_Q_WH_C"
+    ],
+    "kind": "author_analysis"
+  },
+  {
+    "id": "C_D02_02",
+    "doc": "D02",
+    "page": 145,
+    "needle": "용언 서술어 의문사 없음:-나 /있음:-노",
+    "summary": "각주 162에서 인용한 선행연구는 시상 관련 형태가 통합되지 않은 용언 서술어의 의문사 유무에 따른 -나/-노 분포를 제시한다.",
+    "concepts": [
+      "G_Q_POLAR",
+      "G_Q_WH",
+      "G_TAM_SLOTS"
+    ],
+    "atoms": [
+      "GS_ENDRULE_Q_POLAR_V",
+      "GS_ENDRULE_Q_WH_V"
+    ],
+    "kind": "secondary_citation",
+    "scope_note": "박종갑(1999:4–6)의 2차 인용. 모든 화계·운율·부정칭에 적용하는 규칙으로 일반화하지 않는다."
+  },
+  {
+    "id": "C_D02_03",
+    "doc": "D02",
+    "page": 169,
+    "needle": "(125)의 ‘-ㄴ나’또한 ‘-가’,‘-고’와 마찬가지로 동사 ‘오다’와만 결합하는 통사적 제약을 갖는다.",
+    "summary": "저자는 명령형 -ㄴ나의 결합 대상을 오다로 제한하여 기술한다.",
+    "concepts": [
+      "G_END_FINAL",
+      "G_REALIZATION_ALLOWLIST"
+    ],
+    "atoms": [
+      "GS_ENDRULE_NNA_O"
+    ],
+    "kind": "author_analysis"
+  },
+  {
+    "id": "C_D02_04",
+    "doc": "D02",
+    "page": 168,
+    "needle": "‘-래이’는 서술법으로 쓰이는 경우에는 일종의 감탄의 기능을 나타내지만, 명령법에서 쓰일 경우에는 당부를 나타내는 것으로 보인다.",
+    "summary": "저자는 -래이의 서술 용법과 명령 용법을 구별하고, 명령에서는 당부 기능으로 해석한다.",
+    "concepts": [
+      "G_MOOD_FUNCTION",
+      "G_END_FINAL"
+    ],
+    "atoms": [
+      "GS_ENDRULE_RA_EXCLAIM"
+    ],
+    "kind": "author_analysis",
+    "scope_note": "해석의 '보인다'를 보존. 모든 -래이를 일괄 부드러움으로 확정하지 않음.",
+    "mapping_notes": {
+      "GS_ENDRULE_RA_EXCLAIM": "이 원자는 서술·감탄 용법을 다룬다. 인용의 서술·감탄 부분만 연결 근거이며, 명령·당부 용법은 G_MOOD_FUNCTION 연결로 구별한다."
+    }
+  },
+  {
+    "id": "C_D02_05",
+    "doc": "D02",
+    "page": 92,
+    "needle": "이 종결어미는 대계 에 채록된 용례에서 앞 문장에 반드시 명령법이 나온 뒤,뒤의 문장에서 쓰인다는 점이 특징이다.",
+    "summary": "-ㅁ시더의 1인칭 약속 용법에 대해, 저자는 대계의 채록 용례에서 선행 명령이 나타남을 설명한다.",
+    "concepts": [
+      "G_MOOD_FUNCTION"
+    ],
+    "atoms": [
+      "GS_ENDRULE_M_SI_PROM"
+    ],
+    "kind": "author_analysis",
+    "scope_note": "대계 관찰 범위. 현대 모든 약속문에 대한 금지로 확장하지 않음."
+  },
+  {
+    "id": "C_D02_06",
+    "doc": "D02",
+    "page": 190,
+    "needle": "(151ㄷ,ㄹ)의 ‘-제이’는 ‘-자’ 보다는 좀 더 의미적 전달을 부드럽게 할 때 사용되는 것으로 보인다.",
+    "summary": "저자는 두 예문의 -제이를 -자보다 부드러운 전달로 해석한다.",
+    "concepts": [
+      "G_END_FINAL",
+      "G_MOOD_FUNCTION"
+    ],
+    "atoms": [
+      "GS_ENDRULE_HORT_JA"
+    ],
+    "kind": "author_analysis",
+    "mapping_notes": {
+      "GS_ENDRULE_HORT_JA": "기존 원자의 -자/-제 계열과 관련된 참고 연결이다. 직접 인용은 -제이의 두 용례에 대한 완곡 해석이며 -자/-제 전체의 제약이나 동등성을 입증하지 않는다."
+    }
+  },
+  {
+    "id": "C_D03_01",
+    "doc": "D03",
+    "page": 3,
+    "needle": "동남 방언의 고유한 상대 높임법은 하이소체, 하소체, 하게체, 해라체, 해예/해요체, 해체 등이 있다.",
+    "summary": "위키 개관 문서는 상대높임 범주를 이 목록으로 제시한다. 다른 문헌의 분류체계와 동일시하지 않는다.",
+    "concepts": [
+      "G_HON_ADDRESSEE",
+      "G_REGISTER_MAP"
+    ],
+    "atoms": [],
+    "kind": "source_classification"
+  },
+  {
+    "id": "C_D03_02",
+    "doc": "D03",
+    "page": 3,
+    "needle": "동남 방언에서 간접 인용은 '-다꼬, -자꼬, -라꼬'등 '-고'가 경음화하는 경향을 보인다.",
+    "summary": "위키 개관 문서는 간접 인용에서 -다꼬/-자꼬/-라꼬 등의 형태를 제시한다.",
+    "concepts": [
+      "G_QUOTE_INDIRECT",
+      "G_QUOTE_CONTRACTION"
+    ],
+    "atoms": [],
+    "kind": "source_description"
+  },
+  {
+    "id": "C_D04_01",
+    "doc": "D04",
+    "page": 3,
+    "needle": "기존에 '밥뭇나'와 같이 적던 것을 '밥 무웄나'로 적는 것이다.",
+    "summary": "이 문헌은 형태소 경계를 드러내는 편집 표기로 밥 무웄나를 사용한다. 관습 표기 전체의 유일 정답을 뜻하지 않는다.",
+    "concepts": [
+      "G_REALIZATION_ORTHO"
+    ],
+    "atoms": [
+      "GS_CONJ_MUK_UU"
+    ],
+    "kind": "editorial_policy",
+    "mapping_notes": {
+      "GS_CONJ_MUK_UU": "밥 무웄나라는 문헌 편집 표기와 관련된 연결이다. 묵-의 모든 활용·탈락 조건에 대한 근거가 아니다."
+    }
+  },
+  {
+    "id": "C_D04_02",
+    "doc": "D04",
+    "page": 3,
+    "needle": "어간이 받침 없이 'ㅣ'로 끝날 경우, 그 뒤에 어미 '-아/어' 계열이 놓일 때 '-아/어' 없이 활용한다.",
+    "summary": "문헌은 받침 없는 ㅣ 어간 뒤 아/어 계열 활용에서 아/어를 별도로 드러내지 않는 유형을 기술한다.",
+    "concepts": [
+      "G_VERB_INFLECTION",
+      "G_REALIZATION_CONTEXT"
+    ],
+    "atoms": [
+      "GS_CONJ_I_ZERO"
+    ],
+    "kind": "source_description"
+  },
+  {
+    "id": "C_D04_03",
+    "doc": "D04",
+    "page": 3,
+    "needle": "한국어의 방언(최명옥)에 따르면 경북 동부 해안가는 같은 조건에서 ㅔ로 활용된다고 한다.",
+    "summary": "위키가 인용한 최명옥의 자료에서는 같은 ㅣ 어간 환경의 경북 동부 해안 변이를 ㅔ로 제시한다.",
+    "concepts": [
+      "G_REALIZATION_ALLOMORPH"
+    ],
+    "atoms": [
+      "GS_CONJ_I_E"
+    ],
+    "kind": "secondary_citation",
+    "scope_note": "인용 원전은 이번 7종에 없음. 위키에서의 재인용만 확인."
+  },
+  {
+    "id": "C_D04_04",
+    "doc": "D04",
+    "page": 20,
+    "needle": "명령법/청유법: 상대방에게 조심스럽게 권유할 때 사용한다. 즉각적으로 하라는 느낌이 줄어든다.",
+    "summary": "문헌은 -ㅣ이 계열의 명령·청유 용법을 조심스러운 권유 및 즉각성 감소로 설명한다.",
+    "concepts": [
+      "G_END_COMPOSITE",
+      "G_MOOD_FUNCTION"
+    ],
+    "atoms": [],
+    "kind": "source_description",
+    "scope_note": "위키의 기능 설명. 화자 검증을 거친 보편 규칙으로 승격하지 않음."
+  },
+  {
+    "id": "C_D04_05",
+    "doc": "D04",
+    "page": 35,
+    "needle": "(명) 겉절이, 현대에 와서 김치의 의미 보다는 고기와 함께 싸먹는 파겉절이의 의미로 좁혀졌다.",
+    "summary": "제레기/지레기 항목은 의미가 파겉절이 쪽으로 좁혀졌다고 기술한다.",
+    "concepts": [
+      "G_LEX_SENSE",
+      "G_LEX_SELECTION"
+    ],
+    "atoms": [
+      "GS_LEX_041"
+    ],
+    "kind": "source_description"
+  },
+  {
+    "id": "C_D05_01",
+    "doc": "D05",
+    "page": 8,
+    "needle": "이름이 는교형 어미라 '-는교'만 쓰일 거라 생각할 수도 있겠지만 실제론 '-(으)ㄴ교' <형용사>, '-(느)ㄴ교' <동사>라는 것을 잊지 말자.",
+    "summary": "문헌은 는교형을 동사와 형용사에서 구별하여 제시한다.",
+    "concepts": [
+      "G_PRED_KIND",
+      "G_END_FINAL"
+    ],
+    "atoms": [],
+    "kind": "source_description"
+  },
+  {
+    "id": "C_D05_02",
+    "doc": "D05",
+    "page": 14,
+    "needle": "형용사에서 '-니더'와 '-(으)이더'가 구분되어 쓰이는데 '-니더'는 모음 뒤에 오면 어색하다. 즉 '(자음)니더', '(모음)이더'이다.",
+    "summary": "문헌의 안동 지역어 관련 설명은 형용사의 -니더/-(으)이더를 어간말음에 따라 구별한다.",
+    "concepts": [
+      "G_ADJ_STATE",
+      "G_REALIZATION_CONTEXT"
+    ],
+    "atoms": [
+      "GS_ENDRULE_I_DEO"
+    ],
+    "kind": "secondary_citation",
+    "scope_note": "해당 쪽은 대부분 김정균의 안동 지역어의 종결어미 연구를 참고했다고 밝힌다. 인용 원전은 이번 7종에 없어 직접 확인하지 않았다. 같은 쪽에 불규칙 목록이 있으므로 예외 없는 전경상 생산 규칙으로 사용하지 않음."
+  },
+  {
+    "id": "C_D05_03",
+    "doc": "D05",
+    "page": 26,
+    "needle": "단, 해예체를 사용한다고 해서 해요체를 사용하지 않는 것은 아니다.",
+    "summary": "문헌은 해예체 사용과 해요체 사용이 배타적인 것은 아니라고 설명한다.",
+    "concepts": [
+      "G_REGISTER_VARIATION"
+    ],
+    "atoms": [
+      "GS_ENDRULE_YO_COMPOSE"
+    ],
+    "kind": "source_description"
+  },
+  {
+    "id": "C_D06_01",
+    "doc": "D06",
+    "page": 3,
+    "needle": "모든 화자가 ㄴ을 탈락하는 것은 아니며 필요에 따라 ㄴ을 발음한다.",
+    "summary": "ㄴ 탈락·비모음 설명에서 문헌은 모든 화자의 필수 탈락이 아님을 명시한다.",
+    "concepts": [
+      "G_REALIZATION_ALLOMORPH",
+      "G_REALIZATION_ORTHO"
+    ],
+    "atoms": [
+      "GS_PHON_N_NASAL"
+    ],
+    "kind": "source_description"
+  },
+  {
+    "id": "C_D06_02",
+    "doc": "D06",
+    "page": 4,
+    "needle": "가끔 '받침 ㅇ/ㄴ'과 '초성 ㅇ/ㅎ'이 만났을 때 빨리 발음하면서 '받침 ㅇ/ㄴ'을 탈락시키기도 하며, 북부는 입을 크게 벌리는 단어는 조사 '-에' 와 만나면 모음 동화가 일어나기도 한다.",
+    "summary": "문헌은 빠른 발음에서 받침 ㅇ/ㄴ 탈락이 나타나기도 한다고 설명한다. 텍스트의 필수 삭제 규칙으로 삼지 않는다.",
+    "concepts": [
+      "G_REALIZATION_CONTRACTION",
+      "G_REALIZATION_CONTEXT"
+    ],
+    "atoms": [
+      "GS_PHON_NG_DROP"
+    ],
+    "kind": "source_description"
+  },
+  {
+    "id": "C_D06_03",
+    "doc": "D06",
+    "page": 8,
+    "needle": "-라고 하다: -라카다 <경상도 전역>",
+    "summary": "문헌의 준말 목록은 -라고 하다에 대한 -라카다를 제시하고 범위를 경상도 전역으로 표기한다.",
+    "concepts": [
+      "G_QUOTE_CONTRACTION"
+    ],
+    "atoms": [
+      "GS_PHON_CONTRACT"
+    ],
+    "kind": "source_inventory",
+    "scope_note": "범위는 원문 주장으로 보존하며 각 지역 전체에서 검증된 사실로 확정하지 않음."
+  },
+  {
+    "id": "C_D07_01",
+    "doc": "D07",
+    "page": 12,
+    "needle": "나처럼 해 봐라.- 처럼 50 0 - 매이로 나매이로 해 봐라",
+    "summary": "함양 문헌의 비교·비유 조사 표는 -처럼에 대한 -매이로와 나매이로 해 봐라를 제시한다.",
+    "concepts": [
+      "G_PARTICLE_COMPARE"
+    ],
+    "atoms": [
+      "GS_HAM_SIMIL"
+    ],
+    "kind": "source_inventory",
+    "scope_note": "표의 비율을 생성 확률로 사용하지 않음."
+  },
+  {
+    "id": "C_D07_02",
+    "doc": "D07",
+    "page": 12,
+    "needle": "이러한 차이가 개인적인 것인지, 지역적인 것인지 다시 한 번 확인해 볼 필요가 있겠다.",
+    "summary": "주제 보조사 은/는의 부재 진술과 자료집 용례가 달라 저자는 추가 확인 필요성을 명시한다.",
+    "concepts": [
+      "G_PARTICLE_TOPIC"
+    ],
+    "atoms": [
+      "GS_HAM_TOPIC_GAP"
+    ],
+    "kind": "author_uncertainty"
+  },
+  {
+    "id": "C_D07_03",
+    "doc": "D07",
+    "page": 23,
+    "needle": "함양 방언에서 피동사를 파생시키는 피동접미사에는 ‘-이-, -기-, -히-, -리-’가 있다. 표준어와 같다.",
+    "summary": "저자는 함양의 피동 접미사 목록을 -이-/-기-/-히-/-리-로 기술한다.",
+    "concepts": [
+      "G_PASS_DERIVE"
+    ],
+    "atoms": [
+      "GS_HAM_PASS_I",
+      "GS_HAM_PASS_GI",
+      "GS_HAM_PASS_HI",
+      "GS_HAM_PASS_RI"
+    ],
+    "kind": "author_analysis"
+  },
+  {
+    "id": "C_D07_04",
+    "doc": "D07",
+    "page": 24,
+    "needle": "함양 방언에서는 진행을 나타내는 보조동사는 ‘(-고) 있다’, 종결은 ‘(-어) 삐다, (-고) 나다, 고 말다’, 봉사는 ‘(-어) 주다’,",
+    "summary": "저자는 함양의 보조동사에서 진행·종결·봉사 기능과 각각의 형태를 제시한다.",
+    "concepts": [
+      "G_AUX_PROGRESS",
+      "G_AUX_COMPLETE",
+      "G_AUX_BENEFACTIVE"
+    ],
+    "atoms": [
+      "GS_HAM_AUX_PROGRESS",
+      "GS_HAM_AUX_COMPLETE",
+      "GS_HAM_AUX_SERVICE"
+    ],
+    "kind": "author_analysis"
+  },
+  {
+    "id": "C_D07_05",
+    "doc": "D07",
+    "page": 26,
+    "needle": "함양 방언에서 쓰이는 부사 중 특징적인 것은 ‘마이, 쪼께만, 한거석, 제와/ 보도시, 절로, 까딱하면/꺼떡하면, 백지, 쪽바로’ 등이다.",
+    "summary": "저자는 함양 방언의 특징적 부사 목록을 제시한다.",
+    "concepts": [
+      "G_LEX_SENSE"
+    ],
+    "atoms": [
+      "GS_HAM_ADV_MAI",
+      "GS_HAM_ADV_LITTLE",
+      "GS_HAM_ADV_FULL",
+      "GS_HAM_ADV_BARE"
+    ],
+    "kind": "source_inventory"
+  },
+  {
+    "id": "C_D07_06",
+    "doc": "D07",
+    "page": 7,
+    "needle": "함양 방언 2인칭 단수는 ‘니, 너, 네, 자네, 당신’이 쓰이고, 복수는 ‘느, 너그, 너들, 너그들’ 형태가 쓰이고 있으나, 단수 형태와 동일한 ‘너’ 형태가 복수의 의미로도 쓰이고 있다.",
+    "summary": "저자는 함양의 2인칭 대명사 단수·복수 목록을 제시하고 너가 복수 의미로도 쓰임을 설명한다.",
+    "concepts": [
+      "G_PRON_PERSON"
+    ],
+    "atoms": [
+      "GS_HAM_P2"
+    ],
+    "kind": "author_analysis",
+    "scope_note": "함양 조사 자료의 서술. 나이별 사용 비율을 보편적 분포나 생성 확률로 사용하지 않는다."
+  }
+]

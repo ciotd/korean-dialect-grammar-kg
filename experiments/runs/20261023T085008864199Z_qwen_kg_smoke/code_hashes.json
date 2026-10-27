@@ -1,0 +1,12 @@
+{
+  "__init__.py": "746adc31be59926ee9c7b6b9f9bca5180f5ec61c72e4ec6b29780d6e409b5a58",
+  "contracts.py": "0cc98294b9cf0f3d37722d8ac369d7cd88a6ffd6661253fea5a7bd9c3efc8edb",
+  "io.py": "ad6cb3f143e4c98e004c45b8ab48dc478ebeeb26a953709b95ceb9e958ce1c17",
+  "mapping.py": "efe9e60e2a25dffa2bb7fb41d9f13cc81d6fb4c769ac66512339f5bc69cf9f40",
+  "report.py": "752166079b5b9966824bb5402ee2c6b6d8caa2da03d174e9bd3debbeac36e2d7",
+  "retrieval.py": "76be0bda5958a1abf8a854255fa2d169f04aa642bee96942c4b4275b84f9a350",
+  "runner.py": "022dd2b4a06356ebcce8a4d5a044789664db1487d13a86e64412c165f3bde9e0",
+  "selection.py": "ff98192023ae8f1c0bb69e0fdb8cd28d859a9cec70598e97ff843489abb599cb",
+  "test_kg_pipeline.py": "cb9145496ce24a7daad07deb0f46d2dc898b8e8914fe979a14045780de050fae",
+  "validation.py": "e0093b52667108c6d1f6cca0b7fa8d133b92b87fc4922187b8b9f98cc23bda5c"
+}

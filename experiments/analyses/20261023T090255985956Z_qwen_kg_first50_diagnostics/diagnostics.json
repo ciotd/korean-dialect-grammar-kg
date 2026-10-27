@@ -1,0 +1,278 @@
+{
+  "run_id": "20261023T090255985956Z_qwen_kg_first50",
+  "pipeline_version": "0.1.3",
+  "results_sha256": "73ca64a8539620b70b018d81ff1b360752289e930d1a31ac116a6c322b25493f",
+  "metrics_sha256": "bf5a7b2a0e888fa9220080939e124a04ebb1d83ba100b3889bf47ab2e0a45ce5",
+  "script_sha256": "5dd823ee36298b4583976f63d5dba1d6e85c8e522208de182bf7395d818cb778",
+  "input_count": 50,
+  "error_categories": {
+    "anchor_not_in_input": 9,
+    "unit_outside_clause": 6
+  },
+  "issues": [
+    {
+      "id": "DEV028",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:은"
+    },
+    {
+      "id": "DEV030",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:나"
+    },
+    {
+      "id": "LONG001",
+      "stage": "analysis",
+      "category": "unit_outside_clause",
+      "detail": "unit_outside_clause:u12"
+    },
+    {
+      "id": "LONG002",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:에서"
+    },
+    {
+      "id": "LONG003",
+      "stage": "analysis",
+      "category": "unit_outside_clause",
+      "detail": "unit_outside_clause:u1"
+    },
+    {
+      "id": "LONG004",
+      "stage": "analysis",
+      "category": "unit_outside_clause",
+      "detail": "unit_outside_clause:u9"
+    },
+    {
+      "id": "NEW001",
+      "stage": "analysis",
+      "category": "unit_outside_clause",
+      "detail": "unit_outside_clause:u4"
+    },
+    {
+      "id": "NEW007",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:나"
+    },
+    {
+      "id": "NEW012",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:를"
+    },
+    {
+      "id": "ADVCE005A",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:는"
+    },
+    {
+      "id": "ADVCE005B",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:는"
+    },
+    {
+      "id": "ADVCE008A",
+      "stage": "analysis",
+      "category": "unit_outside_clause",
+      "detail": "unit_outside_clause:u1"
+    },
+    {
+      "id": "QUAL002",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:저"
+    },
+    {
+      "id": "QUAL017",
+      "stage": "analysis",
+      "category": "unit_outside_clause",
+      "detail": "unit_outside_clause:u19"
+    },
+    {
+      "id": "QUAL018",
+      "stage": "analysis",
+      "category": "anchor_not_in_input",
+      "detail": "anchor_not_in_input:라고"
+    }
+  ],
+  "distinct_actual_concept_ids": [
+    "G_ADJ_STATE",
+    "G_AUX_BECOME",
+    "G_AUX_BENEFACTIVE",
+    "G_AUX_COMPLETE",
+    "G_AUX_DESIRE",
+    "G_AUX_INFER",
+    "G_AUX_PROGRESS",
+    "G_CASE_ROLE",
+    "G_END_CAUSE",
+    "G_END_CONCESSION",
+    "G_END_FINAL",
+    "G_GE_CAUSATIVE_HA",
+    "G_HON_ADDRESSEE",
+    "G_HON_SUBJECT",
+    "G_LEX_SENSE",
+    "G_MAIN_BECOME",
+    "G_MOOD_FUNCTION",
+    "G_PARTICLE_COMPARE",
+    "G_PARTICLE_DATIVE",
+    "G_PARTICLE_FOCUS",
+    "G_PARTICLE_INSTRUMENT",
+    "G_PARTICLE_OBJECT",
+    "G_PARTICLE_SUBJECT",
+    "G_PARTICLE_TOPIC",
+    "G_PASS_ANALYTIC",
+    "G_PASS_DERIVE",
+    "G_PRED_KIND",
+    "G_PRON_PERSON",
+    "G_QUOTE_BOUNDARY",
+    "G_QUOTE_CONTRACTION",
+    "G_Q_POLAR",
+    "G_Q_SCOPE",
+    "G_Q_WH",
+    "G_REALIZATION_ALLOWLIST",
+    "G_TAM_MODALITY",
+    "G_TAM_PAST",
+    "G_TAM_PROSPECTIVE",
+    "G_TAM_RETROSPECT",
+    "G_TAM_SLOTS",
+    "G_VERB_INFLECTION",
+    "G_VERB_STEM"
+  ],
+  "analysis_units_in_records_reaching_mapping": 228,
+  "units_with_at_least_one_concept": 228,
+  "inputs_with_qwen_uncertainties": [
+    "DEV013",
+    "QUAL003"
+  ],
+  "references_by_claim": {
+    "C_D07_04": 2,
+    "C_D07_05": 1,
+    "C_D03_02": 1
+  },
+  "references_by_document": {
+    "D07": 3,
+    "D03": 1
+  },
+  "cited_claims_in_changed_outputs": {
+    "C_D07_05": 1
+  },
+  "records_with_reference_but_unchanged": [
+    "DEV003",
+    "DEV005",
+    "QUAL020"
+  ],
+  "records_without_realization_reference": [
+    "DEV002",
+    "DEV004",
+    "DEV007",
+    "DEV011",
+    "DEV012",
+    "DEV013",
+    "DEV014",
+    "DEV017",
+    "DEV019",
+    "DEV020",
+    "DEV021",
+    "DEV022",
+    "DEV029",
+    "NEW004",
+    "NEW005",
+    "NEW006",
+    "NEW008",
+    "NEW009",
+    "ADVCE001A",
+    "ADVCE001B",
+    "ADVCE002A",
+    "ADVCE002B",
+    "ADVCE003A",
+    "ADVCE003B",
+    "ADVCE006A",
+    "ADVCE006B",
+    "ADVCE008B",
+    "ADVCE010A",
+    "ADVCE010B",
+    "QUAL003",
+    "QUAL005"
+  ],
+  "stage_seconds_completed_stages_only": {
+    "analysis": {
+      "n": 35,
+      "mean_seconds": 19.146,
+      "median_seconds": 16.885,
+      "p95_nearest_rank_seconds": 52.958
+    },
+    "mapping": {
+      "n": 35,
+      "mean_seconds": 0.003,
+      "median_seconds": 0.004,
+      "p95_nearest_rank_seconds": 0.005
+    },
+    "retrieval": {
+      "n": 35,
+      "mean_seconds": 0.299,
+      "median_seconds": 0.274,
+      "p95_nearest_rank_seconds": 0.473
+    },
+    "selection": {
+      "n": 35,
+      "mean_seconds": 0.059,
+      "median_seconds": 0.056,
+      "p95_nearest_rank_seconds": 0.086
+    },
+    "generation": {
+      "n": 35,
+      "mean_seconds": 1.772,
+      "median_seconds": 1.176,
+      "p95_nearest_rank_seconds": 4.316
+    }
+  },
+  "failed_condition_occurrences": {
+    "lexeme-specific semantic mapping": 447,
+    "adverb": 296,
+    "source fact exists but no sufficiently narrow implementation selector in this release": 246,
+    "information question": 208,
+    "no TAM prefinal; narrow source scope": 192,
+    "interrogative form": 188,
+    "coarse input politeness compatibility": 100,
+    "predicate class ('copula', 'negative_copula')": 92,
+    "question type=wh": 91,
+    "WH variable bound to current clause": 91,
+    "question type=polar": 81,
+    "lexeme=오다": 48,
+    "exclamative use": 48,
+    "prior command context and promise relation not resolved; defer": 48,
+    "Claim attests -제이 while linked atom lists -자/-제; do not silently equate": 48,
+    "TAM interaction left out in first release": 48,
+    "coarse informal compatibility": 48,
+    "imperative form": 45,
+    "Qwen flagged uncertainty for this unit/clause": 40,
+    "adjective": 39,
+    "coarse polite compatibility": 32,
+    "whole construction in editable span": 11,
+    "indirect quotation": 10,
+    "quoted ending within exact target span": 10,
+    "no unverified TAM combination": 9,
+    "second person": 8,
+    "plain 너; do not demote honorific pronouns": 8,
+    "benefactive": 6,
+    "predicate class ('verb', 'adjective')": 6,
+    "outer final": 5,
+    "no subject honorific": 5,
+    "progressive": 4,
+    "auxiliary become": 4,
+    "completion construction": 4,
+    "similarity, not comparison": 3,
+    "verb or adjective": 3,
+    "speaker intention": 3,
+    "speaker agent": 2,
+    "preserve informal politeness": 2,
+    "singular": 1
+  },
+  "interpretation": "Descriptive process diagnostics only; no accuracy/naturalness/gold labels; failed conditions can mean mismatch or unresolved input, not a false source claim."
+}

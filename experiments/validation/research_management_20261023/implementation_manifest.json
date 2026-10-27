@@ -1,0 +1,85 @@
+{
+  "files": [
+    {
+      "path": "src/research_management/core.py",
+      "sha256": "90ac9b37b088bbdd13ca549a8e7d20c8cf49bc9d890995558e4b88bc390c0ac2"
+    },
+    {
+      "path": "src/research_management/server.py",
+      "sha256": "1ea85853ef82a068294f8c536f19260795dcacf8bd3d593623cd91c56fe4bec2"
+    },
+    {
+      "path": "src/research_management/__init__.py",
+      "sha256": "ae1a8ddf4aa4ed469d3d5a0ebf173d481e9caa56d71816216898f8833f0c7c1e"
+    },
+    {
+      "path": "src/research_management/web/app.js",
+      "sha256": "2663dfa78ff68dc73399e8c6b0fd62b82d2693ff8a2ebfd997f46a13fcce7598"
+    },
+    {
+      "path": "src/research_management/web/index.html",
+      "sha256": "5461b258ae3cbd3e9101ed7a4d2509b0009961180a5598e622bfabedee12e85b"
+    },
+    {
+      "path": "src/research_management/web/style.css",
+      "sha256": "2597f1758313d09e4b4f6217e074b43b853745b71e67bf29f583091f69778ab6"
+    },
+    {
+      "path": "src/kg_pipeline/runner.py",
+      "sha256": "21673f548d56d88ef170e081c87f4fd9f0ee3da80a48888d9b85ad6b404d30d9"
+    },
+    {
+      "path": "src/kg_pipeline/__init__.py",
+      "sha256": "a48d553cf24aa19309d4e2fba309b42e81a17c3111598982a6c18063e537ddb9"
+    },
+    {
+      "path": "tools/research_manager.py",
+      "sha256": "66e54fab0f41a6b463013589cbe0a8c0c612255de165b93bca1a1168e6dc6da7"
+    },
+    {
+      "path": "tests/test_research_management.py",
+      "sha256": "1e9511537f0013452b36500d74807cedd2cc26966f2e278d618ab4bc3c107a0b"
+    },
+    {
+      "path": "tests/qa_research_dashboard_first50.cjs",
+      "sha256": "0136ac0776177e992febfb546e4f1f4fcf2c7624e2ae7c60bb75c9282a02df22"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "8f13f5db6b54619feba21e9c165b1bd60853111d98c9370eeb8b859a3be30275"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9612e6d4028f7ef3f825f74143597df7c43d067d44920c5cb7166ec011ad6803"
+    },
+    {
+      "path": "docs/research/RESEARCH_MANAGEMENT.md",
+      "sha256": "01e81a6173d43feda51639894548ea1a3ddd42d3fbcd42e84a259fc5a4d8a67f"
+    },
+    {
+      "path": "docs/workflows/RESEARCH_MANAGEMENT.md",
+      "sha256": "bf2ab5b7873bbcd642f2fbe4ca1357463c451eb5b21be2c7093ea70e47e69b7e"
+    },
+    {
+      "path": "docs/research/RESEARCH_STATUS.md",
+      "sha256": "2aaba1f62e35569f2fd6f9e3be78e85b517d16abf7fe3e710981ddce7a7f2afc"
+    },
+    {
+      "path": "docs/research/DECISIONS.md",
+      "sha256": "b95168f67530b93a9b50dd0fb71dc9c87a17766a362560e0ed58c7e804f8771a"
+    },
+    {
+      "path": "docs/research/RECORDING_CONTRACT.md",
+      "sha256": "dff804c8a5622a5167e1a42a6d2c316bd276d45decc56922f906b402c37a24be"
+    },
+    {
+      "path": "docs/research/EVALUATION_PLAN.md",
+      "sha256": "72b4a88a631bc4a236b5df8870ca5194efdd754892f0fa569854c577137b84fe"
+    },
+    {
+      "path": "experiments/management/report_navigation.json",
+      "sha256": "57fa704b9fdc030ec46dbd5098e714bed9216ddfe3787696507b6fd0e31ce5ac"
+    }
+  ],
+  "note": "Current management changes; previous run snapshots are unchanged. No commit/push performed."
+}

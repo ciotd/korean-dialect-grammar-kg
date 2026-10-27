@@ -1,0 +1,23 @@
+{
+  "date_kst": "2026-10-27",
+  "repository": "ciotd/korean-dialect-grammar-kg",
+  "original_repository_modified": false,
+  "tests": {
+    "command": "python -m unittest discover -s tests -p 'test_*.py' -v",
+    "count": 96,
+    "status": "passed",
+    "model_calls": 0
+  },
+  "credential_scan": {
+    "scope": "748 candidate files before adding this record and restore documentation",
+    "known_local_credentials_found": 0,
+    "credential_pattern_findings": 0
+  },
+  "scope": "Commit-safe working files; excludes existing .gitignore private sources, inputs, per-record traces, credentials, local packages. Not a full workstation backup.",
+  "source_workspace": "G:/Work/00_projects/active/hyperscale_AI/02_research/KG",
+  "transport_workspace": "C:/Users/ciot28/Documents/Codex/github-sync-20261027",
+  "limitations": [
+    "Source workspace Git metadata is write-blocked; remote update uses isolated checkout and GitHub connector.",
+    "Historical artifact manifests reference excluded private files; complete historical verification requires those local originals."
+  ]
+}

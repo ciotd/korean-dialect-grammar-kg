@@ -1,0 +1,12 @@
+id,source,target,origin,properties_json
+E_03ef785e3d8a220b1cd5100a,HR_C04,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"
+E_14be385b63c13f80e80a4817,HR_YEO_OUTPUT,GS_ENDRULE_YO_COMPOSE,builder_review,"{""origin"":""builder_review""}"
+E_1b58eb4927bd734f17f95e42,HR_SOURCE_SCOPE,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"
+E_2095e8c7cb4e16e518c91129,HR_MODULE_ASSIGNMENT,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"
+E_2386dcab0173de37ae746d52,HR_C03,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"
+E_5a26a5bfcc85e2e21f19d7c0,HR_C01,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"
+E_9122685249ec2e44b78989ba,HR_YEO_OUTPUT,GS_ENDRULE_YEO_SCOPE,builder_review,"{""origin"":""builder_review""}"
+E_9df94222051c9756afacfd89,HR_COVERAGE,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"
+E_c24376ef03b8411b7a374911,HR_C06,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"
+E_c4aa8e800fa084dd7a044572,HR_C05,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"
+E_d18af4bd5f3bce2d5d255183,HR_C02,COMMON_SPINE,builder_review,"{""origin"":""builder_review""}"

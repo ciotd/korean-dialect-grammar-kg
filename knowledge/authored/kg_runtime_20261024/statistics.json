@@ -1,0 +1,43 @@
+{
+  "source_nodes": 1625,
+  "projected_nodes": 1625,
+  "source_edges": 6167,
+  "projected_edges": 6167,
+  "modules": 12,
+  "source_atom_kinds": {
+    "design_rule": 81,
+    "realization_inventory": 433,
+    "observation": 183,
+    "classification": 24
+  },
+  "implemented_rule_ids": [
+    "GS_ENDRULE_YO_COMPOSE",
+    "GS_ENDRULE_ISO_IMP",
+    "GS_ENDRULE_Q_POLAR_V",
+    "GS_ENDRULE_Q_WH_V",
+    "GS_ENDRULE_Q_POLAR_C",
+    "GS_ENDRULE_Q_WH_C",
+    "GS_ENDRULE_Q_TAM_C",
+    "GS_ENDRULE_NNA_O",
+    "GS_ENDRULE_HORT_JA",
+    "GS_ENDRULE_JI_ASSERT",
+    "GS_ENDRULE_JI_CONFIRM",
+    "GS_CONNECT_COND_03",
+    "GS_CONNECT_CAUSE_01",
+    "GS_CONNECT_QUOTE_02",
+    "GS_HAM_ADV_MAI",
+    "GS_HAM_ADV_LITTLE",
+    "GS_HAM_ADV_BARE"
+  ],
+  "implemented_rules": 17,
+  "source_node_property_fields": 14027,
+  "projected_node_property_fields": 2534,
+  "source_graph_json_bytes": 5562616,
+  "runtime_json_bytes": 1413119,
+  "source_hashes": {
+    "nodes.jsonl": "ea646186bb417ce53fc212ebce0db1c6d3acaf7c8847bae26ef268e859a32509",
+    "edges.jsonl": "de9340e4c920d1303ba15bc8299e1d0d372cfa96a1854c1f98c4f122b713e546"
+  },
+  "original_graph_modified": false,
+  "note": "All IDs/edges preserved; only execution fields projected. Source text/profiles remain in research KG and sidecars."
+}

@@ -1,0 +1,56 @@
+{
+  "results": [
+    {
+      "columns": [
+        "name",
+        "value"
+      ],
+      "data": [
+        {
+          "row": [
+            "db.import.csv.legacy_quote_escaping",
+            "false"
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "server.bolt.listen_address",
+            "127.0.0.1:7687"
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "server.default_listen_address",
+            "127.0.0.1"
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        },
+        {
+          "row": [
+            "server.http.listen_address",
+            "127.0.0.1:7474"
+          ],
+          "meta": [
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "lastBookmarks": [
+    "FB:kcwQF1Gv3fqrQ2inIg0NjjQLXEiQ"
+  ]
+}

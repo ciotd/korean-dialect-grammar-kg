@@ -1,0 +1,32 @@
+[
+  {
+    "decision": "final_design_authority",
+    "basis": "root.module_catalog + atoms._module; 16장 목차와 12개 모듈은 서로 다른 분류축",
+    "impact": "기존 모듈 지정 보존"
+  },
+  {
+    "decision": "preserve_original_graph",
+    "basis": "911 atom IDs and all 2909 typed connections preserved",
+    "impact": "새 의미 연결은 별도 origin 필드"
+  },
+  {
+    "decision": "minimum_schema_extension",
+    "basis": "원 계약에 출처 위치 소속과 Claim→SourceAtom 연결이 없음",
+    "impact": "8개 근거/관리 관계 및 Framework/ReviewIssue 추가; 기존40관계 변경 없음"
+  },
+  {
+    "decision": "no_runtime_promotion",
+    "basis": "설명형 설계를 실행 규칙으로 가정하지 않음",
+    "impact": "모든 runtime_active=false; 검색과 시각화에 사용"
+  },
+  {
+    "decision": "scope_metadata_only",
+    "basis": "사용자 연구 범위",
+    "impact": "지역·세대는 원문 속성 보존; 필수 프로필 필터 미구현"
+  },
+  {
+    "decision": "source_vs_interpretation",
+    "basis": "원문 인용과 Builder 요약/개념매핑 구별",
+    "impact": "Claim.source_statement / claim_text / interpreted_as 분리"
+  }
+]

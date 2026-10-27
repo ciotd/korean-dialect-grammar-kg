@@ -1,0 +1,38 @@
+RUN C:\Users\ciot28\AppData\Local\Temp\tmpqdphaep2\experiments\runs\20261025T091347026979Z_qwen_kg_evaluation
+{"done":1,"id":"X1","of":1,"references":null,"seconds":0.1,"status":"unchanged"}
+COMPLETE {"metrics":{"accuracy":null,"api_attempts":0,"api_failures":0,"automatic_retries":0,"calls_with_usage":0,"calls_without_usage":0,"changed_records":0,"char_reduction_fraction":null,"error_types":{},"evaluation_note":"No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.","evidence_appropriateness":null,"mean_record_seconds":0.1,"median_record_seconds":0.1,"naturalness":null,"neighborhood_limit_records":0,"packet_chars_total":0,"records":1,"records_with_claim_paths":0,"records_with_realization_reference":0,"reported_usage":{"completion_tokens":0,"prompt_tokens":0,"total_tokens":0},"retrieval_chars_total":0,"status_counts":{"unchanged":1},"valid_output_records":1,"wall_seconds":0.005},"run":"C:\\Users\\ciot28\\AppData\\Local\\Temp\\tmpqdphaep2\\experiments\\runs\\20261025T091347026979Z_qwen_kg_evaluation"}
+
+............................................................................................E.C:\Users\ciot28\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\json\encoder.py:260: ResourceWarning: unclosed <socket.socket [closed] fd=1184, family=2, type=1, proto=0>
+  def _make_iterencode(markers, _default, _encoder, _indent, _floatstr,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..
+======================================================================
+ERROR: test_refresh_valid_token (test_research_management.ServerTests.test_refresh_valid_token)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "G:\Work\00_projects\active\hyperscale_AI\02_research\KG\tests\test_research_management.py", line 154, in test_refresh_valid_token
+    with urllib.request.urlopen(req) as r:self.assertEqual(json.load(r)['total_runs'],1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciot28\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciot28\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciot28\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciot28\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ciot28\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\ciot28\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\urllib\request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+
+----------------------------------------------------------------------
+Ran 96 tests in 20.114s
+
+FAILED (errors=1)

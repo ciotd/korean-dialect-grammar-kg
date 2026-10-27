@@ -1,0 +1,8 @@
+{
+  "synthetic_runs": 200,
+  "records_per_run": 1,
+  "first_sync_seconds": 7.115,
+  "second_sync_seconds": 5.807,
+  "list_seconds": 0.004,
+  "note": "Synthetic management fixture only, not Qwen quality/latency or a 200-run production workload benchmark."
+}

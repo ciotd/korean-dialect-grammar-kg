@@ -1,0 +1,35 @@
+{
+  "nodes": 1625,
+  "edges": 6167,
+  "modules": 12,
+  "searchable_atoms": 721,
+  "searchable_concepts": 125,
+  "executable_rule_count": 17,
+  "node_types": {
+    "Framework": 1,
+    "SourceSpan": 655,
+    "Claim": 29,
+    "SourceDocument": 7,
+    "SourceAtom": 721,
+    "AnalysisConcept": 48,
+    "Construction": 54,
+    "GrammarFeature": 23,
+    "AggregateInterface": 11,
+    "ReviewIssue": 10,
+    "TechnicalResponsibility": 54,
+    "Module": 12
+  },
+  "original_graph_modified": false,
+  "all_original_ids_preserved": true,
+  "source_hashes": {
+    "nodes.jsonl": "ea646186bb417ce53fc212ebce0db1c6d3acaf7c8847bae26ef268e859a32509",
+    "edges.jsonl": "de9340e4c920d1303ba15bc8299e1d0d372cfa96a1854c1f98c4f122b713e546"
+  },
+  "previous_projection_sha256": "8851b8c0bbd4788a62447e15a6a00b01ebd994fc39b9e2385d27369a773fd910",
+  "policy": {
+    "search": "No activation/profile/executable filter; exact-ID lookup covers every concept and atom.",
+    "application": "Existing 17 explicit operators plus morphology and Qwen sentence-function selection.",
+    "metadata": "Full original properties remain in the source graph. Provenance is a separate ID join.",
+    "conditions": "Original match/block retained as declarative knowledge, not blindly executed as deployment gates."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "added_or_modified": [
+    "src\\kg_pipeline\\contracts.py",
+    "src\\kg_pipeline\\io.py",
+    "src\\kg_pipeline\\mapping.py",
+    "src\\kg_pipeline\\report.py",
+    "src\\kg_pipeline\\retrieval.py",
+    "src\\kg_pipeline\\runner.py",
+    "src\\kg_pipeline\\selection.py",
+    "src\\kg_pipeline\\validation.py",
+    "src\\kg_pipeline\\__init__.py",
+    "tests\\test_kg_pipeline.py",
+    "tools/run_kg_pipeline.py",
+    "tools/analyze_kg_run.py",
+    "tools/render_pipeline_review.py",
+    "docs/research/PIPELINE_IMPLEMENTATION.md",
+    "docs/research/PIPELINE_FIRST50_RESULTS_20261023.md",
+    "experiments/templates/pipeline_smoke_inputs.jsonl",
+    "README.md",
+    "src/README.md",
+    "docs/research/DECISIONS.md",
+    ".gitignore"
+  ],
+  "original_repository_modified": false,
+  "commit_or_push_performed": false
+}

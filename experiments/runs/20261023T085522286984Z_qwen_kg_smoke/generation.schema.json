@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "input_id": {
+      "type": "string"
+    },
+    "output_text": {
+      "type": "string"
+    },
+    "edits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target_uid": {
+            "type": "string"
+          },
+          "before": {
+            "type": "string"
+          },
+          "after": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_uid",
+          "before",
+          "after",
+          "evidence_ids",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "input_id",
+    "output_text",
+    "edits",
+    "unresolved"
+  ],
+  "additionalProperties": false
+}

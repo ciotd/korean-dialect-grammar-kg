@@ -1,0 +1,63 @@
+{
+  "reviewer": "Linguistic Evidence Reviewer",
+  "date": "2026-10-19",
+  "review_kind": "limited_change_recheck",
+  "input_directory": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\knowledge\\authored\\kg_v3_evidence_20261019",
+  "input_sha256": {
+    "graph\\nodes.jsonl": "7eead0b07f6c7bde507aed82e1357085cea66b057f0031072305e102d673d97c",
+    "graph\\edges.jsonl": "ed7a1cd7f7527f4afc0a6785795226568fdce5485a28eaac91b1fb288f62c752"
+  },
+  "scope": "이전 28Claim 재독은 반복하지 않고 추가1Claim과 LE01/LE03 수정만 확인. LE02 보고서 표시 요구는 Builder 최종보고서에서 확인할 조건이다.",
+  "new_claim": {
+    "id": "C_D07_06",
+    "doc": "D07",
+    "pdf_page": 7,
+    "full_page_text_read": true,
+    "exact_span_match": true,
+    "semantic_result": "supported_with_document_scope",
+    "mapping_result": "G_PRON_PERSON의 인칭·수 구분과 GS_HAM_P2의 목록에 좁게 연결하는 것이 타당",
+    "note": "너의 복수 용법을 문헌 진술로 보존하고 표의 비율을 생성확률로 쓰지 않는 한정을 명시함. 기존 원자의 PDF8참조는 보존되고 추가Claim은 PDF7에 독립 출처를 두므로 출처 오연결이 아님."
+  },
+  "resolved_findings": [
+    {
+      "id": "LE01",
+      "status": "resolved",
+      "evidence": "3개 documents_atom 연결 모두 mapping_note에 부분 지지 범위와 전체원자 승인아님을 명시."
+    },
+    {
+      "id": "LE03",
+      "status": "resolved",
+      "evidence": "C_D05_02 claim_kind=secondary_citation, 김정균 연구 참고 및 해당 원전 미확인 scope_note 확인."
+    }
+  ],
+  "report_condition": {
+    "id": "LE02",
+    "status": "must_remain_explicit",
+    "required": "직접대조29Claim과 기존721원자 이관 구분. 7문헌 전체 의미검증/규칙실행완료 주장 금지. 직접 공통개념 매핑0 모듈은 12만 남음.",
+    "direct_claim_concept_modules": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "modules_without_direct_claim_concept_mapping": [
+      12
+    ]
+  },
+  "cumulative_scope": {
+    "claims": 29,
+    "unique_pdf_pages": 24,
+    "documents": 7,
+    "visual_pages": 3,
+    "all_original_atoms_independently_validated": false
+  },
+  "verdict": "변경 사항 및 신규1Claim에 대한 한정 재검토 통과. 나머지 검토 한계는 이전 linguistic_review.json 그대로 유지.",
+  "kg_modified": false
+}

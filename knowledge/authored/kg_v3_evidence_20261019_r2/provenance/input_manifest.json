@@ -1,0 +1,39 @@
+{
+  "run_id": "kg_v3_evidence_20261019_r2",
+  "build_date_kst": "2026-10-19",
+  "design_sha256": "1fea4ea5eafbdbd3b18380b1f02c12c05a6f1d053a4a045730e492ca61886bcb",
+  "design_semantic_digest": "de9a8945bc101112b282d2d37e6410bb155cbc36d0aa582141fc9ace20774264",
+  "sources": [
+    {
+      "id": "D01",
+      "sha256": "30b90da21b6f86e1c7404d194d35f6bbb9f77f7ed9e11dcb642f5f8b7ee19f3b"
+    },
+    {
+      "id": "D02",
+      "sha256": "3b48d6356b9efe95fe06dbd9f4db61031795cb3fb48aa87da0f192fcc1ee6c3d"
+    },
+    {
+      "id": "D03",
+      "sha256": "97a5ccceeb15d9b80370f1a505c5eebd6e69e9da9a57ade1bed8e19303b9f80c"
+    },
+    {
+      "id": "D04",
+      "sha256": "7bbc219e272b325a44310fe70aeed20912b38b9023d00fcbbb879edc22ec7003"
+    },
+    {
+      "id": "D05",
+      "sha256": "e0eb50ca37599a7c21e09c49c4c2052a6013c6073edd14391c0d2d70a15de9c4"
+    },
+    {
+      "id": "D06",
+      "sha256": "ecdde8d655782e6ebb4c86361019139f6dc6ad87c556bf1b4bcf82402b2b3366"
+    },
+    {
+      "id": "D07",
+      "sha256": "2ae9c22e1a7cc9f470909bdf9cfe5f7e002d868c208a55ce23fed479ae5d9973"
+    }
+  ],
+  "html_files": 19,
+  "source_paths_are_external": true,
+  "no_original_modifications": true
+}

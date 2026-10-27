@@ -1,0 +1,625 @@
+{
+  "type": "object",
+  "properties": {
+    "input_id": {
+      "type": "string"
+    },
+    "clauses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cid": {
+            "type": "string"
+          },
+          "anchor": {
+            "type": "object",
+            "properties": {
+              "surface": {
+                "type": "string",
+                "minLength": 1
+              },
+              "occurrence": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "surface",
+              "occurrence"
+            ],
+            "additionalProperties": false
+          },
+          "parent_cid": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "relation": {
+            "type": "string",
+            "enum": [
+              "main",
+              "reason",
+              "condition",
+              "purpose",
+              "degree",
+              "contrast",
+              "concessive",
+              "sequence",
+              "simultaneous",
+              "relative",
+              "nominal",
+              "quote",
+              "coordinate",
+              "other",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "cid",
+          "anchor",
+          "parent_cid",
+          "relation"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "uid": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "predicate"
+                ]
+              },
+              "cid": {
+                "type": "string"
+              },
+              "anchor": {
+                "type": "object",
+                "properties": {
+                  "surface": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "occurrence": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "required": [
+                  "surface",
+                  "occurrence"
+                ],
+                "additionalProperties": false
+              },
+              "lemma": {
+                "type": "string"
+              },
+              "morphemes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "features": {
+                "type": "object",
+                "properties": {
+                  "predicate_kind": {
+                    "type": "string",
+                    "enum": [
+                      "verb",
+                      "adjective",
+                      "copula",
+                      "negative_copula",
+                      "unknown"
+                    ]
+                  },
+                  "stem": {
+                    "type": "string"
+                  },
+                  "mood": {
+                    "type": "string",
+                    "enum": [
+                      "declarative",
+                      "interrogative",
+                      "imperative",
+                      "propositive",
+                      "exclamative",
+                      "unknown"
+                    ]
+                  },
+                  "speech_act": {
+                    "type": "string",
+                    "enum": [
+                      "assertion",
+                      "question",
+                      "command",
+                      "request",
+                      "suggestion",
+                      "intention",
+                      "promise",
+                      "exclamation",
+                      "unknown"
+                    ]
+                  },
+                  "question_type": {
+                    "type": "string",
+                    "enum": [
+                      "polar",
+                      "wh",
+                      "choice",
+                      "echo",
+                      "none",
+                      "unknown"
+                    ]
+                  },
+                  "politeness": {
+                    "type": "string",
+                    "enum": [
+                      "informal",
+                      "polite",
+                      "unknown"
+                    ]
+                  },
+                  "subject_honorific": {
+                    "type": "string",
+                    "enum": [
+                      "yes",
+                      "no",
+                      "unknown"
+                    ]
+                  },
+                  "tense": {
+                    "type": "string",
+                    "enum": [
+                      "past",
+                      "present",
+                      "future",
+                      "unspecified",
+                      "unknown"
+                    ]
+                  },
+                  "prefinal_tam": {
+                    "type": "string",
+                    "enum": [
+                      "absent",
+                      "present",
+                      "unknown"
+                    ]
+                  },
+                  "aspect": {
+                    "type": "string",
+                    "enum": [
+                      "progressive",
+                      "result",
+                      "completion",
+                      "none",
+                      "unknown"
+                    ]
+                  },
+                  "negation": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "an",
+                      "mot",
+                      "malda",
+                      "long_an",
+                      "long_mot",
+                      "lexical",
+                      "unknown"
+                    ]
+                  },
+                  "constructions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "trial",
+                        "benefactive",
+                        "completion",
+                        "aux_become",
+                        "main_become",
+                        "desire",
+                        "obligation",
+                        "inference",
+                        "passive_derived",
+                        "passive_analytic",
+                        "causative",
+                        "quote_indirect",
+                        "quote_direct",
+                        "quote_rago_hada",
+                        "retrospective",
+                        "prospective",
+                        "unknown"
+                      ]
+                    }
+                  },
+                  "wh_scope_cid": {
+                    "type": "string"
+                  },
+                  "agent": {
+                    "type": "string",
+                    "enum": [
+                      "speaker",
+                      "addressee",
+                      "both",
+                      "other",
+                      "unknown"
+                    ]
+                  }
+                },
+                "required": [
+                  "predicate_kind",
+                  "stem",
+                  "mood",
+                  "speech_act",
+                  "question_type",
+                  "politeness",
+                  "subject_honorific",
+                  "tense",
+                  "prefinal_tam",
+                  "aspect",
+                  "negation",
+                  "constructions",
+                  "wh_scope_cid",
+                  "agent"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uid",
+              "kind",
+              "cid",
+              "anchor",
+              "lemma",
+              "morphemes",
+              "features"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uid": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "particle"
+                ]
+              },
+              "cid": {
+                "type": "string"
+              },
+              "anchor": {
+                "type": "object",
+                "properties": {
+                  "surface": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "occurrence": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "required": [
+                  "surface",
+                  "occurrence"
+                ],
+                "additionalProperties": false
+              },
+              "lemma": {
+                "type": "string"
+              },
+              "morphemes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "features": {
+                "type": "object",
+                "properties": {
+                  "particle_function": {
+                    "type": "string",
+                    "enum": [
+                      "subject",
+                      "object",
+                      "topic",
+                      "comparison",
+                      "similarity",
+                      "dative",
+                      "instrument",
+                      "coordination",
+                      "focus",
+                      "vocative",
+                      "locative",
+                      "genitive",
+                      "unknown"
+                    ]
+                  }
+                },
+                "required": [
+                  "particle_function"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uid",
+              "kind",
+              "cid",
+              "anchor",
+              "lemma",
+              "morphemes",
+              "features"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uid": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "pronoun"
+                ]
+              },
+              "cid": {
+                "type": "string"
+              },
+              "anchor": {
+                "type": "object",
+                "properties": {
+                  "surface": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "occurrence": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "required": [
+                  "surface",
+                  "occurrence"
+                ],
+                "additionalProperties": false
+              },
+              "lemma": {
+                "type": "string"
+              },
+              "morphemes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "features": {
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "type": "string",
+                    "enum": [
+                      "first",
+                      "second",
+                      "third",
+                      "unknown"
+                    ]
+                  },
+                  "number": {
+                    "type": "string",
+                    "enum": [
+                      "singular",
+                      "plural",
+                      "unknown"
+                    ]
+                  },
+                  "lexical_sense": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "person",
+                  "number",
+                  "lexical_sense"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uid",
+              "kind",
+              "cid",
+              "anchor",
+              "lemma",
+              "morphemes",
+              "features"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uid": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "adverb"
+                ]
+              },
+              "cid": {
+                "type": "string"
+              },
+              "anchor": {
+                "type": "object",
+                "properties": {
+                  "surface": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "occurrence": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "required": [
+                  "surface",
+                  "occurrence"
+                ],
+                "additionalProperties": false
+              },
+              "lemma": {
+                "type": "string"
+              },
+              "morphemes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "features": {
+                "type": "object",
+                "properties": {
+                  "lexical_sense": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lexical_sense"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uid",
+              "kind",
+              "cid",
+              "anchor",
+              "lemma",
+              "morphemes",
+              "features"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "uid": {
+                "type": "string"
+              },
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "noun"
+                ]
+              },
+              "cid": {
+                "type": "string"
+              },
+              "anchor": {
+                "type": "object",
+                "properties": {
+                  "surface": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "occurrence": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "required": [
+                  "surface",
+                  "occurrence"
+                ],
+                "additionalProperties": false
+              },
+              "lemma": {
+                "type": "string"
+              },
+              "morphemes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "features": {
+                "type": "object",
+                "properties": {
+                  "lexical_sense": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lexical_sense"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "uid",
+              "kind",
+              "cid",
+              "anchor",
+              "lemma",
+              "morphemes",
+              "features"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target_id": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_id",
+          "field",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "input_id",
+    "clauses",
+    "units",
+    "uncertainties"
+  ],
+  "additionalProperties": false
+}

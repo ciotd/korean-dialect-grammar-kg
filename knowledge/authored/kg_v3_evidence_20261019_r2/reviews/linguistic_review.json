@@ -1,0 +1,400 @@
+{
+  "reviewer": "Linguistic Evidence Reviewer",
+  "date": "2026-10-19",
+  "input_directory": "C:\\Users\\ciot28\\Documents\\Codex\\2026-10-13\\ciotd-odor-complaint-dialect-rag-kg\\work\\kg_build_20261019\\draft1",
+  "input_sha256": {
+    "inputs\\curated_claims.json": "0fe286278d8d8585c4866006da52559ef7c6753b2a279703e7a3bfcf3b69c906",
+    "graph\\nodes.jsonl": "55476181a56d2a2dd20f8838274b2a1cc493a04f8b54637733b898e5008c4ea2",
+    "graph\\edges.jsonl": "1dbe5fccc1f6bdfa5ce5c3f0cc5d71dad021d4597b21c0e184174dcab79348b3"
+  },
+  "verdict": "직접 대조한 28 Claim의 인용 및 제한적 요약에서 원문과 충돌하는 치명적 오류를 발견하지 않았다. 기존 전체 원자의 언어학적 승인 또는 실행 가능성 승인이 아니다. 범위 표시를 조건으로 근거 추적용 KG 초안 사용 가능.",
+  "review_scope": {
+    "curated_claim_count": 28,
+    "exact_span_matches": 28,
+    "unique_pdf_pages": 23,
+    "pages_by_document": {
+      "D01": [
+        9,
+        12,
+        17
+      ],
+      "D02": [
+        92,
+        144,
+        145,
+        168,
+        169,
+        190
+      ],
+      "D03": [
+        3
+      ],
+      "D04": [
+        3,
+        20,
+        35
+      ],
+      "D05": [
+        8,
+        14,
+        26
+      ],
+      "D06": [
+        3,
+        4,
+        8
+      ],
+      "D07": [
+        12,
+        23,
+        24,
+        26
+      ]
+    },
+    "full_page_text_read": true,
+    "visual_pages": [
+      {
+        "doc": "D07",
+        "page": 12
+      },
+      {
+        "doc": "D04",
+        "page": 35
+      },
+      {
+        "doc": "D02",
+        "page": 190
+      }
+    ],
+    "methods": [
+      "지정쪽 전체 추출문에서 인용·앞뒤 문단·각주·표 확인",
+      "Claim 요약과 원문의 양태/한정 범위 대조",
+      "28 Claim의 공통개념 이름 및 기존 원자 연결 검토",
+      "28 SourceSpan의 start/end 부분문자열과 원문 인용 일치 자동 확인",
+      "SourceDocument 근거군·2차인용 정책 및 원자 미검증 상태 확인"
+    ],
+    "not_performed": [
+      "7PDF 474쪽 전체 독립 재독",
+      "721개 기존 원자 전체의 조건/출력 개별 재검증",
+      "현대 경상도 지역화자 자연스러움 검증",
+      "실행규칙 또는 번역 생성 실험"
+    ]
+  },
+  "claim_results": [
+    {
+      "claim_id": "C_D01_01",
+      "source": "D01",
+      "pdf_page": 9,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D01_02",
+      "source": "D01",
+      "pdf_page": 12,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D01_03",
+      "source": "D01",
+      "pdf_page": 17,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D01_04",
+      "source": "D01",
+      "pdf_page": 17,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D02_01",
+      "source": "D02",
+      "pdf_page": 144,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D02_02",
+      "source": "D02",
+      "pdf_page": 145,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D02_03",
+      "source": "D02",
+      "pdf_page": 169,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D02_04",
+      "source": "D02",
+      "pdf_page": 168,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "LE01의 부분 연결 범위 보완 대상"
+    },
+    {
+      "claim_id": "C_D02_05",
+      "source": "D02",
+      "pdf_page": 92,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D02_06",
+      "source": "D02",
+      "pdf_page": 190,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "LE01의 부분 연결 범위 보완 대상"
+    },
+    {
+      "claim_id": "C_D03_01",
+      "source": "D03",
+      "pdf_page": 3,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D03_02",
+      "source": "D03",
+      "pdf_page": 3,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D04_01",
+      "source": "D04",
+      "pdf_page": 3,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "LE01의 부분 연결 범위 보완 대상"
+    },
+    {
+      "claim_id": "C_D04_02",
+      "source": "D04",
+      "pdf_page": 3,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D04_03",
+      "source": "D04",
+      "pdf_page": 3,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D04_04",
+      "source": "D04",
+      "pdf_page": 20,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D04_05",
+      "source": "D04",
+      "pdf_page": 35,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D05_01",
+      "source": "D05",
+      "pdf_page": 8,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D05_02",
+      "source": "D05",
+      "pdf_page": 14,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D05_03",
+      "source": "D05",
+      "pdf_page": 26,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D06_01",
+      "source": "D06",
+      "pdf_page": 3,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D06_02",
+      "source": "D06",
+      "pdf_page": 4,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D06_03",
+      "source": "D06",
+      "pdf_page": 8,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D07_01",
+      "source": "D07",
+      "pdf_page": 12,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D07_02",
+      "source": "D07",
+      "pdf_page": 12,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D07_03",
+      "source": "D07",
+      "pdf_page": 23,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D07_04",
+      "source": "D07",
+      "pdf_page": 24,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    },
+    {
+      "claim_id": "C_D07_05",
+      "source": "D07",
+      "pdf_page": 26,
+      "quote_check": "exact_match",
+      "semantic_result": "limited_paraphrase_supported",
+      "mapping_result": "interpretive_candidate_not_identity",
+      "notes": "문헌 진술의 범위에서 지지; 전체 경상도 보편 규칙이나 기존 원자 전체 승인 아님"
+    }
+  ],
+  "positive_findings": [
+    "28개 직접 인용은 해당 출처 위치와 일치한다.",
+    "저자 분석·위키 서술·2차 인용·편집정책·저자 불확실성을 구분한다.",
+    "원문의 보인다/확인 필요/일부 화자 등의 제한을 요약에 보존한다.",
+    "문헌 출처군을 보존하고 위키 4종을 독립 근거로 가산하지 않는다.",
+    "자동 문맥 발췌는 automatic_context_not_semantic_evidence, 기존 원자는 inherited_design_specification으로 표시되어 있다.",
+    "interpreted_as는 builder_mapping/review_candidate, documents_atom은 claim_only_not_whole_atom이므로 추론 연결을 문헌의 직접 사실과 구별한다.",
+    "모든 해당 규칙 runtime_active=false이므로 미검증 규칙 실행을 주장하지 않는다."
+  ],
+  "issues": [
+    {
+      "id": "LE01",
+      "target": [
+        "C_D02_04",
+        "GS_ENDRULE_RA_EXCLAIM",
+        "C_D02_06",
+        "GS_ENDRULE_HORT_JA",
+        "C_D04_01",
+        "GS_CONJ_MUK_UU"
+      ],
+      "severity": "보완 권고",
+      "status": "builder_action_recommended",
+      "evidence": "D02 PDF168은 래이의 서술 감탄과 명령 당부를 구별한다. PDF190은 제이/재이 완곡을 기술하지만 기존 원자 output은 자/제다. D04 PDF3은 무웄나라는 문서 편집 표기 정책이며 묵의 전 활용규칙 입증은 아니다.",
+      "finding": "documents_atom의 coverage=claim_only_not_whole_atom은 적절하지만 세 연결의 지지 범위가 서로 달라 연결명만 보면 규칙 전체가 확인되었다고 오해할 수 있다.",
+      "recommendation": "각 연결에 mapping_note를 추가하여 각각 서술감탄과 명령당부의 구별, 파생/확장형의 완곡 용법에 한정, 문서 표기정책에 한정이라고 명시. 기존 원자 전체의 의미 검증 완료 상태로 승격하지 않는다."
+    },
+    {
+      "id": "LE02",
+      "target": [
+        "HR_COVERAGE",
+        "report Graph Statistics",
+        "721 SourceAtom"
+      ],
+      "severity": "표시상 필수",
+      "status": "release_condition",
+      "evidence": "28개 Claim은 7문헌의 23개 서로 다른 PDF쪽에 위치한다. 기존 721개 SourceAtom은 이번에 전부 문장별 의미 재검증되지 않았다. 공통개념 매핑의 직접대조 범위는 12모듈 중 10모듈(3,12 미포함)이다.",
+      "finding": "인용위치 연결 수와 독립 의미검증 수를 합쳐 evidence-verified로 표시하면 검토 범위를 과장한다. 원본의 broad atom 내 조건 전체 승인도 아니다.",
+      "recommendation": "HTML과 README에 설계이관 721, 직접대조 Claim 28, 미재검증 원자 상태를 별도로 표시. 3·12모듈은 직접대조 Claim이 없음을 명시. 최종 결과를 7문헌 지식 전부의 완전 추출이나 완성 문법 실행기로 표현하지 않는다."
+    },
+    {
+      "id": "LE03",
+      "target": [
+        "C_D05_02",
+        "D05",
+        "D03",
+        "D04",
+        "D06"
+      ],
+      "severity": "추적성 보완",
+      "status": "optional_improvement",
+      "evidence": "D05 PDF14 첫 문장은 이하 대부분이 김정균 안동 지역어 종결어미 연구를 참고했다고 명시한다. D03–D06은 동일 위키 근거군이며 현 graph가 이를 보존한다.",
+      "finding": "C_D05_02는 위키의 설명으로 올바르게 한정되지만 간접 인용 원전 추적 정보는 C_D04_03에 비해 약하다.",
+      "recommendation": "C_D05_02 scope_note에 김정균 연구 참고라는 위키 설명과 이번 원전 미확인을 추가 권고. 동일 위키 4개를 독립 지지 4건으로 가중하지 않는 현재 family 정책 유지."
+    }
+  ],
+  "human_review": [
+    "미검증 기존 원자들의 문헌 의미 대조는 계속 필요한 후속 범위이며 현재 독립검토 완료로 계산할 수 없음.",
+    "문헌 분류체계와 현대 화자 용법의 차이는 이 검토에서 해소되지 않음."
+  ],
+  "files_modified": [
+    "work/kg_build_20261019/linguistic_review.json"
+  ],
+  "kg_modified": false
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "finding": "SR01–SR09",
+    "action": "기존 ID·모듈 분류·관계 보존, 종류 정규화, 근거 노드·최소 관계 확장, 중첩 원본 보존",
+    "status": "반영; 구조 Reviewer 확인"
+  },
+  {
+    "finding": "SP01",
+    "action": "Module.number는 원래 import 마지막 문장에서 설정됨",
+    "status": "Reviewer 오탐 철회; 기록 보존"
+  },
+  {
+    "finding": "SP02",
+    "action": "설명 두 곳을 한국어로 정리",
+    "status": "수정·재확인"
+  },
+  {
+    "finding": "SP04",
+    "action": "CSV 표시값 NUL은 ␀로 변환; properties_json은 원문 유지",
+    "status": "수정·재확인"
+  },
+  {
+    "finding": "LE01",
+    "action": "세 documents_atom 연결에 부분적으로 관련되는 범위를 mapping_note로 명시",
+    "status": "수정·재확인"
+  },
+  {
+    "finding": "LE03",
+    "action": "C_D05_02를 2차 인용으로 표시하고 원전 미확인 기록",
+    "status": "수정·재확인"
+  },
+  {
+    "finding": "LE02 / SP03",
+    "action": "29개 좁은 진술 대조와 721개 기존 항목을 구분; 직접 Claim이 없는 모듈12 표시",
+    "status": "보고 범위 유지"
+  },
+  {
+    "finding": "Builder 출처 중복 검사",
+    "action": "동일 문헌·쪽·offset·발췌의 자동 SourceSpan 공유; 항목별 anchor는 매핑파일에 보존",
+    "status": "r2에서 수정; 구조 재검증"
+  }
+]

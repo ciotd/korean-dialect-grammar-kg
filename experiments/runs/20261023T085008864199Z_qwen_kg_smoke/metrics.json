@@ -1,0 +1,33 @@
+{
+  "records": 5,
+  "status_counts": {
+    "unchanged": 4,
+    "generated_requires_human_review": 1
+  },
+  "valid_output_records": 5,
+  "changed_records": 1,
+  "records_with_realization_reference": 1,
+  "records_with_claim_paths": 5,
+  "api_attempts": 10,
+  "api_failures": 0,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 9748,
+    "completion_tokens": 4623,
+    "total_tokens": 14371
+  },
+  "calls_with_usage": 10,
+  "calls_without_usage": 0,
+  "wall_seconds": 54.7,
+  "mean_record_seconds": 18.22,
+  "median_record_seconds": 16.779,
+  "retrieval_chars_total": 10960975,
+  "packet_chars_total": 7623,
+  "char_reduction_fraction": 0.9993,
+  "neighborhood_limit_records": 0,
+  "error_types": {},
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit."
+}

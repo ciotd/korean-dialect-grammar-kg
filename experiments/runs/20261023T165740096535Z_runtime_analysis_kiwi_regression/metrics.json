@@ -1,0 +1,42 @@
+{
+  "records": 50,
+  "status_counts": {
+    "analysis_completed": 40,
+    "analysis_failed": 10
+  },
+  "valid_output_records": 0,
+  "changed_records": 0,
+  "records_with_realization_reference": 6,
+  "records_with_claim_paths": 0,
+  "api_attempts": 50,
+  "api_failures": 0,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 64592,
+    "completion_tokens": 76261,
+    "total_tokens": 140853
+  },
+  "calls_with_usage": 50,
+  "calls_without_usage": 0,
+  "wall_seconds": null,
+  "mean_record_seconds": 31.066,
+  "median_record_seconds": 22.078,
+  "retrieval_chars_total": 158651640,
+  "packet_chars_total": 75655,
+  "char_reduction_fraction": 0.99952,
+  "neighborhood_limit_records": 0,
+  "error_types": {
+    "ValidationError": 10
+  },
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.",
+  "shared_batch_wall_seconds": 1082.229,
+  "analysis_valid_records": 40,
+  "kg_query_count": 80,
+  "selected_rule_ids": [],
+  "wall_note": "Shared interleaved batch: compare per-record latency; no isolated per-condition wall time.",
+  "rule_accuracy": null,
+  "meaning_preservation": null
+}

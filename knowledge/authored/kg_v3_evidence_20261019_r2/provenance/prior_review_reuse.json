@@ -1,0 +1,139 @@
+{
+  "method": "이전 19HTML 검토 기록은 LF 줄바꿈 정규화 텍스트 해시였음. 동일 방식으로 19개 모두 일치 확인 후 재사용; 현재 원본 바이트 해시도 별도 보존; 이번 작업에서는 최종 구조화 설계를 분석하고 모든 HTML의 구조·판본을 재확인. 19개 전체를 새로 정독했다고 주장하지 않음.",
+  "comparison": [
+    {
+      "path": "agents/dialect.html",
+      "raw_sha256": "fdc3b6f60ce92b724b5f7636652f8ce354d688323ccb4f9293b193c8edfee586",
+      "lf_normalized_sha256": "f8d7472ce85ecede0bc699e0cc85344312012670849c7cf6f1f4351d81fa3860",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "agents/grammar.html",
+      "raw_sha256": "83dc11c3f50fa936b1e047f7562f841c88c079d90ef8c1e0f2377d31ff9e7073",
+      "lf_normalized_sha256": "27e45304742e9c5533f46fdfa0bf18d097f8c171efa499e92f018e67eaa34f0d",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "agents/graph.html",
+      "raw_sha256": "3ce5b87419eaaeb237e01aeee747765ee9d864f71a6e27a1b2228791a6e78703",
+      "lf_normalized_sha256": "411db2e4c6f399f9514e058f04b64510a8b66d3b9fd5b8b44e83d005a59718c1",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round2/agents/dialect.html",
+      "raw_sha256": "50687a9309b4cfb7b4e2a8b03b63bf06a1940075062aeba8e38ad336c732c61e",
+      "lf_normalized_sha256": "cb322a301844e84bee14b6954b5051a14c8c07cd49717bbc56743b352c9cbbea",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round2/agents/grammar.html",
+      "raw_sha256": "3b976c53bde01af84630206e1ae91d4a6c89a25dffe385d53f47edd8d4569098",
+      "lf_normalized_sha256": "d03dcb829cadad29d3dfdaf1005ca11d87141eaa65d45bd7a63c0285d8b132cc",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round2/agents/graph.html",
+      "raw_sha256": "a442457923555a1b8c2deb85be392cf8cfcfe76df85008bc24301f3155496d5e",
+      "lf_normalized_sha256": "ad4e031ffa55a61b156b9a9ba0233551487c7bf4df303ce918db3bd2f44ea183",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round2/경상방언_KG_최종설계보고서.html",
+      "raw_sha256": "db4c09cc545bd8071bf91d2069ac12fde4cb581fa5ab1f81717fc98b6f2f9fe2",
+      "lf_normalized_sha256": "249ab31458222b0d8a2a98663fce2ef5ff6a4d9a5f66d5d319d960d0c151c6e6",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3/agents/dialect.html",
+      "raw_sha256": "c6342bacaa5bf38026925b3a7543219119b93212f3e1b62d03896163968b93cc",
+      "lf_normalized_sha256": "99584418072a29a2f5350c2e8f3f79d72f32000bf385c869c7d74d7e78e969ff",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3/agents/grammar.html",
+      "raw_sha256": "bc050d27169dc00142e51144584b7ff59b30538b93a326586b8e24d1e9f18881",
+      "lf_normalized_sha256": "b1cb5c1ef7b7fa04093664d0882fdab9712279bab28db252e7c4f00c9eac2af7",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3/agents/graph.html",
+      "raw_sha256": "4eb180681465c9b53362af998ffa4d39bd4c1fd27051063264f3715a8b6965a2",
+      "lf_normalized_sha256": "a8ca67fdc36f9b6d241707ea9b7e7781e8da52c64003622ff7a2bc6e694d30a8",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3/경상방언_KG_최종설계보고서.html",
+      "raw_sha256": "92b8c2419ff7413f5187ce996bb3ae3ee4a20e6462683eb3c2ccc525bf9099d7",
+      "lf_normalized_sha256": "9c75e576a94a5d855efa8dbca63a7664ce632f319ac74164dec13a59f5cb3e8b",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3/협업_검수실.html",
+      "raw_sha256": "7a1fb3e802c6a69d52679e0dc80d209a216bb362a78efb8c56fb577322f8ec53",
+      "lf_normalized_sha256": "e932bc98c073df29f76d06007e829eb3f7f0d2ac30cc9c2cfd15eba95876949e",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3_final/agents/dialect.html",
+      "raw_sha256": "c6342bacaa5bf38026925b3a7543219119b93212f3e1b62d03896163968b93cc",
+      "lf_normalized_sha256": "99584418072a29a2f5350c2e8f3f79d72f32000bf385c869c7d74d7e78e969ff",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3_final/agents/grammar.html",
+      "raw_sha256": "4fa6b2bd03b8fe9a875576ec518eb41b36396462292b86443d8b4d6c84537334",
+      "lf_normalized_sha256": "72e27ec7feb928a9a070d76684ecc4562a4957d523b3683f966e2b6d3d0a3ee4",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3_final/agents/graph.html",
+      "raw_sha256": "4eb180681465c9b53362af998ffa4d39bd4c1fd27051063264f3715a8b6965a2",
+      "lf_normalized_sha256": "a8ca67fdc36f9b6d241707ea9b7e7781e8da52c64003622ff7a2bc6e694d30a8",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3_final/경상방언_KG_최종설계보고서.html",
+      "raw_sha256": "86a2de90e366353604faf2ba7f13ffeccae402f7c9872b9c0fd27eb267ef549b",
+      "lf_normalized_sha256": "8d42414188d5b994afae56914ea5eda968d6d777f437cddf1f2c6e4eeee3fe77",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "snapshots/round3_final/협업_검수실.html",
+      "raw_sha256": "7a1fb3e802c6a69d52679e0dc80d209a216bb362a78efb8c56fb577322f8ec53",
+      "lf_normalized_sha256": "e932bc98c073df29f76d06007e829eb3f7f0d2ac30cc9c2cfd15eba95876949e",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "경상방언_KG_최종설계보고서.html",
+      "raw_sha256": "482539cf8b7a1371cdfcbf86f75e9e087d477c81954adad77b9d255875668657",
+      "lf_normalized_sha256": "03609e07ae90758db881b67fef0e2be2ba488f9841c042a7675821a73d882e65",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    },
+    {
+      "path": "협업_검수실.html",
+      "raw_sha256": "6daaf352384ef79b4db0a49c6ab5a95f59372a9b780b7726d93d7e9ae736f61b",
+      "lf_normalized_sha256": "718256ce946e4a36aa8033d8fa10e2cb01bf7d26874eee6d9c82e6e59174d584",
+      "matches_prior_audit": true,
+      "raw_matches_current_file": true
+    }
+  ],
+  "all_match": true
+}
