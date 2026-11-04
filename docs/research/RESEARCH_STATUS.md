@@ -4,6 +4,7 @@
 
 | Run ID | 용도 | 상태 | 입력 | 출력 형식 통과 | 분석·조회 실패(단위 구분) |
 |---|---|---|---:|---:|---|
+| 20261104T152433297395Z_past_copula_paired_regression | regression | incomplete | 50 | — | 미집계 |
 | 20261104T151953338664Z_past_copula_paired_development | development | completed | 16 | 32 | 미집계 |
 | 20261104T151934664312Z_past_copula_paired_development | development | incomplete | 16 | — | 미집계 |
 | 20261104T150619276822Z_paired_error_feedback | regression | completed | 12 | 12 | 미집계 |
