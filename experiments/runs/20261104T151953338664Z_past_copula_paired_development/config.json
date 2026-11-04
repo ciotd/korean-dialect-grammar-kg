@@ -1,0 +1,33 @@
+{
+  "phase": "development",
+  "dataset_role": "development",
+  "input_count": 16,
+  "model_id": "Qwen3.8-27B",
+  "kg_dataset": "r7_vs_r10_shared_analysis",
+  "graph_paths": {
+    "r7": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\knowledge\\authored\\semantic_grammar_20261104_r7\\private\\graph.json",
+    "r10": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\knowledge\\authored\\semantic_grammar_20261105_r10\\private\\graph.json"
+  },
+  "final_writer": "Qwen",
+  "arms": [
+    "r7",
+    "r10"
+  ],
+  "analysis_shared": true,
+  "automatic_retries": 0,
+  "seed": 20261103,
+  "temperature": 0,
+  "top_p": 1,
+  "enable_thinking": false,
+  "reference_answers_in_request": false,
+  "data_check": {
+    "role": "development",
+    "input_sha256": "fa576b5db5e83f9618c1ff5600e37a24a5d1c5949a87460a32b9a199654e1de9",
+    "records": 16,
+    "frozen_overlap_ids": [],
+    "check": "NFC_and_whitespace_normalized_exact_match",
+    "limitation": "Paraphrase/semantic overlap needs human review; prior exposure is not erased."
+  },
+  "input_sha256": "fa576b5db5e83f9618c1ff5600e37a24a5d1c5949a87460a32b9a199654e1de9",
+  "metric_contract": "paired_kg_support_and_generation_not_human_quality"
+}

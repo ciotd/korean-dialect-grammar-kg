@@ -1,0 +1,20 @@
+{
+  "records": 32,
+  "planned_inputs": 16,
+  "api_attempts": 48,
+  "analysis_calls": 16,
+  "generation_calls": 32,
+  "valid_output_records": 32,
+  "arm_counts": {
+    "r7": 16,
+    "r10": 16
+  },
+  "failure_count": 0,
+  "naturalness": "not_evaluated",
+  "wall_seconds": 116.41788599989377,
+  "reported_usage": {
+    "prompt_tokens": 54085,
+    "completion_tokens": 5147,
+    "total_tokens": 59232
+  }
+}
