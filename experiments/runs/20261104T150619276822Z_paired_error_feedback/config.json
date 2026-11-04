@@ -1,0 +1,24 @@
+{
+  "phase": "diagnostic",
+  "dataset_role": "regression",
+  "input_count": 12,
+  "unique_inputs": 3,
+  "first_outputs": 6,
+  "arms": [
+    "neutral",
+    "specific"
+  ],
+  "model_id": "Qwen3.8-27B",
+  "kg_dataset": "semantic_grammar_20261104_r7",
+  "temperature": 0,
+  "top_p": 1,
+  "enable_thinking": false,
+  "max_tokens": 2048,
+  "automatic_retries": 0,
+  "followup_calls_per_first_output_per_arm": 1,
+  "metric_contract": "single_action_surface_contract_not_naturalness",
+  "source_checkpoint": "42dfc8f",
+  "difference": "failed_checks only; unequal token counts",
+  "reference_answers_in_request": false,
+  "final_writer": "Qwen"
+}

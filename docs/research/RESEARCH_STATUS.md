@@ -4,6 +4,7 @@
 
 | Run ID | 용도 | 상태 | 입력 | 출력 형식 통과 | 분석·조회 실패(단위 구분) |
 |---|---|---|---:|---:|---|
+| 20261104T150619276822Z_paired_error_feedback | regression | completed | 12 | 12 | 미집계 |
 | 20261104T072510684970Z_scope_development_C | development | completed | 24 | 24 | 미집계 |
 | 20261104T072510684970Z_scope_development_B | development | completed | 24 | 24 | 미집계 |
 | 20261104T072510684970Z_scope_development_A | development | completed | 24 | 24 | 미집계 |
