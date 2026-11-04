@@ -198,5 +198,10 @@
     "title": "40 · 승인 참조50 기반 수정안",
     "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/generation_scope_20261104/private/refinement/20261104T083517Z/report.html",
     "summary": "50입력·62조회 위치 대조. 실행 지식 공백·조건 차단·전달 후 생성 실패 분리. 구체 오류 피드백 후보 오프라인 검사. 새 모델 호출 없음."
+  },
+  {
+    "title": "11월5일 · 연구 미팅·논문 인계",
+    "url": "http://127.0.0.1:8767/reports/overnight-20261105/report.html",
+    "summary": "피드백·과거 계사 KG·기존50·쉬운30 통제 비교, 실제 구조와 한계"
   }
 ]

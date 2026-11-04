@@ -47,6 +47,13 @@ def make_server(project, port=8766):
                     name={'/work':'work.html','/work.js':'work.js','/work.css':'work.css'}[request.path]
                     mime={'work.html':'text/html','work.js':'text/javascript','work.css':'text/css'}[name]
                     return self.send((assets/name).read_bytes(),mime=mime+'; charset=utf-8')
+                if request.path.startswith('/reports/overnight-20261105/'):
+                    name=request.path.removeprefix('/reports/overnight-20261105/')
+                    files={'report.html':'text/html','report.css':'text/css','report.js':'text/javascript','paper_handoff.md':'text/plain','codex_review.md':'text/plain','claude_review.md':'text/plain'}
+                    if name not in files:return self.send({'error':'not_found'},404)
+                    path=registry.project/'experiments/analyses/overnight_20261105/private'/name
+                    if not path.is_file():return self.send({'error':'report_not_ready'},404)
+                    return self.send(path.read_bytes(),mime=files[name]+'; charset=utf-8')
                 if request.path.startswith('/reports/qwen-rerun-20261030/'):
                     name=request.path.removeprefix('/reports/qwen-rerun-20261030/')
                     files={'report.html':'text/html','report.css':'text/css'}
