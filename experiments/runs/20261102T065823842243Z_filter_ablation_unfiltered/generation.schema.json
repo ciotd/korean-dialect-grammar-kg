@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "plan_id": {
+      "type": "string"
+    },
+    "edits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "edit_id": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "apply",
+              "keep",
+              "needs_review"
+            ]
+          },
+          "after": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "edit_id",
+          "action",
+          "after",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "plan_id",
+    "edits",
+    "reason"
+  ],
+  "additionalProperties": false
+}

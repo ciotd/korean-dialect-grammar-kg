@@ -1,0 +1,11 @@
+{
+  "batch_id": "20261030T085346443103Z",
+  "runs": {
+    "single": "20261030T085346443103Z_cards_single_regression",
+    "multi": "20261030T085346443103Z_cards_multi_regression"
+  },
+  "shared_analysis": true,
+  "phase": "regression",
+  "order": "analysis barrier, then input-wise rotating single/multi, workers2",
+  "wall_note": "shared remote server; per-record latency excludes queue/preflight/Kiwi warmup"
+}

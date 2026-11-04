@@ -19,3 +19,7 @@ Thumbs.db
 
 # Local Qwen gateway configuration contains a credential.
 /test.py
+
+# Machine-local agent settings and scratch copies.
+/.claude/
+/work/

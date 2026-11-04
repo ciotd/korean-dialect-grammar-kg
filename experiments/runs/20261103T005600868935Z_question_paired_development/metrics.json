@@ -1,0 +1,140 @@
+{
+  "records": 32,
+  "status_counts": {
+    "generated_requires_human_review": 13,
+    "needs_review": 18,
+    "analysis_failed": 1
+  },
+  "valid_output_records": 31,
+  "changed_records": 13,
+  "held_records": 18,
+  "generation_calls_skipped": 18,
+  "held_by_model": 0,
+  "held_by_program": 0,
+  "records_with_realization_reference": 0,
+  "records_with_claim_paths": 0,
+  "api_attempts": 29,
+  "api_failures": 1,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 11914,
+    "completion_tokens": 6938,
+    "total_tokens": 18852
+  },
+  "calls_with_usage": 29,
+  "calls_without_usage": 0,
+  "wall_seconds": 81.842,
+  "mean_record_seconds": 4.163,
+  "median_record_seconds": 2.917,
+  "retrieval_chars_total": 84371,
+  "packet_chars_total": 6949,
+  "char_reduction_fraction": 0.91764,
+  "neighborhood_limit_records": 0,
+  "error_types": {
+    "ValueError": 1
+  },
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.",
+  "wall_includes_smoke": true,
+  "by_condition": {
+    "manual": {
+      "records": 16,
+      "status_counts": {
+        "generated_requires_human_review": 13,
+        "needs_review": 3
+      },
+      "valid_output_records": 16,
+      "changed_records": 13,
+      "held_records": 3,
+      "generation_calls_skipped": 3,
+      "held_by_model": 0,
+      "held_by_program": 0,
+      "records_with_realization_reference": 0,
+      "records_with_claim_paths": 0,
+      "api_attempts": 13,
+      "api_failures": 0,
+      "automatic_retries": 0,
+      "reported_usage": {
+        "prompt_tokens": 5310,
+        "completion_tokens": 1126,
+        "total_tokens": 6436
+      },
+      "calls_with_usage": 13,
+      "calls_without_usage": 0,
+      "wall_seconds": 81.956,
+      "mean_record_seconds": 1.453,
+      "median_record_seconds": 1.766,
+      "retrieval_chars_total": 52416,
+      "packet_chars_total": 6459,
+      "char_reduction_fraction": 0.87677,
+      "neighborhood_limit_records": 0,
+      "error_types": {},
+      "accuracy": null,
+      "naturalness": null,
+      "evidence_appropriateness": null,
+      "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit."
+    },
+    "model": {
+      "records": 16,
+      "status_counts": {
+        "needs_review": 15,
+        "analysis_failed": 1
+      },
+      "valid_output_records": 15,
+      "changed_records": 0,
+      "held_records": 15,
+      "generation_calls_skipped": 15,
+      "held_by_model": 0,
+      "held_by_program": 0,
+      "records_with_realization_reference": 0,
+      "records_with_claim_paths": 0,
+      "api_attempts": 16,
+      "api_failures": 1,
+      "automatic_retries": 0,
+      "reported_usage": {
+        "prompt_tokens": 6604,
+        "completion_tokens": 5812,
+        "total_tokens": 12416
+      },
+      "calls_with_usage": 16,
+      "calls_without_usage": 0,
+      "wall_seconds": 81.956,
+      "mean_record_seconds": 6.873,
+      "median_record_seconds": 4.623,
+      "retrieval_chars_total": 31955,
+      "packet_chars_total": 490,
+      "char_reduction_fraction": 0.98467,
+      "neighborhood_limit_records": 0,
+      "error_types": {
+        "ValueError": 1
+      },
+      "accuracy": null,
+      "naturalness": null,
+      "evidence_appropriateness": null,
+      "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit."
+    }
+  },
+  "smoke_calls": [
+    {
+      "stage": "question_analysis",
+      "request_sha256": "6b5db3e6a1a1a0a6979491a35810d09e137e6fae8c10aa428f528556df20388c",
+      "attempt": 1,
+      "retry": false,
+      "http_status": 200,
+      "usage": {
+        "prompt_tokens": 395,
+        "total_tokens": 628,
+        "completion_tokens": 233,
+        "prompt_tokens_details": null
+      },
+      "model": "Qwen3.8-27B",
+      "response_id": "chatcmpl-bafb44205474ee52",
+      "finish_reason": "stop",
+      "status": "response_received",
+      "seconds": 4.3151
+    }
+  ],
+  "total_api_attempts_including_smoke": 30
+}

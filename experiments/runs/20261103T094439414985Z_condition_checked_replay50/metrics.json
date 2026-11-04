@@ -1,0 +1,28 @@
+{
+  "records": 50,
+  "api_attempts": 0,
+  "analysis_calls": 0,
+  "analysis_reused": 62,
+  "generation_calls": 0,
+  "changed_records": 13,
+  "actual_generated_outputs": 14,
+  "generation_failures": 0,
+  "target_count": 62,
+  "target_status_counts": {
+    "retrieved": 48,
+    "generation_attempted": 14
+  },
+  "readiness_counts": {
+    "out_of_slice": 46,
+    "ready_for_generation_trial": 14,
+    "needs_analysis": 2
+  },
+  "wall_seconds": 17.515,
+  "reported_usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "naturalness_evaluation": "not_performed",
+  "human_evaluation": "pending"
+}

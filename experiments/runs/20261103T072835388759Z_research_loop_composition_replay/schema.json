@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "replacement": {
+      "type": "string",
+      "maxLength": 100
+    }
+  },
+  "required": [
+    "replacement"
+  ],
+  "additionalProperties": false
+}

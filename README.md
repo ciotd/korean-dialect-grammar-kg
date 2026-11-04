@@ -1,4 +1,8 @@
-**2026-10-27 GitHub 반영:** KG·파이프라인·대시보드·18개 실행의 설정/요약/코드 기록을 포함합니다. 인증정보·비공개 입력과 문장별 원본은 제외되므로, 새 PC에서는 [GitHub 반영 범위와 복원 안내](docs/workflows/GITHUB_SYNC.md)를 먼저 확인하세요.
+## 2026-10-28 · 문법 카드와 입력별 수정 계획
+
+[설계·실행 안내](docs/research/GRAMMAR_CARDS_20261028.md) · [실험 보고서](http://127.0.0.1:8766/reports/grammar-cards/report.html) · [방식을 가린 사람 평가](http://127.0.0.1:8766/reports/grammar-cards/review.html)
+
+Kiwi 위치와 Qwen 문법 기능을 연결하고, 실제 Neo4j 조회에서 선별한 문법 카드로 수정 계획을 만든다. 17개 Python 연산자만 후보를 만들던 제한을 없앴다. 원본 KG·이전 실험은 보존하고 실행용 카드 버전을 별도 관리한다. 새 실행 명령은 `tools/run_kg_cards.py`, 전체 진행·수치는 위 보고서 및 연구 대시보드를 기준으로 확인한다.
 
 ## 2026-10-25 · 검색과 실행을 분리한 비교 실험
 

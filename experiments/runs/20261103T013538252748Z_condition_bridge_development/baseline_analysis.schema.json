@@ -1,0 +1,163 @@
+{
+  "type": "object",
+  "properties": {
+    "target_word_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "question_word_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "clause_role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "main",
+            "embedded",
+            "quoted",
+            null
+          ]
+        },
+        "speech_act": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "information_question",
+            "statement",
+            "request",
+            "rhetorical_question",
+            "confirmation",
+            "suggestion",
+            "exclamation",
+            "self_question",
+            null
+          ]
+        },
+        "addressee_level": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "plain",
+            "polite",
+            null
+          ]
+        },
+        "question_kind": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "polar",
+            "wh",
+            null
+          ]
+        },
+        "predicate_class": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "verb",
+            "adjective",
+            "copula",
+            "negative_copula",
+            null
+          ]
+        },
+        "prefinal_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "none",
+            "eoss",
+            "gess",
+            "deo",
+            "other",
+            null
+          ]
+        },
+        "tense": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "past",
+            "present",
+            "future",
+            null
+          ]
+        },
+        "subject_honorific": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "absent",
+            "present",
+            null
+          ]
+        },
+        "polarity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "positive",
+            "negative",
+            null
+          ]
+        }
+      },
+      "required": [
+        "clause_role",
+        "speech_act",
+        "addressee_level",
+        "question_kind",
+        "predicate_class",
+        "prefinal_type",
+        "tense",
+        "subject_honorific",
+        "polarity"
+      ],
+      "additionalProperties": false
+    },
+    "ambiguity": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "target_word_id",
+    "question_word_id",
+    "features",
+    "ambiguity",
+    "reason"
+  ],
+  "additionalProperties": false
+}

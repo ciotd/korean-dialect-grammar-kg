@@ -1,0 +1,69 @@
+{
+  "version": "surface_tail_v2_terminal_yo",
+  "card_version": "kg_cards_20261030_v3",
+  "author": "Codex implementation of existing card instruction",
+  "operations": {
+    "GS_END_DECL_YE_01": {
+      "card_sha256": "fe534434dc48f2af2ae5755384092ade267e677bb1aa442982257fbf41848079",
+      "kind": "replace_surface_tail",
+      "target_form_index": 0,
+      "target_form": "-예",
+      "source_tail": "요",
+      "target_tail": "예",
+      "source_component": "ending",
+      "source_tag": "EF",
+      "allowed_source_suffixes": [
+        "아요",
+        "어요",
+        "였어요"
+      ],
+      "excluded_source_suffixes": [
+        "이에요",
+        "예요",
+        "에요"
+      ],
+      "required_predicate_tags": [
+        "VV",
+        "VX",
+        "VA",
+        "VCP",
+        "VCN",
+        "XSV",
+        "XSA"
+      ],
+      "preserve": "all source surface characters before terminal 요",
+      "basis": "Existing v3 rewrite.operation and rewrite.preserve; no new dialect form asserted",
+      "supported_terminal_sequence": "EF or EF + 요/JX, still constrained by source suffix and card hash",
+      "unsupported": "noun + 요/JX, EC + 요/JX, contracted 죠, positive present copula, quoted/nonfinal endings remain unsupported"
+    },
+    "GS_ENDRULE_YO_COMPOSE": {
+      "card_sha256": "7ad46ece0d2e54028cdf68072e96f830a8b0eb4c8c052cb5ebb6b54fac5abc25",
+      "kind": "replace_surface_tail",
+      "target_form_index": 1,
+      "target_form": "-예",
+      "source_tail": "요",
+      "target_tail": "예",
+      "source_component": "ending",
+      "source_tag": "EF",
+      "allowed_source_suffixes": [],
+      "excluded_source_suffixes": [
+        "이에요",
+        "예요",
+        "에요"
+      ],
+      "required_predicate_tags": [
+        "VV",
+        "VX",
+        "VA",
+        "VCP",
+        "VCN",
+        "XSV",
+        "XSA"
+      ],
+      "preserve": "all source surface characters before terminal 요",
+      "basis": "Existing v3 rewrite.operation and rewrite.preserve; no new dialect form asserted",
+      "supported_terminal_sequence": "EF or EF + 요/JX, still constrained by source suffix and card hash",
+      "unsupported": "noun + 요/JX, EC + 요/JX, contracted 죠, positive present copula, quoted/nonfinal endings remain unsupported"
+    }
+  }
+}

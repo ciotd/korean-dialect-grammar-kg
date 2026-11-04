@@ -1,0 +1,10 @@
+{
+  "records": 0,
+  "valid_output_records": 0,
+  "api_attempts": 0,
+  "generation_calls": 0,
+  "analysis_calls": 0,
+  "status": "failed_before_model_call",
+  "error_type": "schedule_path_TypeError",
+  "planned_records": 27
+}

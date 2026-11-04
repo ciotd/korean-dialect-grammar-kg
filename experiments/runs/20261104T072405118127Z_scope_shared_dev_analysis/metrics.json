@@ -1,0 +1,14 @@
+{
+  "records": 12,
+  "planned_records": 12,
+  "analysis_calls": 14,
+  "generation_calls": 0,
+  "api_attempts": 14,
+  "valid_output_records": 0,
+  "analysis_failed_targets": 0,
+  "reported_usage": {
+    "prompt_tokens": 25406,
+    "completion_tokens": 2880,
+    "total_tokens": 28286
+  }
+}

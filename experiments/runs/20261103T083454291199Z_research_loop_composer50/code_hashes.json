@@ -1,0 +1,15 @@
+{
+  "experiments\\analyses\\research_loop_20261103\\pipeline.py": "13d02003698a0055d155cd89d4218fe03072f537cf2ad899f931abb8e1fc5c64",
+  "experiments\\analyses\\research_loop_20261103\\run.py": "54134e24d36c645b7c6e5df37e6cf46f3c4ac96bb81b1d65c681f6ced55414ce",
+  "experiments\\analyses\\research_loop_20261103\\test_pipeline.py": "057939d243fd3aba3f9a5e10125b45522262a89a1bce3cd5bd4aac58d523cdd3",
+  "experiments\\analyses\\condition_bridge_20261103\\bridge.py": "c896554af1d929d8fabf8b23e865909dca666c5568180c61459819415360c87c",
+  "experiments\\analyses\\question_pipeline_20261103\\adapter.py": "685e6cfd1a907709e17860dc668a999f4173a83feab73939ac3dc2c3d002942b",
+  "experiments\\analyses\\question_pipeline_20261103\\contracts.py": "96c4dffc3721cb6644c88b77838e931902c023393c92ba7d00887102ef4f4a1a",
+  "experiments\\analyses\\question_refinement_20261102\\query.py": "91e17a8f9dfbda0925298386a701efc201640cd464b623eacb9d1bf1f22b1f31",
+  "experiments\\analyses\\question_refinement_20261102\\sources.py": "0ce6e3950a34668e9780a2d3d74beeffc98581d419ffb4e881705933f92a5d16",
+  "experiments\\analyses\\semantic_kg_rebuild_20261102\\semantic_graph.py": "ddd63490b704f8f7526cb92d75fa6ac8cbdaadf67e3793d642c66f0158f3747b",
+  "src\\kg_pipeline\\io.py": "b11eff2ac9217228a3cc15c53778d559dc4c4d541c7d1ffa7cca7b7123046dde",
+  "src\\kg_pipeline\\validation.py": "9e4b1153d27f3ff1a3eebe888b1356d1c55985c1d3c8c5506ad9d26e5ae811b3",
+  "src\\kg_runtime\\morphology.py": "af4f198cbdfbe10f9d7e448bf625940be5c84fbbdd9cbb3e56d1eb7bc593a0e9",
+  "src\\kg_runtime\\realization.py": "076b94277fe9e21415ce1e3069354daaef188cc520d6f05f0c1ada033e784419"
+}

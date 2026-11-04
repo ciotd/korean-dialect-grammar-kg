@@ -1,0 +1,32 @@
+{
+  "phase": "development",
+  "dataset_role": "development",
+  "metric_contract": "qwen_full_sentence_boundary_v1",
+  "model_id": "Qwen3.8-27B",
+  "kg_dataset": "semantic_grammar_20261104_r6",
+  "input_count": 14,
+  "input_sha256": "5c1a3d312f6d2d8e855fe18939e8465a111c47dc54c7373b64ee6feaae4bf7df",
+  "realizer": "qwen_full_sentence",
+  "composer_role": "offline_comparison_only",
+  "seed": 20261103,
+  "temperature": 0,
+  "top_p": 1,
+  "enable_thinking": false,
+  "workers": 2,
+  "automatic_retries": 0,
+  "analysis_max_tokens": 3072,
+  "generation_max_tokens": 2048,
+  "graph_access": "frozen JSON graph; real edges; no Neo4j write",
+  "source_reference_policy": "no gold sentences or source sentence IDs in generation",
+  "comparison": "historical descriptive comparison; analysis and final generation both changed",
+  "python": "3.12.14",
+  "server_revision": "not_exposed",
+  "data_check": {
+    "role": "development",
+    "input_sha256": "5c1a3d312f6d2d8e855fe18939e8465a111c47dc54c7373b64ee6feaae4bf7df",
+    "records": 14,
+    "frozen_overlap_ids": [],
+    "check": "NFC_and_whitespace_normalized_exact_match",
+    "limitation": "Paraphrase/semantic overlap needs human review; prior exposure is not erased."
+  }
+}

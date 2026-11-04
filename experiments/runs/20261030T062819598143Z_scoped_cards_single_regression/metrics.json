@@ -1,0 +1,46 @@
+{
+  "records": 50,
+  "status_counts": {
+    "unchanged": 3,
+    "generated_requires_human_review": 21,
+    "needs_review": 12,
+    "partial": 9,
+    "planning_failed": 4,
+    "analysis_failed": 1
+  },
+  "valid_output_records": 45,
+  "changed_records": 30,
+  "held_records": 21,
+  "generation_calls_skipped": 0,
+  "held_by_model": 1,
+  "held_by_program": 30,
+  "records_with_realization_reference": 45,
+  "records_with_claim_paths": 0,
+  "api_attempts": 49,
+  "api_failures": 1,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 318961,
+    "completion_tokens": 34926,
+    "total_tokens": 353887
+  },
+  "calls_with_usage": 49,
+  "calls_without_usage": 0,
+  "wall_seconds": null,
+  "mean_record_seconds": 14.739,
+  "median_record_seconds": 11.614,
+  "retrieval_chars_total": 16860774,
+  "packet_chars_total": 900867,
+  "char_reduction_fraction": 0.94657,
+  "neighborhood_limit_records": 0,
+  "error_types": {
+    "ValueError": 4,
+    "CallError": 1
+  },
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "Execution counts only; scoped corrections are program-produced, native quality unscored.",
+  "shared_batch_wall_seconds": 996.2396718000527,
+  "cost_note": "Historical analysis costs excluded."
+}

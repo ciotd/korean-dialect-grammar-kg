@@ -1,0 +1,9 @@
+{
+  "physical_api_attempts": 131,
+  "physical_total_tokens": 851249,
+  "wall_seconds": 996.2396718000527,
+  "new_analysis_calls": 0,
+  "new_retrieval_queries": 0,
+  "input_count": 50,
+  "conditions": 2
+}

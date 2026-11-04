@@ -1,0 +1,11 @@
+{
+  "batch_id": "20261028T010010653367Z",
+  "runs": {
+    "single": "20261028T010010653367Z_cards_single_smoke",
+    "multi": "20261028T010010653367Z_cards_multi_smoke"
+  },
+  "shared_analysis": true,
+  "phase": "smoke",
+  "order": "analysis barrier, then input-wise rotating single/multi, workers2",
+  "wall_note": "shared remote server; per-record latency excludes queue/preflight/Kiwi warmup"
+}

@@ -1,0 +1,38 @@
+{
+  "records": 50,
+  "api_attempts": 112,
+  "analysis_calls": 62,
+  "generation_calls": 50,
+  "valid_output_records": 50,
+  "changed_records": 17,
+  "target_count": 62,
+  "readiness_counts": {
+    "out_of_slice": 29,
+    "ready_for_generation_trial": 19,
+    "no_matching_usage": 12,
+    "needs_analysis": 2
+  },
+  "target_status_counts": {
+    "retrieved": 62
+  },
+  "record_status_counts": {
+    "completed": 42,
+    "completed_with_warnings": 8
+  },
+  "warning_counts": {
+    "prefinal_observation_changed_or_kiwi_uncertain": 3,
+    "integrated_copula_composition_mismatch": 1,
+    "lexical_stem_not_observed_or_kiwi_uncertain": 4,
+    "nominal_changed": 1,
+    "selected_ending_not_at_target_end": 3,
+    "documented_surface_structure_mismatch": 3
+  },
+  "wall_seconds": 202.286,
+  "reported_usage": {
+    "prompt_tokens": 161019,
+    "completion_tokens": 18139,
+    "total_tokens": 179158
+  },
+  "human_evaluation": "not_performed",
+  "naturalness_evaluation": "not_scored"
+}

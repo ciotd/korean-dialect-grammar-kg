@@ -1,0 +1,38 @@
+{
+  "phase": "development",
+  "dataset_role": "development",
+  "metric_contract": "research_loop_target_preservation_v2",
+  "model_id": "Qwen3.8-27B",
+  "kg_dataset": "semantic_grammar_20261103_r3",
+  "input_count": 12,
+  "input_sha256": "57218a598ce7772050d349ef2334b0d7adc7757932ad49aa02f9b80b42737336",
+  "paired_generation": false,
+  "realizer": "kiwi",
+  "arms": [
+    "composer"
+  ],
+  "seed": 20261103,
+  "temperature": 0,
+  "top_p": 1,
+  "enable_thinking": false,
+  "analysis_max_tokens": 2048,
+  "generation_max_tokens": 0,
+  "workers": 2,
+  "automatic_retries": 0,
+  "scope_adapter": "v5_typed_boundary_and_separate_scope",
+  "comparison": "historical paired-input regression; analysis contract changed, executable graph conditions and composer unchanged",
+  "analysis_comparison": "previous bridge run is historical, not simultaneous controlled causal evidence",
+  "graph_access": "frozen JSON using real graph edges; no live Neo4j writes",
+  "reference_policy": "no reference sentences or manually mapped input IDs in model requests",
+  "data_check": {
+    "role": "development",
+    "input_sha256": "57218a598ce7772050d349ef2334b0d7adc7757932ad49aa02f9b80b42737336",
+    "records": 12,
+    "frozen_overlap_ids": [],
+    "check": "NFC_and_whitespace_normalized_exact_match",
+    "limitation": "Paraphrase/semantic overlap needs human review; prior exposure is not erased."
+  },
+  "python": "3.12.14",
+  "quality_metrics": "not available; no naturalness/accuracy claims",
+  "server_revision": "not_exposed"
+}

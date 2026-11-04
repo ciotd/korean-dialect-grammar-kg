@@ -1,0 +1,28 @@
+{
+  "records": 100,
+  "planned_records": 100,
+  "unique_inputs": 50,
+  "valid_output_records": 100,
+  "changed_records": 34,
+  "api_attempts": 100,
+  "analysis_calls": 0,
+  "generation_calls": 100,
+  "failures": 0,
+  "stopped_early": false,
+  "wall_seconds_shared_batch": 310.828,
+  "call_latency_median_seconds": 1.1564,
+  "call_latency_p95_seconds": 2.2343,
+  "reported_usage": {
+    "prompt_tokens": 69898,
+    "completion_tokens": 6317,
+    "total_tokens": 76215
+  },
+  "naturalness": "not_evaluated",
+  "planned_unique_inputs": 50,
+  "observed_unique_inputs": 50,
+  "model_status_counts": {
+    "unchanged": 66,
+    "generated": 34
+  },
+  "p95_definition": "nearest_rank_ceil"
+}

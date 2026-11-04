@@ -82,6 +82,34 @@ def guard_dataset(project, inputs, role):
             'limitation': 'Paraphrase/semantic overlap needs human review; prior exposure is not erased.'}
 
 
+def metric_mismatches(config, metrics, results):
+    """Respect each run's counting contract; no count is a naturalness score."""
+    contract=config.get('metric_contract')
+    if contract in ('research_loop_target_preservation_v1','research_loop_target_preservation_v2'):
+        targets=[t for r in results for t in r.get('targets',[])]
+        expected={
+            'actual_generated_outputs':sum(bool(g.get('output_text')) for t in targets for g in t.get('generation',{}).values()),
+            'generated_records':sum(r.get('generated_targets',0)>0 for r in results),
+            'output_records_with_patch':sum(r.get('generated_targets',0)>0 for r in results),
+            'changed_records':sum(r.get('output_text') is not None and r.get('output_text')!=r.get('input_text') for r in results),
+            'target_count':len(targets),
+            'generation_failures':sum(g.get('status')=='failed' for t in targets for g in t.get('generation',{}).values()),
+        }
+        if contract.endswith('_v1'):
+            expected['valid_output_records']=expected['generated_records']  # historical name; patch count only
+        required={'actual_generated_outputs','generated_records','target_count'}
+    elif contract=='composition_replay_v1':
+        count=sum(r.get('status')=='generated' and isinstance(r.get('output_text'),str) for r in results)
+        expected={'actual_generated_outputs':count,'valid_output_records':count,'schema_valid_generated_records':count,
+                  'surface_warning_records':sum(bool(r.get('checks',{}).get('warnings')) for r in results)}
+        required={'actual_generated_outputs','surface_warning_records'}
+    else:
+        expected={'valid_output_records':sum(r['status'] in ('unchanged','generated_requires_human_review','partial','needs_review') for r in results),
+                  'changed_records':sum(r['status'] in ('generated_requires_human_review','partial') for r in results)}
+        required=set(expected)
+    return ['metrics.'+k for k,v in expected.items() if (k in required or k in metrics) and metrics.get(k)!=v]
+
+
 class Registry:
     def __init__(self, project):
         self.project = Path(project).resolve()
@@ -149,6 +177,7 @@ class Registry:
         if len({r['id'] for r in results}) != len(results):
             raise ValueError('duplicate_result_ids')
         status = ('preflight_failed' if (folder / 'preflight_failure.json').exists() else
+                  'failed' if (folder / 'failure.json').exists() else
                   'completed' if metrics and (folder / 'artifact_hashes.json').exists() else 'incomplete')
         hashes = read(folder / 'code_hashes.json', {})
         artifacts = read(folder / 'artifact_hashes.json', {})
@@ -170,10 +199,7 @@ class Registry:
         if any(value is False for value in postflight.values()):
             mismatch.append('postflight')
         if metrics:
-            valid=sum(r['status'] in ('unchanged','generated_requires_human_review') for r in results)
-            changed=sum(r['status']=='generated_requires_human_review' for r in results)
-            if metrics.get('valid_output_records')!=valid:mismatch.append('metrics.valid_output_records')
-            if metrics.get('changed_records')!=changed:mismatch.append('metrics.changed_records')
+            mismatch.extend(metric_mismatches(config, metrics, results))
         validations = {name: hashes.get(name) for name in ('validation.py', 'contracts.py')}
         validation_contract = digest(encoded({'code': validations, 'schemas': {n: actual.get(n) for n in ('analysis.schema.json','generation.schema.json')}}).encode()) if all(validations.values()) else None
         if (folder/'validation_contract.json').is_file():
@@ -195,9 +221,11 @@ class Registry:
                 'quality_evaluation': 'not_available', 'indexed_at': now()}
         with self.connect() as con:
             old = con.execute('SELECT fingerprint,metadata FROM runs WHERE run_id=?', (run_id,)).fetchone()
-            if old and old['fingerprint'] == fingerprint:
+            if old and json.loads(old['metadata']).get('integrity',{}).get('original_completed_run_changed'):
+                data['integrity']['original_completed_run_changed'] = True
+            if old and old['fingerprint'] == fingerprint and json.loads(old['metadata'])['integrity']==data['integrity'] and json.loads(old['metadata'])['state']==data['state']:
                 return {'run_id': run_id, 'action': 'unchanged'}
-            if old and json.loads(old['metadata'])['state']=='completed':
+            if old and old['fingerprint'] != fingerprint and json.loads(old['metadata'])['state']=='completed':
                 data['integrity']['original_completed_run_changed'] = True
                 con.execute('INSERT INTO events(time,run_id,event,detail) VALUES(?,?,?,?)',
                             (now(),run_id,'completed_source_changed',encoded({'old':old['fingerprint'],'new':fingerprint})))
@@ -324,11 +352,24 @@ class Registry:
     def status_document(self, missing=()):
         runs=self.runs()
         doc=['# 연구 실행 현황','', '자동 생성: `python tools/research_manager.py sync`. 수치는 실행 상태이며 방언 품질 점수가 아니다.', '',
-             '| Run ID | 용도 | 상태 | 입력 | 출력 형식 통과 | 분석 실패 |', '|---|---|---|---:|---:|---:|']
+             '| Run ID | 용도 | 상태 | 입력 | 출력 형식 통과 | 분석·조회 실패(단위 구분) |', '|---|---|---|---:|---:|---|']
         for r in runs:
-            m=r['metrics'];doc.append(f"| {r['run_id']} | {r['dataset_role']} | {r['state']} | {r['config'].get('input_count','미확인')} | {m.get('valid_output_records','—')} | {m.get('status_counts',{}).get('analysis_failed',0)} |")
+            m=r['metrics']
+            if 'target_status_counts' in m:
+                failures=str(m['target_status_counts'].get('analysis_or_query_failed',0))+'위치'
+            elif 'status_counts' in m:
+                failures=str(m['status_counts'].get('analysis_failed',0))+'입력'
+            else:
+                failures='미집계'
+            doc.append(f"| {r['run_id']} | {r['dataset_role']} | {r['state']} | {r['config'].get('input_count','미확인')} | {m.get('valid_output_records','—')} | {failures} |")
+        reference_dir=self.project/'data/derived_private/gyeongsang_reference50_20261030_v1'
+        manifest=read(reference_dir/'manifest.json',{})
+        reference_file=reference_dir/'references.jsonl'
+        approved=reference_file.is_file() and manifest.get('references_sha256')==digest(reference_file.read_bytes())
+        reference_note=('2026-10-30 사용자 승인 정답 '+str(manifest.get('count'))+'개 등록. 새 출력의 자연스러움·정확도는 별도 평가 전이며, 문장 완전 일치만으로 정답률을 계산하지 않는다.'
+                        if approved else '사용자 승인 정답 등록 미확인. 자연스러움·정확도는 별도 평가 전이다.')
         doc+=['','확정 50건 원문은 보존한다. 2026-10-24 이후 실행은 사용자 요청에 따라 회귀 실험으로 사용하며 독립 최종 평가셋이 아니다.',
-              '정답 및 사람 평가 없음: 자연스러움·정확도는 미측정. KG 없는 통제 실험도 아직 없다.',
+              reference_note,
               '대시보드: `python tools/research_manager.py serve` → http://127.0.0.1:8766/',
               '상세 절차: [연구 관리 절차](../workflows/RESEARCH_MANAGEMENT.md).']
         if missing:doc+=['','원본 폴더 누락(색인 유지): '+', '.join(missing)]

@@ -1,0 +1,21 @@
+{
+  "card_count": 721,
+  "kinds": {
+    "design_rule": 81,
+    "realization_inventory": 433,
+    "observation": 183,
+    "classification": 24
+  },
+  "with_forms": 705,
+  "concept_count": 125,
+  "modules": 12,
+  "card_bytes": 238435,
+  "original_atom_bytes": 2537828,
+  "per_rule_python_operators": 0,
+  "all_cards_retrievable": true,
+  "neo4j_original_unchanged": true,
+  "source_hashes": {
+    "nodes.jsonl": "ea646186bb417ce53fc212ebce0db1c6d3acaf7c8847bae26ef268e859a32509",
+    "edges.jsonl": "de9340e4c920d1303ba15bc8299e1d0d372cfa96a1854c1f98c4f122b713e546"
+  }
+}

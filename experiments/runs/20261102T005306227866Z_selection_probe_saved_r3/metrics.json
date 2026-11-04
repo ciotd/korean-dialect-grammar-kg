@@ -1,0 +1,43 @@
+{
+  "records": 50,
+  "valid_output_records": 40,
+  "changed_records": 28,
+  "statuses": {
+    "preworker_blocked": 2,
+    "generated_requires_human_review": 14,
+    "unchanged": 8,
+    "plan_validation_failed": 1,
+    "partial": 14,
+    "no_planned_edit": 6,
+    "needs_review": 4,
+    "generation_failed": 1
+  },
+  "actual_worker_calls": 41,
+  "usage": {
+    "prompt_tokens": 295012,
+    "total_tokens": 308255,
+    "completion_tokens": 13243
+  },
+  "summed_worker_seconds": 327.1484,
+  "quality_accuracy": null,
+  "naturalness": "human review pending",
+  "changed_is_not_correct": true,
+  "status_counts": {
+    "preworker_blocked": 2,
+    "generated_requires_human_review": 14,
+    "unchanged": 8,
+    "plan_validation_failed": 1,
+    "partial": 14,
+    "no_planned_edit": 6,
+    "needs_review": 4,
+    "generation_failed": 1
+  },
+  "api_attempts": 41,
+  "reported_usage": {
+    "prompt_tokens": 295012,
+    "total_tokens": 308255,
+    "completion_tokens": 13243
+  },
+  "calls_with_usage": 41,
+  "calls_without_usage": 0
+}

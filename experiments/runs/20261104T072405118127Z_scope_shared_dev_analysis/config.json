@@ -1,0 +1,18 @@
+{
+  "phase": "development",
+  "dataset_role": "development",
+  "model_id": "Qwen3.8-27B",
+  "input_count": 12,
+  "input_sha256": "2f9a045979b8645c006b5a8b75fe7106b697861930d9b08969914f65ac3ed23d",
+  "kg_dataset": "semantic_grammar_20261104_r7",
+  "purpose": "shared analysis and retrieval only; no generation",
+  "data_check": {
+    "role": "development",
+    "input_sha256": "2f9a045979b8645c006b5a8b75fe7106b697861930d9b08969914f65ac3ed23d",
+    "records": 12,
+    "frozen_overlap_ids": [],
+    "check": "NFC_and_whitespace_normalized_exact_match",
+    "limitation": "Paraphrase/semantic overlap needs human review; prior exposure is not erased."
+  },
+  "automatic_retries": 0
+}

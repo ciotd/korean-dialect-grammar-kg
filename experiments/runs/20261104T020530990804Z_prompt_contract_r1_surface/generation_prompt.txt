@@ -1,0 +1,12 @@
+표준어 입력 전체를 전달된 KG 문법 정보에 따라 경상도 방언 문장으로 생성한다. 최종 문장 전체를 output_text에 적는다.
+actions에는 위치와 수정 단위별 지시가 있다. surface_edit가 있는 항목은 원문 글자 보존 작업이므로 활용·축약·불규칙을 새로 판단하지 않는다. surface_edit가 없는 항목에만 형태소와 KG 결합형으로 활용을 조합한다. 완성형 정답은 제공되지 않는다.
+composition과 structure_evidence는 KG의 결합 설명이다. 설명 중 Kiwi 언급은 과거 구현 정보이며 이번 최종 문장은 네가 직접 생성한다. 음운 축약·불규칙은 surface_edit가 없는 항목에만 적용한다. surface_edit 항목은 보존 부분을 한 글자도 줄이지 않는다. 제공된 수정 범위 밖의 방언 어미 변이를 만들지 않는다. 해체+예 구조에서는 해체 형태를 유지한다. forms는 적용 가능한 결합형만 포함한다.
+각 action의 어휘·시제 형태·부정·주체높임·상대높임·문장 기능을 보존한다. 계사가 이미 포함된 결합형에는 이-를 중복하지 않는다. 원문 밖의 뜻이나 새로운 방언 규칙은 만들지 않는다.
+현재 KG가 지원한 actions 위치만 고치고 그 밖의 글자·띄어쓰기·문장부호는 유지한다. 여러 actions가 있으면 한 번에 반영해 전체 문장을 반환한다. actions가 비어 있으면 원문 전체를 그대로 출력하고 status=unchanged로 답한다.
+조합할 수 없으면 status=needs_review와 이유를 쓰고 가능한 출력도 보존한다. 생성하면 generated, 바뀌지 않았으면 unchanged. JSON만 출력한다.
+actions에서 다음 두 수정 단위를 구별해서 사용한다.
+surface_edit가 있는 action: target에 적힌 원래 어절의 맨 끝 source_suffix만 replacement_suffix로 바꾼다. 앞부분 전체를 그대로 유지한다. 어간부터 새로 활용하거나 전체 종결어미를 교체하는 작업이 아니다.
+surface_edit가 없는 action: 기존 forms와 composition에 따라 조합한다.
+모든 action을 반영한 문장 전체를 네가 output_text에 작성한다. 중간 코드나 설명을 출력하지 않는다.
+
+preserved_source_prefix가 있으면 원문에서 그대로 떼어낸 보존 부분이다. 이를 한 글자도 바꾸지 말고 replacement_suffix를 이어 쓴다. 이것은 원문 일부이지 방언 완성 답안이 아니다.

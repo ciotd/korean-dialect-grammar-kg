@@ -1,0 +1,44 @@
+{
+  "records": 4,
+  "status_counts": {
+    "generated_requires_human_review": 4
+  },
+  "valid_output_records": 4,
+  "changed_records": 4,
+  "records_with_realization_reference": 4,
+  "records_with_claim_paths": 0,
+  "api_attempts": 8,
+  "api_failures": 0,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 37551,
+    "completion_tokens": 3590,
+    "total_tokens": 41141
+  },
+  "calls_with_usage": 8,
+  "calls_without_usage": 0,
+  "wall_seconds": null,
+  "mean_record_seconds": 18.837,
+  "median_record_seconds": 18.662,
+  "retrieval_chars_total": 1484943,
+  "packet_chars_total": 76486,
+  "char_reduction_fraction": 0.94849,
+  "neighborhood_limit_records": 0,
+  "error_types": {},
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.",
+  "shared_batch_wall_seconds": 75.82424159999937,
+  "selected_rule_ids": [
+    "GS_CONNECT_CAUSE_01",
+    "GS_CONNECT_CAUSE_04",
+    "GS_ENDRULE_KKI_PROM",
+    "GS_ENDRULE_NI_B_OPTION",
+    "GS_ENDRULE_Q_HGE_POLAR",
+    "GS_END_IMP_HAE_01",
+    "GS_END_IMP_YO_03",
+    "GS_PART_ACC_01"
+  ],
+  "cost_note": "Production-equivalent per-arm costs include shared analysis once. Do not sum both arms as physical batch cost."
+}

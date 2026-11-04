@@ -1,0 +1,21 @@
+{
+  "records": 27,
+  "unique_positions": 9,
+  "repeats": 3,
+  "valid_output_records": 27,
+  "api_attempts": 27,
+  "analysis_calls": 0,
+  "generation_calls": 27,
+  "instruction_matches": 18,
+  "category_counts": {
+    "exact_instruction_followed": 18,
+    "instruction_violation": 9
+  },
+  "wall_seconds_shared_batch": 69.945,
+  "reported_usage": {
+    "prompt_tokens": 30531,
+    "completion_tokens": 2238,
+    "total_tokens": 32769
+  },
+  "naturalness": "not_evaluated"
+}

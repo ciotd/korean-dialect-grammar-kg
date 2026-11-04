@@ -1,0 +1,37 @@
+{
+ "status":"planned_not_executed",
+ "first_slice":{
+  "title":"해라체 직접 정보 질문의 조건 경로 검증",
+  "work_package":"F03",
+  "in_scope":["같은 주절의 예/아니오 질문과 정보 질문", "용언과 긍정 계사", "선어말 없음 또는 -었-", "주체높임 없음", "기존 소규모 질문 구성을 출발점으로 원문 범위 재대조"],
+  "outside_slice_not_ungrammatical":["확인·반어·감탄·권유 질문", "주체높임 -시-와 -더-·-겠-", "아니다의 결합", "높임 의문 어미", "지역별 다른 질문 체계의 통합", "중첩 인용·복잡한 안은문장"],
+  "sources":[{"doc":"D02","pdf_pages":[139,140,141,142,143,144,145,146,147]}, {"doc":"D04","pdf_pages":[8,9,10,11,12,13,14,15]}, {"doc":"D03","pdf_pages":[3,27,28]}, {"doc":"D05","pdf_pages":[21,22,23,24,25]}],
+  "deferred_followup":[
+   {"title":"격식 높임 질문","source":"D02 PDF117–138"},
+   {"title":"비격식 높임 질문","source":"D02 PDF207–216"},
+   {"title":"함양 질문 체계","source":"D07 PDF15–16"},
+   {"title":"주체높임·지역 변이의 충돌","source":"D04 PDF8–15 및 기존 ReviewIssue를 대조"}
+  ],
+  "required_contracts":[
+   {"feature":"동일 절·대상 서술어·수정 구간","supplier":"F00","legacy_concepts":["G_SCOPE","G_TOKEN_ALIGNMENT","G_CLAUSE_HEAD"],"basis":"공통 분석 계약. 문헌 사실과 별도","unknown":"정확한 위치가 없으면 해당 구간의 후보 적용을 확정하지 않음","acceptance":"다른 절의 특징이 현재 서술어에 섞이지 않음"},
+   {"feature":"질문 기능·예/아니오 대 정보 질문","supplier":"F00/F03","legacy_concepts":["G_MOOD","G_WH"],"basis":"D04 PDF9 및 D02 PDF139–147","unknown":"두 해석을 후보로 유지하고 하나를 임의 정답으로 만들지 않음","acceptance":"의문사 문자열이 같아도 질문 기능이 다르면 다른 조회 결과"},
+   {"feature":"용언·계사와 어간 끝소리","supplier":"F01/F02","legacy_concepts":["G_LEMMA","G_COP"],"basis":"D04 PDF10–11, D02 PDF144–145","unknown":"계사/용언이 미확정이면 해당 분기 확정 금지","acceptance":"용언과 계사, 받침 유무, 시제 유무의 분기를 별도로 검사"},
+   {"feature":"실제 선어말열과 보존할 시간 의미","supplier":"F18","legacy_concepts":["G_TAM"],"basis":"D02 PDF145 주162; 형태와 의미는 별도","unknown":"현재로 기본값을 넣지 않음","acceptance":"-었-가 있는 입력과 없는 입력을 대조하고 과거 의미를 유지"},
+   {"feature":"상대높임과 주체높임 유무","supplier":"F08","legacy_concepts":["G_HON"],"basis":"첫 범위는 주체높임 없는 해라체라는 설계 선택","unknown":"정보 없음과 높임 없음은 구별","acceptance":"-시-가 있으면 틀린 문법이 아니라 이번 범위 밖으로 반환"}
+  ],
+  "reuse_tests":"experiments/analyses/semantic_kg_rebuild_20261102/private/easy_development.json",
+  "test_role":"기존24개 수작업 분석값 개발 검사. 새 모델 성능이나 독립 평가가 아님",
+  "completion":["본문·표·주석을 포함한 조건 근거와 충돌 기록", "기존ID와 새 용법의 대응 및 미확정 표시", "실제 조건 관계와 조회 결과의 추적", "적용·비적용·미확정·범위 밖 및 보존 검사", "두 검토자의 역할별 점검 결과와 총괄 반영"],
+  "on_failure":"원문 해석, 조건 표현, 절/위치 결합, 실현 정보 중 처음 끊긴 곳을 구분하고 해당 분기만 보완. 부족한 조건을 전역 금지로 만들지 않음",
+  "after_completion":"같은 지식을 고정한 수작업 분석 조회와 실제 분석 조회를 비교한 뒤 Qwen 생성 연결; 다음 묶음은 서술·약속과 필요한 높임·활용"
+ },
+ "other_required_fragment_example":{
+  "work_package":"F17",
+  "feature":"뒤 되다의 본용언/보조용언 역할과 해당 구성의 범위",
+  "supplier":"F21/F00",
+  "legacy_concepts":["G_AUX_BECOME","G_MAIN_BECOME","G_SCOPE"],
+  "basis":"D01 PDF12–13",
+  "unknown":"역할 미확정이면 모든 되다 앞을 일괄 허용하거나 차단하지 않음",
+  "acceptance":"다른 절의 되다에 의해 현재 구성의 후보가 차단되지 않음; 본용언 판정만으로 변환 허용을 확정하지 않음"
+ }
+}

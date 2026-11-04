@@ -1,0 +1,125 @@
+{
+  "version": "semantic_questions_20261102_r3",
+  "built_at": "2026-11-02T13:09:42.173297+00:00",
+  "code_commit": "fd774a91e1faea92f0fd33326156bd6a6f1e117a",
+  "working_tree": "contains current uncommitted version; file hashes identify actual implementation",
+  "implementation_hashes": {
+    "build.py": "f06cf3042a5c295bdd0c83ad0f59f9a084f18cbaa20568e5c4edce12ff770cc5",
+    "check_report.cjs": "cafec8c615c1a7ff875dcacdb63c205c9588f0320bfd9aab49ae30ef77d466ea",
+    "development.py": "9408fb3576d328b64a19fba74b1ad52e3e1edb021e4e90a2a86580c4dcb28c03",
+    "finalize.py": "2f448676b80c2695e67a8edf89b63e958569396b6281b8842fd94388fc8f3c0d",
+    "query.py": "91e17a8f9dfbda0925298386a701efc201640cd464b623eacb9d1bf1f22b1f31",
+    "README.md": "2573768d30e65db366551a50792a879de0804d743e1f61dc580de865c8392f03",
+    "report.py": "54416129abd5c507cb056fbe467e8337caf13b76320f21377af3baa235f21d6a",
+    "reviewers.py": "7fbfefd6391e0c841b00081100e21488d9d869c473295a27f8207bf7d675600f",
+    "sources.py": "0ce6e3950a34668e9780a2d3d74beeffc98581d419ffb4e881705933f92a5d16",
+    "test_query.py": "3b7aba4ee71b4778bd3fbcaf15956efef738f6d38fb0ddd3bc829df457dc1a24",
+    "validate.py": "14ad6ebad1f2eb1603c21b0bbace9971afe07741adeccbfda1a028d7fb297585"
+  },
+  "input_hashes": {
+    "knowledge\\authored\\semantic_foundation_20261102_r2\\manifest.json": "4c6ed7f6c6b558bac41458a290743e01857d7007000a6a6832b6c2eae1af1b93",
+    "knowledge\\authored\\semantic_foundation_20261102_r2\\schema.json": "d1ed4d90cd4594cb415b0aa7f4dde3052b235db1243ba6cb85da9c264573d39a",
+    "knowledge\\authored\\semantic_foundation_20261102_r2\\source_mapping.json": "94315a83750998f198fd57da5d52d1450baa9623cdfa8082960daf6abd88178a",
+    "knowledge\\authored\\semantic_foundation_20261102_r2\\private\\foundation.json": "d7cece07ea0244514c1e9177279422172f713d412e42d0486ece882cccf30783",
+    "knowledge\\authored\\semantic_foundation_20261102_r2\\private\\graph.json": "4987f2f68dd29d585e47d8a72308f9bbec4112bc01f34954ce576733b645ca99",
+    "knowledge\\authored\\kg_v3_evidence_20261019_r2\\graph\\nodes.jsonl": "ea646186bb417ce53fc212ebce0db1c6d3acaf7c8847bae26ef268e859a32509",
+    "knowledge\\authored\\kg_v3_evidence_20261019_r2\\graph\\edges.jsonl": "de9340e4c920d1303ba15bc8299e1d0d372cfa96a1854c1f98c4f122b713e546",
+    "knowledge\\authored\\kg_cards_20261030_v3\\cards.json": "09ef01cab2ee869a7fadce2644af14b36ba7a1cbc24281ae845b78ca7e7ec8e6",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\build_foundation.py": "a23f05f8c6853ce7ee4f1a4dbc8dc0eeefc55c96ab1e1162f1c23cdb7601003f",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\finalize.py": "aadf491ff21dd7abbf256a373cdb6535834f67dd4855c8ccceb3bc0ed47dfddc",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\inventory.py": "26a17391719505903427ef6a60b8f8bdc28be0da73267f6c10bc870df22384f5",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\report.py": "d851863ada37656244802e3f4401899f6040fb099cf3816102ecdddcea32fca9",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\reviewers.py": "5bf206046f91b94bcde7960523ffb9d246f6daa7f0e2fbef4bbfccd722e9f86c",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\semantic_graph.py": "ddd63490b704f8f7526cb92d75fa6ac8cbdaadf67e3793d642c66f0158f3747b",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\test_semantic_graph.py": "574498eb9004f02bb57a752f0e6f06320063a83cdeaba9768b4fc7ac295b17df",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\verify_sources.py": "aa98e40fd86ced00230f9987ee96ca66ebe5260d0a509c0d077b5769a695ddd8"
+  },
+  "published_hashes": {
+    "edges.jsonl": "3ba3bbc72f0541e040c15ba58db2d07b90af135d171625cd063e99d50d3a129c",
+    "graph.json": "7e18f8f06f5247c51078b6f8361c6601310270492f45b5288e45f94665356928",
+    "nodes.jsonl": "92416126a5f6a57946920cd8c7ea3122fff171db7b2b4b3733fb88148d47c698",
+    "schema.json": "a4bbace94708c91fe47fa9f5e56c07a798de012790543bab5c5ad2e58871cd56",
+    "source_mapping.json": "703d1f1d92f0eefe6e81bf5d52affd604ddbc3754c603c87f82a54f9d23c1217",
+    "spec.json": "1a6b4dcab97a7ae64639292b44297414fb30c4b21f7a42301cdac5895046afee"
+  },
+  "test_summary": {
+    "tests_run": 39,
+    "failures": 0,
+    "errors": 0,
+    "previous_cases": {
+      "total": 24,
+      "matched": 24
+    },
+    "development_cases": 16,
+    "readiness_counts": {
+      "ready_for_generation_trial": 13,
+      "needs_analysis": 2,
+      "out_of_slice": 1
+    },
+    "qwen_calls": 0
+  },
+  "review_rounds": [
+    {
+      "phase": "independent",
+      "reviewer": "claude",
+      "complete": true,
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "prompt_sha256": "51205a35bbd102a836799fa5287891aa3e749c8d2fffbe626a5cb701a02a8b33",
+      "response_sha256": "36799e2ed90efa2ddbc086206f4a2f073c925511ed3168fac38c7376b1eed685"
+    },
+    {
+      "phase": "independent",
+      "reviewer": "codex",
+      "complete": true,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "prompt_sha256": "83c2f358c5e555802f86d8f13bb8080bf49d344a10d8070713f7af9448bedc07",
+      "response_sha256": "72f2525b012ddd30cebeea37cfb82f7733cb490063fc0e5728910fb3531aa258"
+    },
+    {
+      "phase": "cross",
+      "reviewer": "claude",
+      "complete": true,
+      "models": [
+        "claude-opus-5-5"
+      ],
+      "prompt_sha256": "18c21b360f9f43762d4792b7dfc51452e1e6413e679b528b35f3a62669da0dc1",
+      "response_sha256": "2e71b14ed07ee74f3421ee032851e84e4966e8c7a5d8d59a0d9854e0fdf5c60d"
+    },
+    {
+      "phase": "cross",
+      "reviewer": "codex",
+      "complete": true,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "prompt_sha256": "7e313baa27515994b4f05ffdfecdd84f54e02f765760a06ff0b8ab5b973894ab",
+      "response_sha256": "bb0a62d03978817af7e95da5f796f5b43f277e3be502de2dbf338f14b16c3576"
+    }
+  ],
+  "production_replaced": false,
+  "neo4j_imported": false,
+  "report_check": {
+    "passed": true,
+    "interaction_cases": 20,
+    "scope": "offline JS with DOM stubs, not browser visual inspection"
+  },
+  "report_sha256": "88c4efae4e3e63e632b6e8318cfdda974cfed89acf2b6232bc584ec299f67acf",
+  "output_hashes": {
+    "change_log.json": "251ac5363a11793619491d7809f57d7e7f06c704eedbd1c64082584c365ec806",
+    "development.json": "cdaa089fc6a8de504cc08b76b83f90534800409dd5869363fa7bc5d5eb3dbd96",
+    "graph.json": "7e18f8f06f5247c51078b6f8361c6601310270492f45b5288e45f94665356928",
+    "input_hashes.json": "0dd1365c353d950a88ac98ad71fda6951ef12110917f34b20ae6cba507fb52ca",
+    "previous_case_comparison.json": "7541d2cbf6007f74cbc0ea28391c881f89a221a68bfacb3dd4db08e1ea39036f",
+    "report.html": "88c4efae4e3e63e632b6e8318cfdda974cfed89acf2b6232bc584ec299f67acf",
+    "report_check.json": "6f66856b024af90dbf3607144e22f769ce45698ef4ebe394373d31905c53b4de",
+    "review_resolution.json": "a3e40ea1eded22ba79c42445f27e0508f2238f2280968b0ede749da70791c365",
+    "source_reading.json": "48c5f737bdc0236e540ebd493332296e18143253c16e8cf0eb5d949204d4074d",
+    "spec.json": "1a6b4dcab97a7ae64639292b44297414fb30c4b21f7a42301cdac5895046afee",
+    "tests.txt": "cd9de81468bfd24628a40b9798acd530d86f9d52b33ee66dd1eaa59c42006040",
+    "validation.json": "5e0ef33c7fc1d8f0f8f5f56ec16b83e21ec189e80744f34564b7475a522176de"
+  }
+}

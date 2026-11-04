@@ -1,0 +1,45 @@
+"""Offline HTML report generated only from recorded run artifacts; source text stays private."""
+from html import escape as esc
+from pathlib import Path
+from collections import Counter
+from .io import read,save
+import json
+
+def render_report(out):
+    out=Path(out);m=read(out/'metrics.json');config=read(out/'config.json');results=read(out/'private/results.json')
+    def pretty(x):return '<pre>'+esc(json.dumps(x,ensure_ascii=False,indent=2))+'</pre>'
+    def link(p,label):return '<a href="'+esc(p)+'">'+esc(label)+'</a>'
+    labels={'generated_requires_human_review':'변경됨 · 사람 검토 필요','unchanged':'원문 유지'}
+    rows=[]
+    for r in results:
+        base='records/'+r['id']+'/'
+        raw=out/'private'/base/'generation_call/parsed.json'
+        candidate=read(raw).get('output_text') if raw.exists() else None
+        row=f'<tr><td><b>{esc(r["id"])}</b><br>{esc(labels.get(r["status"],r["status"]))}</td><td>{esc(r["input_text"])}</td><td>{esc(r["output_text"] or "승인 출력 없음")}'
+        if candidate and r['output_text'] is None:row+='<details><summary>검사에서 거부된 모델 출력</summary>'+esc(candidate)+'</details>'
+        row+=f'</td><td>{r.get("reference_count",0)}개<br>{r["total_seconds"]:.1f}초<details><summary>추적 기록</summary>'
+        for file,label in [('analysis_call/parsed.json','Qwen 분석'),('mapping.json','Concept 후보'),('retrieval_raw.json','조회 원본'),('selection_audit.json','선별 판단'),('reference_packet.json','생성에 전달한 근거'),('generation_call/request.json','생성 요청'),('generation_call/response.json','실제 모델 응답'),('result.json','결과·오류')]:
+            if (out/'private'/base/file).exists():row+=link(base+file,label)+'<br>'
+        row+='</details></td></tr>';rows.append(row)
+    example=next((r for r in results if r['status']=='generated_requires_human_review'),next((r for r in results if r['status']=='unchanged'),results[0]))
+    folder=out/'private/records'/example['id'];worked=''
+    for file,title in [('analysis_call/parsed.json','1. 실제 Qwen 분석'),('mapping.json','2. 실제 Concept ID 연결'),('retrieval_raw.json','3. 실제 조회문과 반환 규모'),('reference_packet.json','4. 생성에 전달한 정보'),('generation_call/parsed.json','5. 실제 Qwen 생성')]:
+        if (folder/file).exists():
+            data=read(folder/file)
+            if file=='retrieval_raw.json':data={'queries':data['queries'],'claim_paths_count':len(data['claim_paths']),'unreviewed_neighborhood_count':len(data['unreviewed_neighborhood']),'first_claim_path':data['claim_paths'][:1]}
+            worked+='<details><summary>'+title+'</summary>'+pretty(data)+'</details>'
+    error_rows=''.join('<tr><td>'+esc(k)+'</td><td>'+str(v)+'</td></tr>' for k,v in m['status_counts'].items())
+    bars=''.join('<div class="barrow"><span>'+esc(labels.get(k,k))+'</span><div class="bar" style="width:'+str(max(2,100*v/m['records']))+'%">'+str(v)+'</div></div>' for k,v in m['status_counts'].items())
+    stats=[('전체 입력',str(m['records'])),('검사 통과 출력',str(m['valid_output_records'])),('원문이 바뀐 입력',str(m['changed_records'])),('변환 참고 근거가 있는 입력',str(m['records_with_realization_reference'])),('API 호출 시도',str(m['api_attempts'])),('전체 경과 시간',f'{m["wall_seconds"]:.1f}초')]
+    cards=''.join('<div class="card"><strong>'+v+'</strong><span>'+k+'</span></div>' for k,v in stats)
+    html='''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KG·Qwen 파이프라인 실제 실행 보고서</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f1f5f7;color:#233b46;font:16px/1.75 "Malgun Gothic",sans-serif}header{background:#163e4b;color:#fff;padding:38px max(24px,calc((100vw - 1160px)/2));border-bottom:5px solid #17b5aa}h1{line-height:1.35}main{max-width:1220px;margin:auto;padding:24px}section{background:white;padding:28px;margin:22px 0;border:1px solid #cfdee4;border-radius:14px}h2{font-size:24px;margin-top:0}h3{font-size:19px}a{color:#087e91}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{border:1px solid #bad4dc;border-radius:10px;padding:16px}.card strong{display:block;font-size:28px;color:#086a70}.card span{font-size:14px}.flow{display:flex;flex-wrap:wrap;gap:10px}.flow span{background:#e8f3f4;border-top:3px solid #159e98;padding:12px;flex:1;min-width:130px}.notice{background:#fff6e2;border-left:4px solid #d7a84c;padding:14px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid #d4e1e6;padding:12px;vertical-align:top}th{background:#ecf4f6}#outputs table{min-width:900px}#outputs td:nth-child(2),#outputs td:nth-child(3){width:34%}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7f9;padding:16px;font-size:13px;line-height:1.6}details{border:1px solid #d8e4e9;padding:12px;margin:10px 0}summary{cursor:pointer;font-weight:600}.barrow{margin:12px 0}.bar{background:#158b8b;color:white;padding:3px 10px;min-width:35px;border-radius:3px}code{overflow-wrap:anywhere}.small{font-size:13px;color:#597079}@media(max-width:640px){main{padding:12px}section{padding:18px}.cards{grid-template-columns:1fr 1fr}h1{font-size:25px}h2{font-size:21px}}
+</style></head><body><header><p>실제 실행 기록 · '''+esc(config['phase'])+'''</p><h1>문장을 분석하고, KG 근거를 찾아,<br>Qwen으로 방언을 생성하는 연결 구현</h1><p>'''+esc(out.name)+'''</p></header><main>
+<section><h2>1. 큰 그림: 무엇을 만들었나요?</h2><p>Qwen이 문장을 읽고, 코드가 그 분석을 실제 KG 개념으로 연결합니다. 관련 문헌 근거를 골라 다시 Qwen에 주면, Qwen이 근거가 허용하는 부분을 바꿉니다.</p><div class="flow"><span>입력</span><span>Qwen 문법 분석</span><span>Concept 연결</span><span>Neo4j 조회</span><span>근거 선별</span><span>Qwen 생성</span><span>검사·기록</span></div><p class="notice">이 보고서는 실제 호출 결과입니다. 다만 실행 성공·JSON 검사 통과는 방언 정확성이나 자연스러움의 증명이 아닙니다. 정답 라벨과 사람 평가가 없으므로 정확도는 계산하지 않았습니다.</p><div class="cards">'''+cards+'''</div></section>
+<section><h2>2. 설계 논리: 왜 이렇게 연결했나요?</h2><table><tr><th>대안</th><th>판단</th></tr><tr><td>입력 글자만 검색</td><td>같은 어미의 질문·요청, 본용언·보조용언, 인용 범위를 구별하기 어려움.</td></tr><tr><td>LLM이 Concept ID·조회문까지 생성</td><td>없는 ID와 관계를 발명하거나 조회 범위를 일관되게 유지하지 못할 수 있음.</td></tr><tr><td><b>Qwen 분석 + 명시적 Concept 연결 + 실제 그래프 조회</b></td><td>이번 선택. 언어 해석은 모델, ID·조회·범위·추적은 코드가 맡음. 분석 오류는 여전히 가능하고 연결표의 관리가 필요함.</td></tr></table><p>Concept는 KG의 개념 노드입니다. 새 ID를 만들지 않고 기존 ID 목록과 대조합니다. 정확한 구성 특징을 넓은 개념보다 먼저 정렬하되, 여러 특징이 동시에 관련되면 모두 조회합니다. 정렬 점수는 확률이 아닙니다.</p><p>직접 대조된 Claim(문헌 진술)과 정확한 인용 구간을 우선 사용합니다. 설계 항목의 cross_reference는 ‘관련됨’이지 ‘적용해도 됨’이 아니므로, 넓게 조회한 설계 항목은 감사 로그에 남기고 자동 변환의 허가로 사용하지 않습니다.</p><p>지역·시기는 출처 정보로 보존하며 이번 실험의 선택 필터로 쓰지 않습니다. 다만 원문의 높임과 의미를 바꾸지 않도록 문법 조건을 확인합니다. 지역별 말높임 대응을 검증했다고 주장하지 않습니다.</p></section>
+<section><h2>3. 실제 결과와 측정 범위</h2>'''+bars+'''<table><tr><th>항목</th><th>측정값</th></tr><tr><td>서버 보고 입력 토큰</td><td>'''+str(m['reported_usage']['prompt_tokens'])+'''</td></tr><tr><td>서버 보고 출력 토큰</td><td>'''+str(m['reported_usage']['completion_tokens'])+'''</td></tr><tr><td>usage가 없는 호출</td><td>'''+str(m['calls_without_usage'])+'''</td></tr><tr><td>조회 JSON 총 문자 수 → 전달 묶음 총 문자 수</td><td>'''+str(m['retrieval_chars_total'])+' → '+str(m['packet_chars_total'])+'''</td></tr><tr><td>자동 재시도</td><td>0 · 실패 원본 보존</td></tr><tr><td>Concept 정확도·근거 적절성·방언 자연스러움</td><td>측정 안 함 · 정답/사람 평가 필요</td></tr></table><p class="small">JSON 문자 수 감소는 토큰 절약량과 다릅니다. 전체 시간은 병렬 실행을 포함한 실제 경과 시간입니다. 입력별 시간의 합과 같지 않습니다.</p></section>
+<section id="outputs"><h2>4. 입력별 결과</h2><p>변경된 출력도 사람이 의미·자연스러움을 확인해야 합니다. 실패한 출력은 별도로 보존하며, 원문 유지와 구분합니다.</p><div class="tablewrap"><table><thead><tr><th>ID·상태</th><th>입력</th><th>출력</th><th>근거·시간·로그</th></tr></thead><tbody>'''+''.join(rows)+'''</tbody></table></div></section>
+<section><h2>5. 한 사례를 끝까지 따라가기: '''+esc(example['id'])+'''</h2><p>'''+esc(example['input_text'])+'''</p>'''+worked+'''</section>
+<section><h2>6. 오류·미지원과 다음 단계</h2><table><tr><th>실행 상태</th><th>입력 수</th></tr>'''+error_rows+'''</table><p>분석 실패는 문법 해석·구조화 단계, 조회 실패는 DB·인터페이스 단계, 생성 실패는 응답 또는 변경 범위·근거 연결 검사 단계에서 발생합니다. 단계별 원본을 보존했습니다.</p><p>근거가 없거나 적용 조건이 확인되지 않은 부분은 원문을 유지합니다. 현재 선택기는 29개 직접 대조 진술 가운데 구현된 조건만 다룹니다. 전체 721개 방언 항목을 검증한 규칙 엔진은 아닙니다. 다음 단계는 미지원 조건의 문헌 대조, 정답 분석 작성, 지역 화자의 평가입니다.</p><p>이 50개 입력은 과거 대화에 이미 공개되었고 NEW007은 이전 설계 예시로 사용되었습니다. 이번 구현에서는 별도 예문으로 검증 후 설정을 고정했지만, 완전히 보지 않은 시험셋이라고 주장할 수는 없습니다. KG 없는 비교 조건을 실행하지 않았으므로 KG가 품질을 향상시켰다는 인과 결론도 내리지 않습니다.</p></section>
+<section><h2>7. 기술적 근거·재현 파일</h2><p>'''+link('../config.json','실행 설정')+' · '+link('../freeze.json','실험 전 고정 시점')+' · '+link('../code_hashes.json','코드 해시')+' · '+link('../kg_hashes.json','KG 해시')+' · '+link('../metrics.json','원본 지표')+' · '+link('results.json','입력별 결과 JSON')+' · '+link('human_review.json','사람 평가 빈 양식')+'''</p><p>'''+link('../analysis.schema.json','분석 출력 형식')+' · '+link('../generation.schema.json','생성 출력 형식')+' · '+link('../analysis_prompt.txt','분석 프롬프트')+' · '+link('../generation_prompt.txt','생성 프롬프트')+'''</p><details><summary>실행 설정 전체</summary>'''+pretty(config)+'''</details><p>API의 JSON 형식 요청은 <a href="https://docs.vllm.ai/en/latest/features/structured_outputs/">vLLM 공식 Structured Outputs 문서</a>의 인터페이스를 사용합니다. 형식 제약은 내용의 정확성을 보증하지 않습니다.</p></section></main></body></html>'''
+    (out/'private/report.html').write_text(html,encoding='utf-8')

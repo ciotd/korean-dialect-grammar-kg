@@ -1,0 +1,16 @@
+{
+  "records": 32,
+  "analysis_calls": 0,
+  "generation_calls": 27,
+  "api_attempts": 27,
+  "actual_generated_outputs": 27,
+  "valid_output_records": 27,
+  "surface_warning_records": 9,
+  "wall_seconds": 7.432,
+  "reported_usage": {
+    "prompt_tokens": 7013,
+    "completion_tokens": 200,
+    "total_tokens": 7213
+  },
+  "naturalness_evaluation": "not_performed"
+}

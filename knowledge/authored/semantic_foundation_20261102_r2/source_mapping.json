@@ -1,0 +1,18 @@
+{
+  "GS_ENDRULE_Q_POLAR_V": [
+    "SEM_Q_V_POLAR"
+  ],
+  "GS_ENDRULE_Q_WH_V": [
+    "SEM_Q_V_WH"
+  ],
+  "GS_ENDRULE_Q_POLAR_C": [
+    "SEM_Q_C_POLAR"
+  ],
+  "GS_ENDRULE_Q_WH_C": [
+    "SEM_Q_C_WH"
+  ],
+  "GS_ENDRULE_Q_TAM_C": [
+    "SEM_Q_C_PAST_POLAR",
+    "SEM_Q_C_PAST_WH"
+  ]
+}

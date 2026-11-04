@@ -16,6 +16,12 @@ def read(path): return json.loads(Path(path).read_text(encoding='utf-8-sig'))
 def load_jsonl(path):return [json.loads(l) for l in Path(path).read_text(encoding='utf-8-sig').splitlines() if l.strip()]
 
 class CallError(RuntimeError): pass
+def unique_json_object(pairs):
+    result={}
+    for key,value in pairs:
+        if key in result:raise CallError('duplicate_json_key:'+key)
+        result[key]=value
+    return result
 class Qwen:
     def __init__(self,path,model=None,timeout=180):
         vals={}
@@ -47,7 +53,7 @@ class Qwen:
             if choice.get('finish_reason')!='stop':raise CallError('non_stop_finish:'+str(choice.get('finish_reason')))
             content=choice['message'].get('content')
             if not isinstance(content,str):raise CallError('missing_content')
-            value=json.loads(content);save(out/'parsed.json',value)
+            value=json.loads(content,object_pairs_hook=unique_json_object);save(out/'parsed.json',value)
             meta['status']='response_received';return value
         except Exception as e:
             meta['status']='failed';meta['error_type']=type(e).__name__

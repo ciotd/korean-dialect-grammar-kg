@@ -1,0 +1,22 @@
+{
+  "records": 30,
+  "api_attempts": 0,
+  "analysis_calls": 0,
+  "generation_model_calls": 0,
+  "valid_output_records": 30,
+  "changed_records": 30,
+  "status_counts": {
+    "generated_requires_human_review": 30
+  },
+  "surface_warning_records": 0,
+  "reported_usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "wall_seconds": 5.683311,
+  "kiwi_startup_seconds": 1.243078,
+  "composition_seconds_sum": 2.3903347000014037,
+  "naturalness_evaluation": "not_performed",
+  "valid_count_meaning": "candidate emitted for human review; not translation accuracy"
+}

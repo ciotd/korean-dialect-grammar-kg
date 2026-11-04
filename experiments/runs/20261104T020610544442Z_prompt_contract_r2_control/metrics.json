@@ -1,0 +1,25 @@
+{
+  "records": 17,
+  "valid_output_records": 17,
+  "api_attempts": 17,
+  "analysis_calls": 0,
+  "generation_calls": 17,
+  "changed_records": 17,
+  "record_status_counts": {
+    "completed": 9,
+    "completed_with_warnings": 8
+  },
+  "warning_counts": {
+    "lexical_stem_not_observed_or_kiwi_uncertain": 4,
+    "documented_surface_structure_mismatch": 5,
+    "selected_ending_not_at_target_end": 5
+  },
+  "reported_usage": {
+    "prompt_tokens": 19427,
+    "completion_tokens": 1678,
+    "total_tokens": 21105
+  },
+  "paired_wall_seconds": 38.878,
+  "record_seconds_sum": 39.174,
+  "naturalness_evaluation": "not_scored"
+}
