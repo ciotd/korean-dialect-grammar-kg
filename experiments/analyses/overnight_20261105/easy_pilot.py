@@ -39,6 +39,10 @@ def payloads(text,traces,packet):
  assert all({k:v for k,v in p[a].items() if k!='grammar_reference'}==common for a in p)
  return p,{'knowledge_sha256':sha(j.encode()),'leaf_count':len(list(leaves(knowledge))),'roundtrip_equal':True,'characters':{'T':len(t),'J':len(j)},'common_sha256':sha(dumps(common).encode())}
 
+def wire_content(payload):
+ common={k:v for k,v in payload.items() if k!='grammar_reference'}
+ return dumps(common)+'\n\n문법 참고 정보:\n'+payload['grammar_reference']
+
 def observed(text,analyzer):
  ts=analyzer.analyze(text)['tokens']
  return {'past_ep':sum(t['base_tag']=='EP' and t['form'] in ('았','었','였') for t in ts),'honorific_si':sum(t['base_tag']=='EP' and t['form'] in ('시','으시') for t in ts),'negative_morphemes':sum(t['form'] in ('안','못','않','아니','말') and t['base_tag'] in ('MAG','VX','VCN') for t in ts),'lexical_gyesi':sum(t['form']=='계시' and t['base_tag'] in ('VX','VV') for t in ts),'observational_warning_only':True}
@@ -58,7 +62,7 @@ def main():
   try:
    for target in targets:
     schema,user=rt.schema_and_payload(graph,target['morph'],target['uid'],row['text']);raw=client.call('boundary_analysis',rt.PROMPT,user,schema,d/'analysis'/target['uid'],3072,20261103);validate_schema(raw,schema);raws.append(raw)
-   packet,traces,internal=packet_from_targets(row['text'],targets,raws,graph);save(d/'packet.json',packet);save(d/'traces.json',traces);ps,proof=payloads(row['text'],traces,packet);save(d/'information_equality.json',proof);save(d/'payloads.json',ps);before=observed(row['text'],analyzer);ac=0
+   packet,traces,internal=packet_from_targets(row['text'],targets,raws,graph);save(d/'packet.json',packet);save(d/'traces.json',traces);ps,proof=payloads(row['text'],traces,packet);save(d/'information_equality.json',proof);save(d/'payloads.json',ps);wire={a:wire_content(p) for a,p in ps.items()};assert restore(wire['T'].split('\n\n문법 참고 정보:\n',1)[1])==json.loads(wire['J'].split('\n\n문법 참고 정보:\n',1)[1]);save(d/'wire_contents.json',wire);before=observed(row['text'],analyzer);ac=0
   except Exception as e:
    af+=1;ac+=1;results.append({'id':row['id'],'source_id':row['id'],'arm':'shared_analysis','status':'analysis_or_query_failed','error':type(e).__name__+':'+str(e)[:200]});save(d/'failure.json',results[-1]);task.update(done=i+1,message=row['id']+' 분석 실패');store.task(task)
    if ac>=5 or (i>=9 and af/(i+1)>.2):stop_reason='analysis_failure_threshold';break
@@ -67,7 +71,7 @@ def main():
   for arm in order:
    ad=d/arm;result={'id':row['id']+'__'+arm,'source_id':row['id'],'arm':arm,'input_text':row['text'],'output_text':None,'supported_targets':len(packet['actions']),'rule_ids':[a['rule_id'] for a in packet['actions']],'known_delivery_defect':row['known_delivery_defect']};attempts[arm]+=1
    try:
-    response=client.call('dialect_generation',SYSTEM,ps[arm],rt.GENERATION_SCHEMA,ad/'generation_call',2048,20261103);validate_schema(response,rt.GENERATION_SCHEMA);result.update(status='generated_requires_human_review',output_text=response['output_text'],model_status=response['status']);consecutive[arm]=0
+    response=client.call('dialect_generation',SYSTEM,wire_content(ps[arm]),rt.GENERATION_SCHEMA,ad/'generation_call',2048,20261103);validate_schema(response,rt.GENERATION_SCHEMA);result.update(status='generated_requires_human_review',output_text=response['output_text'],model_status=response['status']);consecutive[arm]=0
    except Exception as e:result.update(status='generation_failed',error=type(e).__name__+':'+str(e)[:200]);fails[arm]+=1;consecutive[arm]+=1
    if result['output_text'] is not None:
     try:

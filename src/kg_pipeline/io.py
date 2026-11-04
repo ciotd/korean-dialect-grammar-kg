@@ -38,7 +38,7 @@ class Qwen:
         self.model=model or ids[0]
         if self.model not in ids:raise ValueError('Requested model is not served')
     def call(self,stage,prompt,user,schema,out,max_tokens,seed):
-        request={'model':self.model,'messages':[{'role':'system','content':prompt},{'role':'user','content':dumps(user)}],
+        request={'model':self.model,'messages':[{'role':'system','content':prompt},{'role':'user','content':user if isinstance(user,str) else dumps(user)}],
           'temperature':0,'top_p':1,'seed':seed,'max_tokens':max_tokens,'chat_template_kwargs':{'enable_thinking':False},
           'response_format':{'type':'json_schema','json_schema':{'name':stage,'strict':True,'schema':schema}}}
         save(out/'request.json',request)
