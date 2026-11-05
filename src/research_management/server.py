@@ -49,7 +49,7 @@ def make_server(project, port=8766):
                     return self.send((assets/name).read_bytes(),mime=mime+'; charset=utf-8')
                 if request.path.startswith('/reports/overnight-20261105/'):
                     name=request.path.removeprefix('/reports/overnight-20261105/')
-                    files={'report.html':'text/html','report.css':'text/css','report.js':'text/javascript','paper_handoff.md':'text/plain','codex_review.md':'text/plain','claude_review.md':'text/plain'}
+                    files={'report.html':'text/html','report.css':'text/css','report.js':'text/javascript','paper_handoff.md':'text/plain','codex_review.md':'text/plain','claude_review.md':'text/plain','guide.html':'text/html','guide.css':'text/css','guide.js':'text/javascript'}
                     if name not in files:return self.send({'error':'not_found'},404)
                     path=registry.project/'experiments/analyses/overnight_20261105/private'/name
                     if not path.is_file():return self.send({'error':'report_not_ready'},404)
