@@ -37,10 +37,12 @@ class Qwen:
         if model is None and len(ids)!=1:raise ValueError('Explicit model required when multiple models are served')
         self.model=model or ids[0]
         if self.model not in ids:raise ValueError('Requested model is not served')
-    def call(self,stage,prompt,user,schema,out,max_tokens,seed):
-        request={'model':self.model,'messages':[{'role':'system','content':prompt},{'role':'user','content':user if isinstance(user,str) else dumps(user)}],
+    def build_request(self,stage,prompt,user,schema,max_tokens,seed):
+        return {'model':self.model,'messages':[{'role':'system','content':prompt},{'role':'user','content':user if isinstance(user,str) else dumps(user)}],
           'temperature':0,'top_p':1,'seed':seed,'max_tokens':max_tokens,'chat_template_kwargs':{'enable_thinking':False},
           'response_format':{'type':'json_schema','json_schema':{'name':stage,'strict':True,'schema':schema}}}
+    def call(self,stage,prompt,user,schema,out,max_tokens,seed):
+        request=self.build_request(stage,prompt,user,schema,max_tokens,seed)
         save(out/'request.json',request)
         t=time.perf_counter();meta={'stage':stage,'request_sha256':sha(dumps(request).encode()),'attempt':1,'retry':False}
         try:

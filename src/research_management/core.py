@@ -85,7 +85,12 @@ def guard_dataset(project, inputs, role):
 def metric_mismatches(config, metrics, results):
     """Respect each run's counting contract; no count is a naturalness score."""
     contract=config.get('metric_contract')
-    if contract in ('research_loop_target_preservation_v1','research_loop_target_preservation_v2'):
+    if contract=='fixed_generation_v1':
+        expected={'valid_output_records':sum(r['status'] in ('generated_requires_human_review','model_review_requested') for r in results),
+                  'attempted_generation_calls':len(results),'generation_calls':len(results),
+                  'analysis_calls':0,'unattempted_records':config['planned_records']-len(results)}
+        required=set(expected)
+    elif contract in ('research_loop_target_preservation_v1','research_loop_target_preservation_v2'):
         targets=[t for r in results for t in r.get('targets',[])]
         expected={
             'actual_generated_outputs':sum(bool(g.get('output_text')) for t in targets for g in t.get('generation',{}).values()),
@@ -178,6 +183,7 @@ class Registry:
             raise ValueError('duplicate_result_ids')
         status = ('preflight_failed' if (folder / 'preflight_failure.json').exists() else
                   'failed' if (folder / 'failure.json').exists() else
+                  'interrupted' if (folder / 'interruption.json').exists() else
                   'completed' if metrics and (folder / 'artifact_hashes.json').exists() else 'incomplete')
         hashes = read(folder / 'code_hashes.json', {})
         artifacts = read(folder / 'artifact_hashes.json', {})
@@ -185,7 +191,8 @@ class Registry:
                          'kg_hashes.json', 'analysis.schema.json', 'generation.schema.json',
                          'analysis_prompt.txt', 'generation_prompt.txt', 'private/inputs.jsonl',
                          'freeze.json', 'postflight.json', 'server_models.json', 'artifact_hashes.json',
-                         'preflight_failure.json', 'version_manifest.json','validation_contract.json']
+                         'preflight_failure.json', 'version_manifest.json','validation_contract.json',
+                         'interruption.json','failure.json','comparison_protocol.json']
         actual = {name: digest((folder / name).read_bytes()) for name in tracked_names if (folder / name).is_file()}
         fingerprint = digest(encoded({'files': actual, 'results': results}).encode())
         mismatch = [name for name, sha in actual.items() if name in artifacts and artifacts[name] != sha]
@@ -193,8 +200,9 @@ class Registry:
             mismatch.append('config.input_sha256')
         if metrics and metrics.get('records') != len(results):
             mismatch.append('metrics.records')
-        if status == 'completed' and config.get('input_count') != len(results):
-            mismatch.append('config.input_count')
+        count_key='planned_records' if config.get('metric_contract')=='fixed_generation_v1' else 'input_count'
+        if status == 'completed' and config.get(count_key) != len(results):
+            mismatch.append('config.'+count_key)
         postflight=read(folder/'postflight.json',{})
         if any(value is False for value in postflight.values()):
             mismatch.append('postflight')
