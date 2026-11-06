@@ -1,0 +1,50 @@
+{
+  "scope": "Planning/report checks only; no new Qwen experiment or KG modification",
+  "http_checks": [
+    {
+      "route": "/reports/research-redesign-20261106/report.html",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "route": "/reports/research-redesign-20261106/report.css",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "route": "/reports/research-redesign-20261106/report.js",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "route": "/reports/integrated-grammar-20261106/report.html",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "route": "/work",
+      "status": 200,
+      "expected": 200,
+      "pass": true
+    },
+    {
+      "route": "/reports/research-redesign-20261106/not-allowed.txt",
+      "status": 404,
+      "expected": 404,
+      "pass": true
+    }
+  ],
+  "review_files": [
+    "private\\claude\\cross_review.md",
+    "private\\claude\\independent.md",
+    "private\\codex\\cross_review.md",
+    "private\\codex\\independent.md"
+  ],
+  "review_count": 4,
+  "visual_check": "Browser screenshot inspected; external styles loaded; proposed/current flow toggle tested",
+  "quality_claim": "No full KG semantic validation or dialect quality measurement performed"
+}
