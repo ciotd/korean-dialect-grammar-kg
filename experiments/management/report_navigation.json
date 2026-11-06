@@ -208,5 +208,10 @@
     "title": "11월5일 · 처음부터 읽는 연구 길잡이와 50문장 추적",
     "url": "http://127.0.0.1:8767/reports/overnight-20261105/guide.html",
     "summary": "연구 이력·버전 뜻·문법 확장 현황, 노드/관계/속성, 원문·승인 참조·Qwen 출력·선택 지식·전달 여부를 쉬운 말로 연결. 새 모델 호출 없음."
+  },
+  {
+    "title": "11월6일 · 연구 전체 복습과 논문 전 점검",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/research_recap_20261106/private/20261106T045300456529Z_research_recap/report.html",
+    "summary": "연구 목적·계보·전체/실행 KG 차이, 실제8사례, 실험 통제와 한계, 최신9분야 통합 범위, 평가 설계·팀 설명. 새 모델 호출·품질 인증 없음."
   }
 ]
