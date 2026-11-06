@@ -55,6 +55,7 @@ def safe_child(root, name):
     return target
 
 def error_category(row):
+    if row.get('status')=='failed':return str(row.get('stage','unknown'))+':'+row.get('error_type','empty_or_unspecified_output')
     if not row.get('status', '').endswith('_failed'):
         return None
     msg = row.get('error', '')
@@ -85,7 +86,13 @@ def guard_dataset(project, inputs, role):
 def metric_mismatches(config, metrics, results):
     """Respect each run's counting contract; no count is a naturalness score."""
     contract=config.get('metric_contract')
-    if contract=='fixed_generation_v1':
+    if contract=='integrated_grammar_v1':
+        expected={'valid_output_records':sum(r['status']=='generated_requires_human_review' for r in results),
+                  'model_review_requested':sum(r.get('model_status')=='needs_review' for r in results),
+                  'failure_stages':dict(collections.Counter(r['stage'] for r in results if r['status']=='failed')),
+                  'changed_records':sum(r.get('output_text') is not None and r['output_text']!=r['input_text'] for r in results)}
+        required=set(expected)
+    elif contract=='fixed_generation_v1':
         expected={'valid_output_records':sum(r['status'] in ('generated_requires_human_review','model_review_requested') for r in results),
                   'attempted_generation_calls':len(results),'generation_calls':len(results),
                   'analysis_calls':0,'unattempted_records':config['planned_records']-len(results)}
@@ -366,7 +373,7 @@ class Registry:
             if 'target_status_counts' in m:
                 failures=str(m['target_status_counts'].get('analysis_or_query_failed',0))+'위치'
             elif 'status_counts' in m:
-                failures=str(m['status_counts'].get('analysis_failed',0))+'입력'
+                failures=str(m.get('failure_stages',{}).get('analysis',m['status_counts'].get('analysis_failed',0)))+'입력'
             else:
                 failures='미집계'
             doc.append(f"| {r['run_id']} | {r['dataset_role']} | {r['state']} | {r['config'].get('input_count','미확인')} | {m.get('valid_output_records','—')} | {failures} |")

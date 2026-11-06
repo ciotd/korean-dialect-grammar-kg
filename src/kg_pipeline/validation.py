@@ -4,7 +4,7 @@ Not a general-purpose JSON Schema validator. Unsupported schema keywords fail cl
 import re
 class ValidationError(ValueError):pass
 def validate_schema(value,schema,path='$'):
-    allowed={'type','properties','required','additionalProperties','items','enum','minimum','minLength','maxLength','maxItems','anyOf'}
+    allowed={'type','properties','required','additionalProperties','items','enum','minimum','minLength','maxLength','minItems','maxItems','anyOf'}
     if set(schema)-allowed:raise ValidationError('unsupported_schema_keyword:'+str(set(schema)-allowed))
     if 'anyOf' in schema:
         for choice in schema['anyOf']:
@@ -25,6 +25,7 @@ def validate_schema(value,schema,path='$'):
         if schema.get('additionalProperties') is False and set(value)-set(props):raise ValidationError(path+':extra_fields')
         for k,v in value.items():validate_schema(v,props[k],path+'.'+k)
     if isinstance(value,list):
+        if 'minItems' in schema and len(value)<schema['minItems']:raise ValidationError(path+':minItems')
         if 'maxItems' in schema and len(value)>schema['maxItems']:raise ValidationError(path+':maxItems')
         for i,v in enumerate(value):validate_schema(v,schema['items'],path+f'[{i}]')
 def locate(text,anchor):
