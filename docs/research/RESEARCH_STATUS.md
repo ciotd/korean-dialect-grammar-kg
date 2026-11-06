@@ -4,6 +4,7 @@
 
 | Run ID | 용도 | 상태 | 입력 | 출력 형식 통과 | 분석·조회 실패(단위 구분) |
 |---|---|---|---:|---:|---|
+| 20261106T052943610843Z_integrated_grammar_regression | regression_exposed | completed | 50 | 48 | 1입력 |
 | 20261106T051728566435Z_integrated_grammar_development | development_exposed | completed | 30 | 30 | 0입력 |
 | 20261106T050944337820Z_integrated_grammar_smoke | development_exposed | completed | 2 | 2 | 0입력 |
 | 20261104T153734922595Z_easy30_knowledge_format_pilot | reviewer_authored_controlled_pilot_not_independent | completed | 30 | — | 미집계 |
