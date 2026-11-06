@@ -32,11 +32,19 @@ def main():
              'same_character_budget':bcfg['knowledge_character_budget']==acfg['knowledge_character_budget'],
              'same_selected_inputs':all(old[i]['input_text']==new[i]['input_text'] for i in manifest['ids'] if i in new),
              'unchanged_schemas':all((before/'private/records'/i/'analysis.schema.json').read_bytes()==(after/'private/records'/i/'analysis.schema.json').read_bytes() for i in new)}
-    rows=[];totals={'before':collections.Counter(),'after':collections.Counter()}
+    rows=[];totals={'before':collections.Counter(),'after':collections.Counter()};order_differences=[]
     for rid in manifest['ids']:
         if rid not in new:
             rows.append({'id':rid,'attempted':False});continue
         b=structural(before,rid);a=structural(after,rid)
+        old_packet=before/'private/records'/rid/'generation_packet.json'
+        new_packet=after/'private/records'/rid/'generation_packet.json'
+        if old_packet.exists() and new_packet.exists():
+            index=lambda p:{(r['unit_id'],r['source_id']):r for r in read(p)['related_unprocessed_sources']}
+            old_refs=index(old_packet);new_refs=index(new_packet)
+            for key in old_refs.keys() & new_refs.keys():
+                x=old_refs[key]['matched_anchors'];y=new_refs[key]['matched_anchors']
+                if x!=y and set(x)==set(y):order_differences.append({'id':rid,'unit_id':key[0],'source_id':key[1],'before':x,'after':y})
         for name,data in [('before',b),('after',a)]:
             for k,v in data.items():
                 if type(v)is int:totals[name][k]+=v
@@ -55,7 +63,8 @@ def main():
         checks.append({**c,**outcomes})
     save(HERE/'private/analysis_repair_comparison.json',{'baseline':before.name,'candidate':after.name,
          'controls':control,'paired_inputs':len(new),'aggregate_structural':{k:dict(v) for k,v in totals.items()},
-         'checks':checks,'cases':rows,'quality_effect':'not_independently_evaluated',
+         'checks':checks,'cases':rows,'reference_anchor_order_differences':order_differences,
+         'quality_effect':'not_independently_evaluated',
          'limits':'18 exposed development inputs; definitions changed as a bundle; no repeat-variance estimate.'})
     print(dumps({'controls':control,'checks_before':sum(x['before']['matches'] for x in checks),
                 'checks_after':sum(x['after']['matches'] for x in checks),'check_count':len(checks),

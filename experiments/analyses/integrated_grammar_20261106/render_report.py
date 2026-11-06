@@ -18,6 +18,8 @@ VALUE.update({'comitative':'함께 하는 대상','coordination':'나란히 잇�
 def value(x):return '판단 못함' if x is None else VALUE.get(str(x),str(x))
 
 PHASE={'smoke':'연결 시험','development':'새 개발 문장 시험','regression':'기존 50문장 재실험','repair':'연결 오류 보완 확인'}
+STAGE={'analysis':'뜻·문법 기능 분석','morphology':'형태소·위치 관찰','kg':'KG 지원 범위','retrieval':'지식 조회','delivery':'모델에 전달','generation':'최종 문장 생성','validation':'검사','unknown':'확인되지 않음'}
+CERTAINTY={'direct':'실제 기록에서 확인','inference':'원인 가설·미확정','needs_human':'사용자·지역 화자 판단 필요'}
 
 def rule_title(r):
     if r['id'].startswith('INT_NOM_WH_'):
@@ -74,7 +76,22 @@ def main():
     if replay_path.exists():
         replay=read(replay_path)
         parts+=['<section><h2>불필요한 참고자료 줄이기: 실제 생성과 구분</h2><p>이미 저장된 분석값을 고정한 뒤 참고자료 전달만 다시 계산했습니다. 맞지 않는 단위·방향을 제외하고, 관계 해시와 반복 관리 설명을 덜었습니다. 정제 지식은 그대로입니다. 아래 대안은 이 보고서의 기존 Qwen 출력에 사용된 요청이 아닙니다.</p>',
-          table(['대상 실행','재생 가능한 입력','참고 건수 전→후','참고 글자 수 전→후','추가 모델 호출'],[[E(s['run_id']),str(len(s['cases'])),f"{s['before_reference_count']} → {s['after_reference_count']}",f"{s['before_chars']:,} → {s['after_chars']:,}",'0'] for s in replay]),'<p>글자 수 감소는 토큰 절감률이나 번역 정확도 개선율이 아닙니다. 실제 품질 효과는 별도 비교 전입니다.</p></section>']
+          table(['대상 실행','재생 가능한 입력 / 계획','참고 건수 전→후','참고 글자 수 전→후','추가 모델 호출'],[[E(s['run_id']),str(s['replayed_inputs'])+' / '+str(s['planned_inputs']),f"{s['before_reference_count']} → {s['after_reference_count']}",f"{s['before_chars']:,} → {s['after_chars']:,}",'0'] for s in replay if s['status']=='completed']),'<p>기존50 중 LONG002는 분석 시간 초과로 전달 패킷이 없어 재생하지 못했습니다. 실패 입력도 대장에 남겼습니다. 글자 수 감소는 토큰 절감률이나 번역 정확도 개선율이 아닙니다. 실제 품질 효과는 별도 비교 전입니다.</p></section>']
+    paired_path=HERE/'private/analysis_repair_comparison.json'
+    if paired_path.exists():
+        paired=read(paired_path)
+        parts+=['<section><h2>분석 설명만 바꾼 마지막 확인</h2><p>새로운 정답 문장을 넣지 않았습니다. 금지·청유·높임·관계 방향의 뜻을 추가로 설명하고, 이전 개발30 중 미리 고른18개를 다시 실행했습니다. KG·생성 지시·참고 선별은 같으며, 위의 참고자료 축소 대안은 이 실행에 넣지 않았습니다.</p>',
+          '<p class="warn"><b>좋아진 부분과 새로 틀린 부분이 함께 있습니다.</b> 아래9개 확인은1→9개 충족으로 바뀌었지만, “닫아 주세요”의 수혜 의미, “처럼”의 유사 의미, “있어”의 반말 판단은 이전보다 나빠졌습니다. 9개 확인 충족을 전체 분석 정확도100%로 읽으면 안 됩니다. “닫아 주이소”는 정제 요청 지식이 빠진 상태에서도 생성돼 KG 효과로 셀 수 없습니다.</p>',
+          table(['입력','확인한 기능','기대값(개발 확인용)','이전 실제 분석','설명 보완 후 실제 분석'],[[E(c['id']),E(FEATURE.get(c['feature'],c['feature'])),E(' / '.join(value(v) for v in c['expected'])),E(' / '.join(value(v) for v in c['before']['actual'])) or '분석 없음',E(' / '.join(value(v) for v in c['after']['actual'])) or '분석 없음'] for c in paired['checks']]),
+          '<p>위 기대값은 사전에 기록한 개발 검사이며 사람의 독립 번역 평가가 아닙니다. 문장 전체 품질 개선율로 사용하지 않습니다. 비교 중 같은 참고자료의 매칭 문자열 순서가 달라진 경우도 확인했습니다. 따라서 분석 지시 외의 모든 요청 바이트가 같았던 비교라고 주장하지 않습니다. 이후 순서를 고정하고 별도 프로세스에서도 같은 전달 내용이 만들어지는지 검사했습니다.</p>',
+          table(['구조 관찰(같은18입력)','이전','보완 후'],[[E({'units':'분석 단위 수','proposed_relations':'모델이 제안한 연결 수','valid_relations':'구조 검사를 통과한 연결 수','relation_issues':'구조 불일치 지적 수','null_features':'판단 못한 특징값 수','rule_instances':'조건을 충족한 위치·용법 쌍','unresolved_instances':'판단이 미확정인 위치·용법 쌍'}.get(k,k)),str(paired['aggregate_structural']['before'].get(k,0)),str(paired['aggregate_structural']['after'].get(k,0))] for k in ['units','proposed_relations','valid_relations','relation_issues','null_features','rule_instances','unresolved_instances']]),
+          '<p>관계 지적 수가 줄어도 관계 자체를 덜 제안한 결과일 수 있습니다. 위 표에서 제안·유효·거부를 함께 봅니다. 분석값과 최종 문장 변경은 독립적인 효과 증명이 아닙니다.</p></section>']
+    observation_path=HERE/'private/observation_fix_summary.json'
+    if observation_path.exists():
+        ob=read(observation_path)
+        parts+=['<section><h2>실험 뒤 확인한 코드 버그도 수정했습니다.</h2><p>“선정해가지고”에서 본동사의 어간 “선정하”를 보조용언 “가지”와 연결어미 쪽에도 복사하는 문제가 있었습니다. 이제 각 연결어미를 바로 앞 용언에 연결하고, 보조구성은 실제 보조용언 어간을 사용합니다.</p>',
+          table(['검사','결과'],[['저장된 형태 분석 재검사',f"{ob['replayed']} / {ob['planned']}입력"],['바뀐 관찰값',f"{ob['changed_inputs']}입력의 {ob['changed_features']}개 특징"],['입력 위치·단위ID·형태소','그대로 유지'],['수정 후 Qwen 재호출','0회. 위 실제 출력은 수정 전 실행 결과']]),
+          '<p>따라서 이 코드 수정의 번역 품질 효과는 아직 측정하지 않았습니다. 과거 결과를 수정 후 결과처럼 바꾸어 표시하지 않았습니다.</p></section>']
     fieldrows=[]
     for number in range(1,13):
         mid=f'M{number:02}';rs=[r for r in rules if number in r['modules']]
@@ -97,7 +114,7 @@ def main():
               '<p>'+pill('원문 유지' if result.get('unchanged') else '변경 있음' if result.get('output_text') is not None else '출력 실패')+pill('전달 용법 '+str(result.get('delivered_knowledge',0)))+pill('과거 형태 수 감소 경고' if 'past_marker_count_decreased' in result.get('observational_warnings',[]) else '과거 감소 자동 경고 없음' if 'observational_warnings' in result else '생성 후 검사 미수행')+'</p>']
             matched=[(who,f) for who,phase,review in reviews() if phase==cfg['phase'] for f in review.get('findings',[]) if f.get('id')==rid]
             if matched:
-                parts+=['<details><summary>검토자가 발견한 문제와 수정 제안</summary>',table(['검토자 / 처음 확인한 단계','실제 관찰','제안·확실성'],[[E(who)+' / '+E(f.get('first_observed_stage','')),E(f.get('observation','')),E(f.get('repair',''))+'<small>'+E(f.get('certainty',''))+'</small>'] for who,f in matched]),'</details>']
+                parts+=['<details><summary>검토자가 발견한 문제와 수정 제안</summary><p>아래 제안은 검토자의 의견입니다. 모두 코드나 KG에 반영한 것은 아닙니다. 조건 삭제나 높임 분류 변경처럼 근거가 부족한 제안은 채택하지 않았으며, 최종 판단은 결정 기록에 남겼습니다.</p>',table(['검토자 / 처음 확인한 단계','실제 관찰','제안·확실성'],[[E(who)+' / '+E(STAGE.get(f.get('first_observed_stage'),f.get('first_observed_stage',''))),E(f.get('observation','')),E(f.get('repair',''))+'<small>'+E(CERTAINTY.get(f.get('certainty'),f.get('certainty','')))+'</small>'] for who,f in matched]),'</details>']
             if result.get('error_type'):parts+=['<p class="warn">실패 위치: '+E(result.get('stage'))+' / '+E(result['error_type'])+' '+E(result.get('error_detail',''))+'</p>']
             ar=[]
             for u in bound:
@@ -118,7 +135,8 @@ def main():
     for r in rules:
         parts+=['<details><summary>'+E(rule_title(r))+' '+pill(value(r.get('rule_type','conversion')))+'</summary><p>'+E(r['instruction'])+'</p>'+table(['실제 적용 조건','실제 출력 후보'],[[condition(r['conditions']),E(' / '.join(r['forms']))]])+'<p><b>한계:</b> '+E(r['limitations'])+'</p><p>근거: '+E(', '.join(s['doc']+' PDF '+str(s['page'])+'쪽' for s in r['source_refs']))+'</p><small>'+E(r['id'])+'</small></details>']
     parts+=['</section><section id="review"><h2>누가 무엇을 확인했나?</h2>',table(['담당','실제로 수행한 일','구분해야 할 한계'],[['리드','원본911항목/26묶음 대응, 통합 코드·데이터 작성, 검토 반영, 시험 실행·집계·백업','원문 근거와 연구자의 대응 해석을 분리. 자연스러움을 혼자 확정하지 않음'],['Claude','57개 지식 후보, 전체 후보 재판정, 추가5개 원문·형태소 대조, 조건/형태/구성 오류 지적','모델 의견은 현대 경상도 화자의 독립 평가를 대신하지 않음'],['Codex','내부 어미 오적용, 동일 본/보조 연결, 중단·선별·집계 오류 검토 및 수정 재확인','코드 반례 검증이며 실제 번역 품질 인증이 아님']]),
-       '<h2>무엇을 검사했고, 무엇은 아직 검사하지 못했나?</h2>',table(['검사','확인 내용','한계'],[['새 코드 24개 검사','내부 연결어미/종결어미 구분, 본/보조 관계, 중단 기록, 원시 출력 보존, 조건의 미확정 처리','실제 방언 자연스러움 점수가 아님'],['기존 관리기 38개 검사','기록·집계·비교·관리 기능의 회귀 검사','수치가 정확히 기록돼도 번역이 정확하다는 뜻은 아님'],['발췌 연결 114개 검사(중복 포함)','새 용법의 발췌 문자열이 해당 문헌·쪽에 실제 존재하는지 검사','인용과 해석의 의미 관계는 별도 언어 검토가 필요'],['그래프 구조','중복 ID·끊긴 참조 검사, 원본 파일 해시 보존','이전 후보에서 물려온 미연결 근거 EV_Q_SCOPE 1개는 보존했고 조회에는 쓰이지 않음'],['모델 생성','실제 요청과 원시 응답·사용 토큰·소요 시간 저장','품질 개선·그래프 우월성은 아직 독립 평가하지 않음']]),
+       '<p>두 검토자는 각각 개발30건·기존50건·분석 보완18건 전체에 대한 검토 파일을 제출했습니다. Codex는 마지막 어간 연결 수정과 참고자료 제외 조건도 다시 확인했습니다. 검토 제안을 모두 채택하지는 않았으며, 채택·미채택 이유는 DECISIONS.md에 기록했습니다.</p>',
+       '<h2>무엇을 검사했고, 무엇은 아직 검사하지 못했나?</h2>',table(['검사','확인 내용','한계'],[['통합 조회22 · 실행기4 · 참고 대안8개 검사','내부 연결어미/종결어미 구분, 본/보조 관계, 중단 기록, 원시 출력 보존, 조건의 미확정 처리','실제 방언 자연스러움 점수가 아님'],['기존 관리기 38개 검사','기록·집계·비교·관리 기능의 회귀 검사','수치가 정확히 기록돼도 번역이 정확하다는 뜻은 아님'],['발췌 연결 114개 검사(중복 포함)','새 용법의 발췌 문자열이 해당 문헌·쪽에 실제 존재하는지 검사','인용과 해석의 의미 관계는 별도 언어 검토가 필요'],['그래프 구조','중복 ID·끊긴 참조 검사, 원본 파일 해시 보존','이전 후보에서 물려온 미연결 근거 EV_Q_SCOPE 1개는 보존했고 조회에는 쓰이지 않음'],['모델 생성','실제 요청과 원시 응답·사용 토큰·소요 시간 저장','품질 개선·그래프 우월성은 아직 독립 평가하지 않음']]),
        '<h2>다음 단계와 멈출 기준</h2>',table(['작업','끝나는 기준','예상과 다르면'],[['이번 결과의 최초 오류 위치 확인','분석·조회·전달·생성 중 실제 기록에서 처음 어긋난 곳을 입력별로 분류','참고와 다르다는 사실만으로 KG 오류라 단정하지 않음'],['후속 지식 정제','보류20후보와 아직 연결되지 않은 용법을 근거·조건 단위로 보완','문헌 표/의미가 불확실하면 미확인으로 남기고 다른 용법을 진행'],['모델과 검색 방식 비교','동일 지식·입력·생성 모델·예산에서 KG없음/문서검색/조건표/그래프 비교','효과가 없으면 그래프 우월성을 주장하지 않고 한계를 기록'],['독립 최종 평가','새 쉬운 평가 문장을 동결하고 사람의 블라인드 자연스러움·의미 보존 평가','기존50과 개발30을 독립 최종평가로 다시 이름 붙이지 않음']]),
        '<p><b>이 보고서의 종료 의미:</b> 통합 구현과 실행 결과를 확보하는 개발 검증입니다. 26묶음 전체의 의미 정제, 모든 지역·세대의 자연스러움, 논문을 위한 그래프 효과 비교는 별도 남은 작업입니다.</p></section>',
        '<footer>원본 KG 및 과거 실행 보존 · 로컬 복구 체크포인트 별도 관리 · 이 보고서에는 인증정보 없음<br>작성 '+E(dt.datetime.now().isoformat(timespec='seconds'))+'</footer></main><script src="report.js"></script></body></html>']

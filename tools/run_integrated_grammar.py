@@ -22,6 +22,9 @@ from research_management.work import WorkStore
 
 def execute(args):
     graph=read(args.graph);reader=IntegratedReader(graph);rows=load_jsonl(args.inputs)
+    prompt_path=getattr(args,'analysis_prompt',None)
+    analysis_prompt=Path(prompt_path).read_text(encoding='utf8') if prompt_path else ANALYSIS_PROMPT
+    require(bool(analysis_prompt.strip()),'Empty analysis prompt')
     require(rows and len({r['id'] for r in rows})==len(rows),'Duplicate/empty inputs')
     require(all(re.fullmatch(r'[A-Za-z0-9_-]+',r['id']) for r in rows),'Unsafe input ID')
     require(args.max_calls>=2*len(rows),'Budget does not cover analysis plus generation')
@@ -39,8 +42,10 @@ def execute(args):
         'model_id':args.model,'graph_sha256':sha(Path(args.graph).read_bytes()),'max_calls':args.max_calls,
         'deadline':args.deadline,'deadline_policy':'no_new_calls_after_deadline','seed':args.seed,
         'automatic_retries':0,'final_writer':'Qwen_raw_output','knowledge_character_budget':args.char_budget,
-        'reference_answers_in_request':False,'naturalness':'not_evaluated','baseline':'development integration, not causal KG comparison'})
-    (out/'analysis_prompt.txt').write_text(ANALYSIS_PROMPT,encoding='utf-8')
+        'reference_answers_in_request':False,'naturalness':'not_evaluated','baseline':'development integration, not causal KG comparison',
+        'analysis_prompt_variant':'explicit_file' if prompt_path else 'default',
+        'analysis_prompt_sha256':sha(analysis_prompt.encode())})
+    (out/'analysis_prompt.txt').write_text(analysis_prompt,encoding='utf-8')
     (out/'generation_prompt.txt').write_text(GENERATION_PROMPT,encoding='utf-8')
     save(out/'generation.schema.json',GENERATION_SCHEMA);save(out/'kg_hashes.json',{'graph':sha(Path(args.graph).read_bytes())})
     hashes={}
@@ -68,7 +73,7 @@ def execute(args):
                 units=observe_units(observed);require(units,'No analyzable units');save(rd/'units.json',units)
                 schema=analysis_contract(reader,units);save(rd/'analysis.schema.json',schema)
                 result['stage']='analysis';calls+=1
-                raw=client.call('integrated_analysis',ANALYSIS_PROMPT,{'text':row['text'],'units':units},schema,rd/'analysis',8192,args.seed)
+                raw=client.call('integrated_analysis',analysis_prompt,{'text':row['text'],'units':units},schema,rd/'analysis',8192,args.seed)
                 validate_schema(raw,schema);bound=bind_analysis(units,raw);save(rd/'bound_analysis.json',bound)
                 result['stage']='retrieval';packet,traces=retrieve_packet(reader,row['text'],bound,args.char_budget)
                 save(rd/'retrieval.json',traces);save(rd/'generation_packet.json',packet)
@@ -139,7 +144,8 @@ def execute(args):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--execute',action='store_true',required=True)
-    p.add_argument('--graph',required=True);p.add_argument('--inputs',required=True);p.add_argument('--phase',choices=['smoke','development','regression'],required=True)
+    p.add_argument('--graph',required=True);p.add_argument('--inputs',required=True);p.add_argument('--phase',choices=['smoke','development','regression','repair'],required=True)
+    p.add_argument('--analysis-prompt',help='Explicit analysis-only comparison prompt, frozen in the run')
     p.add_argument('--model',default='Qwen3.8-27B');p.add_argument('--deadline',required=True);p.add_argument('--max-calls',type=int,required=True)
     p.add_argument('--seed',type=int,default=20261106);p.add_argument('--char-budget',type=int,default=24000)
     args=p.parse_args();_,metrics=execute(args)

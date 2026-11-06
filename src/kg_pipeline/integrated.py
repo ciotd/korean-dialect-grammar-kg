@@ -129,10 +129,9 @@ def observe_units(morph):
                       'observed':obs,'related_word_ids':related or [w['uid']],'token_index':token_index})
     for i,w in enumerate(words):
         ts=w['tokens'];tags=[t['base_tag'] for t in ts]
-        roots=[t['form'] for t in ts if t['base_tag'] in ('VV','VA','VX','VCP','VCN','XSV','XSA')]
-        if any(x in tags for x in ('XSV','XSA')):
-            roots=[''.join(t['form'] for t in ts[:next(j+1 for j,t in enumerate(ts) if t['base_tag'] in ('XSV','XSA'))])]
         root_indices=[j for j,t in enumerate(ts) if t['base_tag'] in ('VV','VA','VX','VCP','VCN','XSV','XSA')]
+        root_lemmas={j:(''.join(t['form'] for t in ts[:j+1]) if ts[j]['base_tag'] in ('XSV','XSA') else ts[j]['form']) for j in root_indices}
+        roots=[root_lemmas[j] for j in root_indices]
         if roots and any(x in tags for x in ('EF','EC','ETM','ETN')):
             for ri,j in enumerate(root_indices):
                 end=root_indices[ri+1] if ri+1<len(root_indices) else len(ts)
@@ -140,7 +139,7 @@ def observe_units(morph):
                 part=ts[begin:end];ends=[t for t in part if t['base_tag'] in ('EF','EC','ETM','ETN')]
                 if not ends:continue
                 pw={**w,'tokens':part,'morphs':[[t['form'],t['tag']] for t in part], 'ending':ends[-1]['form'],'ending_tag':ends[-1]['base_tag']}
-                lemma=''.join(t['form'] for t in ts[:j+1]) if ts[j]['base_tag'] in ('XSV','XSA') else ts[j]['form']
+                lemma=root_lemmas[j]
                 add(pw,'predicate',pw['ending'],lemma)
                 units[-1]['predicate_token_index']=j
                 units[-1]['observed']['root_tag']=ts[j]['base_tag']
@@ -149,13 +148,16 @@ def observe_units(morph):
             add(w,'nominal',''.join(noms),''.join(noms))
         for ti,t in enumerate(ts):
             if t['base_tag'].startswith('J') and t['form']!='요':add(w,'particle',t['form'],token_index=ti)
-            if t['base_tag'] in ('EC','ETM','ETN'):add(w,'connector',t['form'],roots[-1] if roots else '',token_index=ti)
+            if t['base_tag'] in ('EC','ETM','ETN'):
+                preceding=[j for j in root_indices if j<ti]
+                add(w,'connector',t['form'],root_lemmas[preceding[-1]] if preceding else '',token_index=ti)
         if 'VX' in tags:
             prev=words[i-1] if i and words[i-1]['sentence']==w['sentence'] else None
             first_vx=tags.index('VX')
             internal_main=any(t in ('VV','VA','XSV','XSA','VCP','VCN') for t in tags[:first_vx])
             linked=not internal_main and prev is not None and any(t['base_tag']=='EC' for t in prev['tokens'])
-            add(w,'construction',w.get('ending') or roots[-1],roots[-1] if roots else '',
+            last_vx=max(j for j,t in enumerate(ts) if t['base_tag']=='VX')
+            add(w,'construction',w.get('ending') or root_lemmas[last_vx],root_lemmas[last_vx],
                 [prev['start'],w['end']] if linked else None,[prev['uid'],w['uid']] if linked else None)
     return units
 
@@ -227,7 +229,7 @@ class IntegratedReader:
             content=title+' '+dumps(match)
             hits=[a for a in anchors if a in content]
             # One-character anchors need a source title token, not arbitrary substring.
-            hits=[a for a in hits if len(a)>1 or re.search(r'(?<![가-힣])'+re.escape(a)+r'(?![가-힣])',content)]
+            hits=sorted(a for a in hits if len(a)>1 or re.search(r'(?<![가-힣])'+re.escape(a)+r'(?![가-힣])',content))
             if not hits:continue
             paths=self.links(n['id'],'cites_source_span')
             ranked.append({'source_id':n['id'],'title':title,'matched_anchors':hits,'score':sum(len(h) for h in hits),

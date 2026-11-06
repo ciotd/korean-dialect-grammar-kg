@@ -34,6 +34,16 @@ class IntegrationTests(unittest.TestCase):
         units=observe_units(self.m.analyze('물을 주세요.'))
         self.assertFalse(any(u['kind']=='construction' for u in units))
 
+    def test_compound_derived_verb_does_not_overwrite_auxiliary_lemma(self):
+        path=ROOT/'experiments/runs/20261106T052943610843Z_integrated_grammar_regression/private/records/QUAL003/morphology.json'
+        if not path.exists():self.skipTest('Private observed regression fixture not available')
+        morph=json.loads(path.read_text(encoding='utf8'));units=observe_units(morph)
+        targets=[u for u in units if u['text']=='선정해가지고']
+        cx=next(u for u in targets if u['kind']=='construction')
+        self.assertEqual(cx['observed']['lemma'],'가지')
+        connectors=[u for u in targets if u['kind']=='connector']
+        self.assertEqual([(u['observed']['source_form'],u['observed']['lemma']) for u in connectors],[('어','선정하'),('고','가지')])
+
     def test_observed_past_not_overwritten_by_model(self):
         units=observe_units(self.m.analyze('벌써 먹었어요.'))
         raw={'units':[{'unit_id':u['id'],'features':{'past_form':'absent','tense':'present'},'clause_key':'C1','related_unit_ids':[]} for u in units]}

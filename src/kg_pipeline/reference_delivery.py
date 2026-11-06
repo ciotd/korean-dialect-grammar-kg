@@ -7,10 +7,6 @@ unknown and cannot become an executable rule through this module.
 import re
 import json
 
-MODULE_KINDS={1:{'predicate','construction'},2:{'predicate','construction'},
-              3:{'nominal'},4:{'particle'},5:{'predicate','construction'},
-              6:{'predicate','construction'},7:{'connector'},
-              8:{'predicate','connector','construction'},9:{'predicate','construction'}}
 VOWELS='ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ'
 
 def exact_anchor(anchor,text):
@@ -19,20 +15,23 @@ def exact_anchor(anchor,text):
 def reference_exclusion(node,unit,reference):
     p=node['properties'];spec=p.get('original_spec',{});title=node.get('title','')
     condition=spec.get('documentary_condition_before_normalization',{})
-    kinds=MODULE_KINDS.get(p.get('module'))
-    # Module12 contains a regional inventory of different parts of speech.
-    if p.get('module')==12:
-        if title.startswith('조사/'):kinds={'particle'}
-        elif title.startswith(('대명사/','수사/','명사/')):kinds={'nominal'}
-    if kinds and unit['kind'] not in kinds:return 'module_unit_mismatch'
+    # A chapter/module is not an application unit. Only explicit categories are
+    # used here; generic construction/source_claim remains unclassified.
+    kinds=None
+    if 'particle_sense' in condition or title.startswith('조사/'):kinds={'particle'}
+    elif title.startswith(('대명사/','수사/','명사/')):kinds={'nominal'}
+    if kinds and unit['kind'] not in kinds:return 'explicit_source_category_mismatch'
     observed=unit.get('observed',{})
     if unit['kind'] in ('nominal','particle','connector') and 'source_form' in observed:
         own={str(observed.get(k,'')).strip('-') for k in ('source_form','lemma')}
         if not own.intersection(reference['matched_anchors']):return 'anchor_belongs_to_other_morpheme'
     if '→' in title:
-        input_side=title.split('→',1)[0]
-        if not any(exact_anchor(a,input_side) for a in reference['matched_anchors']):
-            return 'no_input_side_anchor'
+        input_side,output_side=title.split('→',1)
+        anchors=reference['matched_anchors']
+        if not any(a in input_side for a in anchors) and any(exact_anchor(a,output_side) for a in anchors):
+            return 'dialect_side_only'
+        # A substring inside a source phrase is not enough to approve relevance,
+        # but its absence as a token is not proof of a reverse-direction match.
     lemma=unit.get('observed',{}).get('lemma','')
     if lemma and 0xac00<=ord(lemma[-1])<=0xd7a3:
         index=ord(lemma[-1])-0xac00

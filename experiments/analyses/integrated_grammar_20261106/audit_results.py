@@ -25,8 +25,8 @@ def audit(run):
         refs = packet.get('related_unprocessed_sources', [])
         counts['delivered_rule_instances'] += len(actions)
         counts['delivered_reference_instances'] += len(refs)
-        counts['rule_payload_characters'] += len(dumps(actions))
-        counts['reference_payload_characters'] += len(dumps(refs))
+        counts['rule_payload_characters'] += len(dumps(actions)) if packet else 0
+        counts['reference_payload_characters'] += len(dumps(refs)) if packet else 0
         counts['inputs_with_delivered_rules'] += bool(actions)
         counts['inputs_with_no_delivered_rules'] += bool(packet) and not actions
         counts['inputs_with_past_count_warning'] += 'past_marker_count_decreased' in row.get('observational_warnings', [])
