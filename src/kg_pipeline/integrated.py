@@ -143,6 +143,7 @@ def observe_units(morph):
                 lemma=''.join(t['form'] for t in ts[:j+1]) if ts[j]['base_tag'] in ('XSV','XSA') else ts[j]['form']
                 add(pw,'predicate',pw['ending'],lemma)
                 units[-1]['predicate_token_index']=j
+                units[-1]['observed']['root_tag']=ts[j]['base_tag']
         if any(x in tags for x in ('NNG','NNP','NP','NR','NNB')) and not any(x in tags for x in ('XSV','XSA')):
             noms=[t['form'] for t in ts if t['base_tag'] in ('NNG','NNP','NP','NR','NNB')]
             add(w,'nominal',''.join(noms),''.join(noms))
@@ -151,7 +152,9 @@ def observe_units(morph):
             if t['base_tag'] in ('EC','ETM','ETN'):add(w,'connector',t['form'],roots[-1] if roots else '',token_index=ti)
         if 'VX' in tags:
             prev=words[i-1] if i and words[i-1]['sentence']==w['sentence'] else None
-            linked=prev is not None and any(t['base_tag']=='EC' for t in prev['tokens'])
+            first_vx=tags.index('VX')
+            internal_main=any(t in ('VV','VA','XSV','XSA','VCP','VCN') for t in tags[:first_vx])
+            linked=not internal_main and prev is not None and any(t['base_tag']=='EC' for t in prev['tokens'])
             add(w,'construction',w.get('ending') or roots[-1],roots[-1] if roots else '',
                 [prev['start'],w['end']] if linked else None,[prev['uid'],w['uid']] if linked else None)
     return units
@@ -263,7 +266,7 @@ def analysis_contract(reader,units):
               'voice':['active','passive','causative']}
     for k,vs in defaults.items():values[k]=sorted(set(values.get(k,[])+vs))
     values['predicate_class']=sorted(set(values.get('predicate_class',[])+['verb','adjective','copula','negative_copula','other']))
-    observed={'unit_kind','source_form','lemma','source_final','prefinal_type','prefinal_sequence','past_form','nominal_end','nominal_kind','morph_tag','ending_tag'}
+    observed={'unit_kind','source_form','lemma','source_final','prefinal_type','prefinal_sequence','past_form','nominal_end','nominal_kind','morph_tag','ending_tag','root_tag'}
     semantic={k:{'type':['string','null'],'enum':[v for v in vs if v!='unknown']+[None]} for k,vs in values.items() if k not in observed}
     relation_names=['nominal_host','head_predicate','left_predicate','right_predicate','main_predicate','auxiliary_predicate',
                     'modifier_head','agent','patient','recipient','causer','causee','negation_target']

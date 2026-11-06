@@ -43,6 +43,13 @@ def make_server(project, port=8766):
             try:
                 if request.path=='/api/work':return self.send(work.state())
                 if request.path=='/api/work/review':return self.send(work.review())
+                if request.path.startswith('/reports/integrated-grammar-20261106/'):
+                    name=request.path.removeprefix('/reports/integrated-grammar-20261106/')
+                    files={'report.html':'text/html','report.css':'text/css','report.js':'text/javascript'}
+                    if name not in files:return self.send({'error':'not_found'},404)
+                    path=registry.project/'experiments/analyses/integrated_grammar_20261106/private'/name
+                    if not path.is_file():return self.send({'error':'report_not_ready'},404)
+                    return self.send(path.read_bytes(),mime=files[name]+'; charset=utf-8')
                 if request.path in ('/work','/work.js','/work.css'):
                     name={'/work':'work.html','/work.js':'work.js','/work.css':'work.css'}[request.path]
                     mime={'work.html':'text/html','work.js':'text/javascript','work.css':'text/css'}[name]

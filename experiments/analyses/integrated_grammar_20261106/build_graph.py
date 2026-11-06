@@ -1,5 +1,6 @@
 """Build an immutable candidate overlay from reviewed source interpretations."""
 import collections
+import argparse
 import copy
 import json
 from pathlib import Path
@@ -21,7 +22,8 @@ DEFER={
  'INT_END_Q_SI_NOUN_GA':'기존 시 선어말 조건의 계사 질문과 중복. 별도 실행 규칙으로 더하지 않고 기존 경로의 시험 대상으로 둔다.',
 }
 
-def main():
+def main(revision):
+    out=OUT if revision=='r1' else OUT.parent.parent/('semantic_grammar_20261106_integrated_'+revision)/'private'
     candidates=read(HERE/'private/claude/knowledge_candidates.json')
     adjud=read(HERE/'private/claude/adjudication.json');decisions={r['id']:r for r in adjud['rules']}
     rules=[];ledger=[]
@@ -70,33 +72,59 @@ def main():
         for r in read(HERE/'private/lead_candidates.json')['rules']:
             rules.append(r);ledger.append({'id':r['id'],'title':r['title'],'decision':'trial_candidate','produced_ids':[r['id']],
                 'reason':'리드가 누락된 핵심 용법을 직접 원문 대조. 표준어 입력과 문헌 실현형의 대응은 연구 해석.', 'packages':r['packages'],'legacy_ids':r['legacy_ids']})
+    if revision!='r1':
+        for r in rules:
+            rid=r['id']
+            if rid in ('INT_LEAD_DECL_PAST_DA','INT_LEAD_DECL_PRESENT_DA'):
+                r['conditions'].update(source_form=['어','아'],clause_role=['main'])
+                r['source_refs'].extend([{'doc':'D04','page':9,'quote':'깝다는 걸 고려하여 표준어 풀이는 해체로 작성했다.'},
+                   {'doc':'D04','page':9,'quote':'안 무웄다.(응. 먹었어. / 아니. 안 먹었어.)'}])
+            if rid=='INT_LEAD_DECL_PRESENT_DA':r['conditions']['root_tag']=['VV','VA','XSV','XSA']
+            if rid=='INT_LEAD_REQUEST_JU_MAIN':
+                r['conditions']['root_tag']=['VV'];r['conditions'].pop('auxiliary_kind',None)
+            if rid in ('INT_LEAD_REQUEST_JU_MAIN','INT_LEAD_REQUEST_JU_AUX','INT_END_PROHIB_MAISO'):
+                r['conditions']['source_form']=['세요','ㅂ시오','시오']
+            if rid in ('INT_LEAD_REQUEST_JU_MAIN','INT_LEAD_REQUEST_JU_AUX'):
+                r['instruction']+=' 주이소는 하이소체 높임 선택지다. 원문의 해요체 주세요를 유지하는 것도 가능하며 동일 높임 등급의 일대일 치환이라고 보지 않는다.'
+                r['forms_annotated']=[{'form':'주이소','usage':'하이소체 높임 선택지'},{'form':'주세요','usage':'해요체 유지도 가능'}]
+            if rid=='INT_LEAD_PROHIB_PLAIN':
+                r['conditions']['source_form']=['어','아'];r['instruction']+=' -지 마 유지도 허용한다.'
+                r['source_refs'].extend([{'doc':'D02','page':167,'quote':'불 옇지 마라.'},{'doc':'D02','page':113,'quote':'가지 마라.'}])
+            if rid=='INT_END_Q_CONFIRM_JE':r['conditions']['source_form']=['지']
+            if rid=='INT_CAUS_CONTRACT_AARA':r['conditions'].pop('voice',None)
+            if rid=='INT_AUX_PRESERVE_COMMON':r['instruction']='본용언+보조용언의 구성과 진행·상태·바람·시도·수혜·의무 의미는 유지한다. 끝의 어미는 다른 조건 맞는 종결 규칙에 따라 바뀔 수 있다. 보존 지식 자체를 방언 변환이라고 세지 않는다.'
+            if rid=='INT_TAM_GET_GEOT':r['limitations']+=' 이번 판은 EF 종결 위치만 지원하며 연결형은 후속 대상이다.'
+            if rid=='INT_Q_CONFIRM_ANIGA':r['limitations']+=' 잖아 단일 어미 분기는 이번 판에 포함하지 않았다.'
     refined={'rules':rules,'gaps':candidates['gaps'],'interpretation_policy':'Document interpretation is distinct from attested source text. No reference50 answers were used.'}
     graph=compile_overlay(refined);reader=IntegratedReader(graph)
-    OUT.mkdir(parents=True,exist_ok=True)
-    if (OUT/'graph.json').exists():raise RuntimeError('Graph already frozen; make a new version instead of overwriting')
-    save(OUT/'refined_knowledge.json',refined);save(OUT/'graph.json',graph)
-    save(HERE/'private/curation_decisions.json',ledger)
+    graph['version']='integrated_grammar_20261106_'+revision
+    out.mkdir(parents=True,exist_ok=True)
+    if (out/'graph.json').exists():raise RuntimeError('Graph already frozen; make a new version instead of overwriting')
+    save(out/'refined_knowledge.json',refined);save(out/'graph.json',graph)
+    save(HERE/('private/curation_decisions_'+revision+'.json'),ledger)
     atlas=read(ROOT/'experiments/analyses/source_workmap_20261102/private/atlas.json')
     reverse=collections.defaultdict(list)
     for r in rules:
         for old in r['legacy_ids']:reverse[old].append(r['id'])
     wholeledger=[{**x,'new_rule_ids':reverse[x['legacy_id']], 'this_stage_status':'partially_refined_link' if reverse[x['legacy_id']] else 'mapped_not_semantically_completed'} for x in atlas['legacy_items']]
-    save(HERE/'private/legacy_item_ledger.json',wholeledger)
+    save(HERE/('private/legacy_item_ledger_'+revision+'.json'),wholeledger)
     packages=[]
     for p in atlas['work_packages']:
         selected=[r for r in rules if p['id'] in r['packages']]
         packages.append({'id':p['id'],'title':p['title'],'legacy_items':len(p['legacy_ids']),
             'new_rule_ids':[r['id'] for r in selected], 'deferred_candidate_ids':[r['id'] for r in ledger if r['decision']=='deferred' and p['id'] in r['packages']],
             'status':'部分 정제·통합 시험 대상' if selected else '원본 검색 가능 / 의미 정제 미완료','whole_package_complete':False})
-    save(HERE/'coverage.json',{'packages':packages,'legacy_items':len(wholeledger),'legacy_items_with_new_refinement':sum(bool(x['new_rule_ids']) for x in wholeledger)})
+    save(HERE/('coverage_'+revision+'.json'),{'packages':packages,'legacy_items':len(wholeledger),'legacy_items_with_new_refinement':sum(bool(x['new_rule_ids']) for x in wholeledger)})
     stats={'source_graph':{'nodes':1625,'edges':6167},'combined_candidate':{'nodes':len(graph['nodes']),'edges':len(graph['edges'])},
         'original_source_atoms_searchable':len(reader.legacy),'existing_rules':12,'new_rules':len(rules),'all_interpreted_rules':len(reader.rules),
         'new_rule_types':dict(collections.Counter(r.get('rule_type','conversion') for r in rules)),
         'new_unit_kinds':dict(collections.Counter(r['unit_kind'] for r in rules)),'source_quote_checks':sum(len(r['source_refs']) for r in rules),
         'new_module_rule_memberships':dict(collections.Counter(str(m) for r in rules for m in r['modules'])),
-        'deferred_candidates':sum(r['decision']=='deferred' for r in ledger),'graph_sha256':sha((OUT/'graph.json').read_bytes()),
+        'deferred_candidates':sum(r['decision']=='deferred' for r in ledger),'graph_sha256':sha((out/'graph.json').read_bytes()),
         'scope_note':'Counts describe candidate data and reachability; not whole grammar completion, naturalness, or quality gains.'}
-    save(HERE/'statistics.json',stats);save(OUT/'statistics.json',stats)
+    save(HERE/('statistics_'+revision+'.json'),stats);save(out/'statistics.json',stats)
+    save(HERE/'latest_graph.json',{'revision':revision,'graph':str(out/'graph.json'),'statistics':str(HERE/('statistics_'+revision+'.json'))})
     print(json.dumps(stats,ensure_ascii=False,indent=2))
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('--revision',choices=['r1','r2'],default='r1');main(p.parse_args().revision)

@@ -141,5 +141,23 @@ class IntegrationTests(unittest.TestCase):
         self.assertEqual(sum(x['unit_id']==u['id'] for x in packet['related_unprocessed_sources']),3)
         self.assertEqual(sum(x['unit_id']==u['id'] and x['reason']=='unrefined_reference_top3_policy' for x in packet['delivery_omissions']),len(tr['legacy_candidates'])-3)
 
+    def test_internal_auxiliary_does_not_capture_previous_clause(self):
+        us=observe_units(self.m.analyze('빨리 와서 도와주세요.'))
+        cx=next(u for u in us if u['kind']=='construction')
+        self.assertEqual(cx['text'],'도와주세요');self.assertEqual(len(cx['related_word_ids']),1)
+
+    def test_root_tags_distinguish_main_and_aux_ju(self):
+        aux=next(u for u in observe_units(self.m.analyze('열어주세요.')) if u['kind']=='predicate' and u['observed']['lemma']=='주')
+        main=next(u for u in observe_units(self.m.analyze('물을 주세요.')) if u['kind']=='predicate' and u['observed']['lemma']=='주')
+        self.assertEqual(aux['observed']['root_tag'],'VX');self.assertEqual(main['observed']['root_tag'],'VV')
+
+    def test_adopted_candidate_does_not_force_auxiliary_present_nda(self):
+        p=ROOT/'knowledge/authored/semantic_grammar_20261106_integrated_r2/private/graph.json'
+        if not p.exists():self.skipTest('private candidate absent')
+        rd=IntegratedReader(json.loads(p.read_text(encoding='utf8')))
+        u=next(u for u in observe_units(self.m.analyze('가고 싶어.')) if u['kind']=='predicate' and u['observed']['lemma']=='싶')
+        f={**u['observed'],'predicate_class':'verb','speech_act':'statement','clause_role':'main','addressee_level':'plain','subject_honorific':'absent','tense':'present'}
+        self.assertNotIn('INT_LEAD_DECL_PRESENT_DA',[h['rule_id'] for h in rd.query(u,f)['eligible']])
+
 
 if __name__=='__main__':unittest.main()

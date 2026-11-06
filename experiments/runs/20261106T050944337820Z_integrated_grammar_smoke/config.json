@@ -1,0 +1,23 @@
+{
+  "phase": "smoke",
+  "dataset_role": "development_exposed",
+  "input_count": 2,
+  "input_sha256": "51b321532a7d4401c2dbac28282fe25003eed7384b63376efd9672545410cf89",
+  "kg_dataset": "integrated_grammar_20261106_candidate",
+  "metric_contract": "integrated_grammar_v1",
+  "program_id": "integrated_grammar_20261106",
+  "program_prior_calls": 0,
+  "program_total_call_limit": 200,
+  "model_id": "Qwen3.8-27B",
+  "graph_sha256": "ec7be847300d42a5d6bede8b2259890b007fee94fb261b6aa47cf9059c8f9848",
+  "max_calls": 4,
+  "deadline": "2026-11-06T16:30:00+09:00",
+  "deadline_policy": "no_new_calls_after_deadline",
+  "seed": 20261106,
+  "automatic_retries": 0,
+  "final_writer": "Qwen_raw_output",
+  "knowledge_character_budget": 24000,
+  "reference_answers_in_request": false,
+  "naturalness": "not_evaluated",
+  "baseline": "development integration, not causal KG comparison"
+}
