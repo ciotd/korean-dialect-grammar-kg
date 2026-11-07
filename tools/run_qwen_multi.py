@@ -1,4 +1,4 @@
-"""Run the versioned Qwen-only analysis/generation pipeline; no Kiwi dependency.
+"""Run the versioned pipeline (Kiwi by default; Qwen morphology for comparison).
 
 Every HTTP attempt passes a shared deadline/call-budget guard. This runner does
 not alter KG or substitute a Python-composed sentence for the model's output.
@@ -109,6 +109,10 @@ def output_availability(record_dir, result):
 
 
 def execute(args):
+    if getattr(args,'analysis_backend','qwen')=='kiwi':
+        if getattr(args,'separate_plan',False):raise ValueError('Separate planner is not enabled in the Kiwi default comparison')
+        from run_kiwi_default import execute as kiwi_execute
+        return kiwi_execute(args)
     require(args.execute, 'Explicit --execute required')
     rows = load_jsonl(args.inputs)
     require(rows and len({r['id'] for r in rows}) == len(rows), 'Duplicate/empty inputs')
@@ -337,6 +341,8 @@ def parser():
     p.add_argument('--phase', choices=['smoke', 'development', 'regression'], required=True)
     p.add_argument('--graph', help='Explicit graph file; defaults to separated latest')
     p.add_argument('--model', default='Qwen3.8-27B')
+    p.add_argument('--analysis-backend', choices=['kiwi','qwen'], default='kiwi',
+                   help='Default: Kiwi morphology, Qwen scope/meaning/writer/diagnostic review. qwen preserves the older path.')
     p.add_argument('--deadline', required=True, help='ISO time with explicit timezone')
     p.add_argument('--max-calls', type=int, required=True)
     p.add_argument('--seed', type=int, default=20261107)

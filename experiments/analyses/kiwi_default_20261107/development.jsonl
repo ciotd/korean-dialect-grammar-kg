@@ -1,0 +1,12 @@
+{"id":"KIWI_NEW01","text":"그 사진은 아무한테도 보내지 마.","check":{"construction_act":"prohibition","required_relations":["main_predicate","auxiliary_predicate"],"preserve":["금지","사진","아무에게도"]}}
+{"id":"KIWI_NEW02","text":"그 사진을 나한테 보내 줘.","check":{"construction_act":"request","required_relations":["main_predicate","auxiliary_predicate"],"preserve":["요청","사진","수혜자 나"]}}
+{"id":"KIWI_NEW03","text":"수업 시간에는 떠들지 마세요.","check":{"construction_act":"prohibition","required_relations":["main_predicate","auxiliary_predicate"],"preserve":["금지","존댓말","수업 시간"]}}
+{"id":"KIWI_NEW04","text":"이 문을 조금 열어 주세요.","check":{"construction_act":"request","required_relations":["main_predicate","auxiliary_predicate"],"preserve":["요청","존댓말","문","조금"]}}
+{"id":"KIWI_NEW05","text":"이 가방은 제 물건이에요.","check":{"humble":true,"preserve":["화자 겸양","소유 관계","존댓말","가방"]}}
+{"id":"KIWI_NEW06","text":"저는 어제 도서관에서 책을 빌렸어요.","check":{"humble":true,"past":true,"preserve":["화자 겸양","과거","도서관","책"]}}
+{"id":"KIWI_NEW07","text":"이건 내 우산이야.","check":{"plain_pronoun":true,"preserve":["화자 소유","반말","우산"],"note":"내를 겸양 대명사로 오인하지 않음"}}
+{"id":"KIWI_NEW08","text":"민수의 방에서 잠깐 기다려 주세요.","check":{"construction_act":"request","required_relations":["main_predicate","auxiliary_predicate"],"preserve":["민수와 방의 소유 관계","잠깐","존댓말"]}}
+{"id":"KIWI_NEW09","text":"어머니께서 아침에 약을 드셨어요.","check":{"past":true,"subject_honorific":true,"preserve":["과거","어머니 높임","존댓말","아침","약"]}}
+{"id":"KIWI_NEW10","text":"방금 정리한 서류를 책상에 놓았어요.","check":{"past":true,"preserve":["관형절의 정리한 행위","서류","책상","놓은 과거"]}}
+{"id":"KIWI_NEW11","text":"할머니께 전화해 봤어요.","check":{"construction_act":"statement","required_relations":["main_predicate","auxiliary_predicate"],"past":true,"preserve":["시도 경험","할머니","과거","존댓말"]}}
+{"id":"KIWI_NEW12","text":"내일은 제가 먼저 연락할게요.","check":{"humble":true,"preserve":["화자 겸양","약속","내일","먼저","존댓말"]}}

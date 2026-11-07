@@ -86,6 +86,12 @@ def guard_dataset(project, inputs, role):
 def metric_mismatches(config, metrics, results):
     """Respect each run's counting contract; no count is a naturalness score."""
     contract=config.get('metric_contract')
+    if contract=='kiwi_default_v1':
+        expected={'records':len(results),'unattempted_records':config['planned_records']-len(results),
+                  'valid_output_records':sum(bool(r.get('pipeline_completed')) for r in results),
+                  'changed_records':sum(bool(r.get('pipeline_completed')) and r.get('output_text')!=r.get('input_text') for r in results),
+                  'api_attempts':metrics.get('scope_calls',0)+sum(r.get('api_attempts',0) for r in results)}
+        return ['metrics.'+k for k,v in expected.items() if metrics.get(k)!=v]
     if contract=='paired_morphology_v1':
         issues=[]
         for backend in ('qwen','kiwi'):
@@ -225,7 +231,7 @@ class Registry:
             mismatch.append('config.input_sha256')
         if metrics and metrics.get('records') != len(results):
             mismatch.append('metrics.records')
-        count_key='planned_records' if config.get('metric_contract')=='fixed_generation_v1' else 'input_count'
+        count_key='planned_records' if config.get('metric_contract') in ('fixed_generation_v1','kiwi_default_v1') else 'input_count'
         if status == 'completed' and config.get(count_key) != len(results):
             mismatch.append('config.'+count_key)
         postflight=read(folder/'postflight.json',{})
@@ -243,7 +249,7 @@ class Registry:
                     'validation_contract': validation_contract,
                     'input': actual.get('private/inputs.jsonl'),
                     'manifest': actual.get('artifact_hashes.json')}
-        if paired:
+        if paired or config.get('metric_contract')=='kiwi_default_v1':
             evidence['kg']=config.get('graph_sha256')
             evidence['prompts']=config.get('prompt_sha256',{})
         categories = dict(collections.Counter(filter(None, map(error_category, results))))
