@@ -1,0 +1,15 @@
+{
+  "report": "experiments\\analyses\\qwen_multi_20261107\\private\\report.html",
+  "runs": [
+    "experiments\\runs\\20261107T061957241164Z_qwen_multi_development",
+    "experiments\\runs\\20261107T063055332251Z_qwen_multi_development"
+  ],
+  "prompt_sha256": {
+    "structure": "3db6cd64bef44131e2ef9b7e5d03ca2fc92f3265ccd4075a92f731376682f749",
+    "meaning": "96661e31c56725db5939b4b752e05de40cad3fd9d5b4d3491caa7a00d874b3a5",
+    "planner": "86bdbd37576b6fda152d77739da3f7773f748e3024c1a4a71ae2b2256d66a7f3",
+    "writer": "ffe9017d3e0bf77bc58c95b4dbb15b1e135267485e8e24afc17c2a62d58a625b",
+    "reviewer": "5d5bfce36cc9ca24253d203c9970cf0e251af9d1692858c9baa8058bf97be8c1"
+  },
+  "independent_quality_evaluation": false
+}

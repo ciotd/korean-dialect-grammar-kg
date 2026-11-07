@@ -1,0 +1,53 @@
+{
+  "records": 1,
+  "planned_inputs": 1,
+  "unattempted_inputs": 0,
+  "valid_output_records": 1,
+  "failed_input_records": 0,
+  "draft_available_records": 1,
+  "draft_only_records": 0,
+  "review_complete_records": 1,
+  "review_response_complete_records": 1,
+  "review_validation_counts": {
+    "valid": 1
+  },
+  "revision_attempted_records": 0,
+  "revision_written_not_rechecked_records": 0,
+  "final_available_records": 1,
+  "changed_records": 1,
+  "status_counts": {
+    "generated_requires_human_review": 1
+  },
+  "failure_stages": {},
+  "last_call_failure_slots": {},
+  "api_attempts": 4,
+  "transport_meta_records": 4,
+  "attempts_missing_transport_meta": 0,
+  "api_failures": 0,
+  "calls_by_stage": {
+    "multi_meaning": 1,
+    "multi_reviewer": 1,
+    "multi_structure": 1,
+    "multi_writer": 1
+  },
+  "stage_seconds": {
+    "multi_meaning": 13.0721,
+    "multi_reviewer": 16.2169,
+    "multi_structure": 25.4976,
+    "multi_writer": 4.257
+  },
+  "reported_usage": {
+    "prompt_tokens": 6853,
+    "completion_tokens": 3122,
+    "total_tokens": 9975
+  },
+  "calls_without_usage": 0,
+  "usage_completeness": "complete",
+  "wall_seconds": 61.8325,
+  "mean_record_seconds": 59.1653,
+  "stop_reason": null,
+  "naturalness": null,
+  "independent_accuracy": null,
+  "automatic_transport_retries": 0,
+  "model_review_is_independent_human_evaluation": false
+}

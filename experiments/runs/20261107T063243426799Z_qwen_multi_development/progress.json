@@ -1,0 +1,10 @@
+{
+  "done": 1,
+  "total": 1,
+  "id": "SAME_IG006",
+  "status": "generated_requires_human_review",
+  "elapsed_seconds": 61.7,
+  "eta_seconds": null,
+  "eta_basis": "observed_average_after_three_inputs",
+  "calls_started": 4
+}
