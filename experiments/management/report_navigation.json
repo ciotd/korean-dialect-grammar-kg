@@ -248,5 +248,12 @@
     "local_path": "experiments/analyses/semantic_reachability_20261107/private/20261107T052951500203Z/report.html",
     "summary": "새 KG Neo4j 적재, 50문장 90지점의 실제 분석·조건·연결 점검과 수정안. 신규 Qwen 생성 없음.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "11월7일 · 같은 문장 Qwen 분업 실제 실행 비교",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/same_sentence_multi_live_20261107/private/20261107T062940840497Z/report.html",
+    "local_path": "experiments/analyses/same_sentence_multi_live_20261107/private/20261107T062940840497Z/report.html",
+    "summary": "실제 4회 호출·61개 규칙 조합·309개 조건·전달 정보와 이전 Kiwi 실행 비교. 수정 요구 후 초안 유지, 사람 검토 필요. KG·실행 코드 변경 없음.",
+    "delivery": "local_html_desktop"
   }
 ]
