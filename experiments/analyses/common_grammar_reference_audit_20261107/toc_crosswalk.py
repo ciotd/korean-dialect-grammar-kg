@@ -1,0 +1,98 @@
+"""Auditor-authored correspondence to the user's 2026-10-13 supplied TOC.
+
+Longest prefix selects a topic correspondence, not historical derivation or
+semantic verification. No coverage percentage is calculated from these labels.
+"""
+M = {
+'3':('G_UNIT_ONTOLOGY G_LEX_SENSE G_PRED_KIND','상위 분류','하위 항목별 대응을 별도로 본다. 상위 제목 대응을 해당 영역 전체의 충분성으로 계산하지 않는다.'),
+'4':('G_CLAUSE_HEAD G_CLAUSE_COMPONENT','상위 분류','하위 항목별 대응을 별도로 본다. 상위 제목 대응을 해당 영역 전체의 충분성으로 계산하지 않는다.'),
+'1':('', '당시 제외', '사용자가 1장 일반론을 당장 다룰 범위에서 제외했다. 이후의 영구 제외 판정은 아니다.'),
+'2':('G_REALIZATION_CONTEXT G_REALIZATION_ALLOMORPH G_REALIZATION_CONTRACTION G_REALIZATION_PROSODY','당시 보류·포괄 관련만','음운론 상세 논의는 당시 미루었다. 관련 처리 계약은 있지만 해당 음운 현상별 규칙이 있다는 뜻은 아니다.'),
+'2.5':('G_VERB_ALLOMORPH G_REALIZATION_ALLOMORPH G_REALIZATION_ALLOWLIST','관련 계약 있음','교체·이형태·규칙성의 상위 계약은 있다. 개별 어휘와 환경별 분류를 검증한 것은 아니다.'),
+'3.1':('G_UNIT_ONTOLOGY G_LEX_SENSE G_REALIZATION_ALLOMORPH','관련 계약 있음','형태소·단어·실현형을 나누는 설계가 대응한다. 이론상 정의와 분석기 단위의 일치 여부는 별도 확인이 필요하다.'),
+'3.2':('G_VERB_COMPOUND G_VERB_DERIVED G_LEX_PROTECTED','세부 명세 부족','단어 형성의 일부만 다루며 보호 정책은 형성 이론 전체의 구현과 다르다.'),
+'3.2.1.4':('','전용 계약 없음','신조어·순화어를 생성·분류하는 전용 공통 계약은 확인하지 못했다. 현재 방언 생성의 필수 범위인지 먼저 결정한다.'),
+'3.2.2.1':('G_VERB_COMPOUND G_NP_HEAD G_LEX_PROTECTED','관련 계약 있음','복합어 전체와 내부 성분, 구의 경계를 구별하는 설계가 있다.'),
+'3.2.2.7':('G_VERB_COMPOUND','관련 계약 있음','동사 합성의 분석 책임이 명시되어 있다. 모든 합성동사에 대한 실증 검증과 다르다.'),
+'3.2.2.4':('G_LEX_PROTECTED','세부 명세 부족','합성 명사를 보호할 수 있다는 포괄 책임은 있으나 합성 명사 전반의 구성 관계를 명세하지 않았다.'),
+'3.2.2.5':('G_REALIZATION_CONTEXT','세부 명세 부족','사잇소리의 개별 발생 조건을 담은 공통 계약은 확인하지 못했다.'),
+'3.2.2.6':('G_LEX_PROTECTED','세부 명세 부족','합성 형용사의 전용 형성 계약은 없다.'),
+'3.2.2.8':('G_ADJ_ADVERB G_LEX_PROTECTED','세부 명세 부족','부사화 일부와 고정 표현 보호만으로 합성 부사 체계 전체를 다루지는 못한다.'),
+'3.2.2.9':('G_PRON_PERSON G_NUMERAL_ROLE G_LEX_PROTECTED','세부 명세 부족','품사 역할은 일부 있으나 해당 품사의 합성 형성 규칙을 전담하지 않는다.'),
+'3.2.2.10':('G_LEX_ONOMATOPOEIA','세부 명세 부족','반복·강도 어휘를 고려하지만 반복 합성어 전체를 담당하는 계약과 같지 않다.'),
+'3.2.3':('G_VERB_DERIVED G_ADJ_ADVERB G_CAUS_DERIVE G_PASS_DERIVE','세부 명세 부족','동사·일부 부사화·사동·피동 파생 중심이다. 전체 품사의 접사 생산성·제약·단일어화는 별도로 확인해야 한다.'),
+'3.2.4':('','전용 계약 없음','한자어의 범위·형성 방식에 대한 전용 공통 계약은 없다. 어휘 전체 보호로 대신할 수 있는 범위인지 결정해야 한다.'),
+'3.3.1':('G_PRED_KIND G_TAG_MAPPING G_LEX_SENSE G_ANALYSIS_ALTERNATIVES','세부 명세 부족','분석기 태그와 의미 후보를 다루지만 품사 분류 체계·통용 판정 기준을 문헌에 대조한 기록은 없다.'),
+'3.3.2.1':('G_NP_HEAD G_NOUN_PROPER G_BOUND_NOUN_GEOT G_NUMERAL_COUNTER','세부 명세 부족','명사구·보호 대상·것·단위 의존명사 중심이며 명사 하위 범주 전반과 일치하지 않는다.'),
+'3.3.2.2':('G_PRON_PERSON G_PRON_DEICTIC G_PRON_REFLEXIVE G_Q_INDEFINITE','관련 계약 있음','인칭·지시·재귀·부정칭 역할별 설계가 있다. 전체 어휘와 쓰임의 검증은 남아 있다.'),
+'3.3.2.3':('G_NUMERAL_ROLE G_NUMERAL_COUNTER','관련 계약 있음','수량과 용법·분류사 결합을 다룬다. 서수·기수 등 세부 체계의 충분성은 별도 검토한다.'),
+'3.3.3.1':('G_PRED_KIND G_VERB_ARGFRAME G_VERB_STEM G_VERB_INFLECTION','관련 계약 있음','서술어 종류·논항·어간·어미 결합의 설계가 있다.'),
+'3.3.3.2':('G_ADJ_STATE G_ADJ_EXISTENCE G_ADJ_ADNOMINAL G_ADJ_ADVERB','관련 계약 있음','상태 서술과 활용·수식 기능을 구별하려는 설계가 있다.'),
+'3.3.3.3':('G_PRED_KIND G_ADJ_EXISTENCE G_COP G_NEG_COPULA','관련 계약 있음','계사와 다른 서술어를 구별한다. 서술격 조사/계사라는 이론적 명칭 차이를 바로 오류로 보지 않는다.'),
+'3.3.4.1':('G_NUMERAL_ROLE G_NP_HEAD G_CLAUSE_COMPONENT','세부 명세 부족','일반 관형사의 종류·조건을 전담하지 않는다. 관형사형 어미는 관형사 자체와 다른 단위다.'),
+'3.3.4.2':('G_ADJ_ADVERB G_PRON_DEICTIC G_LEX_ONOMATOPOEIA G_NEG_SHORT','세부 명세 부족','일부 부사와 부사화는 있지만 부사 일반 체계와 수식 범위의 세부 구분은 부족하다.'),
+'3.3.4.3':('G_LEX_INTERJECTION','관련 계약 있음','감탄사·응답 기능을 명시한다. 현재 항목의 출처는 위키 계통이므로 기준 문헌 보강이 필요하다.'),
+'3.3.5.1':('G_CASE_ROLE G_PARTICLE_SUBJECT G_PARTICLE_OBJECT G_PARTICLE_TOPIC G_PARTICLE_STACK','관련 계약 있음','격·보조·접속·중첩 등 여러 설계가 있다. 모든 조사 용법이 인증됐다는 뜻은 아니다.'),
+'3.3.5.2':('G_END_SLOT G_END_FINAL G_END_ADNOMINAL G_END_NOMINAL G_CLAUSE_LINK','관련 계약 있음','어미 슬롯·종결·전성·연결의 설계가 있다.'),
+'4.1':('G_UNIT_ONTOLOGY G_CLAUSE_HEAD G_CLAUSE_COMPONENT','관련 계약 있음','문법 단위와 절·성분 관계의 설계가 있다.'),
+'4.1.2.2':('G_PARTICLE_TOPIC G_PARTICLE_FOCUS','세부 명세 부족','은/는·초점 보조사만으로 정보 구조 전체를 다루지 못한다.'),
+'4.1.3':('G_CLAUSE_COMPONENT G_VERB_ARGFRAME','세부 명세 부족','문장 성분 관계는 있지만 어순·이동과 의미/정보 구조의 조건을 전담하는 계약은 없다.'),
+'4.2':('G_CLAUSE_COMPONENT G_CASE_ROLE','관련 계약 있음','품사와 문장 성분을 분리해 역할로 연결하는 책임이 있다.'),
+'4.2.2':('G_CLAUSE_COMPONENT G_PARTICLE_SUBJECT','관련 계약 있음','주어 역할과 주격의 구별은 있다. 이중주어 등 세부 분석 기준은 미정이다.'),
+'4.2.3':('G_CLAUSE_COMPONENT G_PARTICLE_OBJECT','관련 계약 있음','목적어와 목적격을 다룬다. 이중목적어 등 세부 기준은 미정이다.'),
+'4.2.4':('G_CLAUSE_COMPONENT G_PARTICLE_SUBJECT','세부 명세 부족','보어와 보격을 언급하지만 보어의 범위를 판정하는 이론·조건은 구체화되지 않았다.'),
+'4.2.5':('G_CLAUSE_HEAD G_PRED_KIND G_VERB_ARGFRAME','관련 계약 있음','서술어 중심과 논항 구조를 연결한다.'),
+'4.2.6':('G_CLAUSE_COMPONENT G_NP_HEAD G_CLAUSE_RELATIVE','관련 계약 있음','관형어 역할과 수식 명사 관계를 다룬다. 일반 관형사 품사 분류와는 별개다.'),
+'4.2.7':('G_CLAUSE_COMPONENT G_ADJ_ADVERB G_GE_DEGREE','관련 계약 있음','부사어 역할은 명시한다. 부사의 전체 하위 분류가 포함되었다는 뜻은 아니다.'),
+'4.2.8':('G_CLAUSE_COMPONENT G_LEX_INTERJECTION G_PARTICLE_VOCATIVE','관련 계약 있음','독립어·감탄·호칭의 일부 역할이 있다.'),
+'4.2.10':('G_VERB_ARGFRAME G_VOICE_FRAME','관련 계약 있음','논항 요구와 태 변화 시 보존 관계를 명시한다.'),
+'4.3':('G_CLAUSE_HEAD G_CLAUSE_EMBED G_CLAUSE_LINK G_CLAUSE_COORD','관련 계약 있음','절의 연결과 포함을 표현하는 설계가 있다.'),
+'4.3.3.1':('G_END_NOMINAL G_CLAUSE_NOMINAL','관련 계약 있음','명사형과 명사절을 구별한다.'),
+'4.3.3.2':('G_END_ADNOMINAL G_CLAUSE_RELATIVE G_ADJ_ADNOMINAL','관련 계약 있음','형태와 절 구조를 서로 다른 책임으로 다룬다.'),
+'4.3.3.3':('G_CLAUSE_EMBED G_ADJ_ADVERB G_GE_DEGREE','관련 계약 있음','부사절 유형을 명시한다. 부사절 분석 관점과 조건은 본문 대조가 필요하다.'),
+'4.3.3.4':('G_CLAUSE_EMBED G_CLAUSE_COMPONENT','세부 명세 부족','명사·관형·부사·인용·의문 절은 열거하지만 서술절은 명시하지 않았다.'),
+'4.4':('G_MOOD_FUNCTION G_END_FINAL','관련 계약 있음','문장 형식과 발화 기능을 분리하는 포괄 계약이다. 유형별 세부 제약을 전부 명시하지 않았다.'),
+'4.4.1':('G_MOOD_FUNCTION G_END_FINAL','세부 명세 부족','일반 진술의 세부 조건이 의문 항목보다 덜 분화되어 있다.'),
+'4.4.2.1':('G_Q_POLAR','관련 계약 있음','판정과 확인을 다루는 설계가 있다.'),
+'4.4.2.2':('G_Q_WH G_Q_WH_BIND G_Q_SCOPE','관련 계약 있음','질문 변수와 그 범위를 다룬다.'),
+'4.4.2.3':('G_MOOD_FUNCTION G_Q_POLAR G_Q_WH','세부 명세 부족','선택지 집합과 선택 질문을 전담하는 계약을 확인하지 못했다.'),
+'4.4.2.4':('G_MOOD_FUNCTION G_Q_RHETORICAL','세부 명세 부족','되묻는 메아리 질문을 전담하는 계약은 없다. 수사 의문과 동일시할 수 없다.'),
+'4.4.2.5':('G_MOOD_FUNCTION G_Q_RHETORICAL','세부 명세 부족','자문을 전담하는 구별이 명시되지 않았다.'),
+'4.4.3':('G_MOOD_FUNCTION G_GE_HA_ORDER G_NEG_PROHIBITIVE','세부 명세 부족','특정 지시·금지 구성이 있으나 일반 명령의 세부 체계와 같지 않다.'),
+'4.4.4':('G_MOOD_FUNCTION G_GE_HA_PROPOSAL','세부 명세 부족','제안의 일부와 포괄 기능은 있으나 일반 청유의 세부 체계는 부족하다.'),
+'4.4.5':('G_ADJ_AFFECT G_MOOD_FUNCTION G_Q_RHETORICAL','관련 계약 있음','감탄 기능은 여러 구성에서 다룬다. 전체 감탄문 분류의 검증과 다르다.'),
+'4.5':('G_HON_SUBJECT G_HON_OBJECT G_HON_ADDRESSEE G_REGISTER_MAP G_REGISTER_VARIATION','관련 계약 있음','높임 대상과 어휘·화계를 나누는 설계가 있다. 지역 대응의 정확도는 별도 평가다.'),
+'4.6':('G_TAM_SLOTS G_TAM_PAST G_TAM_PROSPECTIVE G_TAM_ASPECT','관련 계약 있음','시제·상 설계는 있다. 모든 하위 범주와 의미 관계가 충분히 명시된 것은 아니다.'),
+'4.6.2':('G_TAM_ADNOMINAL G_TIME_REFERENCE','세부 명세 부족','관형절과 시간 창구는 있지만 모든 절의 절대·상대 시제 결속 기준은 구체화되지 않았다.'),
+'4.6.3.1':('G_TAM_SLOTS','세부 명세 부족','현재·비과거의 하위 해석을 전담하는 계약이 없다.'),
+'4.6.3.2':('G_TAM_PAST','관련 계약 있음','과거·중복 과거 보존을 명시한다. 완료 해석과의 경계는 재검토 후보다.'),
+'4.6.3.3':('G_TAM_PROSPECTIVE G_TAM_MODALITY','관련 계약 있음','전망·예정·추측의 구별을 요구한다.'),
+'4.6.5.1':('G_AUX_PROGRESS G_TAM_ASPECT','관련 계약 있음','진행과 점진 변화의 구별을 명세하지만 한 항목 안에 묶여 있다.'),
+'4.6.5.2':('G_AUX_COMPLETE G_AUX_STATE G_TAM_ASPECT','관련 계약 있음','완료·결과 상태를 구별하는 설계가 있다.'),
+'4.6.6':('G_LEX_SENSE G_TAM_ASPECT','세부 명세 부족','사건 종류·한계성 등 어휘상 구분을 전담하는 계약이 없다.'),
+'4.6.7':('G_TAM_ASPECT G_VERB_ARGFRAME','세부 명세 부족','문법상과 어휘상의 상호 제약을 명시한 대응표가 없다.'),
+'4.7':('G_TAM_MODALITY G_MOOD_FUNCTION G_END_FINAL','세부 명세 부족','양태의 포괄 특징과 일부 형태 중심이다. 형식별 기능·조건·범위 전체를 인증하지 않았다.'),
+'4.7.2.1':('G_TAM_MODALITY','관련 계약 있음','겠의 추측·의도 구별을 다룬다.'),
+'4.7.2.2':('G_TAM_RETROSPECT','관련 계약 있음','회상·증거성 설계가 명시되어 있다.'),
+'4.7.5':('G_AUX_INFER G_AUX_DESIRE G_AUX_OBLIGATION G_TAM_PROSPECTIVE','관련 계약 있음','일부 보조·복합 양태 구성에 대응한다. 전체 목록 포괄과 다르다.'),
+'4.8':('G_CAUS_DERIVE G_GE_CAUSATIVE_HA G_PASS_DERIVE G_PASS_ANALYTIC G_VOICE_FRAME','관련 계약 있음','형태·통사적 사동·피동과 논항 보존의 설계가 있다.'),
+'4.8.5.1':('G_GE_CAUSATIVE_HA G_CAUS_DERIVE','세부 명세 부족','접미사/게 하다 구별만으로 직접/간접 사동의 의미 차이 전부를 대체할 수 없다.'),
+'4.9':('G_NEG_SHORT G_NEG_LONG G_NEG_PROHIBITIVE G_NEG_COPULA G_NEG_SCOPE','관련 계약 있음','주요 부정 형태와 작용 범위를 다루는 설계가 있다.'),
+'4.9.2.1':('G_NEG_SHORT G_NEG_LONG G_NEG_COPULA G_LEX_SENSE','세부 명세 부족','아니다와 일부 어휘 조회가 있지만 어휘적 부정 전체를 다루는 목록·관계는 없다.'),
+'4.9.2.4':('G_NEG_SCOPE G_CLAUSE_SCOPE','세부 명세 부족','작용 범위는 있으나 이중 부정의 해석을 전담하는 조건은 없다.'),
+'4.9.3.1':('G_NEG_SCOPE G_PARTICLE_FOCUS','세부 명세 부족','부정극어별 허용 환경·범위 관계가 독립적으로 정리되어 있지 않다.'),
+'4.9.3.3':('G_NEG_SCOPE G_Q_POLAR G_LEX_INTERJECTION','세부 명세 부족','부정 질문과 응답 극성을 연결하는 일반 조건이 명시되지 않았다.'),
+'4.10':('G_PARTICLE_TOPIC G_PARTICLE_FOCUS','세부 명세 부족','조사 기반 주제·초점만으로 신구 정보와 분열문 체계 전체를 대표하지 못한다.'),
+'4.10.3':('','전용 계약 없음','분열문을 구성·판정하는 전용 공통 계약을 확인하지 못했다.'),
+}
+
+def crosswalk(entries, valid_ids):
+    result=[]
+    for x in entries:
+        n=x['number']; keys=[k for k in M if n==k or n.startswith(k+'.')]
+        assert keys,n
+        key=max(keys,key=len);ids,status,note=M[key];ids=ids.split()
+        assert set(ids)<=valid_ids,(n,ids)
+        result.append(dict(x,status=status,note=note,common_ids=ids,match_prefix=key))
+    assert len(result)==224 and sum(x['leaf'] for x in result)==171
+    return result
