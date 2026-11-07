@@ -22,8 +22,8 @@ from kg_pipeline.separated_graph import FORMAT as SEPARATED_FORMAT, restore
 from kg_pipeline.runner import register_run
 from research_management.work import WorkStore
 
-PROGRAM_ID = 'qwen_multi_20261107'
-DEFAULT_MAX_CALLS_PER_INPUT = 5
+PROGRAM_ID = 'qwen_alignment_20261107'
+DEFAULT_MAX_CALLS_PER_INPUT = 6
 
 
 class RunLimitReached(RuntimeError):
@@ -115,7 +115,7 @@ def execute(args):
     require(all(isinstance(r.get('text'), str) and r['text'].strip() and
                 re.fullmatch(r'[A-Za-z0-9_-]+', r['id']) for r in rows), 'Invalid input text or ID')
     separate_plan = bool(getattr(args, 'separate_plan', False))
-    max_calls_per_input = 6 if separate_plan else 5
+    max_calls_per_input = 7 if separate_plan else 6
     require(args.max_calls >= max_calls_per_input * len(rows),
             'Budget must reserve all worker calls and one possible rewrite for every input')
     require(args.char_budget > 0, 'Knowledge character budget must be positive')
@@ -130,7 +130,7 @@ def execute(args):
               'dataset_role': 'regression_exposed' if args.phase == 'regression' else 'development',
               'input_count': len(rows), 'input_sha256': sha(Path(args.inputs).read_bytes()),
               'model_id': args.model, 'seed': args.seed, 'max_calls': args.max_calls,
-              'max_calls_per_input': max_calls_per_input, 'max_generation_repairs': 1,
+              'max_calls_per_input': max_calls_per_input, 'max_generation_repairs': 1, 'max_analysis_repairs': 1,
               'separate_plan': separate_plan, 'worker_role_count': 5 if separate_plan else 4,
               'worker_roles': ['structure', 'meaning', 'plan', 'writer', 'review'] if separate_plan
               else ['structure', 'meaning', 'selection_and_writer', 'review'],

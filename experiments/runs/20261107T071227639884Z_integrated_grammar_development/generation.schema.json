@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "output_text": {
+      "type": "string"
+    },
+    "used_rule_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "generated",
+        "needs_review"
+      ]
+    }
+  },
+  "required": [
+    "output_text",
+    "used_rule_ids",
+    "status"
+  ],
+  "additionalProperties": false
+}

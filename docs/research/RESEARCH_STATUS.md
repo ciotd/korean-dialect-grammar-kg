@@ -4,6 +4,9 @@
 
 | Run ID | 용도 | 상태 | 입력 | 출력 형식 통과 | 분석·조회 실패(단위 구분) |
 |---|---|---|---:|---:|---|
+| 20261107T071452561482Z_feedback_route_probe | development_exposed | completed | 3 | 3 | 미집계 |
+| 20261107T071227639884Z_integrated_grammar_development | development_exposed | completed | 6 | 6 | 0입력 |
+| 20261107T070359552481Z_qwen_multi_development | development | completed | 6 | 6 | 0입력 |
 | 20261107T063243426799Z_qwen_multi_development | development | completed | 1 | 1 | 0입력 |
 | 20261107T063055332251Z_qwen_multi_development | development | completed | 6 | 4 | 0입력 |
 | 20261107T062953574940Z_qwen_multi_development | development | failed | 1 | 0 | 0입력 |

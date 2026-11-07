@@ -40,10 +40,13 @@ def execute(args):
     require(all(re.fullmatch(r'[A-Za-z0-9_-]+',r['id']) for r in rows),'Unsafe input ID')
     require(args.max_calls>=2*len(rows),'Budget does not cover analysis plus generation')
     end=dt.datetime.fromisoformat(args.deadline);require(end.tzinfo and end>dt.datetime.now(dt.timezone.utc),'Deadline expired or missing timezone')
-    program_id='integrated_grammar_20261106';prior_calls=0
+    program_id=getattr(args,'program_id','integrated_grammar_20261106');prior_calls=0
+    program_limit=getattr(args,'program_call_limit',200)
+    require(re.fullmatch(r'[A-Za-z0-9_-]+',program_id) is not None,'Unsafe program ID')
+    require(program_limit>0,'Positive program call limit required')
     for cfg in (ROOT/'experiments/runs').glob('*_integrated_grammar_*/config.json'):
         if read(cfg).get('program_id')==program_id:prior_calls+=len(list((cfg.parent/'private/records').rglob('meta.json')))
-    require(prior_calls+2*len(rows)<=200,'This task has a cumulative 200-call limit; preserve budget for requested regression')
+    require(prior_calls+2*len(rows)<=program_limit,'Program cumulative call limit reached')
     stamp=dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     out=ROOT/'experiments/runs'/(stamp+'_integrated_grammar_'+args.phase);(out/'private').mkdir(parents=True,exist_ok=False)
     shutil.copy2(args.inputs,out/'private/inputs.jsonl');shutil.copy2(args.graph,out/'private/graph.json')
@@ -52,7 +55,7 @@ def execute(args):
         shutil.copy2(companion/'manifest.json',out/'private/kg_manifest.json')
     save(out/'config.json',{'phase':args.phase,'dataset_role':'regression_exposed' if args.phase=='regression' else 'development_exposed',
         'input_count':len(rows),'input_sha256':sha(Path(args.inputs).read_bytes()),'kg_dataset':graph['version'],
-        'metric_contract':'integrated_grammar_v1','program_id':program_id,'program_prior_calls':prior_calls,'program_total_call_limit':200,
+        'metric_contract':'integrated_grammar_v1','program_id':program_id,'program_prior_calls':prior_calls,'program_total_call_limit':program_limit,
         'model_id':args.model,'graph_sha256':sha(Path(args.graph).read_bytes()),'max_calls':args.max_calls,
         'deadline':args.deadline,'deadline_policy':'no_new_calls_after_deadline','seed':args.seed,
         'automatic_retries':0,'final_writer':'Qwen_raw_output','knowledge_character_budget':args.char_budget,
@@ -80,7 +83,7 @@ def execute(args):
         client=Qwen(ROOT/'test.py',model=args.model,timeout=120);save(out/'server_models.json',client.models)
         morph=Morphology()
         for row in rows:
-            if dt.datetime.now(dt.timezone.utc)>=end or calls+2>args.max_calls or prior_calls+calls+2>200:stop='deadline_or_budget';break
+            if dt.datetime.now(dt.timezone.utc)>=end or calls+2>args.max_calls or prior_calls+calls+2>program_limit:stop='deadline_or_budget';break
             if consecutive>=3:stop='consecutive_failures';break
             t0=time.perf_counter();rd=out/'private/records'/row['id']
             result={'id':row['id'],'input_text':row['text'],'output_text':None,'status':'started','stage':'morphology'}
@@ -165,5 +168,6 @@ if __name__=='__main__':
     p.add_argument('--analysis-prompt',help='Explicit analysis-only comparison prompt, frozen in the run')
     p.add_argument('--model',default='Qwen3.8-27B');p.add_argument('--deadline',required=True);p.add_argument('--max-calls',type=int,required=True)
     p.add_argument('--seed',type=int,default=20261106);p.add_argument('--char-budget',type=int,default=24000)
+    p.add_argument('--program-id',default='integrated_grammar_20261106');p.add_argument('--program-call-limit',type=int,default=200)
     args=p.parse_args();_,metrics=execute(args)
     if metrics['stop_reason']:sys.exit(2)

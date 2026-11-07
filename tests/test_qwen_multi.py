@@ -194,8 +194,10 @@ class MultiContracts(unittest.TestCase):
         schema, meaning = meaning_fixture(self.reader, units)
         meaning['structural_corrections'] = [{'unit_id': 'U1', 'field': 'past_form',
                                              'value': 'absent', 'source_quote': '없는 원문'}]
-        with self.assertRaisesRegex(ValidationError, 'correction_without_source_quote'):
-            multi.bind_meaning(text, units, meaning, schema)
+        bound=multi.bind_meaning(text, units, meaning, schema)
+        self.assertEqual(bound[0]['features']['past_form'],'present')
+        self.assertEqual(bound[0]['rejected_structural_corrections'][0]['reason'],'correction_without_source_quote')
+        self.assertIn('invalid_structural_correction',bound[0]['analysis_issues'])
 
     def test_auxiliary_cannot_be_bound_as_main_predicate(self):
         text = '하지 마.'
@@ -318,6 +320,125 @@ import kg_pipeline.multi_agent
             with self.assertRaises(multi.ValidationError):multi.validate_schema(bad,schema)
         self.assertEqual(multi.plan_contract([])['properties']['selected']['maxItems'],0)
         self.assertEqual(multi.plan_contract([])['properties']['not_selected']['maxItems'],0)
+    def test_invalid_correction_value_isolated_not_applied(self):
+        words,raw=structure_fixture();units,_=multi.normalize_structure('언제 문 닫았어?',words,raw)
+        schema,meaning=meaning_fixture(self.reader,units)
+        meaning['structural_corrections']=[{'unit_id':'U1','field':'prefinal_type','value':'connective','source_quote':'닫았어'}]
+        with self.assertRaises(ValidationError):validate_schema(meaning,schema)
+        bound=multi.bind_meaning('언제 문 닫았어?',units,meaning,schema)
+        self.assertEqual(bound[0]['features']['prefinal_type'],'eoss')
+        self.assertEqual(len(bound[0]['rejected_structural_corrections']),1)
+
+    def test_analysis_cause_does_not_block_output_repair(self):
+        issue={'stage':'analysis','repair_target':'output','category':'addressee_honorific_loss',
+            'source_quote':'했어요','output_quote':'했어','problem':'높임 손실','suggestion':'상대 높임 복구'}
+        review=multi.validate_review({'correction_required':True,'issues':[issue],'uncertainties':[]},'했어요',{'output_text':'했어'})
+        self.assertEqual(multi.repair_issues(review),[issue])
+        issue['repair_target']='analysis'
+        self.assertEqual(multi.repair_issues(review),[issue])
+        review['correction_required']=False
+        self.assertEqual(multi.repair_issues(review),[issue])
+
+    def test_false_added_word_does_not_trigger_repair(self):
+        issue={'stage':'generation','repair_target':'output','category':'added_content',
+            'source_quote':'그 종이','output_quote':'그','problem':'그 추가','suggestion':'삭제'}
+        review=multi.validate_review({'correction_required':True,'issues':[issue],'uncertainties':[]},'그 종이',{'output_text':'그 종이'})
+        self.assertEqual(multi.repair_issues(review),[])
+        self.assertEqual(review['state'],'invalid')
+        issue['category']='other'
+        review=multi.validate_review({'correction_required':True,'issues':[issue],'uncertainties':[]},'그 종이',{'output_text':'그 종이'})
+        self.assertEqual(multi.repair_issues(review),[])
+
+    def test_review_context_explains_past_presence_without_present_tense(self):
+        units=[{'id':'U1','kind':'predicate','text':'했어','features':{'past_form':'present','tense':'past','subject_honorific':'present'}}]
+        row=multi.review_context(units)[0]['보존 정보(분석 추정)']
+        self.assertEqual(row['과거 형태 유무'],'있음')
+        self.assertEqual(row['시간 의미'],'과거')
+        self.assertEqual(row['주체 높임'],'있음')
+
+    def test_bounded_structure_repair_and_output_repair_are_model_calls(self):
+        text='언제 문 닫았어?'; words,raw=structure_fixture(text); outer=self
+        class Fake:
+            def __init__(self):self.roles=[];self.structures=0;self.writes=0
+            def call(self,stage,prompt,payload,schema,out,tokens,seed):
+                self.roles.append(stage)
+                if stage=='multi_structure':
+                    self.structures+=1;result=copy.deepcopy(raw)
+                    if self.structures==1:result['units'][0]['features']['prefinal_sequence']='none'
+                    return result
+                if stage=='multi_meaning':
+                    _,result=meaning_fixture(outer.reader,payload['units']);result['structural_corrections']=[{'unit_id':[],'field':'past_form','value':'absent','source_quote':'닫았어'}];return result
+                if stage=='multi_writer':
+                    self.writes+=1;value='언제 문 닫아?' if self.writes==1 else '언제 문 닫았노?'
+                    d={'decisions':[],'output_text':value,'used_action_ids':[],
+                        'clause_coverage':[{'clause_id':'C1','output_quote':value}], 'model_knowledge_changes':[],'warnings':[]}
+                    if 'previous_draft' in payload:d['feedback_decisions']=[{'issue_id':'R1','decision':'accepted','reason':'mock'}]
+                    return d
+                if stage=='multi_reviewer':
+                    return {'correction_required':True,'issues':[{'stage':'analysis','repair_target':'output','category':'speech_act_changed',
+                        'source_quote':'닫았어?','output_quote':'닫아?','problem':'모의 검토','suggestion':'모의 수정'}],'uncertainties':[]}
+        client=Fake()
+        with tempfile.TemporaryDirectory() as td:
+            result=multi.run_sentence(client,self.reader,text,Path(td))
+            self.assertEqual(result['call_count'],6)
+            self.assertTrue(result['analysis_repaired']);self.assertTrue(result['repaired'])
+            self.assertEqual(result['output_text'],'언제 문 닫았노?')
+            self.assertTrue((Path(td)/'structure_initial_units.json').exists())
+            self.assertFalse(result['post_repair_semantic_recheck'])
+        class FailedSecond(Fake):
+            def call(self,stage,*args):
+                if stage=='multi_structure' and self.structures==1:
+                    self.roles.append(stage);raise multi.CallError('simulated')
+                return super().call(stage,*args)
+        with tempfile.TemporaryDirectory() as td:
+            result=multi.run_sentence(FailedSecond(),self.reader,text,Path(td),max_repairs=0)
+            self.assertEqual(result['analysis_repair_status'],'failed_initial_analysis_retained')
+            self.assertEqual(result['output_text'],'언제 문 닫아?')
+            self.assertTrue((Path(td)/'structure_revision_failure.json').exists())
+
+
+    def test_bad_unbound_proposals_do_not_block_every_unit(self):
+        words,raw=structure_fixture();units,_=multi.normalize_structure('언제 문 닫았어?',words,raw)
+        schema,meaning=meaning_fixture(self.reader,units)
+        meaning['structural_corrections']=[{'unit_id':'missing','field':'past_form','value':'absent','source_quote':'문'}]
+        bound=multi.bind_meaning('언제 문 닫았어?',units,meaning,schema)
+        self.assertFalse(bound[0]['analysis_issues'])
+        self.assertEqual(len(bound[0]['unbound_structural_corrections']),1)
+        meaning['structural_corrections']=[{'unit_id':[],'field':'past_form','value':'absent','source_quote':'닫았어'},'not an object']
+        bound=multi.bind_meaning('언제 문 닫았어?',units,meaning,schema)
+        self.assertFalse(bound[0]['analysis_issues'])
+        self.assertEqual(len(bound[0]['unbound_structural_corrections']),2)
+        meaning['structural_corrections']=[{'unit_id':'U1','field':'past_form','value':'absent','source_quote':'닫았어','extra':'not allowed'}]
+        bound=multi.bind_meaning('언제 문 닫았어?',units,meaning,schema)
+        self.assertFalse(bound[0]['structural_objections'])
+        self.assertEqual(len(bound[0]['rejected_structural_corrections']),1)
+
+    def test_overlong_review_issue_isolated_not_truncated(self):
+        issue={'stage':'analysis','repair_target':'output','category':'addressee_honorific_loss',
+            'source_quote':'했어요','output_quote':'했어','problem':'높임 손실','suggestion':'높임 복구'}
+        bad={**issue,'problem':'가'*181}
+        review=multi.validate_review({'correction_required':True,'issues':[bad,issue],'uncertainties':[]},'했어요',{'output_text':'했어'})
+        self.assertEqual(multi.repair_issues(review),[issue])
+        self.assertEqual(review['state'],'partially_invalid')
+        self.assertEqual(review['invalid_issues'][0]['issue']['problem'],'가'*181)
+
+    def test_unchanged_quote_and_false_omission_do_not_route(self):
+        base={'stage':'analysis','repair_target':'output','category':'tense_loss','source_quote':'인사한','output_quote':'인사한','problem':'모의','suggestion':'모의'}
+        review=multi.validate_review({'correction_required':True,'issues':[base],'uncertainties':[]},'인사한 분',{'output_text':'인사한 분'})
+        self.assertEqual(multi.repair_issues(review),[])
+        self.assertEqual(review['invalid_issues'][0]['invalid_reason'],'unchanged_quote_not_evidence_of_change')
+        missing={**base,'category':'missing_content','source_quote':'인사한 분','output_quote':''}
+        review=multi.validate_review({'correction_required':True,'issues':[missing,missing],'uncertainties':[]},'인사한 분',{'output_text':'인사한 분'})
+        self.assertEqual(multi.repair_issues(review),[])
+        self.assertEqual(len(review['invalid_issues']),2)
+        review=multi.validate_review({'correction_required':True,'issues':[missing],'uncertainties':[]},'인사한 분',{'output_text':'없음'})
+        self.assertEqual(multi.repair_issues(review),[missing])
+
+    def test_feedback_acceptance_is_report_not_an_edit_substitution(self):
+        feedback=multi.feedback_request([{'category':'tense_loss'}])
+        multi.check_feedback({'feedback_decisions':[{'issue_id':'R1','decision':'rejected','reason':'모의'}]},feedback)
+        with self.assertRaises(ValidationError):multi.check_feedback({'feedback_decisions':[]},feedback)
+
 
 if __name__ == '__main__':
     unittest.main()
