@@ -81,5 +81,25 @@ class KiwiDefault(unittest.TestCase):
         base=['--execute','--inputs','x','--phase','development','--deadline','2027-01-01T00:00:00Z','--max-calls','4']
         self.assertEqual(parser().parse_args(base).analysis_backend,'kiwi')
         self.assertEqual(parser().parse_args(base+['--analysis-backend','qwen']).analysis_backend,'qwen')
+    def test_focused_questions_leave_old_schema_and_generation_unchanged(self):
+        from kg_pipeline.multi_agent import meaning_contract
+        p=enhance_structure('문을 열어 주세요.',self.prepared('문을 열어 주세요.'))
+        old=meaning_contract(self.reader,p['units']);snapshot=copy.deepcopy(old);new=focused_contract(old,self.reader,p['units'])
+        self.assertEqual(old,snapshot)
+        index={u['id']:u for u in p['units']}
+        for v in new['properties']['units']['items']['anyOf']:
+            kind=index[v['properties']['unit_id']['enum'][0]]['kind']
+            self.assertEqual('auxiliary_kind' in v['properties']['features']['properties'],kind=='construction')
+        self.assertEqual(prompts()['writer'],focused_prompts()['writer']);self.assertEqual(prompts()['reviewer'],focused_prompts()['reviewer'])
+    def test_explicit_links_are_model_choices_null_not_autofilled(self):
+        p=self.prepared('문을 열어 주세요.');cx=next(u for u in p['units'] if u['kind']=='construction')
+        candidate=relation_candidates(p['units'])[0]
+        raw={'units':[{'unit_id':cx['id'],'relations':[{'role':'main_predicate','target_id':candidate['main_predicate'][0]}]}],
+            'construction_links':[{'unit_id':cx['id'],'main_predicate':None,'auxiliary_predicate':None}]}
+        bound,log=bind_explicit_links(raw,p['units'])
+        self.assertEqual(bound['units'][0]['relations'],[]);self.assertTrue(log[0]['conflict']);self.assertEqual(len(log[0]['unconfirmed_roles']),2)
+        self.assertTrue(raw['units'][0]['relations'])
+        raw['construction_links']*=2
+        with self.assertRaises(Exception):bind_explicit_links(raw,p['units'])
 
 if __name__=='__main__':unittest.main()

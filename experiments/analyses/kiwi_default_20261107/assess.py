@@ -7,12 +7,13 @@ from kg_pipeline.io import read,save,sha,load_jsonl,dumps
 
 def assess(run):
     inputs=load_jsonl(run/'private/inputs.jsonl');results=read(run/'private/results.json');index={(r['source_input_id'],r['policy']):r for r in results}
-    summary={'run':run.name,'checks':{},'cases':[],'connection_denominator':sum('construction_act' in r.get('check',{}) for r in inputs)}
+    policies=read(run/'config.json')['policies']
+    summary={'run':run.name,'policies':policies,'checks':{},'cases':[],'connection_denominator':sum('construction_act' in r.get('check',{}) for r in inputs)}
     control_pairs=[];wire_no_check=[];writer_matches=[];corpus=[]
     for inp in inputs:
         case={'id':inp['id'],'source':inp['text'],'expected':inp.get('check',{}),'policies':{}}
         controls=[]
-        for policy in ('baseline','kiwi_improved'):
+        for policy in policies:
             r=index.get((inp['id'],policy))
             if r is None:continue
             rd=run/'private/records'/r['id'];b=read(rd/'bound_analysis.json') if (rd/'bound_analysis.json').exists() else []
@@ -45,7 +46,7 @@ def assess(run):
     summary['checks']={'all_available_control_pairs_identical':all(control_pairs),'checked_pairs':len(control_pairs),
         'raw_writer_equals_final_for_completed':all(writer_matches),'checked_outputs':len(writer_matches),
         'no_local_expectation_fields_in_requests':all(wire_no_check),'checked_requests':len(wire_no_check)}
-    summary['connection_matches']={p:sum(c['policies'].get(p,{}).get('connection_match') is True for c in summary['cases']) for p in ('baseline','kiwi_improved')}
+    summary['connection_matches']={p:sum(c['policies'].get(p,{}).get('connection_match') is True for c in summary['cases']) for p in policies}
     summary['not_quality_metrics']=True
     save(HERE/'private'/('assessment_'+run.name+'.json'),summary)
     return summary

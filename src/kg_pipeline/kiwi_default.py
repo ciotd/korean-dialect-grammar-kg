@@ -129,3 +129,46 @@ def humble_hints(units):
 def prompts():
     return {**PROMPTS,'meaning':PROMPTS['meaning']+MEANING_ADDITION,
         'writer':PROMPTS['writer']+WRITER_ADDITION}
+
+AUXILIARY_GUIDE = ('auxiliary_kind는 보조 구성 전체의 뜻이다. benefactive=화자 또는 다른 사람을 위해 해 줌(주다/드리다), '
+    'attempt=시도·경험(-어 보다), progressive=진행(-고 있다), resultative=결과(-어 버리다), '
+    'desire=희망, necessity=필요, other=그 밖의 보조 의미, none=실제로 보조 구성이 아님, null=미확정. '
+    '형태 이름만으로 의미를 확정하지 말고 해당 문맥의 구성 전체를 판단한다.')
+
+def focused_prompts():
+    result=prompts()
+    result['meaning']+='''
+construction_links는 각 보조 구성의 본동작과 보조동작을 명시적으로 선택하는 표다. 모든 구성 ID를 한 번씩 적고 제시된 후보 ID 또는 null을 선택한다. 모르면 null이지 누락이 아니다. 이 표만 본·보조 연결의 판단값으로 사용한다. construction의 일반 relations 배열에는 main_predicate/auxiliary_predicate를 중복 기록하지 않는다. 다른 단위의 의미 값을 구성 전체에 복사하지 않는다. '''+AUXILIARY_GUIDE
+    return result
+
+def focused_contract(schema,reader,units):
+    result=copy.deepcopy(schema);index={u['id']:u for u in units}
+    for variant in result['properties']['units']['items']['anyOf']:
+        kind=index[variant['properties']['unit_id']['enum'][0]]['kind']
+        needed=any('auxiliary_kind' in b['conditions'] and kind in b['conditions']['unit_kind'] for r in reader.rules.values() for b in r['branches'])
+        features=variant['properties']['features']
+        if not needed:
+            features['properties'].pop('auxiliary_kind',None)
+            if 'auxiliary_kind' in features['required']:features['required'].remove('auxiliary_kind')
+    candidates=relation_candidates(units)
+    variants=[obj({'unit_id':string([r['unit_id']]),'main_predicate':string(r['main_predicate'],True),
+        'auxiliary_predicate':string(r['auxiliary_predicate'],True)}) for r in candidates]
+    result['properties']['construction_links']=arr({'anyOf':variants} if variants else obj({'unit_id':string()}),minItems=len(candidates),maxItems=len(candidates))
+    result['required'].append('construction_links')
+    return result
+
+def bind_explicit_links(raw,units):
+    result=copy.deepcopy(raw);cx={u['id'] for u in units if u['kind']=='construction'}
+    links=result['construction_links'];ids=[r['unit_id'] for r in links]
+    if len(ids)!=len(set(ids)) or set(ids)!=cx:raise ValidationError('construction_link_missing_duplicate')
+    index={r['unit_id']:r for r in links};log=[]
+    for row in result['units']:
+        if row['unit_id'] not in cx:continue
+        explicit=index[row['unit_id']];roles=('main_predicate','auxiliary_predicate')
+        prior=[r for r in row['relations'] if r['role'] in roles]
+        chosen=[{'role':role,'target_id':explicit[role]} for role in roles if explicit[role] is not None]
+        row['relations']=[r for r in row['relations'] if r['role'] not in roles]+chosen
+        log.append({'unit_id':row['unit_id'],'authority':'qwen_construction_links','explicit':explicit,
+            'ignored_duplicate_free_relations':prior,'conflict':bool(prior and sorted(prior,key=lambda r:(r['role'],r['target_id']))!=sorted(chosen,key=lambda r:(r['role'],r['target_id']))),
+            'unconfirmed_roles':[role for role in roles if explicit[role] is None]})
+    return result,log

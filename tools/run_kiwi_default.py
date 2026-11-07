@@ -6,7 +6,7 @@ sys.path[:0]=[str(ROOT/'src'),str(ROOT/'local/python'),str(ROOT/'tools')]
 from kg_pipeline.io import Qwen,read,save,sha,dumps,load_jsonl
 from kg_pipeline.integrated import IntegratedReader
 from kg_pipeline.multi_agent import run_sentence,PROMPTS
-from kg_pipeline.kiwi_default import initial_structure,SCOPE_PROMPT,prompts
+from kg_pipeline.kiwi_default import initial_structure,SCOPE_PROMPT,prompts,focused_prompts
 from kg_pipeline.separated_graph import restore
 from kg_pipeline.runner import register_run
 from research_management.work import WorkStore
@@ -19,8 +19,11 @@ def execute(args):
     rows=load_jsonl(args.inputs)
     if not rows or len({r['id'] for r in rows})!=len(rows):raise ValueError('Empty/duplicate inputs')
     if any(not re.fullmatch('[A-Za-z0-9_-]+',r['id']) or not isinstance(r.get('text'),str) or not r['text'].strip() for r in rows):raise ValueError('Invalid input')
-    paired=getattr(args,'paired',False);policies=['baseline','kiwi_improved'] if paired else ['kiwi_improved']
-    needed=len(rows)*(1+3*len(policies))
+    paired=getattr(args,'paired',False);policy=getattr(args,'connection_policy','kiwi_improved')
+    policies=([getattr(args,'comparison_policy','baseline'),policy] if paired else [policy])
+    if len(set(policies))!=len(policies):raise ValueError('Compared policies must differ')
+    reuse=Path(args.replay_structure) if getattr(args,'replay_structure',None) else None
+    needed=len(rows)*((0 if reuse else 1)+3*len(policies))
     if args.max_calls<needed:raise ValueError('Budget must cover scope and downstream roles')
     end=dt.datetime.fromisoformat(args.deadline)
     if end.tzinfo is None or end<=dt.datetime.now(dt.timezone.utc):raise ValueError('Invalid deadline')
@@ -41,6 +44,10 @@ def execute(args):
         'paired_shared_scope':paired,'changed_factors':'connection_unknown_handling_meaning_relation_guidance_humility_delivery',
         'knowledge_character_budget':args.char_budget,'python_version':platform.python_version(),'sampling_repeat_count':1,
         'worker_roles':['scope','meaning','writer','diagnostic_reviewer']}
+    if reuse:
+        prior=read(reuse/'config.json');artifacts=read(reuse/'artifact_hashes.json')
+        if any(prior[k]!=config[k] for k in ('input_sha256','graph_sha256','model_id','seed')):raise ValueError('Structure replay input/KG/model/seed mismatch')
+        config['structure_reuse']={'source_run':reuse.name,'source_artifact_manifest_sha256':sha((reuse/'artifact_hashes.json').read_bytes()),'new_scope_calls':0,'scope_cost_in_source_run_only':True}
     save(out/'config.json',config);hashes={}
     paths=['tools/run_kiwi_default.py','tools/run_qwen_multi.py','src/kg_pipeline/kiwi_default.py','src/kg_pipeline/morphology_control.py',
         'src/kg_pipeline/multi_agent.py','src/kg_pipeline/integrated.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py',
@@ -48,7 +55,7 @@ def execute(args):
     for rel in paths:
         dest=out/'code_snapshot'/rel;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/rel,dest);hashes[rel]=sha((ROOT/rel).read_bytes())
     save(out/'code_hashes.json',hashes)
-    for label,ps in [('baseline',PROMPTS),('kiwi_improved',prompts()),('common',{'scope':SCOPE_PROMPT})]:
+    for label,ps in [('baseline',PROMPTS),('kiwi_improved',prompts()),('kiwi_focused',focused_prompts()),('common',{'scope':SCOPE_PROMPT})]:
         for key,value in ps.items():
             p=out/'prompts'/label/(key+'.txt');p.parent.mkdir(parents=True,exist_ok=True);p.write_text(value,encoding='utf8')
     config['prompt_sha256']={str(p.relative_to(out/'prompts')):sha(p.read_bytes()) for p in (out/'prompts').rglob('*.txt')};save(out/'config.json',config)
@@ -72,7 +79,12 @@ def execute(args):
             if dt.datetime.now(dt.timezone.utc)>=end:stop='deadline';break
             shared=out/'private/shared'/row['id'];t=time.perf_counter();client.begin_input()
             try:
-                prepared=initial_structure(client,row['text'],kiwi,shared,args.seed)
+                if reuse:
+                    rel='private/shared/'+row['id']+'/common_structure.json';src=reuse/rel
+                    if sha(src.read_bytes())!=artifacts.get(rel):raise ValueError('Shared structure snapshot hash mismatch')
+                    prepared=read(src);save(shared/'common_structure.json',prepared)
+                    save(shared/'structure_reuse.json',{'source':str(src),'sha256':sha(src.read_bytes()),'new_model_calls':0})
+                else:prepared=initial_structure(client,row['text'],kiwi,shared,args.seed)
                 scope_records.append({'id':row['id'],'complete':True,'seconds':time.perf_counter()-t,'api_attempts':client.input_calls})
             except (Exception,KeyboardInterrupt) as e:
                 scope_records.append({'id':row['id'],'complete':False,'seconds':time.perf_counter()-t,'api_attempts':client.input_calls,'error_type':type(e).__name__})
@@ -139,6 +151,9 @@ def parser():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--execute',action='store_true',required=True)
     p.add_argument('--inputs',required=True);p.add_argument('--phase',choices=['development','regression','smoke'],required=True)
     p.add_argument('--paired',action='store_true');p.add_argument('--graph');p.add_argument('--model',default='Qwen3.8-27B')
+    p.add_argument('--connection-policy',choices=['kiwi_improved','kiwi_focused'],default='kiwi_improved')
+    p.add_argument('--comparison-policy',choices=['baseline','kiwi_improved'],default='baseline')
+    p.add_argument('--replay-structure',help='Frozen common structure from a previous same-input/KG/model/seed run; no new scope calls')
     p.add_argument('--deadline',required=True);p.add_argument('--max-calls',type=int,required=True)
     p.add_argument('--seed',type=int,default=20261107);p.add_argument('--char-budget',type=int,default=18000)
     return p

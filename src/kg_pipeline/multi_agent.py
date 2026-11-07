@@ -358,11 +358,14 @@ def compact_context(units,clauses):
 
 
 def run_sentence(client,reader,text,out_dir,seed=20261107,char_budget=18000,max_repairs=1,separate_plan=False,max_analysis_repairs=1,prepared_structure=None,connection_policy='baseline'):
-    if connection_policy not in ('baseline','kiwi_improved'):raise ValueError('Unknown connection policy')
+    if connection_policy not in ('baseline','kiwi_improved','kiwi_focused'):raise ValueError('Unknown connection policy')
     active_prompts=PROMPTS
-    if connection_policy=='kiwi_improved':
+    if connection_policy!='baseline':
         from .kiwi_default import prompts, enhance_structure, relation_candidates, humble_hints
         active_prompts=prompts()
+        if connection_policy=='kiwi_focused':
+            from .kiwi_default import focused_prompts,focused_contract,bind_explicit_links,AUXILIARY_GUIDE
+            active_prompts=focused_prompts()
         if prepared_structure is None:raise ValueError('Improved policy needs prepared morphology')
         prepared_structure=enhance_structure(text,prepared_structure)
     if max_repairs not in (0,1) or max_analysis_repairs not in (0,1):raise ValueError('repair limits must be 0 or 1')
@@ -419,10 +422,15 @@ def run_sentence(client,reader,text,out_dir,seed=20261107,char_budget=18000,max_
     save(out/'structure_repair_status.json',{'status':analysis_repair_status,'initial_issues':issues})
     save(out/'structure_units.json',units)
     schema=meaning_contract(reader,units)
+    if connection_policy=='kiwi_focused':schema=focused_contract(schema,reader,units)
     meaning_input={'text':text,'units':units,'clauses':clauses,'field_definitions':FIELD_GUIDE,'tag_definitions':TAG_MEANINGS}
-    if connection_policy=='kiwi_improved':
+    if connection_policy!='baseline':
         meaning_input.update(relation_candidates=relation_candidates(units),missing_coverage=prepared_structure['missing_coverage'])
+    if connection_policy=='kiwi_focused':meaning_input['field_definitions']={**FIELD_GUIDE,'auxiliary_kind':AUXILIARY_GUIDE}
     meaning=call('meaning',meaning_input,schema)
+    if connection_policy=='kiwi_focused':
+        meaning,link_log=bind_explicit_links(meaning,units)
+        save(out/'meaning_binding_input.json',meaning);save(out/'explicit_link_binding.json',link_log)
     stage('meaning_binding');bound=bind_meaning(text,units,meaning,schema);save(out/'bound_analysis.json',bound)
     stage('kg_retrieval')
     packet,traces=retrieve_packet(reader,text,bound,char_budget)
@@ -438,7 +446,7 @@ def run_sentence(client,reader,text,out_dir,seed=20261107,char_budget=18000,max_
     packet['verified_scope_knowledge']=retained
     save(out/'retrieval.json',traces);save(out/'retrieval_packet.json',packet)
     actions=[{'action_id':f'A{i+1}',**a} for i,a in enumerate(packet['verified_scope_knowledge'])]
-    if connection_policy=='kiwi_improved':
+    if connection_policy!='baseline':
         unit_index={u['id']:u for u in bound}
         for a in actions:a['source_form_literal']=unit_index[a['unit_id']].get('source_form_literal')
     context=compact_context(bound,clauses)
@@ -452,7 +460,7 @@ def run_sentence(client,reader,text,out_dir,seed=20261107,char_budget=18000,max_
         plan={'mode':'writer_selects_and_writes_in_one_call'};selected=actions
     save(out/'selected_knowledge.json',selected)
     preservation=review_context(bound)
-    if connection_policy=='kiwi_improved':
+    if connection_policy!='baseline':
         for hint,u in zip(preservation,[u for u in bound if u['kind'] in ('predicate','construction')]):
             if u['features'].get('speech_act')!='information_question':hint['보존 정보(분석 추정)'].pop('질문 종류',None)
         preservation+=humble_hints(bound)
