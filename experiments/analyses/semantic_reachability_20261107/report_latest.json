@@ -1,0 +1,15 @@
+{
+  "report": "experiments\\analyses\\semantic_reachability_20261107\\private\\20261107T052951500203Z\\report.html",
+  "reviewed_goal_states": {
+    "knowledge_scope_not_supported": 19,
+    "target_unit_not_found": 1,
+    "observed_form_or_rule_scope_mismatch": 1,
+    "reached_and_delivered": 49,
+    "non_discriminating_unknown_gate": 2,
+    "semantic_axis_collision": 3,
+    "meaning_judgment_candidate": 10,
+    "relation_binding_missing": 3,
+    "analysis_unavailable": 2
+  },
+  "neo4j_dataset": "semantic_grammar_20261107_separated_20261107T045555351994Z"
+}

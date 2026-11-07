@@ -1,0 +1,183 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "규칙 하나에 조건 묶음이 둘인 경우",
+    "locale": "ko",
+    "quality_profile": "showcase",
+    "output": ".archify/workflow-rule-branches-20261107-1435/rule-branches.html",
+    "repository": {
+      "url": "https://github.com/ciotd/korean-dialect-grammar-kg.git",
+      "revision": "9ddb4d48eda0aed47af597bddf44b3f3131f859b",
+      "link_mode": "local-only"
+    }
+  },
+  "lanes": [
+    {
+      "id": "lookup",
+      "label": "조건 확인과 전달"
+    },
+    {
+      "id": "alternative",
+      "label": "다른 경우와 보류"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "input",
+      "lane": "lookup",
+      "col": 0,
+      "type": "frontend",
+      "label": "문장 분석값",
+      "sublabel": "계사·과거·높임 등",
+      "width": 170,
+      "sources": [
+        {
+          "path": "src/kg_pipeline/integrated.py",
+          "line": 199,
+          "end_line": 206,
+          "label": "실제 조건 조회 코드"
+        }
+      ]
+    },
+    {
+      "id": "positive",
+      "lane": "lookup",
+      "col": 1,
+      "type": "backend",
+      "label": "긍정 조건 묶음",
+      "sublabel": "이 묶음 안은 모두 충족",
+      "width": 190,
+      "sources": [
+        {
+          "path": "src/kg_pipeline/integrated.py",
+          "line": 205,
+          "end_line": 211,
+          "label": "실제 조건 조회 코드"
+        }
+      ]
+    },
+    {
+      "id": "negative",
+      "lane": "alternative",
+      "col": 1,
+      "type": "backend",
+      "label": "부정 조건 묶음",
+      "sublabel": "이 묶음 안도 모두 충족",
+      "width": 190,
+      "sources": [
+        {
+          "path": "src/kg_pipeline/integrated.py",
+          "line": 205,
+          "end_line": 211,
+          "label": "실제 조건 조회 코드"
+        }
+      ]
+    },
+    {
+      "id": "either",
+      "lane": "lookup",
+      "col": 2,
+      "type": "security",
+      "label": "한 묶음이라도 충족?",
+      "sublabel": "두 묶음을 모두 요구하지 않음",
+      "width": 200,
+      "sources": [
+        {
+          "path": "src/kg_pipeline/integrated.py",
+          "line": 212,
+          "end_line": 216,
+          "label": "실제 조건 조회 코드"
+        }
+      ]
+    },
+    {
+      "id": "deliver",
+      "lane": "lookup",
+      "col": 3,
+      "type": "backend",
+      "label": "한 규칙을 후보로 전달",
+      "sublabel": "표현과 보존할 뜻 함께",
+      "width": 195,
+      "sources": [
+        {
+          "path": "src/kg_pipeline/integrated.py",
+          "line": 247,
+          "end_line": 261,
+          "label": "실제 조건 조회 코드"
+        }
+      ]
+    },
+    {
+      "id": "hold",
+      "lane": "alternative",
+      "col": 3,
+      "type": "security",
+      "label": "적용 후보에서 보류",
+      "sublabel": "불일치와 미확정은 기록",
+      "width": 195,
+      "sources": [
+        {
+          "path": "src/kg_pipeline/integrated.py",
+          "line": 208,
+          "end_line": 218,
+          "label": "실제 조건 조회 코드"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "input",
+      "to": "positive",
+      "label": "확인"
+    },
+    {
+      "from": "input",
+      "to": "negative",
+      "label": "확인"
+    },
+    {
+      "from": "positive",
+      "to": "either",
+      "label": "판정"
+    },
+    {
+      "from": "negative",
+      "to": "either",
+      "label": "판정"
+    },
+    {
+      "from": "either",
+      "to": "deliver",
+      "label": "충족",
+      "variant": "emphasis"
+    },
+    {
+      "from": "either",
+      "to": "hold",
+      "label": "아직 아님",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "규칙·조건·분기의 차이",
+      "items": [
+        "규칙: 어떻게 바꿀 수 있는지 담은 지식",
+        "조건: 과거인지, 긍정인지 등 한 가지 확인",
+        "분기: 조건들을 모두 만족해야 하는 한 묶음"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "이 그림이 뜻하지 않는 것",
+      "items": [
+        "56개 규칙·57개 분기를 차례로 통과한다는 뜻이 아닙니다.",
+        "실제 과거 계사 규칙의 두 경우를 이해하기 위한 그림입니다.",
+        "후보를 찾았어도 생성한 문장이 올바른지는 별도로 확인합니다."
+      ]
+    }
+  ]
+}

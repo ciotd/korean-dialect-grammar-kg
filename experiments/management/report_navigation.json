@@ -241,5 +241,12 @@
     "local_path": "experiments/analyses/common_grammar_reference_audit_20261107/private/20261107T050652077810Z/report.html",
     "summary": "한국어 문법 총론1 원목차 복원, 기존136개·최하위 목차171개 대조, 공백16·분할8 검토 묶음. KG 변경 없음.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "11월7일 · 실제 문장 분석에서 필요한 KG 지식까지",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/semantic_reachability_20261107/private/20261107T052951500203Z/report.html",
+    "local_path": "experiments/analyses/semantic_reachability_20261107/private/20261107T052951500203Z/report.html",
+    "summary": "새 KG Neo4j 적재, 50문장 90지점의 실제 분석·조건·연결 점검과 수정안. 신규 Qwen 생성 없음.",
+    "delivery": "local_html_desktop"
   }
 ]
