@@ -213,5 +213,12 @@
     "title": "11월6일 · 연구 전체 복습과 논문 전 점검",
     "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/research_recap_20261106/private/20261106T045300456529Z_research_recap/report.html",
     "summary": "연구 목적·계보·전체/실행 KG 차이, 실제8사례, 실험 통제와 한계, 최신9분야 통합 범위, 평가 설계·팀 설명. 새 모델 호출·품질 인증 없음."
+  },
+  {
+    "title": "공통 문법136·후보 용법56 · 근거와 실제 연결",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/common_grammar_walkthrough_20261107/private/20261107T033934996218Z/guide.html",
+    "local_path": "experiments/analyses/common_grammar_walkthrough_20261107/private/20261107T033934996218Z/guide.html",
+    "summary": "Archify 전체 그림, 136개 항목별 설명용 예문과 56개 조건 카드. 로컬 HTML이며 기존 HTTP 서버 경로는 아님.",
+    "delivery": "local_html_desktop"
   }
 ]
