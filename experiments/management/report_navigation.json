@@ -220,5 +220,12 @@
     "local_path": "experiments/analyses/common_grammar_walkthrough_20261107/private/20261107T033934996218Z/guide.html",
     "summary": "Archify 전체 그림, 136개 항목별 설명용 예문과 56개 조건 카드. 로컬 HTML이며 기존 HTTP 서버 경로는 아님.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "공통107·용법27 연결 공백 원인 — 수정 전 감사",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/link_gap_audit_20261107/private/20261107T042114917700Z/report.html",
+    "local_path": "experiments/analyses/link_gap_audit_20261107/private/20261107T042114917700Z/report.html",
+    "summary": "전체 항목의 현재 코드·실행 기록 대조와 표준어 문법책 원전 한계. KG/실행 수정 없음.",
+    "delivery": "local_html_desktop"
   }
 ]
