@@ -255,5 +255,12 @@
     "local_path": "experiments/analyses/same_sentence_multi_live_20261107/private/20261107T062940840497Z/report.html",
     "summary": "실제 4회 호출·61개 규칙 조합·309개 조건·전달 정보와 이전 Kiwi 실행 비교. 수정 요구 후 초안 유지, 사람 검토 필요. KG·실행 코드 변경 없음.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "11월7일 · Kiwi 기본 전환과 요청·겸양 연결 보완",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/kiwi_default_20261107/private/report.html",
+    "local_path": "experiments/analyses/kiwi_default_20261107/private/report.html",
+    "summary": "새12문장 두 차례 비교. 기능·본/보조 연결4→5→6/6, 높임 손실 잔류로50건 보류. 실제 출력과 전달 지식·두 검토 결과.",
+    "delivery": "local_html_desktop"
   }
 ]

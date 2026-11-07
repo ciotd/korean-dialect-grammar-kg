@@ -1,0 +1,9 @@
+{
+  "done": 24,
+  "total": 24,
+  "elapsed_seconds": 674.7,
+  "eta_seconds": 0.0,
+  "eta_basis": "observed_average_including_scope_after_four_paths",
+  "status": "completed",
+  "message": "원시 출력 기록 완료; 원문 보존과 오류는 별도 판정"
+}

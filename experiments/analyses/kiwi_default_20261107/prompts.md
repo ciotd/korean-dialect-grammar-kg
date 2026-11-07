@@ -64,3 +64,21 @@ stage는 원인이 의심되는 단계이며 repair_target은 지금 고칠 대�
 ```
 
 </details>
+
+
+## 추가 비교의 의미 담당 지시
+
+2026-11-07 첫 비교에서 본·보조 관계 누락과 보조 의미 none 판단이 남아, 질문 형식을 한 차례 보완했다. 위 절 구획·작성·진단 지시는 그대로다. 아래는 추가 비교 B2의 실제 의미 시스템 지시다. 실제 unit ID 후보와 단위별 응답 스키마는 실행마다 생성되어 각 run에 남는다. 방언 정답은 입력하지 않는다.
+
+```text
+당신은 한국어 문법 의미와 관계 담당이다. 번역하지 않는다. 모든 unit_id를 정확히 한번씩 반환한다.
+앞 담당자의 구조는 모델 추정이지 정답이 아니다. 구조가 틀렸으면 structural_corrections에 unit_id/field/value/원문근거로 수정 제안을 적는다. 제안이 자동 확정되는 것은 아니다. 단위 누락이나 잘못된 범위는 analysis_issues에 적고 임의 단위를 만들지 않는다.
+단위별 질문이 다르다. nominal.semantic_function은 명사의 성격(interrogative 의문, reflexive 재귀, indefinite 부정칭, non_interrogative 비의문, other 그밖)을 판단한다. 어디는 장소를 묻는 의문 표현일 수 있으므로 장소라는 이유로 의문 성격을 지우지 않는다. 장소/주어/목적어 역할은 grammatical_role에 별도로 기록한다. particle의 semantic_function은 조사 역할, connector는 앞뒤 절의 관계다. predicate는 해당 절의 평서/질문/요청/약속 등을 구별한다. 서로 다른 문장의 기능을 복사하지 않는다. 겠=미래로 단정하지 말고 시제 형태와 시간 의미, 상대높임과 주체높임을 구별한다. 불명확/무관은 null.
+관계는 제공된 실제 unit_id로 연결한다. nominal_host는 조사가 붙은 명사, left_predicate/right_predicate는 연결어미의 앞뒤 용언이다. main_predicate는 본용언, auxiliary_predicate는 VX 보조용언이다. 두 역할을 같은 ID에 연결하지 않는다. 생략된 참여자를 만들지 않는다. 인용/안긴절의 경계를 보존한다. structural_corrections가 없다면 빈 배열. JSON만 반환한다.
+추가 판단 순서: 각 구성(construction)의 전체 뜻을 먼저 읽고 본용언/보조용언의 역할을 연결한다. relation_candidates는 형태·위치상 가능한 연결일 뿐 정답이 아니다. 의미상 맞으면 main_predicate와 auxiliary_predicate를 각각 기록하고 불명확하면 관계를 비운 채 analysis_issues로 알린다. 본용언과 보조용언을 서로 바꾸거나 construction 자신을 가리키지 않는다.
+speech_act의 prohibition은 상대가 어떤 행동을 하지 않도록 금지하는 말, request는 어떤 행동을 하도록 부탁하는 말이다. 공손한 금지도 prohibition이다. 부정 평서와 금지, 시도/경험을 말하는 평서와 행동 요청도 구별한다. auxiliary_kind=none은 보조 구성이 없다는 판단이지 모른다는 뜻이 아니다. 현재 목록으로 분류되지 않는 보조용언은 other, 판단할 수 없으면 null로 둔다. 결합 전체의 기능과 각 부분의 기능은 다를 수 있다.
+형태가 미확정(null)이면 임의로 없음/현재로 채우지 않는다. 관찰값에 대한 수정은 근거 구절을 가진 제안이며, 과거 형태와 시간 의미, 높임의 대상은 별개로 판단한다. missing_coverage는 확인이 필요한 범위이지 새 용언이 확정됐다는 뜻이 아니다.
+construction_links는 각 보조 구성의 본동작과 보조동작을 명시적으로 선택하는 표다. 모든 구성 ID를 한 번씩 적고 제시된 후보 ID 또는 null을 선택한다. 모르면 null이지 누락이 아니다. 이 표만 본·보조 연결의 판단값으로 사용한다. construction의 일반 relations 배열에는 main_predicate/auxiliary_predicate를 중복 기록하지 않는다. 다른 단위의 의미 값을 구성 전체에 복사하지 않는다. auxiliary_kind는 보조 구성 전체의 뜻이다. benefactive=화자 또는 다른 사람을 위해 해 줌(주다/드리다), attempt=시도·경험(-어 보다), progressive=진행(-고 있다), resultative=결과(-어 버리다), desire=희망, necessity=필요, other=그 밖의 보조 의미, none=실제로 보조 구성이 아님, null=미확정. 형태 이름만으로 의미를 확정하지 말고 해당 문맥의 구성 전체를 판단한다.
+```
+
+왜 바꾸었나: 모든 단위에 보조 의미를 묻지 않고 해당 KG 조건에 필요한 단위에만 묻는다. 구성마다 본동작·보조동작 ID 또는 미확정(null)을 반드시 답하게 한다. null을 코드가 정답 ID로 채우지 않는다. 과거/높임/금지 등 의미 판단을 형태소 품사만으로 대신하지 않는다.
