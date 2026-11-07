@@ -212,7 +212,7 @@ def bind_meaning(text,units,raw,schema):
         u.update(features={**r['features'],**u['observed']},relations=relations,relation_issues=issues)
         if r['clause_key'] is None:u['features']['clause_role']=None
         u['grammatical_role']=rawby[u['id']]['grammatical_role']
-        u['feature_origin']={k:'qwen_structure_judgment' if k in STRUCTURE_FIELDS else 'qwen_meaning_judgment' for k in u['features']}
+        u['feature_origin']={k:original.get('feature_origin',{}).get(k,'qwen_structure_judgment') if k in original['observed'] else 'qwen_meaning_judgment' for k in u['features']}
         u['analysis_issues']=u.get('structure_issues',[])+[r['problem'] for r in raw['analysis_issues'] if r['unit_id']==u['id']]
         u['structural_objections']=[c for c in raw['structural_corrections'] if c['unit_id']==u['id']]
         u['rejected_structural_corrections']=[c for c in rejected if c['unit_id']==u['id']]
@@ -357,7 +357,7 @@ def compact_context(units,clauses):
         'morphology_judgments':u.get('morphology_judgments',[])} for u in units]}
 
 
-def run_sentence(client,reader,text,out_dir,seed=20261107,char_budget=18000,max_repairs=1,separate_plan=False,max_analysis_repairs=1):
+def run_sentence(client,reader,text,out_dir,seed=20261107,char_budget=18000,max_repairs=1,separate_plan=False,max_analysis_repairs=1,prepared_structure=None):
     if max_repairs not in (0,1) or max_analysis_repairs not in (0,1):raise ValueError('repair limits must be 0 or 1')
     out=out_dir;calls=0
     def stage(name):save(out/'pipeline_stage.json',{'stage':name})
@@ -385,8 +385,16 @@ def run_sentence(client,reader,text,out_dir,seed=20261107,char_budget=18000,max_
     structure_input={'text':text,'words':words,'known_grammar_notation_examples':guide,
         'tag_definitions':TAG_MEANINGS,'field_definitions':FIELD_GUIDE,
         'notation_note':'표기 예시이지 어휘 제한이 아니다. restored는 축약·탈락 복원 여부. 중복 판단칸과 형태소 목록은 서로 일치하게 기록한다.'}
-    raw=call('structure',structure_input,structure_contract(words))
-    stage('structure_binding');units,clauses=normalize_structure(text,words,raw)
+    if prepared_structure is None:
+        raw=call('structure',structure_input,structure_contract(words))
+        stage('structure_binding');units,clauses=normalize_structure(text,words,raw)
+    else:
+        if max_analysis_repairs:raise ValueError('Prepared morphology comparison forbids analysis requery')
+        units,clauses=copy.deepcopy(prepared_structure['units']),copy.deepcopy(prepared_structure['clauses'])
+        raw={'uncertainties':copy.deepcopy(prepared_structure.get('uncertainties',[]))}
+        if not units or any(u['text']!=text[slice(*u['span'])] for u in units):raise ValidationError('invalid_prepared_units')
+        if any(u['clause_key'] not in {c['id'] for c in clauses} for u in units):raise ValidationError('invalid_prepared_clause')
+        save(out/'prepared_structure.json',prepared_structure)
     save(out/'structure_initial_units.json',units)
     analysis_repaired=False
     issues=[{'unit_id':u['id'],'text':u['text'],'issues':u['structure_issues']} for u in units if u['structure_issues']]
@@ -457,6 +465,6 @@ def run_sentence(client,reader,text,out_dir,seed=20261107,char_budget=18000,max_
         'unresolved_units':len(packet['unresolved']),'delivery_omissions':packet['delivery_omissions'],
         'feedback_decisions':final.get('feedback_decisions',[]),'model_knowledge_changes':final['model_knowledge_changes'],'analysis_issues':meaning['analysis_issues'],
         'worker_roles':5 if separate_plan else 4,'separate_plan':separate_plan,
-        'final_writer':'Qwen','kiwi_used':False,'independent_quality_evaluation':False}
+        'final_writer':'Qwen','kiwi_used':bool(prepared_structure and prepared_structure.get('backend')=='kiwi'),'independent_quality_evaluation':False}
     stage('completed');save(out/'pipeline_result.json',result)
     return result
