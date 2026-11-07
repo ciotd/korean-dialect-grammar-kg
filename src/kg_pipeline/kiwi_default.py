@@ -102,7 +102,7 @@ def enhance_structure(text,prepared):
             missing.append({'text':w['text'],'span':w['span'],'basis':'qwen_scope_suspects_unrepresented_predicate'})
     result['missing_coverage']=missing
     result['coverage_ledger']=ledger
-    result['uncertainties']=result.get('scope_response',{}).get('uncertainties',[])
+    # Keep scope free-text in scope_response for diagnosis, not one-sided model input.
     return result
 
 def relation_candidates(units):
@@ -118,7 +118,7 @@ def relation_candidates(units):
 def humble_hints(units):
     seen=set();hints=[]
     for u in units:
-        if any(f in ('저','저희') and t=='NP' for f,t in u['morphs']):
+        if any(f in ('저','제','저희') and t=='NP' for f,t in u['morphs']):
             key=tuple(u['span'])
             if key not in seen:
                 hints.append({'원문 구절':u['text'],'span':u['span'],

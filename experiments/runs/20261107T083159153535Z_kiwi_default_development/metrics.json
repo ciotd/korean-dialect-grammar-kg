@@ -1,0 +1,37 @@
+{
+  "records": 24,
+  "planned_records": 24,
+  "unattempted_records": 0,
+  "valid_output_records": 24,
+  "changed_records": 18,
+  "by_policy": {
+    "baseline": {
+      "records": 12,
+      "complete": 12,
+      "api_attempts": 36,
+      "branch_seconds": 349.7278156001121,
+      "tokens": 94052
+    },
+    "kiwi_improved": {
+      "records": 12,
+      "complete": 12,
+      "api_attempts": 36,
+      "branch_seconds": 319.7374847002793,
+      "tokens": 98956
+    }
+  },
+  "scope_calls": 12,
+  "scope_complete": 12,
+  "api_attempts": 84,
+  "transport_meta_records": 84,
+  "reported_usage": {
+    "prompt_tokens": 164464,
+    "completion_tokens": 36398,
+    "total_tokens": 200862
+  },
+  "calls_without_usage": 0,
+  "wall_seconds": 697.5367707000114,
+  "stop_reason": null,
+  "naturalness": null,
+  "independent_accuracy": null
+}

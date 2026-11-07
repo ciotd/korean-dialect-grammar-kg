@@ -1,0 +1,53 @@
+{
+  "program_id": "kiwi_default_20261107",
+  "phase": "development",
+  "dataset_role": "development",
+  "metric_contract": "kiwi_default_v1",
+  "policies": [
+    "baseline",
+    "kiwi_improved"
+  ],
+  "input_count": 12,
+  "planned_records": 24,
+  "model_id": "Qwen3.8-27B",
+  "seed": 20261107,
+  "temperature": 0,
+  "top_p": 1,
+  "enable_thinking": false,
+  "max_calls": 84,
+  "deadline": "2026-11-07T09:06:58.7909309Z",
+  "input_sha256": "60944aacc2fd32fae3dd2666e28f5b4af3a0d701969ceea4d214c474318f18be",
+  "graph_sha256": "69688a7d9cc1ebf066531b810ff5afb5a25920e50bbdc59dc4334189a2e9fccc",
+  "analysis_backend": "Kiwi_morphology_Qwen_scope_and_meaning",
+  "final_writer": "Qwen_raw_output",
+  "automatic_retries": 0,
+  "max_analysis_repairs": 0,
+  "max_generation_repairs": 0,
+  "reference_answers_in_request": false,
+  "paired_shared_scope": true,
+  "changed_factors": "connection_unknown_handling_meaning_relation_guidance_humility_delivery",
+  "knowledge_character_budget": 18000,
+  "python_version": "3.12.14",
+  "sampling_repeat_count": 1,
+  "worker_roles": [
+    "scope",
+    "meaning",
+    "writer",
+    "diagnostic_reviewer"
+  ],
+  "prompt_sha256": {
+    "baseline\\meaning.txt": "a1bead1bacf9c427964d245a504624b7b9efc2ac8dbdec9cffae784ab480ad78",
+    "baseline\\planner.txt": "51a324d387c273e5d787c7dbae4f7f1861e559452debd7ce9235535510809e59",
+    "baseline\\reviewer.txt": "691f43ddd3c54e678d0c3d9b89f2b9b8a50b773fb233919483153379b344f77b",
+    "baseline\\structure.txt": "901fb98c5541e143e465af69655c810e93f6c83794d567992646e2a9860ce340",
+    "baseline\\writer.txt": "254c961e94a3aa974cdd16795ac5330690f95022f34fdd674d4a5e342297f055",
+    "common\\scope.txt": "ae5c2e79e0d04f969898f3a8d14337cad19184ab6d16e17b90585c9d5c27bbba",
+    "kiwi_improved\\meaning.txt": "31e3bc3e8a367ef285223bd21dc24f8a16d5721ea5a4605ffce7a1d7f0aad121",
+    "kiwi_improved\\planner.txt": "51a324d387c273e5d787c7dbae4f7f1861e559452debd7ce9235535510809e59",
+    "kiwi_improved\\reviewer.txt": "691f43ddd3c54e678d0c3d9b89f2b9b8a50b773fb233919483153379b344f77b",
+    "kiwi_improved\\structure.txt": "901fb98c5541e143e465af69655c810e93f6c83794d567992646e2a9860ce340",
+    "kiwi_improved\\writer.txt": "ea13eba613d6db6a6dee628d94b00c33fe8d526878b40e53536b29615ff8077e"
+  },
+  "kiwi_initialization_seconds": 1.41475969995372,
+  "kiwi_package_version": "0.23.1"
+}

@@ -37,7 +37,7 @@ class KiwiDefault(unittest.TestCase):
             self.assertTrue(rr[0]['main_predicate']);self.assertTrue(rr[0]['auxiliary_predicate'])
             self.assertTrue(all('relations' not in u for u in p['units']))
     def test_humble_surface_and_normal_pronoun(self):
-        for text in ['제 물건이에요.','저는 가요.','저희 물건이에요.']:
+        for text in ['제 물건이에요.','저는 가요.','저희 물건이에요.','제가 먼저 갈게요.']:
             p=enhance_structure(text,self.prepared(text));self.assertTrue(humble_hints(p['units']))
         p=enhance_structure('제 물건이에요.',self.prepared('제 물건이에요.'))
         self.assertFalse(next(u for u in p['units'] if u['kind']=='particle' and u['observed']['source_form']=='의')['source_form_literal'])

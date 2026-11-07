@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\candidate.json",
+    "sha256": "4f4b6a562b3da708daad17af73bd5f46138369f00033b34a5e5da39abec1dc39",
+    "bytes": 4423
+  },
+  "artifact": {
+    "path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\pipeline.html",
+    "sha256": "db6c53c8dd6467e9aa7301f932b9b1c789c0fb22a0938a204346604371583308",
+    "bytes": 835905
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\pipeline.html"
+      },
+      "evidence": {
+        "reason": "Temporary directory ancestor identity is unavailable: C:\\Users\\ciot28\\AppData\\Local\\Temp"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\pipeline.finalize.json",
+    "summaryReceipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\pipeline.finalize-summary.json",
+    "browserCheckReceipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\pipeline.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-07T05:35:25.741Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 5447,
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  }
+}
