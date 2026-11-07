@@ -28,6 +28,8 @@ prepare는 후보 파일의 SHA-256과 비밀정보 의심 위치를 기록한�
 
 원본 PDF·전체 추출 본문·AI-Hub 파생 자료·인증정보·private/local·로컬 에이전트 설정·임시 work는 Git에서 제외한다. 비공개 KG graph.json과 data/derived_private는 **로컬 private_state 사본**으로만 보존한다. 이는 GitHub에 업로드하지 않는다.
 
+2026-11-07 출처 분리 저장부터 `knowledge/authored/*/private/<고유 버전>/graph.json`도 포함한다. 그래프 옆의 `audit.json`과 `manifest.json`은 함께 로컬 백업한다. 실행 그래프만 복사하여 출처·복원 기록을 빠뜨리지 않으며, 세 파일 모두 Git에는 넣지 않는다.
+
 **복원 한계:** 3GB 이상인 기존 비공개 실행 기록 전체, 외부 문헌, 인증정보, 설치환경, 실행 중 Neo4j DB는 이 도구가 복제하지 않는다. 실행 기록은 원래 Run 폴더에서 유지한다. 같은 디스크의 체크포인트는 디스크 고장 대비 백업이 아니다. 다른 PC로 이동할 때는 권한 있는 비공개 자료를 별도로 옮겨야 한다.
 
 ## 보고할 항목

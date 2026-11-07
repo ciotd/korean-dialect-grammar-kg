@@ -22,6 +22,18 @@ def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def save(p, value): p.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 def load(p): return json.loads(p.read_text(encoding='utf8'))
 
+def private_kg_paths(root):
+    # Include versioned execution graphs and their separate audit companions.
+    # The private material is copied locally only; denied() keeps it out of Git.
+    authored=root/'knowledge/authored'
+    graphs=list(authored.glob('*/private/graph.json'))+list(authored.glob('*/private/*/graph.json'))
+    paths=set(graphs)
+    for graph in graphs:
+        for name in ('audit.json','manifest.json'):
+            companion=graph.with_name(name)
+            if companion.is_file():paths.add(companion)
+    return sorted(paths)
+
 def denied(path):
     p=Path(path)
     return bool(set(p.parts)&DENIED) or path.startswith(('data/raw/', 'data/derived_private/')) or p.name=='test.py' or p.name.startswith('.env') or p.suffix.lower() in {'.pdf','.zip','.pem','.key'} or bool(re.search(r'credentials|settings\.local',p.name,re.I))
@@ -56,7 +68,7 @@ def prepare():
     if forbidden_parent: raise RuntimeError('Parent contains excluded paths; review before checkpoint')
     retained=[p for p in prior_paths if p not in paths]
     private=[]
-    private_paths=list((ROOT/'knowledge/authored').glob('*/private/graph.json'))
+    private_paths=private_kg_paths(ROOT)
     private_paths+=list((ROOT/'data/derived_private').rglob('*'))
     for p in private_paths:
         if not p.is_file() or p.suffix.lower() not in {'.json','.jsonl','.md'}: continue

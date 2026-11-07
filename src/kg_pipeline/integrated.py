@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 from .io import dumps, read, save, sha
+from .separated_graph import FORMAT as SEPARATED_FORMAT, compact_payload, compact_reference
 
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE_CACHE=Path('C:/Users/ciot28/Documents/Codex/2026-10-13/ciotd-odor-complaint-dialect-rag-kg/work/source_audit')
@@ -164,6 +165,7 @@ def observe_units(morph):
 
 class IntegratedReader:
     def __init__(self,graph):
+        self.graph_storage_format=graph.get('storage_format')
         self.graph=graph;self.nodes={n['id']:n for n in graph['nodes']};self.out=collections.defaultdict(list)
         require(len(self.nodes)==len(graph['nodes']),'Duplicate node')
         for e in graph['edges']:
@@ -237,6 +239,8 @@ class IntegratedReader:
                            'source_edge_ids':[e['id'] for e in paths],
                            'source_span_ids':[e['target'] for e in paths],
                            'document_refs':spec.get('source_refs',spec.get('_refs',[]))})
+        if self.graph_storage_format == SEPARATED_FORMAT:
+            ranked=[compact_reference(r) for r in ranked]
         ranked=sorted(ranked,key=lambda x:(-x['score'],x['source_id']))
         return ranked if limit is None else ranked[:limit]
 
@@ -247,13 +251,14 @@ class IntegratedReader:
         sources=[]
         for e in self.links(hit['rule_id'],'SUPPORTED_BY'):
             ep=self.nodes[e['target']]['properties'];sources.append({'evidence_id':e['target'],'doc':ep.get('document_id'),'page':ep.get('pdf_page')})
-        return {'unit_id':unit['id'],'span':unit['span'],'source_text':unit['text'],'rule_id':hit['rule_id'],
+        payload={'unit_id':unit['id'],'span':unit['span'],'source_text':unit['text'],'rule_id':hit['rule_id'],
                 'instruction':p.get('instruction',p.get('meaning',p.get('summary',''))),'forms':forms,
                 'preserve':p.get('preserve',[]),'source_morphs':unit['morphs'],'rule_type':p.get('rule_type','conversion'),
                 'limitations':p.get('limitations',''),
                 'forms_annotated':p.get('forms_annotated',[]),'lexical_map':p.get('lexical_map',{}),
                 'conditions':[{ 'feature':c['feature'],'value':c['value']} for c in next(b for b in hit['branches'] if b['state']=='true')['checks']],
                 'sources':sources,'relations':unit.get('relations',{}),'clause_key':unit.get('clause_key')}
+        return compact_payload(payload) if self.graph_storage_format == SEPARATED_FORMAT else payload
 
 
 def analysis_contract(reader,units):

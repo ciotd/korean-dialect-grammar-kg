@@ -1,0 +1,8 @@
+{
+  "version": "semantic_grammar_20261107_separated_20261107T045555351994Z",
+  "graph": "knowledge\\authored\\semantic_grammar_20261107_separated_r1\\private\\20261107T045555351994Z\\graph.json",
+  "audit": "knowledge\\authored\\semantic_grammar_20261107_separated_r1\\private\\20261107T045555351994Z\\audit.json",
+  "manifest": "knowledge\\authored\\semantic_grammar_20261107_separated_r1\\private\\20261107T045555351994Z\\manifest.json",
+  "status": "passed_structural_and_offline_replay",
+  "translation_quality": "not_evaluated"
+}

@@ -13,6 +13,8 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/'src'),str(ROOT/'local/python')]
 from kg_pipeline.integrated import compile_overlay
 from kg_pipeline.io import save,read
+from kg_pipeline.separated_graph import separate
+from kg_pipeline.io import sha
 
 spec=importlib.util.spec_from_file_location('integrated_runner',ROOT/'tools/run_integrated_grammar.py')
 runner=importlib.util.module_from_spec(spec);spec.loader.exec_module(runner)
@@ -41,7 +43,7 @@ class FakeQwen:
 class RunnerTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
-        for rel in ['tools/run_integrated_grammar.py','src/kg_pipeline/integrated.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_runtime/morphology.py']:
+        for rel in ['tools/run_integrated_grammar.py','src/kg_pipeline/integrated.py','src/kg_pipeline/separated_graph.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_runtime/morphology.py']:
             p=self.root/rel;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/rel,p)
         save(self.root/'graph.json',compile_overlay({'rules':[]}))
         self.args=SimpleNamespace(graph=str(self.root/'graph.json'),inputs=str(self.root/'inputs.jsonl'),phase='smoke',
@@ -68,6 +70,22 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(wire['messages'][0]['content'],'분석 정의 보완 시험')
         self.assertEqual((out/'generation_prompt.txt').read_text(encoding='utf8'),runner.GENERATION_PROMPT)
         self.assertEqual(m['api_attempts'],2)
+
+    def test_separated_default_archives_audit_but_does_not_send_it(self):
+        graph,audit=separate(read(self.root/'graph.json'),'separated_fixture')
+        save(self.root/'graph.json',graph);save(self.root/'audit.json',audit)
+        save(self.root/'manifest.json',{'graph_sha256':sha((self.root/'graph.json').read_bytes()),
+             'audit_sha256':sha((self.root/'audit.json').read_bytes())})
+        save(self.root/'knowledge/authored/semantic_grammar_20261107_separated_r1/latest.json',{'graph':'graph.json'})
+        self.args.graph=None
+        out,m=self.run_fixture([{'id':'T1','text':'책을 읽어.'}])
+        self.assertTrue((out/'private/kg_audit.json').is_file())
+        self.assertIn('audit',read(out/'kg_hashes.json'))
+        request=read(out/'private/records/T1/generation/request.json')
+        payload=json.loads(request['messages'][1]['content'])
+        self.assertTrue(payload['related_unprocessed_sources'])
+        self.assertTrue(all('document_refs' not in x and 'source_span_ids' not in x for x in payload['related_unprocessed_sources']))
+        self.assertNotIn('documentary_nodes',payload)
     def test_three_failures_stop_and_preserve_unattempted(self):
         out,m=self.run_fixture([{'id':f'T{i}','text':'책을 읽어.'} for i in range(5)],fail=True)
         self.assertEqual(m['api_attempts'],3);self.assertEqual(m['unattempted_inputs'],2)

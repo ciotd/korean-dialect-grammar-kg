@@ -15,13 +15,24 @@ from kg_pipeline.integrated import (IntegratedReader,observe_units,analysis_cont
     retrieve_packet,ANALYSIS_PROMPT,GENERATION_PROMPT,GENERATION_SCHEMA,require)
 from kg_pipeline.io import Qwen,read,save,sha,dumps,load_jsonl
 from kg_pipeline.validation import validate_schema
+from kg_pipeline.separated_graph import FORMAT as SEPARATED_FORMAT, restore
 from kg_pipeline.runner import register_run
 from kg_runtime.morphology import Morphology
 from research_management.work import WorkStore
 
 
 def execute(args):
+    if not args.graph:
+        pointer=read(ROOT/'knowledge/authored/semantic_grammar_20261107_separated_r1/latest.json')
+        args.graph=str(ROOT/pointer['graph'])
     graph=read(args.graph);reader=IntegratedReader(graph);rows=load_jsonl(args.inputs)
+    companion=None
+    if graph.get('storage_format')==SEPARATED_FORMAT:
+        parent=Path(args.graph).parent;manifest=read(parent/'manifest.json')
+        require(sha(Path(args.graph).read_bytes())==manifest['graph_sha256'],'Separated graph hash mismatch')
+        require(sha((parent/'audit.json').read_bytes())==manifest['audit_sha256'],'Separated audit hash mismatch')
+        restore(graph,read(parent/'audit.json'))  # Integrity check only; never put audit into prompts.
+        companion=parent
     prompt_path=getattr(args,'analysis_prompt',None)
     analysis_prompt=Path(prompt_path).read_text(encoding='utf8') if prompt_path else ANALYSIS_PROMPT
     require(bool(analysis_prompt.strip()),'Empty analysis prompt')
@@ -36,6 +47,9 @@ def execute(args):
     stamp=dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     out=ROOT/'experiments/runs'/(stamp+'_integrated_grammar_'+args.phase);(out/'private').mkdir(parents=True,exist_ok=False)
     shutil.copy2(args.inputs,out/'private/inputs.jsonl');shutil.copy2(args.graph,out/'private/graph.json')
+    if companion:
+        shutil.copy2(companion/'audit.json',out/'private/kg_audit.json')
+        shutil.copy2(companion/'manifest.json',out/'private/kg_manifest.json')
     save(out/'config.json',{'phase':args.phase,'dataset_role':'regression_exposed' if args.phase=='regression' else 'development_exposed',
         'input_count':len(rows),'input_sha256':sha(Path(args.inputs).read_bytes()),'kg_dataset':graph['version'],
         'metric_contract':'integrated_grammar_v1','program_id':program_id,'program_prior_calls':prior_calls,'program_total_call_limit':200,
@@ -47,9 +61,12 @@ def execute(args):
         'analysis_prompt_sha256':sha(analysis_prompt.encode())})
     (out/'analysis_prompt.txt').write_text(analysis_prompt,encoding='utf-8')
     (out/'generation_prompt.txt').write_text(GENERATION_PROMPT,encoding='utf-8')
-    save(out/'generation.schema.json',GENERATION_SCHEMA);save(out/'kg_hashes.json',{'graph':sha(Path(args.graph).read_bytes())})
+    save(out/'generation.schema.json',GENERATION_SCHEMA)
+    kg_hashes={'graph':sha(Path(args.graph).read_bytes())}
+    if companion:kg_hashes.update(audit=sha((companion/'audit.json').read_bytes()),manifest=sha((companion/'manifest.json').read_bytes()))
+    save(out/'kg_hashes.json',kg_hashes)
     hashes={}
-    for rel in ['tools/run_integrated_grammar.py','src/kg_pipeline/integrated.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_runtime/morphology.py']:
+    for rel in ['tools/run_integrated_grammar.py','src/kg_pipeline/integrated.py','src/kg_pipeline/separated_graph.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_runtime/morphology.py']:
         source=ROOT/rel;dest=out/'code_snapshot'/rel;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,dest);hashes[rel]=sha(source.read_bytes())
     save(out/'code_hashes.json',hashes);register_run(ROOT,out)
     results=[];calls=0;consecutive=0;start=time.perf_counter();stop=None
@@ -144,7 +161,7 @@ def execute(args):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--execute',action='store_true',required=True)
-    p.add_argument('--graph',required=True);p.add_argument('--inputs',required=True);p.add_argument('--phase',choices=['smoke','development','regression','repair'],required=True)
+    p.add_argument('--graph',help='Explicit historical/comparison graph; defaults to the validated separated storage version');p.add_argument('--inputs',required=True);p.add_argument('--phase',choices=['smoke','development','regression','repair'],required=True)
     p.add_argument('--analysis-prompt',help='Explicit analysis-only comparison prompt, frozen in the run')
     p.add_argument('--model',default='Qwen3.8-27B');p.add_argument('--deadline',required=True);p.add_argument('--max-calls',type=int,required=True)
     p.add_argument('--seed',type=int,default=20261106);p.add_argument('--char-budget',type=int,default=24000)

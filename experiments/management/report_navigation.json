@@ -227,5 +227,12 @@
     "local_path": "experiments/analyses/link_gap_audit_20261107/private/20261107T042114917700Z/report.html",
     "summary": "전체 항목의 현재 코드·실행 기록 대조와 표준어 문법책 원전 한계. KG/실행 수정 없음.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "11월7일 · KG 문법 지식과 출처 기록 분리 전후",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/kg_storage_separation_20261107/report.html",
+    "local_path": "experiments/analyses/kg_storage_separation_20261107/report.html",
+    "summary": "실제 KG 정리·원본 복원·990조건과 99개 분석 기록 재생 비교. 문법 조건 보존, 새 모델 호출 없음.",
+    "delivery": "local_html_desktop"
   }
 ]
