@@ -86,7 +86,18 @@ def guard_dataset(project, inputs, role):
 def metric_mismatches(config, metrics, results):
     """Respect each run's counting contract; no count is a naturalness score."""
     contract=config.get('metric_contract')
-    if contract=='integrated_grammar_v1':
+    if contract=='paired_morphology_v1':
+        issues=[]
+        for backend in ('qwen','kiwi'):
+            rr=[r for r in results if r.get('backend')==backend]
+            actual=metrics.get('by_backend',{}).get(backend,{})
+            for key,value in {'records':len(rr),'complete':sum(bool(r.get('pipeline_completed')) for r in rr),'api_attempts':sum(r.get('api_attempts',0) for r in rr)}.items():
+                if actual.get(key)!=value:issues.append('metrics.by_backend.'+backend+'.'+key)
+        complete_pairs=sum(all(any(r['source_input_id']==i and r['backend']==b and r.get('pipeline_completed') for r in results) for b in ('qwen','kiwi')) for i in {r['source_input_id'] for r in results})
+        for key,value in {'records':len(results),'unattempted_records':config['input_count']-len(results),'complete_pairs':complete_pairs,'api_attempts':sum(r.get('api_attempts',0) for r in results)}.items():
+            if metrics.get(key)!=value:issues.append('metrics.'+key)
+        return issues
+    elif contract=='integrated_grammar_v1':
         expected={'valid_output_records':sum(r['status']=='generated_requires_human_review' for r in results),
                   'model_review_requested':sum(r.get('model_status')=='needs_review' for r in results),
                   'failure_stages':dict(collections.Counter(r['stage'] for r in results if r['status']=='failed')),
@@ -186,6 +197,13 @@ class Registry:
         results = read(folder / 'private/results.json')
         if results is None:
             results = [read(p) for p in sorted((folder / 'private/records').glob('*/result.json'))]
+        # Index paired outputs by (source input, backend), without rewriting frozen artifacts.
+        paired=config.get('program_id')=='morphology_control_20261107' and config.get('changed_factor')=='word_morpheme_form_and_tag_provider'
+        if paired:
+            if any(r.get('backend') not in ('qwen','kiwi') for r in results):raise ValueError('invalid_morphology_backend')
+            results=[{**r,'source_input_id':r['id'],'id':r['id']+'_'+r['backend']} for r in results]
+            config={**config,'metric_contract':'paired_morphology_v1','input_count':metrics.get('planned_records',12),
+                'registry_projection':'composite display IDs and counting contract; original run files unchanged'}
         if len({r['id'] for r in results}) != len(results):
             raise ValueError('duplicate_result_ids')
         status = ('preflight_failed' if (folder / 'preflight_failure.json').exists() else
@@ -225,6 +243,9 @@ class Registry:
                     'validation_contract': validation_contract,
                     'input': actual.get('private/inputs.jsonl'),
                     'manifest': actual.get('artifact_hashes.json')}
+        if paired:
+            evidence['kg']=config.get('graph_sha256')
+            evidence['prompts']=config.get('prompt_sha256',{})
         categories = dict(collections.Counter(filter(None, map(error_category, results))))
         data = {'run_id': run_id, 'state': status, 'config': config, 'metrics': metrics,
                 'versions': evidence, 'version_manifest': read(folder/'version_manifest.json', {}),

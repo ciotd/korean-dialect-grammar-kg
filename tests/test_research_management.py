@@ -35,6 +35,20 @@ class ManagementTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.project=Path(self.tmp.name);self.registry=Registry(self.project)
     def tearDown(self):self.tmp.cleanup()
+    def test_paired_morphology_index_preserves_raw_ids_and_counts(self):
+        f=fixture(self.project);config=json.loads((f/'config.json').read_text())
+        config.update(program_id='morphology_control_20261107',changed_factor='word_morpheme_form_and_tag_provider')
+        write(f/'config.json',config)
+        rows=[{'id':'S1','backend':b,'input_text':'새 문장','output_text':'새 문장','status':'generated_requires_human_review','pipeline_completed':True,'api_attempts':n} for b,n in [('qwen',4),('kiwi',3)]]
+        write(f/'private/results.json',rows)
+        write(f/'metrics.json',{'records':2,'planned_records':2,'unattempted_records':0,'complete_pairs':1,'api_attempts':7,
+            'by_backend':{b:{'records':1,'complete':1,'api_attempts':n} for b,n in [('qwen',4),('kiwi',3)]}})
+        seal(f);before=(f/'private/results.json').read_bytes();self.registry.register('run_a')
+        self.assertEqual(self.registry.get('run_a')['integrity']['status'],'light_check_passed')
+        self.assertEqual([r['id'] for r in self.registry.records('run_a')],['S1_qwen','S1_kiwi'])
+        self.assertEqual((f/'private/results.json').read_bytes(),before)
+        metrics=json.loads((f/'metrics.json').read_text());metrics['api_attempts']=8;write(f/'metrics.json',metrics);seal(f);self.registry.register('run_a')
+        self.assertIn('metrics.api_attempts',self.registry.get('run_a')['integrity']['mismatches'])
     def test_reference_status_requires_matching_manifest_hash(self):
         root=self.project/'data/derived_private/gyeongsang_reference50_20261030_v1'
         root.mkdir(parents=True)

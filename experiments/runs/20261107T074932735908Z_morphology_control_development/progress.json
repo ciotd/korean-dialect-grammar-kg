@@ -1,0 +1,9 @@
+{
+  "done": 12,
+  "total": 12,
+  "elapsed_seconds": 354.8,
+  "eta_seconds": 0.0,
+  "eta_basis": "observed_average_after_three_branches",
+  "status": "completed",
+  "message": "양쪽 출력 저장; 품질은 별도 검토"
+}

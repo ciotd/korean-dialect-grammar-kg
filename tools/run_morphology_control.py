@@ -114,8 +114,9 @@ def execute(args):
             'transport_meta_records':len(metas),'wall_seconds':time.perf_counter()-start,'stop_reason':stop,'naturalness':None,'independent_accuracy':None}
         save(out/'metrics.json',metrics);save(out/'postflight.json',{'graph_unchanged':sha(graph_path.read_bytes())==config['graph_sha256'],
             'code_unchanged':all(sha((ROOT/p).read_bytes())==h for p,h in hashes.items())})
+        progress('failed' if stop else 'completed',stop or '양쪽 출력 저장; 품질은 별도 검토')
         save(out/'artifact_hashes.json',{str(p.relative_to(out)):sha(p.read_bytes()) for p in out.rglob('*') if p.is_file() and p.name!='artifact_hashes.json'})
-        register_run(ROOT,out);progress('failed' if stop else 'completed',stop or '양쪽 출력 저장; 품질은 별도 검토')
+        register_run(ROOT,out)
         save(ROOT/'experiments/analyses/morphology_control_20261107/latest.json',{'run':str(out.relative_to(ROOT))})
     print(out,flush=True)
 

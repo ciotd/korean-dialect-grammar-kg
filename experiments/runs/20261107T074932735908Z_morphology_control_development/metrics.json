@@ -1,0 +1,40 @@
+{
+  "records": 12,
+  "planned_records": 12,
+  "unattempted_records": 0,
+  "complete_pairs": 6,
+  "by_backend": {
+    "qwen": {
+      "records": 6,
+      "complete": 6,
+      "api_attempts": 24,
+      "record_seconds": 188.04000120027922,
+      "reported_usage": {
+        "prompt_tokens": 38985,
+        "completion_tokens": 9961,
+        "total_tokens": 48946
+      },
+      "calls_without_usage": 0,
+      "delivered_candidates": 5
+    },
+    "kiwi": {
+      "records": 6,
+      "complete": 6,
+      "api_attempts": 18,
+      "record_seconds": 162.59773860033602,
+      "reported_usage": {
+        "prompt_tokens": 37617,
+        "completion_tokens": 8440,
+        "total_tokens": 46057
+      },
+      "calls_without_usage": 0,
+      "delivered_candidates": 9
+    }
+  },
+  "api_attempts": 42,
+  "transport_meta_records": 42,
+  "wall_seconds": 354.1630122999195,
+  "stop_reason": null,
+  "naturalness": null,
+  "independent_accuracy": null
+}
