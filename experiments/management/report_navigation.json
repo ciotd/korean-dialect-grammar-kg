@@ -289,5 +289,12 @@
     "local_path": "experiments/analyses/current_state_20261109/report.html",
     "summary": "기존 기록과 Orca 두 리뷰어 대조. 현재 흐름,12모듈·26묶음 완료/미완료, 실패 위치, 다음 전체 검사 대상. KG·실행 코드·새 모델 호출 변경 없음.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "11월9일 · 전체 KG 목록·구조 검사와 수정안",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/kg_structure_audit_20261109/private/report.html",
+    "local_path": "experiments/analyses/kg_structure_audit_20261109/private/report.html",
+    "summary": "1491노드·5037관계 및56규칙·57분기 전수 목록 검사. 두 리뷰어 대조,설명·조건·전달 불일치와 수정안. 새 예문/Qwen 실행 및 KG 수정 없음.",
+    "delivery": "local_html_desktop"
   }
 ]
