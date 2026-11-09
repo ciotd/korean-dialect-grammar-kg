@@ -1,0 +1,30 @@
+{
+  "records": 50,
+  "planned_records": 50,
+  "unattempted_records": 0,
+  "valid_output_records": 48,
+  "changed_records": 39,
+  "by_policy": {
+    "kiwi_focused": {
+      "records": 50,
+      "complete": 48,
+      "api_attempts": 146,
+      "branch_seconds": 2085.5007411004044,
+      "tokens": 576731
+    }
+  },
+  "scope_calls": 50,
+  "scope_complete": 49,
+  "api_attempts": 196,
+  "transport_meta_records": 196,
+  "reported_usage": {
+    "prompt_tokens": 506509,
+    "completion_tokens": 117401,
+    "total_tokens": 623910
+  },
+  "calls_without_usage": 0,
+  "wall_seconds": 2241.1812783996575,
+  "stop_reason": null,
+  "naturalness": null,
+  "independent_accuracy": null
+}

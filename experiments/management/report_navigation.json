@@ -262,5 +262,12 @@
     "local_path": "experiments/analyses/kiwi_default_20261107/private/report.html",
     "summary": "새12문장 두 차례 비교. 기능·본/보조 연결4→5→6/6, 높임 손실 잔류로50건 보류. 실제 출력과 전달 지식·두 검토 결과.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "11월9일 · 최근 보완 방식의 전체 50문장 결과",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/kiwi_focused_full50_20261109/private/report.html",
+    "local_path": "experiments/analyses/kiwi_focused_full50_20261109/private/report.html",
+    "summary": "50건 모두 시도, 48건 전체 처리·2건 단계 실패. 원문/승인 참조/실제 출력과 분석·조건·전달·선택 이유, 토큰·시간을 확인. 자연스러움 점수 아님.",
+    "delivery": "local_html_desktop"
   }
 ]

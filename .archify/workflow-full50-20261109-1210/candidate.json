@@ -1,0 +1,185 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "50문장 재실험에서 실제로 거치는 단계",
+    "quality_profile": "showcase",
+    "output": ".archify/workflow-full50-20261109-1210/pipeline.html",
+    "repository": {
+      "url": "https://github.com/ciotd/korean-dialect-grammar-kg.git",
+      "revision": "f583120cb9a379f2dfe00a3dd51f427cb879f321",
+      "link_mode": "local-only"
+    },
+    "locale": "ko"
+  },
+  "lanes": [
+    {
+      "id": "analysis",
+      "label": "읽고 찾기"
+    },
+    {
+      "id": "generation",
+      "label": "쓰고 확인하기"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "kiwi",
+      "lane": "analysis",
+      "col": 0,
+      "type": "backend",
+      "label": "Kiwi 형태 분석",
+      "sublabel": "어간·어미·조사 읽기",
+      "sources": [
+        {
+          "path": "src/kg_pipeline/kiwi_default.py",
+          "line": 33,
+          "end_line": 36
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "lane": "analysis",
+      "col": 1,
+      "type": "backend",
+      "label": "Qwen 절 구획",
+      "sublabel": "문장 안의 범위 구분",
+      "sources": [
+        {
+          "path": "src/kg_pipeline/kiwi_default.py",
+          "line": 37,
+          "end_line": 49
+        }
+      ]
+    },
+    {
+      "id": "meaning",
+      "lane": "analysis",
+      "col": 2,
+      "type": "backend",
+      "label": "Qwen 의미 판단",
+      "sublabel": "금지·요청과 역할 연결",
+      "sources": [
+        {
+          "path": "src/kg_pipeline/multi_agent.py",
+          "line": 424,
+          "end_line": 434
+        }
+      ]
+    },
+    {
+      "id": "lookup",
+      "lane": "analysis",
+      "col": 3,
+      "type": "database",
+      "label": "KG 조건 조회",
+      "sublabel": "조건에 맞는 지식 찾기",
+      "sources": [
+        {
+          "path": "src/kg_pipeline/multi_agent.py",
+          "line": 435,
+          "end_line": 451
+        }
+      ]
+    },
+    {
+      "id": "writer",
+      "lane": "generation",
+      "col": 3,
+      "type": "backend",
+      "label": "Qwen 문장 작성",
+      "sublabel": "뜻·시제·높임을 보존",
+      "sources": [
+        {
+          "path": "src/kg_pipeline/multi_agent.py",
+          "line": 460,
+          "end_line": 470
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "lane": "generation",
+      "col": 4,
+      "type": "security",
+      "label": "Qwen 오류 진단",
+      "sublabel": "결과를 자동 교체하지 않음",
+      "sources": [
+        {
+          "path": "src/kg_pipeline/multi_agent.py",
+          "line": 472,
+          "end_line": 480
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "lane": "generation",
+      "col": 5,
+      "type": "database",
+      "label": "결과·기록 저장",
+      "sublabel": "실패와 원시 출력도 보존",
+      "sources": [
+        {
+          "path": "tools/run_kiwi_default.py",
+          "line": 111,
+          "end_line": 125
+        }
+      ]
+    }
+  ],
+  "mainPath": [
+    "kiwi",
+    "scope",
+    "meaning",
+    "lookup",
+    "writer",
+    "review",
+    "record"
+  ],
+  "edges": [
+    {
+      "from": "kiwi",
+      "to": "scope"
+    },
+    {
+      "from": "scope",
+      "to": "meaning"
+    },
+    {
+      "from": "meaning",
+      "to": "lookup"
+    },
+    {
+      "from": "lookup",
+      "to": "writer"
+    },
+    {
+      "from": "writer",
+      "to": "review"
+    },
+    {
+      "from": "review",
+      "to": "record"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "실제 실행 조건",
+      "items": [
+        "Kiwi가 형태를 읽고 Qwen을 문장당 네 번 호출합니다.",
+        "의미 담당이 본동작과 보조동작을 명시적으로 연결합니다."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "보고서 읽는 방법",
+      "items": [
+        "최종 문장은 Qwen 원시 출력이며 자동 수정하지 않습니다.",
+        "검토자의 지적과 문자열 변화는 정확도 점수가 아닙니다."
+      ]
+    }
+  ]
+}
