@@ -269,5 +269,18 @@
     "local_path": "experiments/analyses/kiwi_focused_full50_20261109/private/report.html",
     "summary": "50건 모두 시도, 48건 전체 처리·2건 단계 실패. 원문/승인 참조/실제 출력과 분석·조건·전달·선택 이유, 토큰·시간을 확인. 자연스러움 점수 아님.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "11월9일 · 50문장 결과 공유 주소",
+    "url": "https://gyeongsang-kg-full50-20261109.piai-2-3424.chatgpt.site/#case-DEV002",
+    "summary": "로그인 없이 링크로 열람하는 원본 보고서 공유 사본. 원시 실행·인증정보 제외.",
+    "delivery": "public_site"
+  },
+  {
+    "title": "11월9일 · 분석/생성 오류 구분과 두 검토자 설계 검토",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/full50_error_design_20261109/report.html",
+    "local_path": "experiments/analyses/full50_error_design_20261109/report.html",
+    "summary": "실제 단계별 원인과 공통 약속 정리→분업 통제 비교 설계. 코드/KG 변경·새 Qwen 실행 없음.",
+    "delivery": "local_html_desktop"
   }
 ]
