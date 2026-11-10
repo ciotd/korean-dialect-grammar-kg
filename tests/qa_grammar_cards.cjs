@@ -1,0 +1,27 @@
+const {chromium}=require('C:/Users/ciot28/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('fs'),path=require('path');
+const out=path.resolve(__dirname,'../experiments/validation/grammar_cards_20261028/private');fs.mkdirSync(out,{recursive:true});
+(async()=>{
+ const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ const context=await browser.newContext({viewport:{width:1440,height:1000}}),page=await context.newPage(),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));const base='http://127.0.0.1:8766';
+ await page.goto(base+'/reports/grammar-cards/report.html');await page.waitForFunction(()=>document.querySelectorAll('#inputSelect option').length===50);
+ if(await page.locator('#diagnosisRows tr').count()!==15)throw Error('diagnosis_count');
+ await page.screenshot({path:out+'/report_desktop.png'});
+ await page.locator('#inputSelect').selectOption('ADVCE008A');await page.locator('#trace').scrollIntoViewIfNeeded();
+ await page.screenshot({path:out+'/trace.png'});
+ await page.setViewportSize({width:390,height:844});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:out+'/report_mobile.png'});
+ const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+ await page.goto(base+'/reports/grammar-cards/review.html');await page.waitForFunction(()=>document.querySelectorAll('#question option').length===50);
+ if(await page.locator('.answer').count()!==3)throw Error('blind_triple');
+ await page.locator('.naturalness').first().selectOption('4');await page.reload();await page.waitForFunction(()=>document.querySelector('.naturalness').value==='4');
+ const saved=(await page.request.get(base+'/api/grammar-ratings'));const actual=await saved.json();
+ if(actual.ratings.length)throw Error('QA_must_not_write_actual_scores');
+ await page.evaluate(()=>localStorage.clear());await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.answer').length===3);
+ await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:out+'/human_review.png'});
+ const keyStatus=(await page.request.get(base+'/reports/grammar-cards/blind_key.json')).status();
+ const info=await (await page.request.get(base+'/api/info')).json();const newLinks=info.reports.filter(x=>x.url.includes('grammar-cards'));if(newLinks.length!==2)throw Error('navigation');
+ const result={diagnosis_rows:15,inputs:50,blind_answers_per_input:3,local_draft_persistence:true,actual_scores_not_written:true,mobile_overflow:overflow,browser_errors:errors,blind_key_http_status:keyStatus,new_navigation_links:2};
+ fs.writeFileSync(out+'/browser_qa.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));
+ await browser.close();if(overflow||errors.length||keyStatus!==404)process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(1)});

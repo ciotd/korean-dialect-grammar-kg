@@ -1,0 +1,100 @@
+{
+  "node_types": {
+    "Framework": 1,
+    "Module": 12,
+    "GrammarConstruction": 1,
+    "Evidence": 9,
+    "ProcessingScope": 1,
+    "SemanticRule": 6,
+    "GrammarFeature": 7,
+    "AnalysisConcept": 5,
+    "SourceAtom": 5,
+    "ApplicabilityBranch": 6,
+    "Condition": 11,
+    "FeatureValue": 11,
+    "Realization": 6
+  },
+  "relations": {
+    "HAS_MODULE": 12,
+    "IN_MODULE": 25,
+    "SUPPORTED_IN": 1,
+    "HAS_USAGE": 6,
+    "DESCRIBES_USAGE": 26,
+    "REFINES": 6,
+    "ANY_BRANCH": 6,
+    "ALL": 42,
+    "ACCEPTS": 13,
+    "DEFINED_BY": 13,
+    "SUPPORTED_BY": 41,
+    "REALIZES": 6,
+    "HAS_RECORDED_VARIANT": 1
+  },
+  "feature_schema": {
+    "clause_role": [
+      "main",
+      "embedded",
+      "quoted"
+    ],
+    "speech_act": [
+      "information_question",
+      "statement",
+      "request",
+      "rhetorical_question",
+      "confirmation"
+    ],
+    "addressee_level": [
+      "plain",
+      "polite"
+    ],
+    "question_kind": [
+      "polar",
+      "wh"
+    ],
+    "predicate_class": [
+      "verb",
+      "adjective",
+      "copula",
+      "negative_copula"
+    ],
+    "prefinal_type": [
+      "none",
+      "eoss",
+      "gess",
+      "deo",
+      "other"
+    ],
+    "tense": [
+      "past",
+      "present",
+      "future"
+    ],
+    "subject_honorific": [
+      "absent",
+      "present"
+    ]
+  },
+  "support_scope": {
+    "clause_role": [
+      "main"
+    ],
+    "speech_act": [
+      "information_question"
+    ],
+    "addressee_level": [
+      "plain"
+    ],
+    "predicate_class": [
+      "verb",
+      "adjective",
+      "copula"
+    ],
+    "prefinal_type": [
+      "none",
+      "eoss"
+    ],
+    "subject_honorific": [
+      "absent"
+    ]
+  },
+  "new_relations_are_new_implementation_not_inherited_facts": true
+}

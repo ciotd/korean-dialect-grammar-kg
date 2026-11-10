@@ -1,0 +1,19 @@
+{
+  "version": "20261030.1",
+  "basis": "Existing card definitions; interpretation layer, original KG unchanged",
+  "roles": {
+    "GS_GEORO_BLOCK_BECOME": "restriction",
+    "GS_GEORO_BLOCK_GUESS": "restriction",
+    "GS_GEORO_BLOCK_KKEUM": "restriction"
+  },
+  "discourse_required": {
+    "GS_ENDRULE_JI_ASSERT": ["answer", "speaker_commitment"],
+    "GS_ENDRULE_JI_CONFIRM": ["confirmation_question"]
+  },
+  "unresolved_avoid": ["unresolved_final_georo_register_policy", "unresolved_paradigm_cell"],
+  "particle_tags": {
+    "accusative": ["JKO"], "nominative": ["JKS"], "genitive": ["JKG"],
+    "dative_or_target": ["JKB"], "instrumental": ["JKB"],
+    "topic": ["JX"], "only": ["JX"], "limit": ["JX"], "except_only": ["JX"]
+  }
+}

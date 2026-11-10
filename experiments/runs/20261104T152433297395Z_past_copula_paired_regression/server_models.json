@@ -1,0 +1,30 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "Qwen3.8-27B",
+      "object": "model",
+      "created": 1793805875,
+      "owned_by": "vllm",
+      "root": "/root/project/server/server_piai/model/Qwen3.8-27B",
+      "parent": null,
+      "max_model_len": 32768,
+      "permission": [
+        {
+          "id": "modelperm-9b9aca2cd921768e",
+          "object": "model_permission",
+          "created": 1793805875,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}

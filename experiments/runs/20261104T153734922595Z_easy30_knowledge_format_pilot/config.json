@@ -1,0 +1,42 @@
+{
+  "phase": "development",
+  "dataset_role": "reviewer_authored_controlled_pilot_not_independent",
+  "model_id": "Qwen3.8-27B",
+  "kg_dataset": "semantic_grammar_20261105_r10_candidate",
+  "input_count": 30,
+  "arms": [
+    "N",
+    "T",
+    "J"
+  ],
+  "arm_meanings": {
+    "N": "no_external_grammar",
+    "T": "lossless_flat_path_value_text",
+    "J": "nested_json_same_knowledge"
+  },
+  "temperature": 0,
+  "top_p": 1,
+  "seed": 20261103,
+  "max_generation_tokens": 2048,
+  "enable_thinking": false,
+  "automatic_retries": 0,
+  "final_writer": "Qwen",
+  "forced_copy_when_no_knowledge": false,
+  "reference_answers_in_request": false,
+  "system_prompt_sha256": "aa4d4b2a43ed0d5d06c61cbbbcc5e1593139a7cbe3b769a3530d6bd84ece176f",
+  "data_check": {
+    "role": "development",
+    "input_sha256": "f6c4edf81c195aedd11278fe72586e06435ede80fbf68633aaf77ac9cfe56de6",
+    "records": 30,
+    "frozen_overlap_ids": [],
+    "check": "NFC_and_whitespace_normalized_exact_match",
+    "limitation": "Paraphrase/semantic overlap needs human review; prior exposure is not erased."
+  },
+  "input_sha256": "f6c4edf81c195aedd11278fe72586e06435ede80fbf68633aaf77ac9cfe56de6",
+  "naturalness": "not_evaluated",
+  "known_delivery_defects": [
+    "EZ01",
+    "EZ21"
+  ],
+  "metric_contract": "output_observations_not_accuracy"
+}

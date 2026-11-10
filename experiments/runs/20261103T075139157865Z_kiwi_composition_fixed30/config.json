@@ -1,0 +1,21 @@
+{
+  "phase": "diagnostic",
+  "dataset_role": "development_and_regression_subset",
+  "metric_contract": "kiwi_fixed_composition_v1",
+  "input_count": 30,
+  "input_sha256": "7a997c94a52df2c4c4633f0be0779d45832727d2bc9e9599e8a65d7c5fc73323",
+  "model_id": "Kiwi.join 0.23.1",
+  "analysis_model": "saved Qwen analysis; no new call",
+  "kg_dataset": "semantic_questions_20261102_r3",
+  "generator": "Kiwi.join(lm_search=False); integrated copula uses selected KG form directly",
+  "source_runs": [
+    "20261103T072412784953Z_research_loop_dev",
+    "20261103T073106231833Z_research_loop_full50"
+  ],
+  "baseline_run": "20261103T073040472661Z_research_loop_composition_replay",
+  "analysis_calls": 0,
+  "generation_model_calls": 0,
+  "lm_search": false,
+  "comparison": "same frozen analysis, selected usage, original morphs and combining form; replace surface realization implementation only",
+  "limitation": "27 development targets plus3 full50 targets; selection conditional on prior readiness, not full50 translation performance"
+}

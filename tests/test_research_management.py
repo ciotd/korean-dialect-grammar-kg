@@ -35,6 +35,31 @@ class ManagementTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.project=Path(self.tmp.name);self.registry=Registry(self.project)
     def tearDown(self):self.tmp.cleanup()
+    def test_paired_morphology_index_preserves_raw_ids_and_counts(self):
+        f=fixture(self.project);config=json.loads((f/'config.json').read_text())
+        config.update(program_id='morphology_control_20261107',changed_factor='word_morpheme_form_and_tag_provider')
+        write(f/'config.json',config)
+        rows=[{'id':'S1','backend':b,'input_text':'새 문장','output_text':'새 문장','status':'generated_requires_human_review','pipeline_completed':True,'api_attempts':n} for b,n in [('qwen',4),('kiwi',3)]]
+        write(f/'private/results.json',rows)
+        write(f/'metrics.json',{'records':2,'planned_records':2,'unattempted_records':0,'complete_pairs':1,'api_attempts':7,
+            'by_backend':{b:{'records':1,'complete':1,'api_attempts':n} for b,n in [('qwen',4),('kiwi',3)]}})
+        seal(f);before=(f/'private/results.json').read_bytes();self.registry.register('run_a')
+        self.assertEqual(self.registry.get('run_a')['integrity']['status'],'light_check_passed')
+        self.assertEqual([r['id'] for r in self.registry.records('run_a')],['S1_qwen','S1_kiwi'])
+        self.assertEqual((f/'private/results.json').read_bytes(),before)
+        metrics=json.loads((f/'metrics.json').read_text());metrics['api_attempts']=8;write(f/'metrics.json',metrics);seal(f);self.registry.register('run_a')
+        self.assertIn('metrics.api_attempts',self.registry.get('run_a')['integrity']['mismatches'])
+    def test_reference_status_requires_matching_manifest_hash(self):
+        root=self.project/'data/derived_private/gyeongsang_reference50_20261030_v1'
+        root.mkdir(parents=True)
+        content=b'{}\n';(root/'references.jsonl').write_bytes(content)
+        write(root/'manifest.json',{'count':1,'references_sha256':digest(content)})
+        self.registry.status_document()
+        doc=self.project/'docs/research/RESEARCH_STATUS.md'
+        self.assertIn('사용자 승인 정답 1개 등록',doc.read_text(encoding='utf-8'))
+        (root/'references.jsonl').write_bytes(b'changed')
+        self.registry.status_document()
+        self.assertIn('등록 미확인',doc.read_text(encoding='utf-8'))
     def test_runtime_validation_contract_support(self):
         a=fixture(self.project);b=fixture(self.project,'run_b')
         for f in (a,b):
@@ -58,6 +83,12 @@ class ManagementTests(unittest.TestCase):
     def test_preflight_failure_is_visible(self):
         f=fixture(self.project,completed=False);write(f/'preflight_failure.json',{'error_type':'ConnectionError'});self.registry.sync()
         self.assertEqual(self.registry.get('run_a')['state'],'preflight_failed')
+    def test_fatal_failure_is_not_success_even_with_sealed_metrics(self):
+        f=fixture(self.project);write(f/'failure.json',{'stage':'schedule_serialization','error_type':'TypeError'})
+        seal(f);before={str(p):digest(p.read_bytes()) for p in f.rglob('*') if p.is_file()}
+        self.registry.register('run_a')
+        self.assertEqual(self.registry.get('run_a')['state'],'failed')
+        self.assertEqual(before,{str(p):digest(p.read_bytes()) for p in f.rglob('*') if p.is_file()})
     def test_corrupt_run_does_not_hide_other_runs(self):
         fixture(self.project);f=fixture(self.project,'run_b');(f/'config.json').write_text('{')
         result=self.registry.sync();self.assertEqual(result['total_runs'],1);self.assertIn('index_error',result['indexed'][1])
@@ -140,6 +171,50 @@ class ServerTests(unittest.TestCase):
         self.assertEqual(json.loads(self.get('/reports/search-execution/blind_review.json'))[0]['id'],'S1')
         with self.assertRaises(urllib.error.HTTPError) as e:self.get('/reports/search-execution/blind_review_key.json')
         self.assertEqual(e.exception.code,404)
+    def test_rerun_report_serves_only_html_and_css(self):
+        root=self.project/'experiments/analyses/qwen_rerun_20261030/private'
+        root.mkdir(parents=True)
+        (root/'report.html').write_text('<h1>Report</h1>',encoding='utf-8')
+        (root/'report.css').write_text('body{color:black}',encoding='utf-8')
+        (root/'cases.json').write_text('[]',encoding='utf-8')
+        self.assertIn(b'Report',self.get('/reports/qwen-rerun-20261030/report.html'))
+        self.assertIn(b'color:black',self.get('/reports/qwen-rerun-20261030/report.css'))
+        for name in ('cases.json','../cases.json','%2e%2e/cases.json'):
+            with self.assertRaises(urllib.error.HTTPError) as e:self.get('/reports/qwen-rerun-20261030/'+name)
+            self.assertEqual(e.exception.code,404)
+    def test_claude_comparison_report_serves_only_html_and_css(self):
+        root=self.project/'experiments/analyses/claude_comparison_20261030/private'
+        root.mkdir(parents=True)
+        (root/'report.html').write_text('<h1>Report</h1>',encoding='utf-8')
+        (root/'report.css').write_text('body{color:black}',encoding='utf-8')
+        (root/'cases.json').write_text('[]',encoding='utf-8')
+        self.assertIn(b'Report',self.get('/reports/claude-comparison-20261030/report.html'))
+        self.assertIn(b'color:black',self.get('/reports/claude-comparison-20261030/report.css'))
+        for name in ('cases.json','../cases.json','%2e%2e/cases.json'):
+            with self.assertRaises(urllib.error.HTTPError) as e:self.get('/reports/claude-comparison-20261030/'+name)
+            self.assertEqual(e.exception.code,404)
+    def test_card_delivery_report_serves_only_html_and_css(self):
+        root=self.project/'experiments/analyses/card_delivery_20261030/private'
+        root.mkdir(parents=True)
+        (root/'report.html').write_text('<h1>Report</h1>',encoding='utf-8')
+        (root/'report.css').write_text('body{color:black}',encoding='utf-8')
+        (root/'cases.json').write_text('[]',encoding='utf-8')
+        self.assertIn(b'Report',self.get('/reports/card-delivery-20261030/report.html'))
+        self.assertIn(b'color:black',self.get('/reports/card-delivery-20261030/report.css'))
+        for name in ('cases.json','../cases.json','%2e%2e/cases.json'):
+            with self.assertRaises(urllib.error.HTTPError) as e:self.get('/reports/card-delivery-20261030/'+name)
+            self.assertEqual(e.exception.code,404)
+    def test_card_revision_report_serves_only_html_and_css(self):
+        root=self.project/'experiments/analyses/card_revision_20261030/private'
+        root.mkdir(parents=True)
+        (root/'report.html').write_text('<h1>Report</h1>',encoding='utf-8')
+        (root/'report.css').write_text('body{color:black}',encoding='utf-8')
+        (root/'cases.json').write_text('[]',encoding='utf-8')
+        self.assertIn(b'Report',self.get('/reports/card-revision-20261030/report.html'))
+        self.assertIn(b'color:black',self.get('/reports/card-revision-20261030/report.css'))
+        for name in ('cases.json','../cases.json','%2e%2e/cases.json'):
+            with self.assertRaises(urllib.error.HTTPError) as e:self.get('/reports/card-revision-20261030/'+name)
+            self.assertEqual(e.exception.code,404)
     def test_rebinding_host_rejected(self):
         req=urllib.request.Request(self.url+'/api/runs',headers={'Host':'evil.example'})
         with self.assertRaises(urllib.error.HTTPError) as e:urllib.request.urlopen(req)

@@ -1,0 +1,17 @@
+{
+  "version": "kg_cards_20261030_v3",
+  "parent": "kg_cards_20261028_v2",
+  "source_dataset": "kg_v3_evidence_20261019_r2",
+  "parent_cards_sha256": "4cd0f4be0eb00d530a61b6981fd573651b8e64f71680970ec8b98b1a0cd66c71",
+  "spec_sha256": "e9022ca388ecd1620ae5b6a8b7837a197e083725226ae8fa3d1514dd2530d1f1",
+  "builder_sha256": "6e1f8648c464c13297beaf3f268c329015be06b252624c90a0c8b09dfde323b0",
+  "cards_content_sha256": "8dd6d456f2da1826c6fb8e90754423fa2e5fa423281669653807d82b371f6b62",
+  "provenance_content_sha256": "4607e658f6f217969df71d954f683973c22cc4decd17e0e9e4bbba916c8fc69a",
+  "reference_sha256": "f707ee7a89c8922bd71c776172e1bc9d926e7688c76f4da6de330c9e43340373",
+  "source_pages": {
+    "D02": "cb0319822b1868365289754b261fb6842b6583397d1bc89f94d0e62c34010f5a",
+    "D05": "f9cba93db53c77ae15527cd62173753687dad67053c814c04f50b82b47430aaa",
+    "D04": "7bbd2db727aad1bf42d56e9e8eb14061e5e72836361a08da1adf43d7f74439e2"
+  },
+  "method": "Codex-authored generalizations grounded in documents and user-approved examples; deterministic build; no Qwen runtime card generation"
+}

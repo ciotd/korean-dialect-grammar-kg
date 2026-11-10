@@ -1,0 +1,32 @@
+{
+  "version": "filter_ablation_v1",
+  "date": "2026-11-02T06:58:11.443625+00:00",
+  "inputs": 50,
+  "arms": [
+    "filtered",
+    "unfiltered"
+  ],
+  "architecture": "multi",
+  "repeats": 1,
+  "seed": 20261028,
+  "workers": 2,
+  "max_completion_tokens": 6000,
+  "automatic_retries": 0,
+  "max_calls": 200,
+  "question": "Does removing the pre-planner card selection policy improve selection and generation?",
+  "treatment": "all IDs from the SAME stored actual query; remove initial top48 rank, per-word top3 compatibility selection, and program candidate guidance; deterministic ID order; no token truncation",
+  "control": "current existing ranking/compatibility/guidance code replayed on frozen actual query; context rebuilt using current identical contract; new planning and generation, not historical output",
+  "fixed": "source, morphology, grammar, actual query/results, card version/content, planner/worker prompts, seed/sampling, downstream checks and repairs",
+  "retained": "intrinsic candidate/reference/restriction roles and existing user restrictions; post-planning and post-generation linguistic checks",
+  "derived_changes": "card_usage and request_id follow different card pools; worker plan/card subset follow Qwen choices; this is bundled policy ablation, not isolated filter-vs-length-vs-order causality",
+  "evidence": "stored graph paths preserve actual Concept IDs and relations; no new graph query or analysis calls",
+  "references": "not loaded during prepare/run; user-approved references used only in post-run display",
+  "test_role": "exposed regression/diagnostic set, not held-out generalization; one repeat cannot establish stochastic reliability",
+  "failure_policy": "no truncation/retry/tuning during run; retain context overflow and malformed replies as failures, not unchanged successes; stop batch on service unavailability",
+  "cost_scope": "new planning and generation only; excludes reused analysis and retrieval",
+  "approval": {
+    "channel": "chat",
+    "quote": "진행",
+    "preceding_scope": "기존 선별 사용/선별 우회, 전체50, Qwen 직접 선택, 카드내용과 후단검사 유지"
+  }
+}

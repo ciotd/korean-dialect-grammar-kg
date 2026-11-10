@@ -1,0 +1,5 @@
+{
+  "stage": "schedule_serialization",
+  "error_type": "TypeError",
+  "detail": "Path + str; corrected before retry; zero chat calls"
+}

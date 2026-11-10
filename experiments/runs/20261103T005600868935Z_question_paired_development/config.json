@@ -1,0 +1,47 @@
+{
+  "phase": "development",
+  "dataset_role": "development",
+  "metric_contract": "paired_question_diagnostic_v1",
+  "model_id": "Qwen3.8-27B",
+  "kg_dataset": "semantic_questions_20261102_r3",
+  "input_count": 32,
+  "distinct_source_cases": 16,
+  "input_sha256": "48482e01cde7b1f0530447fe5974a18896afa4049da07f3d621e74f070aa7844",
+  "seed": 20261103,
+  "temperature": 0,
+  "top_p": 1,
+  "enable_thinking": false,
+  "analysis_max_tokens": 2048,
+  "generation_max_tokens": 1024,
+  "timeout_seconds": 90,
+  "workers": 2,
+  "automatic_retries": 0,
+  "conditions": [
+    "manual",
+    "model"
+  ],
+  "question_context": "model receives text+Kiwi only; manual meanings are hypotheses, not uniquely inferable text gold",
+  "generation_payload": "same compact fields in both arms; native accepted answers/alternatives never supplied",
+  "knowledge_access": "frozen JSON graph via existing edge reader; not live Neo4j",
+  "Q16": "duplicate missing-field technical case, not independent linguistic item",
+  "manual_corrections": [
+    {
+      "id": "Q15",
+      "field": "polarity",
+      "from": "positive",
+      "to": "negative"
+    }
+  ],
+  "python": "3.12.14",
+  "kiwipiepy": "0.23.1",
+  "dataset_check": {
+    "role": "development",
+    "input_sha256": "48482e01cde7b1f0530447fe5974a18896afa4049da07f3d621e74f070aa7844",
+    "records": 32,
+    "frozen_overlap_ids": [],
+    "check": "NFC_and_whitespace_normalized_exact_match",
+    "limitation": "Paraphrase/semantic overlap needs human review; prior exposure is not erased."
+  },
+  "model_checkpoint_revision": "not_exposed_by_server",
+  "vllm_version": "not_exposed_by_server"
+}

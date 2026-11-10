@@ -1,0 +1,122 @@
+{
+  "scope": "전체 목록·구조 검사. 자연어 예문·Qwen 신규 실행 및 PDF 의미 검증 아님",
+  "graph": {
+    "version": "semantic_grammar_20261107_separated_20261107T045555351994Z",
+    "nodes": 1491,
+    "edges": 5037,
+    "node_types": {
+      "Framework": 1,
+      "Claim": 29,
+      "SourceAtom": 721,
+      "AnalysisConcept": 48,
+      "Construction": 54,
+      "GrammarFeature": 23,
+      "AggregateInterface": 11,
+      "TechnicalResponsibility": 54,
+      "Module": 12,
+      "GrammarConstruction": 33,
+      "ProcessingScope": 5,
+      "SemanticRule": 56,
+      "ApplicabilityBranch": 57,
+      "Condition": 145,
+      "FeatureValue": 170,
+      "Realization": 56,
+      "UsageObservation": 10,
+      "ImplementationDecision": 5,
+      "ResearchCandidate": 1
+    }
+  },
+  "lineage": {
+    "original_evidence_graph": {
+      "nodes": 1625,
+      "edges": 6167,
+      "duplicate_node_ids": [],
+      "duplicate_edge_ids": [],
+      "dangling": [],
+      "isolated": [],
+      "meaning_verified": false
+    },
+    "restored_integrated_graph": {
+      "nodes": 2320,
+      "edges": 7476,
+      "duplicate_node_ids": [],
+      "duplicate_edge_ids": [],
+      "dangling": [],
+      "isolated": [
+        "EV_Q_SCOPE"
+      ],
+      "meaning_verified": false
+    },
+    "original_jsonl_hashes_match_integrated_header": {
+      "nodes": true,
+      "edges": true
+    }
+  },
+  "checks": {
+    "duplicate_node_ids": [],
+    "duplicate_edge_ids": [],
+    "dangling_edges": [],
+    "duplicate_relation_triples": 0,
+    "isolated_nodes": [],
+    "weak_components": 1,
+    "component_sizes": [
+      1491
+    ],
+    "runtime_relation_type_errors": 0,
+    "reader_compiles_all_rules": 56,
+    "branches": 57,
+    "restore_canonical_equal": true,
+    "restored_nodes": 2320,
+    "restored_edges": 7476,
+    "graph_file_matches_manifest": true
+  },
+  "issue_counts": {
+    "no_direct_module_edge": 6
+  },
+  "same_effective_condition_groups": [],
+  "mixed_note_pattern_rules": 37,
+  "mixed_note_pattern_delivered_rules": 15,
+  "no_eligible_observation_rules": [
+    "SEM_Q_C_POLAR",
+    "SEM_Q_C_WH",
+    "SEM_Q_C_PAST_POLAR",
+    "SEM_Q_C_PAST_WH",
+    "SEM_DECL_HAEYE_GEODEUN",
+    "INT_PART_DATIVE_INDE",
+    "INT_PART_SIMILAR_MAENCHIRO",
+    "INT_PART_MEASURE_MANCHI",
+    "INT_PART_FOCUS_SA",
+    "INT_PART_EXCEPT_BAKKI",
+    "INT_PART_UNTIL_KKEOJI",
+    "INT_NOM_P3_YA_GA_JA",
+    "INT_NOM_WH_NU",
+    "INT_NOM_REFL_JI",
+    "INT_CONN_COND_MO",
+    "INT_CONN_INTENT_LLAKKO",
+    "INT_CONN_PURPOSE_GURO",
+    "INT_CONN_GURO_BLOCK_BECOME",
+    "INT_CONN_GEOLLANG",
+    "INT_CONN_INTERRUPT_DA",
+    "INT_CONN_QUOTE_KKO",
+    "INT_TAM_GET_GEOT",
+    "INT_NEG_SHORT_AN",
+    "INT_Q_CONFIRM_ANIGA",
+    "INT_END_HORT_POLITE_IPSIDEO",
+    "INT_END_Q_CONFIRM_JE",
+    "INT_END_PROHIB_MAISO",
+    "INT_CAUS_CONTRACT_AARA",
+    "INT_AUX_BEORIDA_PPIDA",
+    "INT_AUX_GA_BODA_BAE"
+  ],
+  "frozen_hashes": {
+    "knowledge\\authored\\semantic_grammar_20261107_separated_r1\\private\\20261107T045555351994Z\\graph.json": "69688a7d9cc1ebf066531b810ff5afb5a25920e50bbdc59dc4334189a2e9fccc",
+    "knowledge\\authored\\semantic_grammar_20261107_separated_r1\\private\\20261107T045555351994Z\\audit.json": "53c85db4eddb1555d7896754d8effd9db72103b9b53e4d5213d1acc0f6eaeffb",
+    "knowledge\\authored\\semantic_grammar_20261107_separated_r1\\private\\20261107T045555351994Z\\manifest.json": "2b90395acb23e3fac0885aeafe0467ffb8c8bc9dee2135fc63aa318a819cd146",
+    "src/kg_pipeline/integrated.py": "ae845d86265581557c85c0e87eff4d9ad3ba57b5886f202015f7517f4e2524e8",
+    "src/kg_pipeline/multi_agent.py": "de29d48d1a936ae49c592f65f42e2a713177cb008d6fc743b8f95def9eb166d6",
+    "src/kg_pipeline/kiwi_default.py": "2e26706b84c77fb6cac1e3495c53bf83215cc1ecd0a2610a06b2f912ddfcb75f"
+  },
+  "new_qwen_calls": 0,
+  "all_nodes_meaning_verified": false,
+  "all_pdf_evidence_verified": false
+}

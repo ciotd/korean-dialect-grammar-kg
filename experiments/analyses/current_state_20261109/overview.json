@@ -1,0 +1,814 @@
+{
+  "date": "2026-11-09",
+  "scope": "Stage 1: existing artifact inventory; no new Qwen, KG edits or full grammar validation",
+  "graph": {
+    "path": "knowledge\\authored\\semantic_grammar_20261107_separated_r1\\private\\20261107T045555351994Z\\graph.json",
+    "version": "semantic_grammar_20261107_separated_20261107T045555351994Z",
+    "sha256": "69688a7d9cc1ebf066531b810ff5afb5a25920e50bbdc59dc4334189a2e9fccc",
+    "nodes": 1491,
+    "edges": 5037,
+    "types": {
+      "Framework": 1,
+      "Claim": 29,
+      "SourceAtom": 721,
+      "AnalysisConcept": 48,
+      "Construction": 54,
+      "GrammarFeature": 23,
+      "AggregateInterface": 11,
+      "TechnicalResponsibility": 54,
+      "Module": 12,
+      "GrammarConstruction": 33,
+      "ProcessingScope": 5,
+      "SemanticRule": 56,
+      "ApplicabilityBranch": 57,
+      "Condition": 145,
+      "FeatureValue": 170,
+      "Realization": 56,
+      "UsageObservation": 10,
+      "ImplementationDecision": 5,
+      "ResearchCandidate": 1
+    },
+    "matches_latest_run": true
+  },
+  "modules": [
+    {
+      "id": "M01",
+      "title": "동사",
+      "direct_rule_ids": [
+        "INT_LEAD_DECL_PAST_DA",
+        "INT_LEAD_DECL_PRESENT_DA",
+        "INT_LEAD_REQUEST_JU_MAIN",
+        "SEM_Q_V_POLAR",
+        "SEM_Q_V_WH"
+      ],
+      "direct_rule_count": 5,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M02",
+      "title": "형용사·계사",
+      "direct_rule_ids": [
+        "INT_LEAD_DECL_PRESENT_DA",
+        "SEM_Q_C_PAST_POLAR",
+        "SEM_Q_C_PAST_WH",
+        "SEM_Q_C_POLAR",
+        "SEM_Q_C_WH",
+        "SEM_Q_V_POLAR",
+        "SEM_Q_V_WH"
+      ],
+      "direct_rule_count": 7,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M03",
+      "title": "명사·대명사·수사",
+      "direct_rule_ids": [
+        "INT_NOM_LOC_YEO",
+        "INT_NOM_P2_NI",
+        "INT_NOM_P3_YA_GA_JA",
+        "INT_NOM_REFL_JI",
+        "INT_NOM_WH_EODE_A",
+        "INT_NOM_WH_MEO",
+        "INT_NOM_WH_NU",
+        "INT_PART_GEN_ZERO"
+      ],
+      "direct_rule_count": 8,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M04",
+      "title": "조사",
+      "direct_rule_ids": [
+        "INT_PART_COMIT_KANG",
+        "INT_PART_COMPARE_KAMA",
+        "INT_PART_DATIVE_INDE",
+        "INT_PART_EXCEPT_BAKKI",
+        "INT_PART_FOCUS_SA",
+        "INT_PART_GEN_ZERO",
+        "INT_PART_MEASURE_MANCHI",
+        "INT_PART_SIMILAR_MAENCHIRO",
+        "INT_PART_UNTIL_KKEOJI"
+      ],
+      "direct_rule_count": 9,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M05",
+      "title": "어미·종결법",
+      "direct_rule_ids": [
+        "INT_END_HORT_POLITE_IPSIDEO",
+        "INT_END_PROHIB_MAISO",
+        "INT_END_PROMISE_KKE",
+        "INT_END_Q_CONFIRM_JE",
+        "INT_END_RETRO_DE",
+        "INT_LEAD_DECL_PAST_DA",
+        "INT_LEAD_DECL_PRESENT_DA",
+        "INT_LEAD_PROHIB_PLAIN",
+        "INT_LEAD_REQUEST_JU_AUX",
+        "INT_LEAD_REQUEST_JU_MAIN",
+        "INT_Q_CONFIRM_ANIGA",
+        "SEM_Q_C_PAST_POLAR",
+        "SEM_Q_C_PAST_WH",
+        "SEM_Q_C_POLAR",
+        "SEM_Q_C_WH",
+        "SEM_Q_V_POLAR",
+        "SEM_Q_V_WH"
+      ],
+      "direct_rule_count": 17,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M06",
+      "title": "상대높임·주체높임",
+      "direct_rule_ids": [
+        "INT_END_HORT_POLITE_IPSIDEO",
+        "INT_END_PROHIB_MAISO",
+        "INT_LEAD_REQUEST_JU_AUX",
+        "INT_LEAD_REQUEST_JU_MAIN",
+        "SEM_Q_C_PAST_POLAR",
+        "SEM_Q_C_PAST_WH",
+        "SEM_Q_C_POLAR",
+        "SEM_Q_C_WH",
+        "SEM_Q_V_POLAR",
+        "SEM_Q_V_WH"
+      ],
+      "direct_rule_count": 10,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M07",
+      "title": "연결·전성·절 구조",
+      "direct_rule_ids": [
+        "INT_CONN_COND_MO",
+        "INT_CONN_GEOLLANG",
+        "INT_CONN_GURO_BLOCK_BECOME",
+        "INT_CONN_INTENT_LLAKKO",
+        "INT_CONN_INTERRUPT_DA",
+        "INT_CONN_PURPOSE_GURO",
+        "INT_CONN_QUOTE_KKO",
+        "INT_CONN_REASON_IKKINE",
+        "INT_CONN_SEQ_AGA",
+        "INT_CONN_SIMUL_MINSEO"
+      ],
+      "direct_rule_count": 10,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M08",
+      "title": "시제·상·양태·부정",
+      "direct_rule_ids": [
+        "INT_AUX_GA_BODA_BAE",
+        "INT_END_PROHIB_MAISO",
+        "INT_END_RETRO_DE",
+        "INT_LEAD_DECL_PAST_DA",
+        "INT_LEAD_PROHIB_PLAIN",
+        "INT_NEG_SHORT_AN",
+        "INT_Q_CONFIRM_ANIGA",
+        "INT_TAM_GET_GEOT",
+        "SEM_Q_C_PAST_POLAR",
+        "SEM_Q_C_PAST_WH",
+        "SEM_Q_V_POLAR",
+        "SEM_Q_V_WH"
+      ],
+      "direct_rule_count": 12,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M09",
+      "title": "사동·피동·보조용언",
+      "direct_rule_ids": [
+        "INT_AUX_BEORIDA_PPIDA",
+        "INT_AUX_GA_BODA_BAE",
+        "INT_AUX_PRESERVE_COMMON",
+        "INT_CAUS_CONTRACT_AARA",
+        "INT_CONN_GURO_BLOCK_BECOME",
+        "INT_LEAD_PROHIB_PLAIN",
+        "INT_LEAD_REQUEST_JU_AUX",
+        "INT_PASS_PRESERVE"
+      ],
+      "direct_rule_count": 8,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M10",
+      "title": "부사·관용·어휘 선택",
+      "direct_rule_ids": [],
+      "direct_rule_count": 0,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M11",
+      "title": "형태음운·표기",
+      "direct_rule_ids": [
+        "INT_CAUS_CONTRACT_AARA"
+      ],
+      "direct_rule_count": 1,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    },
+    {
+      "id": "M12",
+      "title": "지역·변이·실행 제어",
+      "direct_rule_ids": [],
+      "direct_rule_count": 0,
+      "scope": "Direct IN_MODULE edges only; not semantic coverage or complete indirect membership"
+    }
+  ],
+  "rules_without_direct_module_edge": [
+    "SEM_DECL_HAEYE_EO",
+    "SEM_DECL_HAEYE_GEODEUN",
+    "SEM_DECL_HAEYE_NE",
+    "SEM_EXT_COP_PAST_HAEYE",
+    "SEM_SUP_COP_PRESENT",
+    "SEM_SUP_POLITE_Q_EO"
+  ],
+  "work_packages": [
+    {
+      "id": "F00",
+      "title": "절·형태·문법 기능을 함께 가리키는 공통 분석값",
+      "legacy_items": 91,
+      "new_rule_ids": [],
+      "deferred_candidate_ids": [],
+      "status": "원본 검색 가능 / 의미 정제 미완료",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F01",
+      "title": "어간과 어미의 실제 결합",
+      "legacy_items": 25,
+      "new_rule_ids": [
+        "INT_LEAD_DECL_PAST_DA",
+        "INT_LEAD_DECL_PRESENT_DA"
+      ],
+      "deferred_candidate_ids": [
+        "INT_VERB_B_REGULAR"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F02",
+      "title": "이다·아니다와 명사 뒤 어미",
+      "legacy_items": 6,
+      "new_rule_ids": [],
+      "deferred_candidate_ids": [
+        "INT_END_Q_SI_NOUN_GA",
+        "INT_COP_RA"
+      ],
+      "status": "원본 검색 가능 / 의미 정제 미완료",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F03",
+      "title": "묻는 말의 어미",
+      "legacy_items": 108,
+      "new_rule_ids": [
+        "INT_NOM_WH_EODE_A",
+        "INT_NOM_WH_NU",
+        "INT_NOM_WH_MEO",
+        "INT_Q_CONFIRM_ANIGA",
+        "INT_END_Q_CONFIRM_JE"
+      ],
+      "deferred_candidate_ids": [
+        "INT_END_Q_SI_NOUN_GA"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F04",
+      "title": "서술·확인·감탄의 어미",
+      "legacy_items": 103,
+      "new_rule_ids": [
+        "INT_END_Q_CONFIRM_JE",
+        "INT_END_RETRO_DE",
+        "INT_LEAD_DECL_PAST_DA",
+        "INT_LEAD_DECL_PRESENT_DA"
+      ],
+      "deferred_candidate_ids": [
+        "INT_END_DECL_DAEI"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F05",
+      "title": "명령·부탁·금지",
+      "legacy_items": 49,
+      "new_rule_ids": [
+        "INT_END_PROHIB_MAISO",
+        "INT_LEAD_REQUEST_JU_AUX",
+        "INT_LEAD_REQUEST_JU_MAIN",
+        "INT_LEAD_PROHIB_PLAIN"
+      ],
+      "deferred_candidate_ids": [
+        "INT_END_DECL_DAEI",
+        "INT_END_REQUEST_DO"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F06",
+      "title": "함께 하자는 말",
+      "legacy_items": 28,
+      "new_rule_ids": [
+        "INT_END_HORT_POLITE_IPSIDEO"
+      ],
+      "deferred_candidate_ids": [
+        "INT_END_HORT_PLAIN_JEI",
+        "INT_END_DECL_DAEI"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F07",
+      "title": "약속·의지·추측 표현",
+      "legacy_items": 8,
+      "new_rule_ids": [
+        "INT_TAM_GET_GEOT",
+        "INT_END_PROMISE_KKE",
+        "INT_AUX_GA_BODA_BAE"
+      ],
+      "deferred_candidate_ids": [
+        "INT_TAM_FUT_KKIDA",
+        "INT_TAM_GETDA_LDA",
+        "INT_END_PROMISE_KKUMA",
+        "INT_END_PROMISE_KKI"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F08",
+      "title": "상대높임과 주체높임",
+      "legacy_items": 32,
+      "new_rule_ids": [
+        "INT_END_HORT_POLITE_IPSIDEO",
+        "INT_END_PROHIB_MAISO",
+        "INT_LEAD_REQUEST_JU_AUX",
+        "INT_LEAD_REQUEST_JU_MAIN"
+      ],
+      "deferred_candidate_ids": [
+        "INT_END_Q_SI_NOUN_GA"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F09",
+      "title": "격조사와 조사 결합",
+      "legacy_items": 55,
+      "new_rule_ids": [
+        "INT_PART_DATIVE_INDE",
+        "INT_PART_COMIT_KANG",
+        "INT_PART_GEN_ZERO"
+      ],
+      "deferred_candidate_ids": [],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F10",
+      "title": "보조사·비교·범위 표현",
+      "legacy_items": 69,
+      "new_rule_ids": [
+        "INT_PART_COMPARE_KAMA",
+        "INT_PART_SIMILAR_MAENCHIRO",
+        "INT_PART_MEASURE_MANCHI",
+        "INT_PART_FOCUS_SA",
+        "INT_PART_EXCEPT_BAKKI",
+        "INT_PART_UNTIL_KKEOJI"
+      ],
+      "deferred_candidate_ids": [
+        "INT_PART_ONLY_MA"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F11",
+      "title": "대명사와 가리키는 말",
+      "legacy_items": 8,
+      "new_rule_ids": [
+        "INT_NOM_P2_NI",
+        "INT_NOM_P3_YA_GA_JA",
+        "INT_NOM_LOC_YEO",
+        "INT_NOM_WH_EODE_A",
+        "INT_NOM_WH_NU",
+        "INT_NOM_WH_MEO",
+        "INT_NOM_REFL_JI"
+      ],
+      "deferred_candidate_ids": [],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F12",
+      "title": "수사·셈 단위·시간 표현",
+      "legacy_items": 42,
+      "new_rule_ids": [],
+      "deferred_candidate_ids": [
+        "INT_NOM_COUNT_SEOI",
+        "INT_NOM_BOUND_JJA"
+      ],
+      "status": "원본 검색 가능 / 의미 정제 미완료",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F13",
+      "title": "이유·조건으로 문장 잇기",
+      "legacy_items": 26,
+      "new_rule_ids": [
+        "INT_CONN_COND_MO",
+        "INT_CONN_SEQ_AGA",
+        "INT_CONN_REASON_IKKINE",
+        "INT_CONN_GEOLLANG"
+      ],
+      "deferred_candidate_ids": [],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F14",
+      "title": "동시·순서·대조·양보로 문장 잇기",
+      "legacy_items": 51,
+      "new_rule_ids": [
+        "INT_CONN_SEQ_AGA",
+        "INT_CONN_SIMUL_MINSEO",
+        "INT_CONN_INTERRUPT_DA"
+      ],
+      "deferred_candidate_ids": [
+        "INT_CONN_CONCESS_DO",
+        "INT_CONN_CONTRAST_JIMANEUN"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F15",
+      "title": "목적·의도로 문장 잇기",
+      "legacy_items": 6,
+      "new_rule_ids": [
+        "INT_CONN_INTENT_LLAKKO",
+        "INT_CONN_PURPOSE_GURO"
+      ],
+      "deferred_candidate_ids": [],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F16",
+      "title": "인용·관형·전성 구성",
+      "legacy_items": 14,
+      "new_rule_ids": [
+        "INT_CONN_QUOTE_KKO"
+      ],
+      "deferred_candidate_ids": [
+        "INT_TAM_PAST_ADN_EONNEUN"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F17",
+      "title": "-거로의 여러 쓰임",
+      "legacy_items": 29,
+      "new_rule_ids": [
+        "INT_CONN_PURPOSE_GURO",
+        "INT_CONN_GURO_BLOCK_BECOME"
+      ],
+      "deferred_candidate_ids": [],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F18",
+      "title": "시제·상·관형형의 시간",
+      "legacy_items": 11,
+      "new_rule_ids": [
+        "INT_TAM_GET_GEOT",
+        "INT_END_RETRO_DE",
+        "INT_LEAD_DECL_PAST_DA"
+      ],
+      "deferred_candidate_ids": [
+        "INT_TAM_FUT_KKIDA",
+        "INT_TAM_GETDA_LDA",
+        "INT_TAM_PAST_ADN_EONNEUN"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F19",
+      "title": "부정과 금지",
+      "legacy_items": 13,
+      "new_rule_ids": [
+        "INT_NEG_SHORT_AN",
+        "INT_Q_CONFIRM_ANIGA",
+        "INT_END_PROHIB_MAISO",
+        "INT_LEAD_PROHIB_PLAIN"
+      ],
+      "deferred_candidate_ids": [
+        "INT_NEG_JI_AN_HA",
+        "INT_NEG_MOT_MON"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F20",
+      "title": "사동·피동",
+      "legacy_items": 17,
+      "new_rule_ids": [
+        "INT_CAUS_CONTRACT_AARA",
+        "INT_PASS_PRESERVE"
+      ],
+      "deferred_candidate_ids": [
+        "INT_CAUS_UH"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F21",
+      "title": "보조용언",
+      "legacy_items": 27,
+      "new_rule_ids": [
+        "INT_CONN_GURO_BLOCK_BECOME",
+        "INT_AUX_BEORIDA_PPIDA",
+        "INT_AUX_GA_BODA_BAE",
+        "INT_AUX_PRESERVE_COMMON",
+        "INT_LEAD_REQUEST_JU_AUX",
+        "INT_LEAD_PROHIB_PLAIN"
+      ],
+      "deferred_candidate_ids": [
+        "INT_END_REQUEST_DO",
+        "INT_AUX_DAEDA_SSATA"
+      ],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F22",
+      "title": "어휘·부사·관용 표현",
+      "legacy_items": 81,
+      "new_rule_ids": [],
+      "deferred_candidate_ids": [],
+      "status": "원본 검색 가능 / 의미 정제 미완료",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F23",
+      "title": "형태음운과 출력 표기",
+      "legacy_items": 22,
+      "new_rule_ids": [
+        "INT_CAUS_CONTRACT_AARA"
+      ],
+      "deferred_candidate_ids": [],
+      "status": "部分 정제·통합 시험 대상",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F24",
+      "title": "지역·시대·자료 계통과 변화 관찰",
+      "legacy_items": 17,
+      "new_rule_ids": [],
+      "deferred_candidate_ids": [],
+      "status": "원본 검색 가능 / 의미 정제 미완료",
+      "whole_package_complete": false
+    },
+    {
+      "id": "F25",
+      "title": "조회·선별·생성의 공통 실행 도구",
+      "legacy_items": 55,
+      "new_rule_ids": [],
+      "deferred_candidate_ids": [],
+      "status": "원본 검색 가능 / 의미 정제 미완료",
+      "whole_package_complete": false
+    }
+  ],
+  "package_count": 26,
+  "packages_marked_complete": 0,
+  "package_table_caveat": "2026-11-06 additional44 mapping; new_rule_ids exclude prior12 rules; zero here does not imply no current implementation.",
+  "prior_rule_ids": [
+    "SEM_DECL_HAEYE_EO",
+    "SEM_DECL_HAEYE_GEODEUN",
+    "SEM_DECL_HAEYE_NE",
+    "SEM_EXT_COP_PAST_HAEYE",
+    "SEM_Q_C_PAST_POLAR",
+    "SEM_Q_C_PAST_WH",
+    "SEM_Q_C_POLAR",
+    "SEM_Q_C_WH",
+    "SEM_Q_V_POLAR",
+    "SEM_Q_V_WH",
+    "SEM_SUP_COP_PRESENT",
+    "SEM_SUP_POLITE_Q_EO"
+  ],
+  "latest_run": {
+    "id": "20261109T030211818725Z_kiwi_default_regression",
+    "metrics": {
+      "records": 50,
+      "planned_records": 50,
+      "unattempted_records": 0,
+      "valid_output_records": 48,
+      "changed_records": 39,
+      "by_policy": {
+        "kiwi_focused": {
+          "records": 50,
+          "complete": 48,
+          "api_attempts": 146,
+          "branch_seconds": 2085.5007411004044,
+          "tokens": 576731
+        }
+      },
+      "scope_calls": 50,
+      "scope_complete": 49,
+      "api_attempts": 196,
+      "transport_meta_records": 196,
+      "reported_usage": {
+        "prompt_tokens": 506509,
+        "completion_tokens": 117401,
+        "total_tokens": 623910
+      },
+      "calls_without_usage": 0,
+      "wall_seconds": 2241.1812783996575,
+      "stop_reason": null,
+      "naturalness": null,
+      "independent_accuracy": null
+    },
+    "config_without_secrets": {
+      "model_id": "Qwen3.8-27B",
+      "temperature": 0,
+      "top_p": 1,
+      "seed": 20261107,
+      "graph_sha256": "69688a7d9cc1ebf066531b810ff5afb5a25920e50bbdc59dc4334189a2e9fccc",
+      "knowledge_character_budget": 18000,
+      "enable_thinking": false
+    }
+  },
+  "runtime_code_match": {
+    "checked": 12,
+    "changed": []
+  },
+  "saved_run_rule_stages": {
+    "eligible_unique": 26,
+    "delivered_unique": 26,
+    "reported_used_unique": 22,
+    "no_eligible_observation": [
+      "INT_AUX_BEORIDA_PPIDA",
+      "INT_AUX_GA_BODA_BAE",
+      "INT_CAUS_CONTRACT_AARA",
+      "INT_CONN_COND_MO",
+      "INT_CONN_GEOLLANG",
+      "INT_CONN_GURO_BLOCK_BECOME",
+      "INT_CONN_INTENT_LLAKKO",
+      "INT_CONN_INTERRUPT_DA",
+      "INT_CONN_PURPOSE_GURO",
+      "INT_CONN_QUOTE_KKO",
+      "INT_END_HORT_POLITE_IPSIDEO",
+      "INT_END_PROHIB_MAISO",
+      "INT_END_Q_CONFIRM_JE",
+      "INT_NEG_SHORT_AN",
+      "INT_NOM_P3_YA_GA_JA",
+      "INT_NOM_REFL_JI",
+      "INT_NOM_WH_NU",
+      "INT_PART_DATIVE_INDE",
+      "INT_PART_EXCEPT_BAKKI",
+      "INT_PART_FOCUS_SA",
+      "INT_PART_MEASURE_MANCHI",
+      "INT_PART_SIMILAR_MAENCHIRO",
+      "INT_PART_UNTIL_KKEOJI",
+      "INT_Q_CONFIRM_ANIGA",
+      "INT_TAM_GET_GEOT",
+      "SEM_DECL_HAEYE_GEODEUN",
+      "SEM_Q_C_PAST_POLAR",
+      "SEM_Q_C_PAST_WH",
+      "SEM_Q_C_POLAR",
+      "SEM_Q_C_WH"
+    ],
+    "writer_requests": 49,
+    "knowledge_equals_selected": true,
+    "caveat": "Eligibility is not all retrieval; reported use is not correct realization. This is one exposed regression run, not grammar coverage."
+  },
+  "verified_mixed_note_examples": [
+    {
+      "record": "ADVCE002B_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "ADVCE008A_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "ADVCE008A_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "ADVCE008A_kiwi_focused",
+      "rule_id": "INT_END_PROMISE_KKE",
+      "field": "limitations",
+      "contains_review_note": true,
+      "contains_page_reference": false
+    },
+    {
+      "record": "ADVCE008B_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "DEV017_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "DEV020_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "DEV021_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "DEV021_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "DEV021_kiwi_focused",
+      "rule_id": "INT_END_PROMISE_KKE",
+      "field": "limitations",
+      "contains_review_note": true,
+      "contains_page_reference": false
+    },
+    {
+      "record": "DEV029_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "LONG002_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "NEW001_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "NEW007_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "QUAL017_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    },
+    {
+      "record": "QUAL017_kiwi_focused",
+      "rule_id": "INT_AUX_PRESERVE_COMMON",
+      "field": "limitations",
+      "contains_review_note": false,
+      "contains_page_reference": true
+    }
+  ],
+  "source_hashes": {
+    "experiments/analyses/integrated_grammar_20261106/coverage_r2.json": "1327d5b2d6c358acb4db198f4a9ea1d1e22d810e49395707e730bcd1d22b6330",
+    "experiments/runs/20261109T030211818725Z_kiwi_default_regression/config.json": "a5b7af1b145aa822acd6f3bb7f8f2d51ec1af05f5e9b3759622a15ad2cdad51e",
+    "experiments/runs/20261109T030211818725Z_kiwi_default_regression/metrics.json": "5708248bd043f0ab04bd7723e3bd344cafef9a31a33585a419838efe13664dd6",
+    "experiments/runs/20261109T030211818725Z_kiwi_default_regression/code_hashes.json": "64d76f2deb9fcfade3122c403e5ec0bf7acf62fbec90dd564e359aac438a61e7"
+  }
+}

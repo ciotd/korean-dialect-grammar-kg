@@ -1,0 +1,7 @@
+{
+  "reason": "Dotted deployment metadata remained in card conditions. Stopped the in-progress batch, fixed serializer and restarted with v2. Partial outputs were not inspected or used to tune the change.",
+  "completed_analysis_files": 50,
+  "final_results_published": false,
+  "completed_generation_record_count": 1,
+  "completed_agent_call_count": 2
+}

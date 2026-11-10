@@ -1,0 +1,35 @@
+{
+  "branches": 57,
+  "sentences": 171,
+  "reviewer_verdicts": {
+    "ready": 40,
+    "needs_revision": 15,
+    "unresolved": 2
+  },
+  "positive_observation_status": {
+    "requires_meaning_and_relations": 54,
+    "target_exists_no_supported_unit": 2,
+    "observed_conditions_block_all": 1
+  },
+  "statuses_by_kind": {
+    "positive": {
+      "requires_meaning_and_relations": 54,
+      "target_exists_no_supported_unit": 2,
+      "observed_conditions_block_all": 1
+    },
+    "negative": {
+      "requires_meaning_and_relations": 23,
+      "observed_conditions_block_all": 27,
+      "target_exists_no_supported_unit": 7
+    },
+    "unknown": {
+      "requires_meaning_and_relations": 48,
+      "observed_conditions_block_all": 6,
+      "target_exists_no_supported_unit": 3
+    }
+  },
+  "review_file_sha256": "bbb6874d132be4c833b6f8fa3e430974660290401f2662b01495d819bce721e7",
+  "qwen_calls": 0,
+  "linguistic_gold": false,
+  "scope": "Claude 제안 171문장의 실제 Kiwi 형태 관찰. 의미·관계는 KG에서 채우지 않았다. Qwen 분석/번역 검사가 아님."
+}

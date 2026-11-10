@@ -16,6 +16,12 @@ def read(path): return json.loads(Path(path).read_text(encoding='utf-8-sig'))
 def load_jsonl(path):return [json.loads(l) for l in Path(path).read_text(encoding='utf-8-sig').splitlines() if l.strip()]
 
 class CallError(RuntimeError): pass
+def unique_json_object(pairs):
+    result={}
+    for key,value in pairs:
+        if key in result:raise CallError('duplicate_json_key:'+key)
+        result[key]=value
+    return result
 class Qwen:
     def __init__(self,path,model=None,timeout=180):
         vals={}
@@ -31,10 +37,12 @@ class Qwen:
         if model is None and len(ids)!=1:raise ValueError('Explicit model required when multiple models are served')
         self.model=model or ids[0]
         if self.model not in ids:raise ValueError('Requested model is not served')
-    def call(self,stage,prompt,user,schema,out,max_tokens,seed):
-        request={'model':self.model,'messages':[{'role':'system','content':prompt},{'role':'user','content':dumps(user)}],
+    def build_request(self,stage,prompt,user,schema,max_tokens,seed):
+        return {'model':self.model,'messages':[{'role':'system','content':prompt},{'role':'user','content':user if isinstance(user,str) else dumps(user)}],
           'temperature':0,'top_p':1,'seed':seed,'max_tokens':max_tokens,'chat_template_kwargs':{'enable_thinking':False},
           'response_format':{'type':'json_schema','json_schema':{'name':stage,'strict':True,'schema':schema}}}
+    def call(self,stage,prompt,user,schema,out,max_tokens,seed):
+        request=self.build_request(stage,prompt,user,schema,max_tokens,seed)
         save(out/'request.json',request)
         t=time.perf_counter();meta={'stage':stage,'request_sha256':sha(dumps(request).encode()),'attempt':1,'retry':False}
         try:
@@ -47,7 +55,7 @@ class Qwen:
             if choice.get('finish_reason')!='stop':raise CallError('non_stop_finish:'+str(choice.get('finish_reason')))
             content=choice['message'].get('content')
             if not isinstance(content,str):raise CallError('missing_content')
-            value=json.loads(content);save(out/'parsed.json',value)
+            value=json.loads(content,object_pairs_hook=unique_json_object);save(out/'parsed.json',value)
             meta['status']='response_received';return value
         except Exception as e:
             meta['status']='failed';meta['error_type']=type(e).__name__

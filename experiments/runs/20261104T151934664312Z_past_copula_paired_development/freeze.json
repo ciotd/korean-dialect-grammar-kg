@@ -1,0 +1,8 @@
+{
+  "before_first_call": true,
+  "graph_hashes": {
+    "r7": "c0956ce349d86f5ea8afeaed0ef272fec928aeaba95ce70c3cde772c6a0326b9",
+    "r10": "4cd64da4568c3bc74bfa112a0ee8bb4eab35e8fc7dc01a5e3914de56aed46c2b"
+  },
+  "inputs_sha256": "fa576b5db5e83f9618c1ff5600e37a24a5d1c5949a87460a32b9a199654e1de9"
+}

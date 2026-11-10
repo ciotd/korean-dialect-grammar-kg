@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-03T07:51:39.182864+00:00",
+  "before_composition": true,
+  "source_manifests": {
+    "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\experiments\\runs\\20261103T072412784953Z_research_loop_dev\\artifact_hashes.json": "e7cef1ab9cebe6c70458f46f033b8e2248b24d2e895394bd5f382334bb2b60e4",
+    "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\experiments\\runs\\20261103T073106231833Z_research_loop_full50\\artifact_hashes.json": "0ab98da85e3048843340c4ed42323698e4d528e4e94a8432e423819b86d28822",
+    "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\experiments\\runs\\20261103T073040472661Z_research_loop_composition_replay\\artifact_hashes.json": "a4bef2f74a7e16925e56dd810652886a18393bcf14a3fb9c38026d537393ca27"
+  },
+  "graph_sha256": "7e18f8f06f5247c51078b6f8361c6601310270492f45b5288e45f94665356928"
+}

@@ -1,0 +1,21 @@
+{
+  "records": 50,
+  "valid_output_records": 0,
+  "changed_records": 0,
+  "status_counts": {
+    "planning_failed": 50
+  },
+  "api_attempts": 50,
+  "reported_usage": {},
+  "calls_with_usage": 0,
+  "calls_without_usage": 50,
+  "summed_api_seconds": 9.0437,
+  "summed_record_seconds": 13.143,
+  "wall_seconds": null,
+  "shared_batch_wall_seconds": 560.6070310000796,
+  "quality_accuracy": null,
+  "naturalness": "human_pending",
+  "held_by_model": 0,
+  "held_by_program": 0,
+  "repair_events": 0
+}

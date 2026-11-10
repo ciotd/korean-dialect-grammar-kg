@@ -1,0 +1,13 @@
+{
+  "program_id": "feedback_route_probe_20261107",
+  "input_count": 3,
+  "source_run": "20261107T070359552481Z_qwen_multi_development",
+  "max_calls": 3,
+  "seed": 20261107,
+  "model_id": "Qwen3.8-27B",
+  "deadline": "2026-11-07T16:24:52.2397801+09:00",
+  "reference_answers_in_request": false,
+  "dataset_role": "development_exposed",
+  "negative_control_bypasses_normal_filter": true,
+  "pipeline_effect_comparison": false
+}

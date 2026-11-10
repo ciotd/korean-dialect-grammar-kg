@@ -1,0 +1,7 @@
+{
+  "tools/run_integrated_grammar.py": "92509626728cff021b05ad3be40cd2f2707e348abbf1bfd6c0641407ebedce7f",
+  "src/kg_pipeline/integrated.py": "d6df2637ddcb149dea3e68bfe96624fb5cdc801a97f55d19c252ae5039e8389c",
+  "src/kg_pipeline/io.py": "12af6640cd865d9c5ea39f9dee732789dd2215c0d883af76bb00972577dec101",
+  "src/kg_pipeline/validation.py": "a2242127a2bb4d0783844d2946ecb0eef694412950dfb418b44823e3ca8a487b",
+  "src/kg_runtime/morphology.py": "af4f198cbdfbe10f9d7e448bf625940be5c84fbbdd9cbb3e56d1eb7bc593a0e9"
+}

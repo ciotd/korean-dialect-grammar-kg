@@ -1,0 +1,33 @@
+{
+  "phase": "regression_diagnostic",
+  "dataset_role": "regression_subset",
+  "metric_contract": "literal_suffix_instruction_v1",
+  "input_count": 27,
+  "unique_positions": 9,
+  "repeats": 3,
+  "input_sha256": "5a9879e5f943d57db034e40f9ad42e509302fa554ac1609eae4a8f7c55d7e90d",
+  "model_id": "Qwen3.8-27B",
+  "kg_dataset": "semantic_grammar_20261104_r7",
+  "source_run": "20261104T013633051461Z_support_expansion_full50",
+  "source_results_sha256": "6dfbec7f99fa73a2275a9cd09e734652bb5a11aa775050ecdc70d622af307281",
+  "arm": "D",
+  "response_format_enabled": true,
+  "distinct_forms": 8,
+  "temperature": 0,
+  "top_p": 1,
+  "seed": 20261104,
+  "enable_thinking": false,
+  "workers": 2,
+  "max_tokens": 2048,
+  "analysis_calls": 0,
+  "automatic_retries": 0,
+  "final_writer": "Qwen",
+  "reference_answers_in_request": false,
+  "comparison": "D/E identical messages and settings; E omits response_format only. D vs A removes sentence context and updates span to word length.",
+  "data_check": {
+    "records": 27,
+    "unique_positions": 9,
+    "source_records": 50,
+    "role": "regression_positions_repeated_not_new_independent_dataset"
+  }
+}

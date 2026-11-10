@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "current",
+  "deliveryReceiptId": "4fe35c73-3e37-4fd1-8581-4e8179657e53",
+  "artifact": {
+    "path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\pipeline.html",
+    "sha256": "db6c53c8dd6467e9aa7301f932b9b1c789c0fb22a0938a204346604371583308",
+    "bytes": 835905
+  },
+  "state": {
+    "detail": "read",
+    "motion": "still"
+  },
+  "chrome": {
+    "status": "available",
+    "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\pipeline.html"
+      },
+      "evidence": {
+        "reason": "Temporary directory ancestor identity is unavailable: C:\\Users\\ciot28\\AppData\\Local\\Temp"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "themeStates": {
+    "status": "fail",
+    "viewports": []
+  },
+  "readability": {
+    "status": "fail",
+    "minimumProjectedNodeTextPx": 6,
+    "viewports": []
+  },
+  "viewerChrome": {
+    "status": "fail",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "receipt": "pipeline.browser-check.json",
+    "files": []
+  },
+  "error": "Temporary directory ancestor identity is unavailable: C:\\Users\\ciot28\\AppData\\Local\\Temp"
+}

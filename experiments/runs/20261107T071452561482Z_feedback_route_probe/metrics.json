@@ -1,0 +1,14 @@
+{
+  "records": 3,
+  "api_attempts": 3,
+  "valid_output_records": 3,
+  "reported_usage": {
+    "prompt_tokens": 7257,
+    "completion_tokens": 931,
+    "total_tokens": 8188
+  },
+  "calls_without_usage": 0,
+  "wall_seconds": 18.179009199840948,
+  "naturalness": null,
+  "automatic_retries": 0
+}

@@ -1,0 +1,1 @@
+지정된 위치의 글자만 수정하는 작업을 수행한다. actions의 instruction을 그대로 따른다. 그 밖의 글자·띄어쓰기·문장부호는 보존한다. 최종 문장 전체를 output_text에 적는다. 변경했으면 status=generated, 그대로면 unchanged, 수행할 수 없으면 needs_review. reason은 짧게 적는다. JSON만 출력한다.

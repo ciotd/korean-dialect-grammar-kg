@@ -1,0 +1,10 @@
+{
+  "done": 6,
+  "total": 6,
+  "id": "MULTI_DEV06",
+  "status": "failed",
+  "elapsed_seconds": 432.4,
+  "eta_seconds": 0.0,
+  "eta_basis": "observed_average_after_three_inputs",
+  "calls_started": 22
+}

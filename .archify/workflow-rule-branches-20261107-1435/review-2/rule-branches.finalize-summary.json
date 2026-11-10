@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-rule-branches-20261107-1435\\candidate.json",
+    "sha256": "6502c5677a9fea37a1f3a6c7467f3af53248c4b7b834ce38101552684bf233b2",
+    "bytes": 4632
+  },
+  "artifact": {
+    "path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-rule-branches-20261107-1435\\rule-branches.html",
+    "sha256": "6a0446f6225a06876ee64dcb34cd5b1cdc83c69584e31c2965e26e114ec840ca",
+    "bytes": 841873
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-rule-branches-20261107-1435\\review-2\\rule-branches.finalize.json",
+    "summaryReceipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-rule-branches-20261107-1435\\review-2\\rule-branches.finalize-summary.json",
+    "browserCheckReceipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-rule-branches-20261107-1435\\review-2\\rule-branches.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-07T05:35:25.741Z",
+    "source": "network",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 10315,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

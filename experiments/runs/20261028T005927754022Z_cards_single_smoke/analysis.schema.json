@@ -1,0 +1,86 @@
+{
+  "type": "object",
+  "properties": {
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "word_id": {
+            "type": "string"
+          },
+          "functions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "declarative",
+                "polar_question",
+                "wh_question",
+                "request",
+                "propositive",
+                "prohibition",
+                "conditional",
+                "causal",
+                "quotation",
+                "intention",
+                "conjecture",
+                "retrospective",
+                "negation",
+                "relative",
+                "progressive",
+                "contrast",
+                "particle",
+                "other"
+              ]
+            }
+          },
+          "politeness": {
+            "type": "string",
+            "enum": [
+              "plain",
+              "polite",
+              "formal",
+              "unknown"
+            ]
+          },
+          "tense": {
+            "type": "string",
+            "enum": [
+              "past",
+              "present",
+              "future",
+              "unknown"
+            ]
+          },
+          "subject_honorific": {
+            "type": "boolean"
+          },
+          "concept_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word_id",
+          "functions",
+          "politeness",
+          "tense",
+          "subject_honorific",
+          "concept_ids",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "units"
+  ],
+  "additionalProperties": false
+}

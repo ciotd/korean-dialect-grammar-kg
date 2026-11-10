@@ -1,0 +1,357 @@
+{
+  "task": "integrated_grammar_20261106",
+  "graph": {
+    "source_graph": {
+      "nodes": 1625,
+      "edges": 6167
+    },
+    "combined_candidate": {
+      "nodes": 2320,
+      "edges": 7476
+    },
+    "original_source_atoms_searchable": 721,
+    "existing_rules": 12,
+    "new_rules": 44,
+    "all_interpreted_rules": 56,
+    "new_rule_types": {
+      "conversion": 41,
+      "block": 1,
+      "preserve_only": 2
+    },
+    "new_unit_kinds": {
+      "particle": 9,
+      "nominal": 7,
+      "connector": 10,
+      "predicate": 10,
+      "construction": 8
+    },
+    "source_quote_checks": 114,
+    "new_module_rule_memberships": {
+      "4": 9,
+      "3": 8,
+      "7": 10,
+      "9": 8,
+      "8": 8,
+      "5": 11,
+      "6": 4,
+      "11": 1,
+      "1": 3,
+      "2": 1
+    },
+    "deferred_candidates": 20,
+    "graph_sha256": "bcd0c67bc0cee9860a73f7658bb33465c10c7f529c0d46ab801f537f19d18364",
+    "scope_note": "Counts describe candidate data and reachability; not whole grammar completion, naturalness, or quality gains."
+  },
+  "runs": [
+    {
+      "run_id": "20261106T050944337820Z_integrated_grammar_smoke",
+      "config": {
+        "phase": "smoke",
+        "dataset_role": "development_exposed",
+        "input_count": 2,
+        "input_sha256": "51b321532a7d4401c2dbac28282fe25003eed7384b63376efd9672545410cf89",
+        "kg_dataset": "integrated_grammar_20261106_candidate",
+        "metric_contract": "integrated_grammar_v1",
+        "program_id": "integrated_grammar_20261106",
+        "program_prior_calls": 0,
+        "program_total_call_limit": 200,
+        "model_id": "Qwen3.8-27B",
+        "graph_sha256": "ec7be847300d42a5d6bede8b2259890b007fee94fb261b6aa47cf9059c8f9848",
+        "max_calls": 4,
+        "deadline": "2026-11-06T16:30:00+09:00",
+        "deadline_policy": "no_new_calls_after_deadline",
+        "seed": 20261106,
+        "automatic_retries": 0,
+        "final_writer": "Qwen_raw_output",
+        "knowledge_character_budget": 24000,
+        "reference_answers_in_request": false,
+        "naturalness": "not_evaluated",
+        "baseline": "development integration, not causal KG comparison"
+      },
+      "metrics": {
+        "records": 2,
+        "planned_inputs": 2,
+        "unattempted_inputs": 0,
+        "valid_output_records": 2,
+        "changed_records": 1,
+        "actual_text_changes": 1,
+        "status_counts": {
+          "generated_requires_human_review": 2
+        },
+        "failure_stages": {},
+        "model_review_requested": 0,
+        "api_attempts": 4,
+        "calls_counted": 4,
+        "analysis_calls": 2,
+        "generation_calls": 2,
+        "reported_usage": {
+          "prompt_tokens": 9304,
+          "completion_tokens": 1832,
+          "total_tokens": 11136
+        },
+        "calls_without_usage": 0,
+        "wall_seconds": 39.26,
+        "usage_completeness": "complete",
+        "stop_reason": null,
+        "naturalness": null,
+        "independent_accuracy": null
+      },
+      "postflight": {
+        "graph_unchanged": true,
+        "code_unchanged": true
+      }
+    },
+    {
+      "run_id": "20261106T051728566435Z_integrated_grammar_development",
+      "config": {
+        "phase": "development",
+        "dataset_role": "development_exposed",
+        "input_count": 30,
+        "input_sha256": "13cb4ea29c402f7735a2f15b1480c9781b06bfa9e4c1abb71e0b1c7eff15f8b7",
+        "kg_dataset": "integrated_grammar_20261106_r2",
+        "metric_contract": "integrated_grammar_v1",
+        "program_id": "integrated_grammar_20261106",
+        "program_prior_calls": 4,
+        "program_total_call_limit": 200,
+        "model_id": "Qwen3.8-27B",
+        "graph_sha256": "bcd0c67bc0cee9860a73f7658bb33465c10c7f529c0d46ab801f537f19d18364",
+        "max_calls": 60,
+        "deadline": "2026-11-06T16:30:00+09:00",
+        "deadline_policy": "no_new_calls_after_deadline",
+        "seed": 20261106,
+        "automatic_retries": 0,
+        "final_writer": "Qwen_raw_output",
+        "knowledge_character_budget": 24000,
+        "reference_answers_in_request": false,
+        "naturalness": "not_evaluated",
+        "baseline": "development integration, not causal KG comparison"
+      },
+      "metrics": {
+        "records": 30,
+        "planned_inputs": 30,
+        "unattempted_inputs": 0,
+        "valid_output_records": 30,
+        "changed_records": 19,
+        "actual_text_changes": 19,
+        "status_counts": {
+          "generated_requires_human_review": 30
+        },
+        "failure_stages": {},
+        "model_review_requested": 0,
+        "api_attempts": 60,
+        "calls_counted": 60,
+        "analysis_calls": 30,
+        "generation_calls": 30,
+        "reported_usage": {
+          "prompt_tokens": 166472,
+          "completion_tokens": 30475,
+          "total_tokens": 196947
+        },
+        "calls_without_usage": 0,
+        "wall_seconds": 588.674,
+        "usage_completeness": "complete",
+        "stop_reason": null,
+        "naturalness": null,
+        "independent_accuracy": null
+      },
+      "postflight": {
+        "graph_unchanged": true,
+        "code_unchanged": true
+      }
+    },
+    {
+      "run_id": "20261106T052943610843Z_integrated_grammar_regression",
+      "config": {
+        "phase": "regression",
+        "dataset_role": "regression_exposed",
+        "input_count": 50,
+        "input_sha256": "b0a765e9680240210e47ce5c90aac6a60b8551986329186c4a69c65717318e53",
+        "kg_dataset": "integrated_grammar_20261106_r2",
+        "metric_contract": "integrated_grammar_v1",
+        "program_id": "integrated_grammar_20261106",
+        "program_prior_calls": 64,
+        "program_total_call_limit": 200,
+        "model_id": "Qwen3.8-27B",
+        "graph_sha256": "bcd0c67bc0cee9860a73f7658bb33465c10c7f529c0d46ab801f537f19d18364",
+        "max_calls": 100,
+        "deadline": "2026-11-06T16:30:00+09:00",
+        "deadline_policy": "no_new_calls_after_deadline",
+        "seed": 20261106,
+        "automatic_retries": 0,
+        "final_writer": "Qwen_raw_output",
+        "knowledge_character_budget": 24000,
+        "reference_answers_in_request": false,
+        "naturalness": "not_evaluated",
+        "baseline": "development integration, not causal KG comparison"
+      },
+      "metrics": {
+        "records": 50,
+        "planned_inputs": 50,
+        "unattempted_inputs": 0,
+        "valid_output_records": 48,
+        "changed_records": 39,
+        "actual_text_changes": 39,
+        "status_counts": {
+          "generated_requires_human_review": 48,
+          "failed": 2
+        },
+        "failure_stages": {
+          "generation": 1,
+          "analysis": 1
+        },
+        "model_review_requested": 0,
+        "api_attempts": 99,
+        "calls_counted": 99,
+        "analysis_calls": 50,
+        "generation_calls": 49,
+        "reported_usage": {
+          "prompt_tokens": 382485,
+          "completion_tokens": 88865,
+          "total_tokens": 471350
+        },
+        "calls_without_usage": 1,
+        "wall_seconds": 1810.919,
+        "usage_completeness": "partial_or_absent_reported_sum_only",
+        "stop_reason": null,
+        "naturalness": null,
+        "independent_accuracy": null
+      },
+      "postflight": {
+        "graph_unchanged": true,
+        "code_unchanged": true
+      }
+    },
+    {
+      "run_id": "20261106T060407624135Z_integrated_grammar_repair",
+      "config": {
+        "phase": "repair",
+        "dataset_role": "development_exposed",
+        "input_count": 18,
+        "input_sha256": "36885935467c0a083a5ae193781aefe631d8bd3fe4d97956429eb39c0bdc0dd6",
+        "kg_dataset": "integrated_grammar_20261106_r2",
+        "metric_contract": "integrated_grammar_v1",
+        "program_id": "integrated_grammar_20261106",
+        "program_prior_calls": 163,
+        "program_total_call_limit": 200,
+        "model_id": "Qwen3.8-27B",
+        "graph_sha256": "bcd0c67bc0cee9860a73f7658bb33465c10c7f529c0d46ab801f537f19d18364",
+        "max_calls": 36,
+        "deadline": "2026-11-06T16:30:00+09:00",
+        "deadline_policy": "no_new_calls_after_deadline",
+        "seed": 20261106,
+        "automatic_retries": 0,
+        "final_writer": "Qwen_raw_output",
+        "knowledge_character_budget": 24000,
+        "reference_answers_in_request": false,
+        "naturalness": "not_evaluated",
+        "baseline": "development integration, not causal KG comparison",
+        "analysis_prompt_variant": "explicit_file",
+        "analysis_prompt_sha256": "a2492eb2fef4beedba785af4cd5961af2ece0a602fb7fa7cdbf19cf7c050bebb"
+      },
+      "metrics": {
+        "records": 18,
+        "planned_inputs": 18,
+        "unattempted_inputs": 0,
+        "valid_output_records": 18,
+        "changed_records": 14,
+        "actual_text_changes": 14,
+        "status_counts": {
+          "generated_requires_human_review": 18
+        },
+        "failure_stages": {},
+        "model_review_requested": 0,
+        "api_attempts": 36,
+        "calls_counted": 36,
+        "analysis_calls": 18,
+        "generation_calls": 18,
+        "reported_usage": {
+          "prompt_tokens": 105551,
+          "completion_tokens": 17577,
+          "total_tokens": 123128
+        },
+        "calls_without_usage": 0,
+        "wall_seconds": 342.191,
+        "usage_completeness": "complete",
+        "stop_reason": null,
+        "naturalness": null,
+        "independent_accuracy": null
+      },
+      "postflight": {
+        "graph_unchanged": true,
+        "code_unchanged": true
+      }
+    }
+  ],
+  "actual_model_calls": 199,
+  "reported_tokens_sum": 802561,
+  "usage_missing_calls": 1,
+  "input_execution_count": 100,
+  "unique_inputs": 80,
+  "independent_evaluation_inputs": 0,
+  "paired_analysis_checks": {
+    "before": 1,
+    "after": 9,
+    "checks": 9,
+    "controls": {
+      "same_graph": true,
+      "same_generation_prompt": true,
+      "same_core_code": true,
+      "same_seed": true,
+      "same_character_budget": true,
+      "same_selected_inputs": true,
+      "unchanged_schemas": true
+    }
+  },
+  "reviews": [
+    {
+      "reviewer": "claude",
+      "phase": "development",
+      "received": true,
+      "reviewed_records": 30
+    },
+    {
+      "reviewer": "claude",
+      "phase": "regression",
+      "received": true,
+      "reviewed_records": 50
+    },
+    {
+      "reviewer": "claude",
+      "phase": "repair",
+      "received": true,
+      "reviewed_records": 18
+    },
+    {
+      "reviewer": "codex",
+      "phase": "development",
+      "received": true,
+      "reviewed_records": 30
+    },
+    {
+      "reviewer": "codex",
+      "phase": "regression",
+      "received": true,
+      "reviewed_records": 50
+    },
+    {
+      "reviewer": "codex",
+      "phase": "repair",
+      "received": true,
+      "reviewed_records": 18
+    }
+  ],
+  "tests": {
+    "integrated": 22,
+    "runner": 4,
+    "reference_delivery": 8,
+    "existing_management": 38
+  },
+  "claim_limits": [
+    "No naturalness score or KG superiority estimate.",
+    "26-package semantic refinement is incomplete.",
+    "Reference delivery alternative was replayed offline, not used in these model runs.",
+    "Observation fix was made after model runs; no post-fix Qwen run.",
+    "Neo4j database not replaced; graph file candidate used.",
+    "Local recovery commits only; no remote push."
+  ]
+}

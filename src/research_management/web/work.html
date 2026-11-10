@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>연구 진행 · 검토와 결정</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/work.css"><script src="/work.js" defer></script></head>
+<body><header><div><span class="eyebrow">RESEARCH · LIVE WORKSPACE</span><h1>연구 진행 · 검토와 결정</h1><p>어디까지 했는지, 무엇을 바꿀지, 누가 결정했는지 한곳에서 확인합니다.</p></div><a href="/" class="back">실험 목록으로</a></header>
+<div id="connection" role="status">서버에 연결하는 중…</div><main>
+<section class="panel"><h2>현재 작업</h2><p>2초마다 기록을 다시 읽습니다. 진행률은 실제 완료 건수이며, 전체 연구의 완성도는 아닙니다.</p><div id="tasks" class="cards"></div></section>
+<section class="panel"><h2>수정안과 사용자 결정</h2><p><strong>기본 승인은 채팅에서.</strong> 여러 항목은 여기서 각각 검토한 뒤 함께 저장할 수 있습니다. 승인 저장은 KG 변경이나 실험 실행을 자동으로 시작하지 않습니다.</p><p>수정안 = 문제와 근거 + 변경 전후 + 영향 범위 + 검증 방법. 검토자 합의는 사람의 승인이나 언어학적 정답을 대신하지 않습니다.</p><div id="proposals"></div><div class="controls"><button id="save-decisions">선택한 결정 저장</button><span id="save-status" role="status"></span></div></section>
+<section class="panel"><h2>50개 전체 진단 · 근거 확인</h2><p>‘어색하다’는 의견과 실행 기록에서 확인한 오류를 구분해서 읽으세요. 아래 검토자 의견은 원문 기록이며 총괄의 확정 판정과 다를 수 있습니다.</p><div id="coverage"></div><label>입력 ID 또는 문장 검색<input id="case-search" placeholder="DEV002 또는 빵"></label><div id="cases"></div></section>
+<section class="panel"><h2>결정 · 적용 이력</h2><p>새 수정안 버전은 다시 승인받습니다. 승인된 내용과 실제 적용 결과는 별도 기록입니다.</p><div id="history"></div></section>
+</main><footer>로컬 연구 관리 · 과거 실험과 원본 검토 기록 보존 · 결정 이력: experiments/management/private/workflow.sqlite3</footer></body></html>

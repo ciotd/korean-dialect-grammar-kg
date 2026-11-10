@@ -1,0 +1,8 @@
+{
+  "report": "experiments\\analyses\\qwen_alignment_20261107\\private\\report.html",
+  "runs": [
+    "experiments\\runs\\20261107T063055332251Z_qwen_multi_development",
+    "experiments\\runs\\20261107T070359552481Z_qwen_multi_development",
+    "experiments\\runs\\20261107T071227639884Z_integrated_grammar_development"
+  ]
+}

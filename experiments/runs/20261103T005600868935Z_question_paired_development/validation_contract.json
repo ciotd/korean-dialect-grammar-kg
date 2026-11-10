@@ -1,0 +1,6 @@
+{
+  "analysis": "JSON schema + word ID/graph contract + Kiwi agreement",
+  "generation": "JSON schema + target/suffix warnings, no output repair",
+  "quality": "not scored by model",
+  "blocked_outputs": "null, not claimed as copied model output"
+}

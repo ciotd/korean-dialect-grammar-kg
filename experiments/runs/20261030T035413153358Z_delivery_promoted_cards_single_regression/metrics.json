@@ -1,0 +1,44 @@
+{
+  "records": 26,
+  "status_counts": {
+    "unchanged": 4,
+    "generated_requires_human_review": 4,
+    "needs_review": 11,
+    "partial": 6,
+    "planning_failed": 1
+  },
+  "valid_output_records": 25,
+  "changed_records": 10,
+  "held_records": 17,
+  "generation_calls_skipped": 0,
+  "held_by_model": 8,
+  "held_by_program": 24,
+  "records_with_realization_reference": 25,
+  "records_with_claim_paths": 0,
+  "api_attempts": 26,
+  "api_failures": 0,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 172478,
+    "completion_tokens": 19677,
+    "total_tokens": 192155
+  },
+  "calls_with_usage": 26,
+  "calls_without_usage": 0,
+  "wall_seconds": null,
+  "mean_record_seconds": 15.925,
+  "median_record_seconds": 14.985,
+  "retrieval_chars_total": 9735713,
+  "packet_chars_total": 528969,
+  "char_reduction_fraction": 0.94567,
+  "neighborhood_limit_records": 0,
+  "error_types": {
+    "ValueError": 1
+  },
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.",
+  "shared_batch_wall_seconds": 976.8759581998456,
+  "cost_note": "Cached analysis cost excluded; shared server timing, not standalone throughput."
+}

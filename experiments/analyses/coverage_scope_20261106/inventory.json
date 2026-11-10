@@ -1,0 +1,232 @@
+{
+  "checked_utc": "2026-11-06T02:09:58.687640+00:00",
+  "measurement": "saved graph files, not live Neo4j query; counts are not semantic completeness",
+  "graphs": {
+    "whole": {
+      "nodes": 1625,
+      "edges": 6167,
+      "node_types": {
+        "Framework": 1,
+        "SourceSpan": 655,
+        "Claim": 29,
+        "SourceDocument": 7,
+        "SourceAtom": 721,
+        "AnalysisConcept": 48,
+        "Construction": 54,
+        "GrammarFeature": 23,
+        "AggregateInterface": 11,
+        "ReviewIssue": 10,
+        "TechnicalResponsibility": 54,
+        "Module": 12
+      },
+      "unique_node_ids": 1625,
+      "dangling_edges": 0,
+      "rule_ids": [],
+      "construction_ids": [],
+      "source": "knowledge/authored/kg_v3_evidence_20261019_r2/graph"
+    },
+    "baseline": {
+      "nodes": 195,
+      "edges": 472,
+      "node_types": {
+        "Framework": 1,
+        "Module": 12,
+        "GrammarConstruction": 4,
+        "Evidence": 53,
+        "ProcessingScope": 4,
+        "SemanticRule": 11,
+        "GrammarFeature": 6,
+        "AnalysisConcept": 6,
+        "SourceAtom": 8,
+        "ApplicabilityBranch": 11,
+        "Condition": 28,
+        "FeatureValue": 25,
+        "Realization": 11,
+        "UsageObservation": 10,
+        "ImplementationDecision": 4,
+        "ResearchCandidate": 1
+      },
+      "unique_node_ids": 195,
+      "dangling_edges": 0,
+      "rule_ids": [
+        "SEM_Q_V_POLAR",
+        "SEM_Q_V_WH",
+        "SEM_Q_C_POLAR",
+        "SEM_Q_C_WH",
+        "SEM_Q_C_PAST_POLAR",
+        "SEM_Q_C_PAST_WH",
+        "SEM_DECL_HAEYE_EO",
+        "SEM_DECL_HAEYE_NE",
+        "SEM_DECL_HAEYE_GEODEUN",
+        "SEM_SUP_COP_PRESENT",
+        "SEM_SUP_POLITE_Q_EO"
+      ],
+      "construction_ids": [
+        "SEM_CX_HAERA_INFORMATION_QUESTION",
+        "SEM_CX_HAEYE_DECLARATIVE",
+        "SEM_CX_SUP_COP_PRESENT",
+        "SEM_CX_SUP_POLITE_Q_EO"
+      ],
+      "source": "knowledge/authored/semantic_grammar_20261104_r7/private"
+    },
+    "candidate": {
+      "nodes": 222,
+      "edges": 541,
+      "node_types": {
+        "Framework": 1,
+        "Module": 12,
+        "GrammarConstruction": 5,
+        "Evidence": 53,
+        "ProcessingScope": 5,
+        "SemanticRule": 12,
+        "GrammarFeature": 6,
+        "AnalysisConcept": 6,
+        "SourceAtom": 8,
+        "ApplicabilityBranch": 13,
+        "Condition": 45,
+        "FeatureValue": 28,
+        "Realization": 12,
+        "UsageObservation": 10,
+        "ImplementationDecision": 5,
+        "ResearchCandidate": 1
+      },
+      "unique_node_ids": 222,
+      "dangling_edges": 0,
+      "rule_ids": [
+        "SEM_Q_V_POLAR",
+        "SEM_Q_V_WH",
+        "SEM_Q_C_POLAR",
+        "SEM_Q_C_WH",
+        "SEM_Q_C_PAST_POLAR",
+        "SEM_Q_C_PAST_WH",
+        "SEM_DECL_HAEYE_EO",
+        "SEM_DECL_HAEYE_NE",
+        "SEM_DECL_HAEYE_GEODEUN",
+        "SEM_SUP_COP_PRESENT",
+        "SEM_SUP_POLITE_Q_EO",
+        "SEM_EXT_COP_PAST_HAEYE"
+      ],
+      "construction_ids": [
+        "SEM_CX_HAERA_INFORMATION_QUESTION",
+        "SEM_CX_HAEYE_DECLARATIVE",
+        "SEM_CX_SUP_COP_PRESENT",
+        "SEM_CX_SUP_POLITE_Q_EO",
+        "SEM_CX_EXT_COP_PAST"
+      ],
+      "source": "knowledge/authored/semantic_grammar_20261105_r10/private"
+    }
+  },
+  "work_packages": [
+    {
+      "id": "F00",
+      "title": "절·형태·문법 기능을 함께 가리키는 공통 분석값"
+    },
+    {
+      "id": "F01",
+      "title": "어간과 어미의 실제 결합"
+    },
+    {
+      "id": "F02",
+      "title": "이다·아니다와 명사 뒤 어미"
+    },
+    {
+      "id": "F03",
+      "title": "묻는 말의 어미"
+    },
+    {
+      "id": "F04",
+      "title": "서술·확인·감탄의 어미"
+    },
+    {
+      "id": "F05",
+      "title": "명령·부탁·금지"
+    },
+    {
+      "id": "F06",
+      "title": "함께 하자는 말"
+    },
+    {
+      "id": "F07",
+      "title": "약속·의지·추측 표현"
+    },
+    {
+      "id": "F08",
+      "title": "상대높임과 주체높임"
+    },
+    {
+      "id": "F09",
+      "title": "격조사와 조사 결합"
+    },
+    {
+      "id": "F10",
+      "title": "보조사·비교·범위 표현"
+    },
+    {
+      "id": "F11",
+      "title": "대명사와 가리키는 말"
+    },
+    {
+      "id": "F12",
+      "title": "수사·셈 단위·시간 표현"
+    },
+    {
+      "id": "F13",
+      "title": "이유·조건으로 문장 잇기"
+    },
+    {
+      "id": "F14",
+      "title": "동시·순서·대조·양보로 문장 잇기"
+    },
+    {
+      "id": "F15",
+      "title": "목적·의도로 문장 잇기"
+    },
+    {
+      "id": "F16",
+      "title": "인용·관형·전성 구성"
+    },
+    {
+      "id": "F17",
+      "title": "-거로의 여러 쓰임"
+    },
+    {
+      "id": "F18",
+      "title": "시제·상·관형형의 시간"
+    },
+    {
+      "id": "F19",
+      "title": "부정과 금지"
+    },
+    {
+      "id": "F20",
+      "title": "사동·피동"
+    },
+    {
+      "id": "F21",
+      "title": "보조용언"
+    },
+    {
+      "id": "F22",
+      "title": "어휘·부사·관용 표현"
+    },
+    {
+      "id": "F23",
+      "title": "형태음운과 출력 표기"
+    },
+    {
+      "id": "F24",
+      "title": "지역·시대·자료 계통과 변화 관찰"
+    },
+    {
+      "id": "F25",
+      "title": "조회·선별·생성의 공통 실행 도구"
+    }
+  ],
+  "hashes": {
+    "knowledge/authored/kg_v3_evidence_20261019_r2/graph/nodes.jsonl": "ea646186bb417ce53fc212ebce0db1c6d3acaf7c8847bae26ef268e859a32509",
+    "knowledge/authored/kg_v3_evidence_20261019_r2/graph/edges.jsonl": "de9340e4c920d1303ba15bc8299e1d0d372cfa96a1854c1f98c4f122b713e546",
+    "knowledge/authored/semantic_grammar_20261104_r7/private/graph.json": "c0956ce349d86f5ea8afeaed0ef272fec928aeaba95ce70c3cde772c6a0326b9",
+    "knowledge/authored/semantic_grammar_20261105_r10/private/graph.json": "4cd64da4568c3bc74bfa112a0ee8bb4eab35e8fc7dc01a5e3914de56aed46c2b",
+    "experiments/analyses/source_workmap_20261102/work_packages.json": "5b49bf928846a05bd0bddca94e8f87efaaa71f3881637804c2ac7b4e3d7d2d4f"
+  }
+}

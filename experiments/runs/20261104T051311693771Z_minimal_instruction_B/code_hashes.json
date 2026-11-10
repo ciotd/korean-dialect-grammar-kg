@@ -1,0 +1,6 @@
+{
+  "experiments\\analyses\\minimal_instruction_20261104\\run.py": "8db60b8d709cff47497aabe5b069a7c73e9901c85a341bd47995226b07e49abb",
+  "experiments\\analyses\\minimal_instruction_20261104\\PLAN.md": "556ff9cdaf8c7906446ee6419c3ed1f007eca5702b856be82754eb4fc0484c02",
+  "src\\kg_pipeline\\io.py": "a01af2c7717c2cf672dc10631057bf6e21ae4eee29a3b4a7350a4ce926012081",
+  "src\\kg_pipeline\\validation.py": "9e4b1153d27f3ff1a3eebe888b1356d1c55985c1d3c8c5506ad9d26e5ae811b3"
+}

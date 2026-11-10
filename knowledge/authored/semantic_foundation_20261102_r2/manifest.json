@@ -1,0 +1,27 @@
+{
+  "version": "semantic_foundation_20261102_r2",
+  "status": "bounded_source_refinement_candidate",
+  "construction_count": 1,
+  "usage_count": 6,
+  "node_count": 81,
+  "edge_count": 198,
+  "source_atom_partial_mapping_count": 5,
+  "whole_source_atoms_semantically_completed": 0,
+  "legacy_source_atoms_total": 721,
+  "analysis": "manual_development_annotation",
+  "qwen_calls": 0,
+  "neo4j_loaded": false,
+  "graph_sha256": "4987f2f68dd29d585e47d8a72308f9bbec4112bc01f34954ce576733b645ca99",
+  "spec_sha256": "d7cece07ea0244514c1e9177279422172f713d412e42d0486ece882cccf30783",
+  "report": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\experiments\\analyses\\semantic_kg_rebuild_20261102\\private\\report.html",
+  "code_files": {
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\build_foundation.py": "a23f05f8c6853ce7ee4f1a4dbc8dc0eeefc55c96ab1e1162f1c23cdb7601003f",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\finalize.py": "aadf491ff21dd7abbf256a373cdb6535834f67dd4855c8ccceb3bc0ed47dfddc",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\inventory.py": "26a17391719505903427ef6a60b8f8bdc28be0da73267f6c10bc870df22384f5",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\report.py": "d851863ada37656244802e3f4401899f6040fb099cf3816102ecdddcea32fca9",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\reviewers.py": "5bf206046f91b94bcde7960523ffb9d246f6daa7f0e2fbef4bbfccd722e9f86c",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\semantic_graph.py": "ddd63490b704f8f7526cb92d75fa6ac8cbdaadf67e3793d642c66f0158f3747b",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\test_semantic_graph.py": "574498eb9004f02bb57a752f0e6f06320063a83cdeaba9768b4fc7ac295b17df",
+    "experiments\\analyses\\semantic_kg_rebuild_20261102\\verify_sources.py": "aa98e40fd86ced00230f9987ee96ca66ebe5260d0a509c0d077b5769a695ddd8"
+  }
+}

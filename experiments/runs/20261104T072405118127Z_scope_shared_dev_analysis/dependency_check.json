@@ -1,0 +1,191 @@
+[
+  {
+    "path": "src\\kg_runtime\\realization.py",
+    "source_sha256": "a9b1c6ce19ac1af4ee786533d9e22ff4811c53105df15c57a47e836f6e30dd8a",
+    "current_sha256": "a9b1c6ce19ac1af4ee786533d9e22ff4811c53105df15c57a47e836f6e30dd8a",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "src\\kg_runtime\\morphology.py",
+    "source_sha256": "af4f198cbdfbe10f9d7e448bf625940be5c84fbbdd9cbb3e56d1eb7bc593a0e9",
+    "current_sha256": "af4f198cbdfbe10f9d7e448bf625940be5c84fbbdd9cbb3e56d1eb7bc593a0e9",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\support_expansion_20261104\\runtime.py",
+    "source_sha256": "26ea13e0a628ba78035e0724c4535ac4fd34eae0203134728403994f08f3fbbc",
+    "current_sha256": "26ea13e0a628ba78035e0724c4535ac4fd34eae0203134728403994f08f3fbbc",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\condition_followup_20261103\\refine_provenance.py",
+    "source_sha256": "9010dc63359ac6795b591d139a8dab44212c945660c5324b8f3e6bb4deb97acd",
+    "current_sha256": "9010dc63359ac6795b591d139a8dab44212c945660c5324b8f3e6bb4deb97acd",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\condition_followup_20261103\\test_runtime.py",
+    "source_sha256": "8acc5a856926e74ad3fa3280194af52a7f633ac6a57215444e28ff584c63a424",
+    "current_sha256": "8acc5a856926e74ad3fa3280194af52a7f633ac6a57215444e28ff584c63a424",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\research_loop_20261103\\run.py",
+    "source_sha256": "67261e44ed59a98168ccbf2c9656730ba864ef6b2ac5859fecad38c5fe74ddf2",
+    "current_sha256": "67261e44ed59a98168ccbf2c9656730ba864ef6b2ac5859fecad38c5fe74ddf2",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\semantic_kg_rebuild_20261102\\semantic_graph.py",
+    "source_sha256": "ddd63490b704f8f7526cb92d75fa6ac8cbdaadf67e3793d642c66f0158f3747b",
+    "current_sha256": "ddd63490b704f8f7526cb92d75fa6ac8cbdaadf67e3793d642c66f0158f3747b",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\boundary_qwen_20261103\\run.py",
+    "source_sha256": "c59d0309adeadb615674e97fb1755bfb8bb189d15b6660bb0bb00adec703b2ca",
+    "current_sha256": "acce6cd51ccacc4ea799071e65323d57b17239e1c74b355a6b103eedbd425a71",
+    "equal": false,
+    "allowed_progress_only_difference": true
+  },
+  {
+    "path": "experiments\\analyses\\condition_followup_20261103\\runtime.py",
+    "source_sha256": "e3d6a8d920b1f61966e0edafe3320fb2d33d56af39dc9edad7ae2d9987896539",
+    "current_sha256": "e3d6a8d920b1f61966e0edafe3320fb2d33d56af39dc9edad7ae2d9987896539",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\grammar_expansion_20261103\\scope_runtime.py",
+    "source_sha256": "d0b64c0f98fa3f66350b6ed54d41590f949509f286efb72a08405f5617a798d7",
+    "current_sha256": "d0b64c0f98fa3f66350b6ed54d41590f949509f286efb72a08405f5617a798d7",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\grammar_expansion_20261103\\expanded_runtime.py",
+    "source_sha256": "f2ed5435b1c87fb9a5a50f006511ac79ce9db71f1b3aebe9b0623e7d32ce0391",
+    "current_sha256": "f2ed5435b1c87fb9a5a50f006511ac79ce9db71f1b3aebe9b0623e7d32ce0391",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\support_expansion_20261104\\test_runtime.py",
+    "source_sha256": "76b9e0bcbbcc70f939fc3b26b1ee430e9b41456b85694516bde45772254bc5a7",
+    "current_sha256": "76b9e0bcbbcc70f939fc3b26b1ee430e9b41456b85694516bde45772254bc5a7",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\condition_followup_20261103\\build_provenance.py",
+    "source_sha256": "d0918305b2def7dab58758a7eaeaa198dba69caeea272a63ad283de546c1b54b",
+    "current_sha256": "d0918305b2def7dab58758a7eaeaa198dba69caeea272a63ad283de546c1b54b",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\question_pipeline_20261103\\contracts.py",
+    "source_sha256": "96c4dffc3721cb6644c88b77838e931902c023393c92ba7d00887102ef4f4a1a",
+    "current_sha256": "96c4dffc3721cb6644c88b77838e931902c023393c92ba7d00887102ef4f4a1a",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "src\\kg_pipeline\\validation.py",
+    "source_sha256": "9e4b1153d27f3ff1a3eebe888b1356d1c55985c1d3c8c5506ad9d26e5ae811b3",
+    "current_sha256": "9e4b1153d27f3ff1a3eebe888b1356d1c55985c1d3c8c5506ad9d26e5ae811b3",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\condition_bridge_20261103\\bridge.py",
+    "source_sha256": "a8e1bfc0dd5e7c1a555881d7c775f0ecfe54e256094b842968fb4cba1062d3a2",
+    "current_sha256": "a8e1bfc0dd5e7c1a555881d7c775f0ecfe54e256094b842968fb4cba1062d3a2",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\boundary_qwen_20261103\\runtime.py",
+    "source_sha256": "61149fcd3c7902f4c1c98632e34504af91aa1cb7b8fa1b2e2e0d617f73e83b15",
+    "current_sha256": "61149fcd3c7902f4c1c98632e34504af91aa1cb7b8fa1b2e2e0d617f73e83b15",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\condition_followup_20261103\\replay_checked.py",
+    "source_sha256": "522a0574e3d86f4ef8cf440d8aa6e1c610e9ae4dc52ae0f25f3544380ae95882",
+    "current_sha256": "522a0574e3d86f4ef8cf440d8aa6e1c610e9ae4dc52ae0f25f3544380ae95882",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\support_expansion_20261104\\build_graph.py",
+    "source_sha256": "2025b2fc0e02a2d9550596b7d1150c5698f6cab20ffa9024cf7f8b1d042bc04f",
+    "current_sha256": "2025b2fc0e02a2d9550596b7d1150c5698f6cab20ffa9024cf7f8b1d042bc04f",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\research_loop_20261103\\pipeline.py",
+    "source_sha256": "13d02003698a0055d155cd89d4218fe03072f537cf2ad899f931abb8e1fc5c64",
+    "current_sha256": "13d02003698a0055d155cd89d4218fe03072f537cf2ad899f931abb8e1fc5c64",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\research_loop_20261103\\test_pipeline.py",
+    "source_sha256": "057939d243fd3aba3f9a5e10125b45522262a89a1bce3cd5bd4aac58d523cdd3",
+    "current_sha256": "057939d243fd3aba3f9a5e10125b45522262a89a1bce3cd5bd4aac58d523cdd3",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "src\\kg_pipeline\\io.py",
+    "source_sha256": "a01af2c7717c2cf672dc10631057bf6e21ae4eee29a3b4a7350a4ce926012081",
+    "current_sha256": "a01af2c7717c2cf672dc10631057bf6e21ae4eee29a3b4a7350a4ce926012081",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\grammar_expansion_20261103\\build_graph.py",
+    "source_sha256": "a5c2e2aa6d394fcd283a5b748bcc493d91973ce3d8354c46d2ae514ca8a4d5dc",
+    "current_sha256": "a5c2e2aa6d394fcd283a5b748bcc493d91973ce3d8354c46d2ae514ca8a4d5dc",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\question_refinement_20261102\\sources.py",
+    "source_sha256": "0ce6e3950a34668e9780a2d3d74beeffc98581d419ffb4e881705933f92a5d16",
+    "current_sha256": "0ce6e3950a34668e9780a2d3d74beeffc98581d419ffb4e881705933f92a5d16",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\question_refinement_20261102\\query.py",
+    "source_sha256": "047a4b07bdea2a4b02bcb2bfaabcdeaa3a4d34ca74fa15f8db9065befe3d5a71",
+    "current_sha256": "047a4b07bdea2a4b02bcb2bfaabcdeaa3a4d34ca74fa15f8db9065befe3d5a71",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\question_pipeline_20261103\\adapter.py",
+    "source_sha256": "685e6cfd1a907709e17860dc668a999f4173a83feab73939ac3dc2c3d002942b",
+    "current_sha256": "685e6cfd1a907709e17860dc668a999f4173a83feab73939ac3dc2c3d002942b",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  },
+  {
+    "path": "experiments\\analyses\\support_expansion_20261104\\run.py",
+    "source_sha256": "07af04e4f45a7e4a559271fa2dc4d2fe273aabeb80f593824fb4ddc594156122",
+    "current_sha256": "07af04e4f45a7e4a559271fa2dc4d2fe273aabeb80f593824fb4ddc594156122",
+    "equal": true,
+    "allowed_progress_only_difference": false
+  }
+]

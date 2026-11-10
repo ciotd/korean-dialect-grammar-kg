@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-full50-20261109-1210\\candidate.json",
+    "sha256": "c5c3de7dbdb93716b70237ee701a7a590cae767dfff98d63a96b031073d461a5",
+    "bytes": 4232
+  },
+  "artifact": {
+    "path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-full50-20261109-1210\\pipeline.html",
+    "sha256": "708b536956623cfcfdf76df59de3e4591107d097819f5fc141d582da0eaca9bb",
+    "bytes": 840129
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-full50-20261109-1210\\pipeline.finalize.json",
+    "summaryReceipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-full50-20261109-1210\\pipeline.finalize-summary.json",
+    "browserCheckReceipt": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-full50-20261109-1210\\pipeline.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-09T03:04:06.794Z",
+    "source": "network",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 10841,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

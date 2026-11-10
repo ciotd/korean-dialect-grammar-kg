@@ -1,0 +1,22 @@
+{
+  "cards": 721,
+  "changed_cards": 573,
+  "directional_cards": 10,
+  "source_conditions_rewritten": 8,
+  "metadata_fields_moved": {
+    "target_profile": 698,
+    "source_region": 2,
+    "source_system": 473,
+    "period": 84,
+    "sample_scope": 83,
+    "year": 17
+  },
+  "forms_and_indices_unchanged": true,
+  "graph_unchanged": true,
+  "all_ids_preserved": true,
+  "ranking_policy": "v2 selection then same-ID content projection",
+  "automatic_condition_engine_added": false,
+  "new_model_calls": 0,
+  "model_payload_chars_before": 218924,
+  "model_payload_chars_after": 185482
+}

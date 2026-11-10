@@ -1,0 +1,41 @@
+{
+  "records": 26,
+  "status_counts": {
+    "generated_requires_human_review": 6,
+    "unchanged": 1,
+    "partial": 9,
+    "needs_review": 10
+  },
+  "valid_output_records": 26,
+  "changed_records": 15,
+  "held_records": 19,
+  "generation_calls_skipped": 0,
+  "held_by_model": 8,
+  "held_by_program": 26,
+  "records_with_realization_reference": 26,
+  "records_with_claim_paths": 0,
+  "api_attempts": 26,
+  "api_failures": 0,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 171784,
+    "completion_tokens": 19156,
+    "total_tokens": 190940
+  },
+  "calls_with_usage": 26,
+  "calls_without_usage": 0,
+  "wall_seconds": null,
+  "mean_record_seconds": 15.415,
+  "median_record_seconds": 15.001,
+  "retrieval_chars_total": 10278474,
+  "packet_chars_total": 547854,
+  "char_reduction_fraction": 0.9467,
+  "neighborhood_limit_records": 0,
+  "error_types": {},
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.",
+  "shared_batch_wall_seconds": 976.8759581998456,
+  "cost_note": "Cached analysis cost excluded; shared server timing, not standalone throughput."
+}

@@ -1,0 +1,7 @@
+{
+  "experiments\\analyses\\minimal_instruction_20261104\\word_probe.py": "8e85c8cc11c8488577f40c3fd6cd63d572a233b6bc26927624aafab37f71d705",
+  "experiments\\analyses\\minimal_instruction_20261104\\diagnostic_transport.py": "3dd3982afcda690fba9ffb300735c7fd3ea18584eec4e09b9c7b5e0225e660ac",
+  "experiments\\analyses\\minimal_instruction_20261104\\WORD_PLAN.md": "9d7b8b13839c02da4bf4b644a66b1954551066fa74349ce36a440dee70987dd6",
+  "src\\kg_pipeline\\io.py": "a01af2c7717c2cf672dc10631057bf6e21ae4eee29a3b4a7350a4ce926012081",
+  "src\\kg_pipeline\\validation.py": "9e4b1153d27f3ff1a3eebe888b1356d1c55985c1d3c8c5506ad9d26e5ae811b3"
+}

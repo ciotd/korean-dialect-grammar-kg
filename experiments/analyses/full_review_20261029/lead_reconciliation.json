@@ -1,0 +1,22 @@
+{
+  "meaning": "총괄이 실제로 읽고 원본·기존 사람 의견·다른 검토자의 의견과 대조한 묶음이다. 자동 응답 수신만으로 완료 표시하지 않는다.",
+  "read_batches": {
+    "codex": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05"
+    ],
+    "claude": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05"
+    ]
+  },
+  "original_inputs_read": 50,
+  "adjudication_file": "review_adjudication.json",
+  "open_scope": "50개 전체의 원본 및 양쪽 검토 의견 대조 완료. 방언 수용성의 미확정 항목과 인과 효과 검증은 후속 작업으로 남긴다."
+}

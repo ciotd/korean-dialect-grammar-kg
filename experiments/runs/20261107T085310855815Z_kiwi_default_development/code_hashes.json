@@ -1,0 +1,14 @@
+{
+  "tools/run_kiwi_default.py": "2bfe3812f9328fdc610f0c79cc7733d79a3d7f8437b55d1bceea623c6591a54b",
+  "tools/run_qwen_multi.py": "8f2ef36680549b5e52fc6457b41c545913d90d8914b699b5ccb8bbb59b9b2d9b",
+  "src/kg_pipeline/kiwi_default.py": "2e26706b84c77fb6cac1e3495c53bf83215cc1ecd0a2610a06b2f912ddfcb75f",
+  "src/kg_pipeline/morphology_control.py": "1e9d9a395a23ae3575ddd963d08f0d8dfec4b31a52e00bff5dada2401661b3e2",
+  "src/kg_pipeline/multi_agent.py": "de29d48d1a936ae49c592f65f42e2a713177cb008d6fc743b8f95def9eb166d6",
+  "src/kg_pipeline/integrated.py": "ae845d86265581557c85c0e87eff4d9ad3ba57b5886f202015f7517f4e2524e8",
+  "src/kg_pipeline/io.py": "12af6640cd865d9c5ea39f9dee732789dd2215c0d883af76bb00972577dec101",
+  "src/kg_pipeline/validation.py": "a2242127a2bb4d0783844d2946ecb0eef694412950dfb418b44823e3ca8a487b",
+  "src/kg_pipeline/separated_graph.py": "2a1258fb55828c3124ecfa6c457229a5f02c772f18f0008224040f94d8e14413",
+  "src/kg_pipeline/runner.py": "08d0bfa6711811442ae2108aff06c77106504b53b94194d107ca8eface291289",
+  "src/research_management/core.py": "8628bc145f845fcc98aaa425d5282e8ddb50f67c2513bac047edd32397663437",
+  "src/research_management/work.py": "fa0aea8dfc48c36e3ec3ac7563ff8fe9c89582f15544449badbd988f5dd3b71b"
+}

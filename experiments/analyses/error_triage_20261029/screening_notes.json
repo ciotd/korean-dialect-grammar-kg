@@ -1,0 +1,115 @@
+{
+  "author": "lead_codex_initial_screening",
+  "purpose": "실행 원본에 근거한 초기 진단; 사람 정답이나 독립 검토 결과가 아님",
+  "first_review_inputs": ["DEV002", "DEV012", "DEV019", "DEV020", "DEV026", "DEV030", "ADVCE006A", "ADVCE008A"],
+  "notes": [
+    {
+      "id": "contraction",
+      "title": "활용 조합 오류 후보",
+      "status": "AI 초기 선별; 일부는 기존 사람 수정 의견 있음",
+      "stage": "수정 지시·활용형 조합",
+      "observation": "사었지, 미끄러우아가, 어두우아가, 들어가아가처럼 어간과 어미를 단순 연결한 출력이 반복된다. DEV002와 DEV019에는 기존 사람의 부자연스러움 지적 또는 대안이 있다. 나머지는 별도 확인한다.",
+      "cases": ["DEV002:single", "DEV019:single", "DEV019:multi", "NEW006:single", "NEW006:multi", "LONG003:single", "LONG003:multi", "LONG004:single", "LONG004:multi"],
+      "anchors": {"DEV002:single": "사었지", "DEV019:single": "미끄러우아가", "NEW006:multi": "어두우아가", "LONG003:multi": "들어가아가"}
+    },
+    {
+      "id": "particle_card_contradiction",
+      "title": "카드 형태와 수정 지시 불일치",
+      "status": "실제 카드·지시 대조로 확인",
+      "stage": "카드 해석·수정 계획",
+      "observation": "DEV012에서 선택된 GS_PART_ACC_03의 forms는 -를인데, 계획은 이 카드가 -을을 제시한다고 설명하고 열쇠을을 만든다. 해당 표기의 지역적 허용 여부와 별개로 근거 해석 불일치다. 사람의 문장 전체 점수 4/3도 이 불일치를 없애지는 않는다.",
+      "cases": ["DEV012:single", "DEV012:multi"],
+      "anchors": {"DEV012:single": "열쇠을", "DEV012:multi": "GS_PART_ACC_03"}
+    },
+    {
+      "id": "prospective_memory",
+      "title": "약속 입력에 회상 카드 선택",
+      "status": "분석·카드 기능 불일치 확인; 최종 표현은 사람 확인 대기",
+      "stage": "문장 조건과 카드 조건 대조",
+      "observation": "ADVCE008A의 분석은 intention/future인데 선택 카드는 회상을 요구하는 GS_ENDRULE_DI_MEMORY다. Single은 빌려드릴디더를 만들며, Multi는 같은 ID를 남겨 둔 채 설명에서 GS_ENDRULE_SI_INTENT와 ㄹ시더로 바꾼다. 카드 ID·설명·출력의 일치를 검증해야 한다.",
+      "cases": ["ADVCE008A:single", "ADVCE008A:multi"],
+      "anchors": {"ADVCE008A:single": "GS_ENDRULE_DI_MEMORY", "ADVCE008A:multi": "GS_ENDRULE_SI_INTENT"}
+    },
+    {
+      "id": "tense_loss",
+      "title": "과거 표현의 소실 후보",
+      "status": "AI 문법 판단; 해당 표현의 방언 해석은 추가 확인",
+      "stage": "수정 계획·활용형 생성",
+      "observation": "원문을 과거로 분석했는데 설명했어요→설명합니더, 넣었어→넣제, 계셨어요→계시디더처럼 과거 표지가 사라진다. 남은 어미가 어떤 의미를 표현하는지까지 확인해 시제 보존을 판정한다.",
+      "cases": ["ADVCE006A:single", "NEW009:single", "NEW009:multi", "ADVCE002B:multi", "ADVCE006B:single", "NEW012:multi", "QUAL018:multi"],
+      "anchors": {"ADVCE006A:single": "설명합니더", "NEW009:single": "넣제", "ADVCE002B:multi": "계시디더"}
+    },
+    {
+      "id": "shared_analysis_register",
+      "title": "반말 입력의 공손함 분석 오류 후보",
+      "status": "AI 분석 대조; 원본 분석에 polite/해요체 명시 확인",
+      "stage": "공통 문장 분석부터 확인",
+      "observation": "DEV030의 자·할게를 polite/해요체로 분석한 후 두 방식 모두 지소·함시더를 만든다. 두 방식의 같은 실패를 워커 수 문제로만 보면 안 된다. 분석을 교정한 최소 확인 실험이 필요하다.",
+      "cases": ["DEV030:single", "DEV030:multi"],
+      "anchors": {"DEV030:single": "해요체", "DEV030:multi": "함시더"}
+    },
+    {
+      "id": "construction_scope",
+      "title": "구성 전체를 보지 못한 기능 대체 후보",
+      "status": "AI 초기 원인 가설",
+      "stage": "분석·구성 범위·카드 적용",
+      "observation": "늦을까 봐를 -면 조건처럼 바꾸거나, -는데/-면서/-말고를 표면상 비슷한 연결 어미 카드로 바꾸는 사례가 있다. 표준어 구성과 문장 내 역할이 실제 카드 적용 대상인지 먼저 확인해야 한다.",
+      "cases": ["DEV026:single", "DEV026:multi", "DEV029:single", "DEV029:multi", "LONG001:multi", "LONG002:multi", "LONG003:single", "LONG003:multi", "QUAL002:single", "NEW007:single", "QUAL018:single", "QUAL018:multi"],
+      "anchors": {"DEV026:single": "늦머", "LONG002:multi": "먹지 지마는", "DEV029:multi": "봤아가"}
+    },
+    {
+      "id": "coda_condition",
+      "title": "받침 조건 누락",
+      "status": "어간·선택 카드 조건 대조로 확인",
+      "stage": "적용 조건 확인·활용형 조합",
+      "observation": "LONG001의 있을게→있끼에 사용한 GS_ENDRULE_KKI_PROM은 stem_coda=NO_CODA를 요구한다. 있-은 받침이 있다. 이 카드로 해당 출력을 정당화할 수 있는지 근거를 추가로 확인해야 한다.",
+      "cases": ["LONG001:single", "LONG001:multi"],
+      "anchors": {"LONG001:single": "있끼", "LONG001:multi": "GS_ENDRULE_KKI_PROM"}
+    },
+    {
+      "id": "question_polarity",
+      "title": "문장 기능·부정 분석 점검",
+      "status": "관찰된 분석 오류 후보; 평서/확인 화행은 문맥 구별 필요",
+      "stage": "공통 분석·후속 카드 적용",
+      "observation": "ADVCE010B 제출하셨죠.를 polar_question과 negation으로 분석했다. 부정 표현은 원문에 보이지 않는다. Multi는 제출하셨나.로 출력한다. 마침표만으로 화행을 완전히 확정하지는 않되, 질문·부정 범주를 함께 점검한다.",
+      "cases": ["ADVCE010B:single", "ADVCE010B:multi"],
+      "anchors": {"ADVCE010B:single": "negation", "ADVCE010B:multi": "제출하셨나"}
+    },
+    {
+      "id": "unchanged_is_not_failure",
+      "title": "원문 유지와 근거 오류를 분리",
+      "status": "기존 사람 판단 + 실행 추적 확인",
+      "stage": "불필요 수정 방지·카드 연결 설명",
+      "observation": "DEV020은 두 방식 모두 원문 그대로이며 기존 평가자는 억양에 의한 방언성을 인정했다. 다만 최종 계획은 금지형 마에 의문 카드 GS_ENDRULE_Q_INDEF를 연결한다. Multi 설명은 그 카드가 적용 불가하다고 하면서 ID를 남겨 둔다. 출력 유지의 타당성과 근거 기록의 타당성은 별개다.",
+      "cases": ["DEV020:single", "DEV020:multi"],
+      "anchors": {"DEV020:single": "GS_ENDRULE_Q_INDEF", "DEV020:multi": "조건 불충족"}
+    },
+    {
+      "id": "offered_vs_factual",
+      "title": "제안·의향 질문의 단순 의문 전환 후보",
+      "status": "AI 초기 선별; 사람 대안 필요",
+      "stage": "의문 기능 분석·카드 선택",
+      "observation": "제가 닫을까요?가 제가 닫는가?/닫나?로 바뀐다. 행위 제안과 사실 확인이 같은 기능인지 검토해야 한다. 높임의 변화도 함께 확인한다.",
+      "cases": ["ADVCE003A:single", "ADVCE003A:multi"],
+      "anchors": {"ADVCE003A:single": "닫는가", "ADVCE003A:multi": "닫나"}
+    },
+    {
+      "id": "lexical_deletion",
+      "title": "원문 어휘 의미 일부 소실",
+      "status": "원문·출력 문자열 대조 확인; 의미 영향 검토",
+      "stage": "워커 활용형 생성·검증",
+      "observation": "ADVCE008B Multi는 빌려드릴게요를 드리ㄹ시더로 바꾸면서 빌려를 없앴다. 단독 ㄹ도 남는다. 빌려줌과 줌의 의미 차이를 보존하는 검사에 걸려야 할 사례다.",
+      "cases": ["ADVCE008B:multi"],
+      "anchors": {"ADVCE008B:multi": "드리ㄹ시더"}
+    },
+    {
+      "id": "dialect_preference",
+      "title": "목표 방언 표현과 문헌형 선택의 차이",
+      "status": "기존 사람 판단; 모든 지역에 대한 사실로 일반화 금지",
+      "stage": "형태 후보 선별·목표 표현 적합성",
+      "observation": "맵이더·좋이더·친구시더·좋제 등에 기존 낮은 점수와 구체적인 의견이 있다. 문헌에 형태가 있다는 것과 평가자가 자연스럽게 쓰는 표현이라는 것은 다르다. 문헌형을 곧바로 삭제하거나 다른 지역 전용이라고 확정하지 않고 현재 목표 표현과 맞는지 검토한다.",
+      "cases": ["DEV003:single", "DEV003:multi", "DEV004:multi", "DEV005:single", "DEV005:multi", "DEV007:multi", "DEV002:multi"],
+      "anchors": {"DEV003:single": "맵이더", "DEV004:multi": "친구시더", "DEV005:multi": "좋제"}
+    }
+  ]
+}

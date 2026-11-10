@@ -1,0 +1,8 @@
+{
+  "experiments\\analyses\\minimal_instruction_20261104\\temperature_probe.py": "85ab99ebb71698e2ade1d4ec13fa0e9f2d2f10f8cd062f3d0b7bfcc409e6ce3d",
+  "experiments\\analyses\\minimal_instruction_20261104\\temperature_transport.py": "fe3a8182b5770ee8a2ce1cc0838dd0bfba28121f513fe92347f5ddc56547b301",
+  "experiments\\analyses\\minimal_instruction_20261104\\TEMPERATURE_PLAN.md": "6201f55fbe635f02caccd6380d8821fe25239dd860e9f01f662e95f098c511e2",
+  "experiments\\analyses\\minimal_instruction_20261104\\private\\server_launch_20261104.json": "16f99f0d910e3859a201507f05e0a9a619a809e31f9d033f6d08d32d6eaaf8cc",
+  "src\\kg_pipeline\\io.py": "a01af2c7717c2cf672dc10631057bf6e21ae4eee29a3b4a7350a4ce926012081",
+  "src\\kg_pipeline\\validation.py": "9e4b1153d27f3ff1a3eebe888b1356d1c55985c1d3c8c5506ad9d26e5ae811b3"
+}

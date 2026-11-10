@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "current",
+  "deliveryReceiptId": "5f8a621b-85d7-48a1-970b-c62f6a2cef2b",
+  "artifact": {
+    "path": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-rule-branches-20261107-1435\\rule-branches.html",
+    "sha256": "6a0446f6225a06876ee64dcb34cd5b1cdc83c69584e31c2965e26e114ec840ca",
+    "bytes": 841873
+  },
+  "state": {
+    "detail": "read",
+    "motion": "still"
+  },
+  "chrome": {
+    "status": "available",
+    "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/browser-check-runtime",
+      "severity": "error",
+      "message": "browser-check could not complete its Chrome inspection.",
+      "subject": {
+        "artifact": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-rule-branches-20261107-1435\\rule-branches.html"
+      },
+      "evidence": {
+        "reason": "Temporary directory ancestor identity is unavailable: C:\\Users\\ciot28\\AppData\\Local\\Temp"
+      },
+      "supportedFixes": [
+        "resolve the reported Chrome inspection error, then rerun browser-check"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "themeStates": {
+    "status": "fail",
+    "viewports": []
+  },
+  "readability": {
+    "status": "fail",
+    "minimumProjectedNodeTextPx": 6,
+    "viewports": []
+  },
+  "viewerChrome": {
+    "status": "fail",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "receipt": "rule-branches.browser-check.json",
+    "files": []
+  },
+  "error": "Temporary directory ancestor identity is unavailable: C:\\Users\\ciot28\\AppData\\Local\\Temp"
+}

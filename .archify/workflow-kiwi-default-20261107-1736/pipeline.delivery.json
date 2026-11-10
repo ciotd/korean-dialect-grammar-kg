@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "1200dbf7-0bfd-42d0-9713-d49ccaabb745",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\candidate.json",
+  "output": "G:\\Work\\00_projects\\active\\hyperscale_AI\\02_research\\KG\\.archify\\workflow-kiwi-default-20261107-1736\\pipeline.html",
+  "specification": {
+    "sha256": "4f4b6a562b3da708daad17af73bd5f46138369f00033b34a5e5da39abec1dc39",
+    "bytes": 4423
+  },
+  "artifact": {
+    "sha256": "db6c53c8dd6467e9aa7301f932b9b1c789c0fb22a0938a204346604371583308",
+    "bytes": 835905
+  }
+}

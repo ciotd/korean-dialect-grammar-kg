@@ -1,0 +1,5 @@
+{
+  "analysis": "anchored_ids_and_actual_concepts",
+  "generation": "word_spans_rule_refs_and_nonoverlap",
+  "quality": "human_pending"
+}

@@ -1,0 +1,31 @@
+{
+  "records": 12,
+  "planned_records": 12,
+  "api_attempts": 12,
+  "generation_calls": 12,
+  "analysis_calls": 0,
+  "valid_output_records": 12,
+  "arms": {
+    "neutral": {
+      "responses": 6,
+      "contract_satisfied": 0,
+      "check_counts": {
+        "feedback_available": 6
+      }
+    },
+    "specific": {
+      "responses": 6,
+      "contract_satisfied": 0,
+      "check_counts": {
+        "feedback_available": 6
+      }
+    }
+  },
+  "naturalness": "not_evaluated",
+  "reported_usage": {
+    "prompt_tokens": 13796,
+    "completion_tokens": 1756,
+    "total_tokens": 15552
+  },
+  "wall_seconds": 36.950012400047854
+}

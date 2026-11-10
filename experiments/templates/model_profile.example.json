@@ -1,0 +1,14 @@
+{
+  "name": "candidate",
+  "model": "REPLACE_WITH_EXACT_SERVED_MODEL_ID",
+  "base_url_env": "KG_MODEL_BASE_URL",
+  "api_key_env": "KG_MODEL_API_KEY",
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 2048,
+  "seed": 20261106,
+  "timeout_seconds": 120,
+  "chat_template_kwargs": null,
+  "max_failures": 3,
+  "repeats": 1
+}

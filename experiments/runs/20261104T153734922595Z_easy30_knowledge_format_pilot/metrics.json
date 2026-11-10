@@ -1,0 +1,33 @@
+{
+  "planned_inputs": 30,
+  "completed_inputs": 30,
+  "records": 90,
+  "api_attempts": 120,
+  "analysis_calls": 30,
+  "generation_calls": 90,
+  "analysis_failures": 0,
+  "generation_failures": {},
+  "arm_counts": {
+    "N": 30,
+    "T": 30,
+    "J": 30
+  },
+  "unchanged_counts": {
+    "N": 0,
+    "T": 1,
+    "J": 1
+  },
+  "past_count_decrease_warnings": {
+    "N": 1,
+    "T": 2,
+    "J": 1
+  },
+  "naturalness": "not_evaluated",
+  "stop_reason": null,
+  "wall_seconds": 318.64601010014303,
+  "reported_usage": {
+    "prompt_tokens": 162628,
+    "completion_tokens": 15402,
+    "total_tokens": 178030
+  }
+}

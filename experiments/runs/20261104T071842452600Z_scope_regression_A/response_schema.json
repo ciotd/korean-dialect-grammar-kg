@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "output_text": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "generated",
+        "unchanged",
+        "needs_review"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "maxLength": 500
+    }
+  },
+  "required": [
+    "output_text",
+    "status",
+    "reason"
+  ],
+  "additionalProperties": false
+}

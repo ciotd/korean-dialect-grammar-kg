@@ -1,0 +1,28 @@
+{
+  "directory": "experiments\\analyses\\semantic_reachability_20261107\\private\\20261107T052951500203Z",
+  "run_id": "20261107T052951500203Z",
+  "regression_inputs": 50,
+  "recorded_analyses": 99,
+  "recorded_units": 802,
+  "rules_total": 56,
+  "rules_reached_on_saved_analysis": 31,
+  "probe_sentences": 57,
+  "probe_states": {
+    "observation_ready_meaning_unchecked": 57
+  },
+  "reviewed_target_goals": 90,
+  "goal_states": {
+    "knowledge_scope_not_supported": 18,
+    "target_unit_not_found": 1,
+    "observed_form_or_rule_scope_mismatch": 2,
+    "reached_and_delivered": 49,
+    "combined_or_unresolved": 2,
+    "meaning_judgment_candidate": 13,
+    "relation_binding_missing": 3,
+    "analysis_unavailable": 2
+  },
+  "meaning_only_diagnostic_enablements": 13,
+  "fresh_qwen_calls": 0,
+  "kg_modified": false,
+  "independent_linguistic_accuracy": null
+}

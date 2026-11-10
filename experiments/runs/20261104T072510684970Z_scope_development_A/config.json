@@ -1,0 +1,36 @@
+{
+  "phase": "development",
+  "dataset_role": "development",
+  "metric_contract": "generation_scope_diagnostic_v1",
+  "generation_policy_version": "v2",
+  "input_count": 24,
+  "unique_inputs": 12,
+  "input_sha256": "51b6a3f9c6f9ac5667b478016b99a175b628aeca113ba378f9b345db7a8c23b5",
+  "model_id": "Qwen3.8-27B",
+  "kg_dataset": "semantic_grammar_20261104_r7",
+  "source_run": "20261104T072405118127Z_scope_shared_dev_analysis",
+  "source_results_sha256": "301ef3ab8291d2482fe0f97109d34b1e88560c9545a4782b22eb381b95cc8ff2",
+  "arm": "A",
+  "seeds": [
+    20261104,
+    20261105
+  ],
+  "temperature": 0,
+  "top_p": 1,
+  "enable_thinking": false,
+  "max_tokens": 2048,
+  "workers": 2,
+  "analysis_calls": 0,
+  "automatic_retries": 0,
+  "final_writer": "Qwen",
+  "reference_answers_in_request": false,
+  "data_check": {
+    "role": "development",
+    "input_sha256": "51b6a3f9c6f9ac5667b478016b99a175b628aeca113ba378f9b345db7a8c23b5",
+    "records": 24,
+    "frozen_overlap_ids": [],
+    "check": "NFC_and_whitespace_normalized_exact_match",
+    "limitation": "Paraphrase/semantic overlap needs human review; prior exposure is not erased."
+  },
+  "paired_request_identity": "A=B with actions; B=C without actions; independently sampled control calls"
+}

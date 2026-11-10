@@ -1,0 +1,136 @@
+{
+  "type": "object",
+  "properties": {
+    "target_word_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "question_word_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "judgments": {
+      "type": "object",
+      "properties": {
+        "clause_role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "독립된 주절",
+            "다른 절 안에 포함된 절",
+            "인용된 절",
+            null
+          ]
+        },
+        "speech_act": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "정보를 묻는 질문",
+            "사실을 서술함",
+            "상대의 행동을 요구하거나 재촉함",
+            "답을 요구하지 않는 수사적 질문",
+            "이미 아는 내용을 확인시킴",
+            "함께 행동하자고 제안함",
+            "감탄을 나타냄",
+            "스스로에게 묻는 질문",
+            null
+          ]
+        },
+        "addressee_level": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "비높임 종결",
+            "높임 종결",
+            null
+          ]
+        },
+        "question_kind": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "사실 여부를 예 아니오로 답함",
+            "누구 어디 왜 무엇 등의 구체적인 정보를 답함",
+            null
+          ]
+        },
+        "tense": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "과거",
+            "현재",
+            "미래",
+            null
+          ]
+        },
+        "subject_honorific": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "주체를 높이지 않음",
+            "주체를 높임",
+            null
+          ]
+        },
+        "polarity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "긍정",
+            "부정",
+            null
+          ]
+        }
+      },
+      "required": [
+        "clause_role",
+        "speech_act",
+        "addressee_level",
+        "question_kind",
+        "tense",
+        "subject_honorific",
+        "polarity"
+      ],
+      "additionalProperties": false
+    },
+    "evidence_word_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 40
+    }
+  },
+  "required": [
+    "target_word_id",
+    "question_word_id",
+    "judgments",
+    "evidence_word_ids",
+    "note"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,8 @@
+from pathlib import Path
+import importlib.util,json,datetime
+R=Path.cwd();H=R/'experiments/analyses/support_expansion_20261104';s=importlib.util.spec_from_file_location('x',R/'experiments/analyses/full_review_20261029/review_exchange.py');x=importlib.util.module_from_spec(s);s.loader.exec_module(x)
+for who in ['codex','claude']:
+ d=H/'private/reviewers'/who
+ prompt=f'''독립 검토를 반영한 실제 구현 검토입니다. {H}/build_graph.py,runtime.py,run.py,test_runtime.py 및 knowledge/authored/semantic_grammar_20261104_r6/private/graph.json을 확인하세요. 이전 r5는 미검토 초안으로 남겼고 실행하지 않습니다. r6는 기존9규칙불변+신규2: 긍정일반명사/선어말없음/평서/공손/EF에요·예요→라예, 어요형공손정보질문→어예. 과거·부정·의존명사 제외. 명사받침별 필수축약규칙 없고, 이+라예 조합은Qwen 담당. 과거부정은ResearchCandidate로만보존. 사용자 승인참조에친구라예가있지만모델프롬프트에정답없음. 근거D02PDF199직접용례추가. query.py includes_copula명시속성우선,legacyfallback유지. run.py 근거선택확장hook, 기존규칙전달그대로. source_final와nominal_kind관찰특징 연결. 13코드검사통과. 기존62답변재사용조회:지원14→19, 추가5 DEV004 NEW001 ADVCE005A LONG003W7 LONG004W7. 미지원상태는no_matching_usage를out_of_slice보다먼저표시하므로이름별수감소를지원증가로계수하지않음. private/replay62.json 참조.
+문제위치→근거→수정안. 승인된범위내 코드/KG 읽기전용, 새실험·모델호출금지. 자기 implementation_review.md만 작성. 이번 코드와 직접근거만 검토하고 전체재정독반복불필요. Claude: 어간이+라예/모음축약을별도문헌확정하지않는실험이타당한지, 과거부정보류가적절한지. Codex: 실제조회/전달/범위차단/현재계사예예오검사방지 확인. 끝 END_SUPPORT_IMPLEMENTATION_{who.upper()}_20261104. 결과 {d/'implementation_review.md'}'''
+ (d/'implementation_prompt.txt').write_text(prompt,'utf8');x.dump(d/'implementation_start.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat()});x.dump(d/'implementation_receipt.json',x.cli(['terminal','send','--terminal',x.HANDLES[who],'--text',prompt,'--enter','--wait-submit','5']));print(who,'sent',flush=True)

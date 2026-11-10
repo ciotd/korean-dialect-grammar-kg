@@ -1,0 +1,46 @@
+{
+  "records": 50,
+  "status_counts": {
+    "needs_review": 13,
+    "generated_requires_human_review": 21,
+    "unchanged": 2,
+    "partial": 11,
+    "planning_failed": 2,
+    "analysis_failed": 1
+  },
+  "valid_output_records": 47,
+  "changed_records": 32,
+  "held_records": 24,
+  "generation_calls_skipped": 0,
+  "held_by_model": 3,
+  "held_by_program": 31,
+  "records_with_realization_reference": 47,
+  "records_with_claim_paths": 0,
+  "api_attempts": 49,
+  "api_failures": 1,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 318822,
+    "completion_tokens": 35290,
+    "total_tokens": 354112
+  },
+  "calls_with_usage": 49,
+  "calls_without_usage": 0,
+  "wall_seconds": null,
+  "mean_record_seconds": 14.996,
+  "median_record_seconds": 11.347,
+  "retrieval_chars_total": 17419606,
+  "packet_chars_total": 941768,
+  "char_reduction_fraction": 0.94594,
+  "neighborhood_limit_records": 0,
+  "error_types": {
+    "CallError": 1,
+    "ValueError": 2
+  },
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "Approved references exist; no human rating of new outputs. Changed/unchanged/failure are execution counts.",
+  "shared_batch_wall_seconds": 1739.1687909001485,
+  "cost_note": "Cached analysis excluded; shared server timing is not standalone throughput."
+}

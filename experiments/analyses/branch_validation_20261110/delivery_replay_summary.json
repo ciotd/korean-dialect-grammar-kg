@@ -1,0 +1,14 @@
+{
+  "source_run": "20261109T030211818725Z_kiwi_default_regression",
+  "records": 50,
+  "replayed": 49,
+  "missing_analysis": 1,
+  "before_matches_saved": 49,
+  "unchanged_selection": 49,
+  "before_actions": 58,
+  "after_actions": 58,
+  "before_chars": 51425,
+  "after_chars": 53733,
+  "qwen_calls": 0,
+  "warning": "저장된 분석값 고정 재생. 최종 JSON 직렬화 확인이며 서버 전송·번역 재실험 아님."
+}

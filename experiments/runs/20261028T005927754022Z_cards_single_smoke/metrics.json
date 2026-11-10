@@ -1,0 +1,37 @@
+{
+  "records": 4,
+  "status_counts": {
+    "analysis_failed": 4
+  },
+  "valid_output_records": 0,
+  "changed_records": 0,
+  "records_with_realization_reference": 0,
+  "records_with_claim_paths": 0,
+  "api_attempts": 4,
+  "api_failures": 0,
+  "automatic_retries": 0,
+  "reported_usage": {
+    "prompt_tokens": 13646,
+    "completion_tokens": 40,
+    "total_tokens": 13686
+  },
+  "calls_with_usage": 4,
+  "calls_without_usage": 0,
+  "wall_seconds": null,
+  "mean_record_seconds": 1.022,
+  "median_record_seconds": 1.02,
+  "retrieval_chars_total": 0,
+  "packet_chars_total": 0,
+  "char_reduction_fraction": null,
+  "neighborhood_limit_records": 0,
+  "error_types": {
+    "ValueError": 4
+  },
+  "accuracy": null,
+  "naturalness": null,
+  "evidence_appropriateness": null,
+  "evaluation_note": "No gold labels or independent human scores. Counts measure execution and coverage, not linguistic accuracy or KG causal benefit.",
+  "shared_batch_wall_seconds": 2.1890868998598307,
+  "selected_rule_ids": [],
+  "cost_note": "Production-equivalent per-arm costs include shared analysis once. Do not sum both arms as physical batch cost."
+}

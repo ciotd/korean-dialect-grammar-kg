@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "edits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "word_id": {
+            "type": "string"
+          },
+          "after": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "word_id",
+          "after",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "edits",
+    "reason"
+  ],
+  "additionalProperties": false
+}

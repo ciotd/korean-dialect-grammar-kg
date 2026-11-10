@@ -1,0 +1,7 @@
+{
+  "experiments\\analyses\\research_loop_20261103\\composer.py": "05616dd280e1b63461e36ecb77f07439bb980fd548e7bb983ae8a10d21d4d44b",
+  "experiments\\analyses\\research_loop_20261103\\compose_run.py": "75a983279dc229fa2cc5512ffac673321bebef537bb13d3c75f7f9c14a91d5ac",
+  "experiments\\analyses\\research_loop_20261103\\test_composer.py": "83c8f6754a942355e7210695925ecb8ba71a59a9d00d4a24e92a8c1ff02351f6",
+  "experiments\\analyses\\research_loop_20261103\\pipeline.py": "13d02003698a0055d155cd89d4218fe03072f537cf2ad899f931abb8e1fc5c64",
+  "src\\kg_runtime\\morphology.py": "af4f198cbdfbe10f9d7e448bf625940be5c84fbbdd9cbb3e56d1eb7bc593a0e9"
+}

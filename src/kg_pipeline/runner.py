@@ -72,10 +72,14 @@ def metrics(results,wall):
     import statistics
     calls=[c for r in results for c in r['calls']]
     usage={k:sum(c.get('usage',{}).get(k,0) or 0 for c in calls if c.get('usage')) for k in ('prompt_tokens','completion_tokens','total_tokens')}
-    valid=[r for r in results if r['status'] in ('generated_requires_human_review','unchanged')]
+    valid=[r for r in results if r['status'] in ('generated_requires_human_review','unchanged','partial','needs_review')]
     raw=sum(r.get('raw_chars',0) for r in results);packet=sum(r.get('packet_chars',0) for r in results)
     return {'records':len(results),'status_counts':dict(Counter(r['status'] for r in results)),
-      'valid_output_records':len(valid),'changed_records':sum(r['status']=='generated_requires_human_review' for r in results),
+        'valid_output_records':len(valid),'changed_records':sum(r['status'] in ('generated_requires_human_review','partial') for r in results),
+        'held_records':sum(r['status'] in ('partial','needs_review') for r in results),
+        'generation_calls_skipped':sum(r.get('generation_call_skipped',False) for r in results),
+        'held_by_model':sum(r.get('held_by_model',0) for r in results),
+        'held_by_program':sum(r.get('held_by_program',0) for r in results),
       'records_with_realization_reference':sum(r.get('reference_count',0)>0 for r in results),
       'records_with_claim_paths':sum(r.get('claim_paths',0)>0 for r in results),
       'api_attempts':len(calls),'api_failures':sum(c['status']=='failed' for c in calls),'automatic_retries':0,

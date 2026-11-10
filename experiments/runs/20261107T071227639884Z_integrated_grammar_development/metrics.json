@@ -1,0 +1,28 @@
+{
+  "records": 6,
+  "planned_inputs": 6,
+  "unattempted_inputs": 0,
+  "valid_output_records": 6,
+  "changed_records": 4,
+  "actual_text_changes": 4,
+  "status_counts": {
+    "generated_requires_human_review": 6
+  },
+  "failure_stages": {},
+  "model_review_requested": 0,
+  "api_attempts": 12,
+  "calls_counted": 12,
+  "analysis_calls": 6,
+  "generation_calls": 6,
+  "reported_usage": {
+    "prompt_tokens": 24260,
+    "completion_tokens": 5845,
+    "total_tokens": 30105
+  },
+  "calls_without_usage": 0,
+  "wall_seconds": 116.053,
+  "usage_completeness": "complete",
+  "stop_reason": null,
+  "naturalness": null,
+  "independent_accuracy": null
+}

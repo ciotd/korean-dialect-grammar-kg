@@ -1,0 +1,41 @@
+{
+  "program_id": "qwen_multi_20261107",
+  "phase": "development",
+  "dataset_role": "development",
+  "input_count": 6,
+  "input_sha256": "3f1ecb71471b1b3823e88b5458821c7627f89bf71d19b2c31394dfa981c6b79a",
+  "model_id": "Qwen3.8-27B",
+  "seed": 20261107,
+  "max_calls": 30,
+  "max_calls_per_input": 5,
+  "max_generation_repairs": 1,
+  "separate_plan": false,
+  "worker_role_count": 4,
+  "worker_roles": [
+    "structure",
+    "meaning",
+    "selection_and_writer",
+    "review"
+  ],
+  "deadline": "2026-11-07T15:49:56.9785142+09:00",
+  "deadline_policy": "guard_every_call_and_bound_transport_timeout",
+  "automatic_transport_retries": 0,
+  "final_writer": "Qwen_raw_output",
+  "analysis_backend": "Qwen_workers_no_Kiwi",
+  "knowledge_character_budget": 18000,
+  "reference_answers_in_request": false,
+  "metric_contract": "qwen_multi_v1",
+  "programmatic_original_text_fallback": false,
+  "naturalness": "not_evaluated",
+  "baseline": "integration; not a causal multi-agent comparison",
+  "python_version": "3.12.14",
+  "kg_dataset": "semantic_grammar_20261107_separated_20261107T045555351994Z",
+  "graph_sha256": "69688a7d9cc1ebf066531b810ff5afb5a25920e50bbdc59dc4334189a2e9fccc",
+  "prompt_sha256": {
+    "structure": "3db6cd64bef44131e2ef9b7e5d03ca2fc92f3265ccd4075a92f731376682f749",
+    "meaning": "96661e31c56725db5939b4b752e05de40cad3fd9d5b4d3491caa7a00d874b3a5",
+    "planner": "86bdbd37576b6fda152d77739da3f7773f748e3024c1a4a71ae2b2256d66a7f3",
+    "writer": "083e1f9275e3e0e1a91b93f67159555dde843277d98de5cc8e6854c9170c503e",
+    "reviewer": "85fcb0dac55d5666655a65861cd7450bbc93a53948c00205d2bf10aa2380e51a"
+  }
+}

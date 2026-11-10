@@ -1,0 +1,58 @@
+{
+  "date_kst": "2026-11-07",
+  "purpose": "Human-readable collaboration brief; editorial rewrite, no new experiment",
+  "pdf_pages": 14,
+  "limit": 20,
+  "pdf_sha256": "cfa0d528e33611bcd691dafe313d79636890e7a8f061436ead940f6c256eff80",
+  "pdf_bytes": 294629,
+  "layout_overflows": 0,
+  "visual_review": "All 14 pages rendered and reviewed; updated page 7 separately rendered",
+  "research_calls": 0,
+  "new_reviewer_calls": 0,
+  "kg_changes": false,
+  "old_pdf_preserved": true,
+  "source_hashes": {
+    "experiments/analyses/research_redesign_20261106/PLAN.md": "ccf7ed5ff0ea94611aa59cc59895ad7483fc2eb6c4790cd3e3a53fd53502b3ad",
+    "experiments/analyses/research_redesign_20261106/DECISIONS.md": "7dfb2446cfe60412d5c90db0dc60a96c95de4c4b203524d4fa1ed27131ca27a4",
+    "experiments/analyses/research_redesign_20261106/inventory.json": "5a81d0ad8b462c855bfc45bf60accd0fe29afeece72dfd7a623743430b0462d5",
+    "experiments/analyses/integrated_grammar_20261106/README.md": "dfd685f9276a718d734d70997f8af77d97207884b7a0e78a0158a760854e92bd",
+    "docs/research/COLLABORATION_RESTART_20261106.md": "1673399b610ddbe1040277de03e1bcba19a296fc90c956ebed6bf638b29f9008",
+    "docs/research/CURRENT_RESEARCH_PLAN.md": "f2148195b65f8c45b775e8f71de4f251896f5130510680bd106afc107f08030d",
+    "experiments/analyses/overnight_20261105/private/guide.html": "21ea645680f296c7d7798daac27b7dfee7714b41fa81f0c0c408d20a62830f3c"
+  },
+  "before_checkpoint": "21315e436862d94ee54c147ccd5bf187c2ab6dca",
+  "coverage": {
+    "research_goal_and_limits": [
+      1,
+      2
+    ],
+    "actual_graph_and_provenance": [
+      3,
+      5
+    ],
+    "failure_evidence_vs_hypothesis": [
+      4,
+      6
+    ],
+    "multi_agent_and_kiwi": [
+      7,
+      8
+    ],
+    "fair_comparison_models": [
+      9
+    ],
+    "data_evaluation": [
+      10
+    ],
+    "termination_next_actions": [
+      11
+    ],
+    "human_collaboration_and_decisions": [
+      12,
+      13
+    ],
+    "terms_sources": [
+      14
+    ]
+  }
+}
