@@ -296,5 +296,12 @@
     "local_path": "experiments/analyses/kg_structure_audit_20261109/private/report.html",
     "summary": "1491노드·5037관계 및56규칙·57분기 전수 목록 검사. 두 리뷰어 대조,설명·조건·전달 불일치와 수정안. 새 예문/Qwen 실행 및 KG 수정 없음.",
     "delivery": "local_html_desktop"
+  },
+  {
+    "title": "11월10일 · 조건별 예문 검사와 전달 보완",
+    "url": "file:///G:/Work/00_projects/active/hyperscale_AI/02_research/KG/experiments/analyses/branch_validation_20261110/private/report.html",
+    "local_path": "experiments/analyses/branch_validation_20261110/private/report.html",
+    "summary": "56규칙57분기 논리 재생,171문장 Kiwi 관찰,전달 누락·옛 메모 수정과 두 검토자 대조. 새 Qwen 실험은 아직 없음.",
+    "delivery": "local_html_desktop"
   }
 ]

@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(ROOT/'src'),str(ROOT/'local/python'),str(ROOT/'tools')]
 from kg_pipeline.io import Qwen,read,save,sha,dumps,load_jsonl
 from kg_pipeline.integrated import IntegratedReader
+from kg_pipeline.delivery_normalization import VERSION as DELIVERY_VERSION
 from kg_pipeline.multi_agent import run_sentence,PROMPTS
 from kg_pipeline.kiwi_default import initial_structure,SCOPE_PROMPT,prompts,focused_prompts
 from kg_pipeline.separated_graph import restore
@@ -43,14 +44,15 @@ def execute(args):
         'automatic_retries':0,'max_analysis_repairs':0,'max_generation_repairs':0,'reference_answers_in_request':False,
         'paired_shared_scope':paired,'changed_factors':'connection_unknown_handling_meaning_relation_guidance_humility_delivery',
         'knowledge_character_budget':args.char_budget,'python_version':platform.python_version(),'sampling_repeat_count':1,
-        'worker_roles':['scope','meaning','writer','diagnostic_reviewer']}
+        'worker_roles':['scope','meaning','writer','diagnostic_reviewer'],
+        'delivery_normalization_version':DELIVERY_VERSION}
     if reuse:
         prior=read(reuse/'config.json');artifacts=read(reuse/'artifact_hashes.json')
         if any(prior[k]!=config[k] for k in ('input_sha256','graph_sha256','model_id','seed')):raise ValueError('Structure replay input/KG/model/seed mismatch')
         config['structure_reuse']={'source_run':reuse.name,'source_artifact_manifest_sha256':sha((reuse/'artifact_hashes.json').read_bytes()),'new_scope_calls':0,'scope_cost_in_source_run_only':True}
     save(out/'config.json',config);hashes={}
     paths=['tools/run_kiwi_default.py','tools/run_qwen_multi.py','src/kg_pipeline/kiwi_default.py','src/kg_pipeline/morphology_control.py',
-        'src/kg_pipeline/multi_agent.py','src/kg_pipeline/integrated.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py',
+        'src/kg_pipeline/multi_agent.py','src/kg_pipeline/integrated.py','src/kg_pipeline/delivery_normalization.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py',
         'src/kg_pipeline/separated_graph.py','src/kg_pipeline/runner.py','src/research_management/core.py','src/research_management/work.py']
     for rel in paths:
         dest=out/'code_snapshot'/rel;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/rel,dest);hashes[rel]=sha((ROOT/rel).read_bytes())

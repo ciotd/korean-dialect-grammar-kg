@@ -69,7 +69,7 @@ def execute(args):
     if companion:kg_hashes.update(audit=sha((companion/'audit.json').read_bytes()),manifest=sha((companion/'manifest.json').read_bytes()))
     save(out/'kg_hashes.json',kg_hashes)
     hashes={}
-    for rel in ['tools/run_integrated_grammar.py','src/kg_pipeline/integrated.py','src/kg_pipeline/separated_graph.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_runtime/morphology.py']:
+    for rel in ['tools/run_integrated_grammar.py','src/kg_pipeline/integrated.py','src/kg_pipeline/separated_graph.py','src/kg_pipeline/delivery_normalization.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_runtime/morphology.py']:
         source=ROOT/rel;dest=out/'code_snapshot'/rel;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,dest);hashes[rel]=sha(source.read_bytes())
     save(out/'code_hashes.json',hashes);register_run(ROOT,out)
     results=[];calls=0;consecutive=0;start=time.perf_counter();stop=None

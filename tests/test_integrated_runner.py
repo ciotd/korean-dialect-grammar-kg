@@ -43,7 +43,7 @@ class FakeQwen:
 class RunnerTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
-        for rel in ['tools/run_integrated_grammar.py','src/kg_pipeline/integrated.py','src/kg_pipeline/separated_graph.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_runtime/morphology.py']:
+        for rel in ['tools/run_integrated_grammar.py','src/kg_pipeline/integrated.py','src/kg_pipeline/separated_graph.py','src/kg_pipeline/delivery_normalization.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_runtime/morphology.py']:
             p=self.root/rel;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/rel,p)
         save(self.root/'graph.json',compile_overlay({'rules':[]}))
         self.args=SimpleNamespace(graph=str(self.root/'graph.json'),inputs=str(self.root/'inputs.jsonl'),phase='smoke',

@@ -187,6 +187,8 @@ def execute(args):
                 kg_hashes[source] = sha((parent / source).read_bytes())
         save(out / 'kg_hashes.json', kg_hashes)
         from kg_pipeline.multi_agent import PROMPTS, run_sentence
+        from kg_pipeline.delivery_normalization import VERSION as delivery_version
+        config['delivery_normalization_version']=delivery_version
         config.update(kg_dataset=graph['version'], graph_sha256=kg_hashes['graph'],
                       prompt_sha256={k: sha(v.encode()) for k, v in PROMPTS.items()})
         save(out / 'config.json', config)
@@ -197,6 +199,7 @@ def execute(args):
             path.write_text(prompt, encoding='utf-8')
         for rel in ['tools/run_qwen_multi.py', 'src/kg_pipeline/multi_agent.py',
                     'src/kg_pipeline/integrated.py', 'src/kg_pipeline/separated_graph.py',
+                    'src/kg_pipeline/delivery_normalization.py',
                     'src/kg_pipeline/io.py', 'src/kg_pipeline/validation.py',
                     'src/kg_pipeline/runner.py', 'src/research_management/core.py',
                     'src/research_management/work.py']:

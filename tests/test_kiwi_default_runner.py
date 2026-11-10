@@ -15,7 +15,7 @@ class KiwiRunnerFailureAccounting(unittest.TestCase):
                 root=Path(td);graph=root/'graph/graph.json';save(graph,{'nodes':[],'edges':[]});save(graph.parent/'audit.json',{})
                 save(graph.parent/'manifest.json',{'graph_sha256':sha(graph.read_bytes()),'audit_sha256':sha((graph.parent/'audit.json').read_bytes())})
                 inputs=root/'inputs.jsonl';inputs.write_text('{"id":"I0","text":"가."}\n',encoding='utf8')
-                for rel in ['tools/run_kiwi_default.py','tools/run_qwen_multi.py','src/kg_pipeline/kiwi_default.py','src/kg_pipeline/morphology_control.py','src/kg_pipeline/multi_agent.py','src/kg_pipeline/integrated.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_pipeline/separated_graph.py','src/kg_pipeline/runner.py','src/research_management/core.py','src/research_management/work.py']:
+                for rel in ['tools/run_kiwi_default.py','tools/run_qwen_multi.py','src/kg_pipeline/kiwi_default.py','src/kg_pipeline/morphology_control.py','src/kg_pipeline/multi_agent.py','src/kg_pipeline/integrated.py','src/kg_pipeline/delivery_normalization.py','src/kg_pipeline/io.py','src/kg_pipeline/validation.py','src/kg_pipeline/separated_graph.py','src/kg_pipeline/runner.py','src/research_management/core.py','src/research_management/work.py']:
                     p=root/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text('# isolated',encoding='utf8')
                 class Fake:
                     timeout=120;models={}
@@ -35,6 +35,8 @@ class KiwiRunnerFailureAccounting(unittest.TestCase):
                 with patch.object(runner,'ROOT',root),patch.object(runner,'HERE',root/'analysis'),patch.object(runner,'restore'),patch.object(runner,'Qwen',Fake),patch.object(runner,'register_run'),patch.object(runner,'WorkStore'),patch.object(runner,'initial_structure',initial),patch.object(runner,'run_sentence',downstream),patch('kiwipiepy.Kiwi',return_value=object()):
                     out,m=runner.execute(args)
                 rr=read(out/'private/results.json')
+                self.assertIn('src/kg_pipeline/delivery_normalization.py',read(out/'code_hashes.json'))
+                self.assertEqual(read(out/'config.json')['delivery_normalization_version'],runner.DELIVERY_VERSION)
                 self.assertEqual(m['api_attempts'],stop_at);self.assertEqual(m['records'],records)
                 self.assertEqual(m['scope_calls']+sum(r['api_attempts'] for r in rr),stop_at)
                 self.assertTrue((out/'failure.json').exists());self.assertEqual(m['stop_reason'],'interrupted')

@@ -1,0 +1,56 @@
+{
+  "rules": 56,
+  "branches": 57,
+  "covered_branches": 57,
+  "logic_cases_reused": 990,
+  "logic_passed": 990,
+  "decisions_unchanged": true,
+  "delivery_rules_checked": 56,
+  "delivery_fields_passed": 56,
+  "payload_changed_rules": 18,
+  "delivery_fields_checked": 443,
+  "branch_payloads": 57,
+  "unit_dispatch_cases": 114,
+  "branch_evaluation_cases": 876,
+  "uncovered_branches": [],
+  "modes": {
+    "all_allowed_values": 324,
+    "one_false": 310,
+    "one_unknown": 310,
+    "missing_relation": 46
+  },
+  "graph_sha256": "69688a7d9cc1ebf066531b810ff5afb5a25920e50bbdc59dc4334189a2e9fccc",
+  "code_sha256": "ccb0eaaeb9da5df67e9c19f6ae9cf9a68a79d69af5a78a448c840efb57f0634d",
+  "normalization_version": "delivery_normalization_20261110_v1",
+  "code_hashes": {
+    "src/kg_pipeline/integrated.py": "ccb0eaaeb9da5df67e9c19f6ae9cf9a68a79d69af5a78a448c840efb57f0634d",
+    "src/kg_pipeline/delivery_normalization.py": "ca4043ffb7e818ad4038f5af0802569fb1e19f27f5adaa1208a05c9968220837",
+    "experiments/analyses/branch_validation_20261110/validate_branches.py": "7b5ddd87ff72228ca8ae6bf2da995550f77ddc965999f659957db849af99cbec",
+    "experiments/analyses/branch_validation_20261110/private/before/integrated.py": "ae845d86265581557c85c0e87eff4d9ad3ba57b5886f202015f7517f4e2524e8"
+  },
+  "path_checks": 57,
+  "normalization_exact_matches": {
+    "INT_END_PROMISE_KKE": {
+      "Kiwi는 ㄹ게를 EF \"ᆯ게\"(받침 낱자 U+11AF)로 출력(실측) → 호환 자모 \"ㄹ게\"는 절대 일치 안 함.": 1
+    },
+    "INT_AUX_PRESERVE_COMMON": {
+      "benefactive 포함으로 REQUEST_DO(보류)와 충돌 없음.": 1
+    },
+    "INT_CONN_SEQ_AGA": {
+      "semantic_function cause는 기본 enum reason과 중복 값.": 1
+    },
+    "INT_END_HORT_POLITE_IPSIDEO": {
+      "source_form 조건 없음.": 1
+    },
+    "INT_END_PROHIB_MAISO": {
+      "construction에 lemma·어미 조건이 없어 높임 금지 판정만으로 걸림.": 1
+    },
+    "INT_CONN_QUOTE_KKO": {
+      "Kiwi는 \"간다고\"를 EC ᆫ다고(받침 낱자)로 분석(실측) → \"다고\"만으로는 ㄴ다고/는다고를 놓침.": 1
+    }
+  },
+  "fixtures_sha256": "c3f91eee6e7ad130a545a57611c4dacccf25a50397e413b2db938bde490760f6",
+  "qwen_calls": 0,
+  "natural_language_accuracy": null,
+  "warning": "기대값은 기존 KG 명세의 논리값이다. 문법 지식의 타당성과 자연스러운 번역을 인증하지 않는다."
+}

@@ -1,0 +1,48 @@
+{
+  "directory": "experiments\\analyses\\branch_validation_20261110\\private\\test_runs\\20261110T014425Z",
+  "results": [
+    {
+      "pattern": "test_branch_delivery.py",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    },
+    {
+      "pattern": "test_*separat*.py",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    },
+    {
+      "pattern": "test_qwen_multi.py",
+      "tests": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    },
+    {
+      "pattern": "test_kiwi_default*.py",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    },
+    {
+      "pattern": "test_*integrat*.py",
+      "tests": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true
+    }
+  ],
+  "tests": 93,
+  "passed": true,
+  "model_calls": 0
+}

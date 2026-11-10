@@ -12,6 +12,7 @@ from pathlib import Path
 
 from .io import dumps, read, save, sha
 from .separated_graph import FORMAT as SEPARATED_FORMAT, compact_payload, compact_reference
+from .delivery_normalization import normalize_delivery
 
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE_CACHE=Path('C:/Users/ciot28/Documents/Codex/2026-10-13/ciotd-odor-complaint-dialect-rag-kg/work/source_audit')
@@ -180,7 +181,7 @@ class IntegratedReader:
             scope={}
             for e in self.links(family[0],'SUPPORTED_IN'):scope.update(self.nodes[e['target']]['properties']['allowed'])
             for be in self.links(rid,'ANY_BRANCH'):
-                conditions={**scope};path=[e['id'] for e in self.links(family[0],'HAS_USAGE') if e['target']==rid]+[be['id']]
+                conditions={**scope};path=[e['id'] for e in self.links(family[0],'HAS_USAGE') if e['target']==rid]+[e['id'] for e in self.links(family[0],'SUPPORTED_IN')]+[be['id']]
                 for ce in self.links(be['target'],'ALL'):
                     cn=self.nodes[ce['target']]['properties'];require(cn['operator']=='in','Unsupported condition operator')
                     vals=[self.nodes[e['target']]['properties']['value'] for e in self.links(ce['target'],'ACCEPTS')]
@@ -247,18 +248,37 @@ class IntegratedReader:
     def payload(self,unit,hit):
         r=self.rules[hit['rule_id']];p=r['node']['properties'];forms=[]
         for e in self.links(hit['rule_id'],'REALIZES'):
-            fp=self.nodes[e['target']]['properties'];forms.append({k:fp[k] for k in ('form','composition','allomorphs','includes_copula') if k in fp})
+            fp=self.nodes[e['target']]['properties'];forms.append({k:fp[k] for k in ('form','composition','allomorphs','includes_copula','unit','surface_postcondition','operation') if k in fp})
         sources=[]
         for e in self.links(hit['rule_id'],'SUPPORTED_BY'):
             ep=self.nodes[e['target']]['properties'];sources.append({'evidence_id':e['target'],'doc':ep.get('document_id'),'page':ep.get('pdf_page')})
         payload={'unit_id':unit['id'],'span':unit['span'],'source_text':unit['text'],'rule_id':hit['rule_id'],
                 'instruction':p.get('instruction',p.get('meaning',p.get('summary',''))),'forms':forms,
                 'preserve':p.get('preserve',[]),'source_morphs':unit['morphs'],'rule_type':p.get('rule_type','conversion'),
-                'limitations':p.get('limitations',''),
+                'limitations':delivery_limitations(p),
                 'forms_annotated':p.get('forms_annotated',[]),'lexical_map':p.get('lexical_map',{}),
                 'conditions':[{ 'feature':c['feature'],'value':c['value']} for c in next(b for b in hit['branches'] if b['state']=='true')['checks']],
                 'sources':sources,'relations':unit.get('relations',{}),'clause_key':unit.get('clause_key')}
+        # These are grammar instructions, not source/review metadata. Preserve
+        # their original values; do not infer that a postcondition was checked.
+        for key in ('target','generation_operation','surface_postcondition','operation'):
+            if key in p:payload[key]=copy.deepcopy(p[key])
+        payload=normalize_delivery(payload)
         return compact_payload(payload) if self.graph_storage_format == SEPARATED_FORMAT else payload
+
+
+def delivery_limitations(properties):
+    """Accept both historical field names without silently choosing a conflict.
+
+    A single field keeps its original type. Distinct values from both fields
+    remain separately visible. No linguistic equivalence is inferred.
+    """
+    values=[]
+    for key in ('limitations','limits'):
+        value=properties.get(key)
+        if value not in (None,'',[]) and value not in values:
+            values.append(copy.deepcopy(value))
+    return values[0] if len(values)==1 else values if values else ''
 
 
 def analysis_contract(reader,units):
